@@ -1,0 +1,37 @@
+.btn-primary{
+    background-color: var(--red);
+    padding: 40px;
+    border: none;
+}
+.btn-primary:hover{
+    background-color: var(--violet);
+}
+
+.month, .month::placeholder {
+    color: var(--blue);
+    background-color: rgb(170, 170, 235);
+}
+
+.month:focus {
+    color: var(--blue);
+    box-shadow: 0 0 5px .25rem var(--blue);
+}
+
+.day ,.day::placeholder {
+    color: var(--green);
+    background-color: rgb(114, 141, 114);
+}
+
+.day:focus {
+    color: var(--green);
+    box-shadow: 0 0 5px .25rem var(--green);
+}
+
+.year, .year::placeholder{
+    color: var(--orange);
+    background-color: rgb(219, 170, 81);
+}
+.year:focus {
+    color: var(--orange);
+    box-shadow: 0 0 5px .25rem var(--orange);
+}
