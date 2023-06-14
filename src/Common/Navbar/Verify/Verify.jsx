@@ -1,45 +1,68 @@
 import { useState } from 'react';
-import { Button, Form, InputGroup, Modal } from 'react-bootstrap';
+import { Form, InputGroup, Modal } from 'react-bootstrap';
 import "./styles.css";
-
+import { useVerifyAge } from '../../../hook/useVerifyAge';
 
 function Verify() {
   const [show, setShow] = useState(true);
+  const [birthDay, setDay] = useState();
+  const [birthMonth, setMonth] = useState();
+  const [birthYear, setYear] = useState();
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  // onHide={handleClose} dentro de Modal
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const isOldEnough = useVerifyAge(birthDay, birthMonth, birthYear)
+    console.log(isOldEnough)
+    if(isOldEnough){
+      handleClose(); 
+      setShow(false);
+    }  
+  }
   return(
-    <Modal show={show}  size="xl">
+    <Modal show={show} size="lg" className='unicornModal'>
             <Modal.Header className='border-0 d-flex justify-content-start' >
-              <Modal.Title className='m-5'><img alt='Unicorn Logo'/></Modal.Title>
+              <Modal.Title className='me-5'><img alt='Unicorn Logo'/></Modal.Title>
               <h2>Please, tell us: When where you born?</h2>
             </Modal.Header>
             <Modal.Body>
-              <Form className='d-flex fs-5'>
-                <InputGroup className="m-3">
+              <Form className='d-flex justify-content-center fs-5' onSubmit={handleSubmit}>
+                <InputGroup className="m-2">
                   <Form.Control
                     className='text-center month'
                     placeholder="MM"
                     aria-label="Month"
+                    name="month"
+                    onChange={(e) => setMonth(e.target.value)}
                   />
                  </InputGroup>
-                 <InputGroup className="m-3">
+                 <InputGroup className="m-2">
                   <Form.Control
                     className='text-center day'
                     placeholder="DD"
                     aria-label="Day"
+                    name="day"
+                    onChange={(e) => setDay(e.target.value)}
                   />
                  </InputGroup>
-                 <InputGroup className="m-3">
+                 <InputGroup className="m-2">
                   <Form.Control
                     className='text-center year'
                     placeholder="YYYY"
                     aria-label="Year"
+                    name="year"
+                    onChange={(e) => setYear(e.target.value)}
                   />
-                 </InputGroup>
-                 <Button className='button'>
-                  Enter
-                </Button>
+                  </InputGroup>
+                 <InputGroup className="m-2">
+                  <Form.Control
+                    className='text-center btn-primary'
+                    value="ENTER"
+                    type="submit"
+                  />
+                  </InputGroup>
               </Form>
             </Modal.Body>
         

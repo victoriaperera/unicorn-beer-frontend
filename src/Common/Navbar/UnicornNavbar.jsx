@@ -20,10 +20,10 @@ function UnicornNavbar() {
                 <Nav.Link href="#">OUR BEER</Nav.Link>
                 <Nav.Link href="#">SHOP</Nav.Link>
                 <Nav.Link href="#" className="py-1 px-2">
-                  <i class="bi bi-person-fill fs-5"></i>
+                  <i className="bi bi-person-fill fs-5"></i>
                 </Nav.Link>
                 <Nav.Link href="#" className="py-1 px-2">
-                  <i class="bi bi-cart-fill fs-5"></i>
+                  <i className="bi bi-cart-fill fs-5"></i>
                 </Nav.Link>
                 <Nav.Link href="#">CONTACT</Nav.Link>
               </Nav>

@@ -1,12 +1,16 @@
 .btn-primary{
     background-color: var(--red);
-    padding: 40px;
     border: none;
+    text-transform: uppercase;
+    color: #ffffff;
 }
 .btn-primary:hover{
     background-color: var(--violet);
 }
 
+.month {
+    border: solid 1px var(--blue);
+}
 .month, .month::placeholder {
     color: var(--blue);
     background-color: rgb(170, 170, 235);
@@ -14,24 +18,34 @@
 
 .month:focus {
     color: var(--blue);
+    background-color: #ffffff;
+    border: solid 1px var(--blue);
     box-shadow: 0 0 5px .25rem var(--blue);
 }
-
+.day {
+    border: solid 1px var(--green);
+}
 .day ,.day::placeholder {
     color: var(--green);
-    background-color: rgb(114, 141, 114);
+    background-color: #728d72; 
 }
 
 .day:focus {
     color: var(--green);
+    background-color: #ffffff;
+    border: solid 1px var(--green);
     box-shadow: 0 0 5px .25rem var(--green);
 }
-
+.year {
+    border: solid 1px var(--orange);
+}
 .year, .year::placeholder{
-    color: var(--orange);
-    background-color: rgb(219, 170, 81);
+    color: rgb(219, 170, 81);
+    background-color: var(--orange);
 }
 .year:focus {
     color: var(--orange);
+    background-color: #ffffff;
+    border: solid 1px var(--orange);
     box-shadow: 0 0 5px .25rem var(--orange);
 }
