@@ -16,9 +16,10 @@ import orderReducer from "./orderSlice";
 
 const rootReducer = combineReducers({
   user: userReducer,
-  products: productReducer,
-  orders: orderReducer,
+  product: productReducer,
+  order: orderReducer,
 });
+
 const persistConfig = {
   key: "root",
   version: 1,
