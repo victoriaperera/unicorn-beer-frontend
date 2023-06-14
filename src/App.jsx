@@ -1,12 +1,13 @@
 import { useState } from "react";
 import "./App.css";
-import Navbar from "./Common/Navbar/Navbar";
+import UnicornNavbar from "./Common/Navbar/UnicornNavbar";
 import Verify from "./Common/Navbar/Verify/Verify";
 function App() {
   return (
     <>
-      <Navbar />
+      <UnicornNavbar />
       <Verify/>
+
 
     </>
   );
