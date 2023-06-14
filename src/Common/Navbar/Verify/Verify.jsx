@@ -18,7 +18,7 @@ function Verify() {
     }  
   }
   return(
-    <Modal show={show} size="lg" className='unicornModal'>
+    <Modal show={show} size="xl" className='unicornModal'>
             <Modal.Header className="border-0 d-flex flex-column">
               <img alt='Unicorn Logo'/>
               <Modal.Title className='me-5'>

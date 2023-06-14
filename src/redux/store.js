@@ -11,15 +11,15 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import userReducer from "../Features/Auth/userSlice";
-import productReducer from "../Features/Shop/productSlice";
-import orderReducer from "./orderSlice";
-import cartSlice from "../Coomon/Navbar/Cart/cartSlice";
+// import productReducer from "../Features/Shop/productSlice";
+// import orderReducer from "./orderSlice";
+// import cartSlice from "../Coomon/Navbar/Cart/cartSlice";
 
 const rootReducer = combineReducers({
   user: userReducer,
-  product: productReducer,
-  order: orderReducer,
-  cart: cartSlice
+  // product: productReducer,
+  // order: orderReducer,
+  // cart: cartSlice
 });
 
 const persistConfig = {

@@ -1,4 +1,7 @@
-.btn-primary{
+.unicornModal {
+    background-color: #728d72;
+}
+.btn-primary {
     background-color: var(--red);
     border: none;
     text-transform: uppercase;
