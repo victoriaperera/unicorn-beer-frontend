@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const orderSlice = createSlice({
-  name: "order",
+const adminSlice = createSlice({
+  name: "admin",
   initialState: null,
   reducers: {},
 });
 
-const { actions, reducer } = orderSlice;
+const { actions, reducer } = adminSlice;
 export const {} = actions;
 export default reducer;
