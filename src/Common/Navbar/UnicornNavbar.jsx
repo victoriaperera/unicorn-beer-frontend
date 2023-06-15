@@ -44,7 +44,7 @@ function UnicornNavbar() {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Brand href="/">
             <img
-              src="/src/assets/icons/Unicorn-beer-icon-black-iso.svg"
+              src="/src/assets/icons/Unicorn-beer-white-logo-iso.svg"
               alt="Unicorn Logo"
               className="icon-beer"
             />
@@ -83,7 +83,7 @@ function UnicornNavbar() {
                     <Cart />
                   </Offcanvas>
                 </Nav.Link>
-                <Nav.Link href="#" className="mx-2 mt-1 text-white">
+                <Nav.Link href="/contact" className="mx-2 mt-1 text-white">
                   CONTACT
                 </Nav.Link>
               </Nav>
