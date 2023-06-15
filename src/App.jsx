@@ -1,6 +1,7 @@
 import "./App.css";
 import Verify from "./Common/Navbar/Verify/Verify";
 import UnicornNavbar from "./Common/Navbar/UnicornNavbar";
+import Footer from "./Common/Footer/Footer";
 import Home from "./Features/Home/Home";
 import About from "./Features/About/About";
 import Cart from "./Common/Navbar/Cart/Cart";
@@ -13,8 +14,8 @@ import Login from "./Features/Auth/Login";
 function App() {
   return (
     <>
-      <UnicornNavbar />
       <Verify />
+      <UnicornNavbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -23,6 +24,7 @@ function App() {
         <Route path="/shop" element={<Shop />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer/>
     </>
   );
 }
