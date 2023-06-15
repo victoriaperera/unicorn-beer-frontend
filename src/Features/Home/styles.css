@@ -112,3 +112,93 @@ header .overlay {
   top: -90px;
   left: 0;
 }
+
+.divider-bottom-VIOLET,
+.divider-bottom-WHITE {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.divider-bottom-VIOLET svg {
+  position: relative;
+  display: block;
+  width: calc(129% + 1.3px);
+  height: 78px;
+  transform: rotateY(180deg);
+}
+
+.divider-bottom-VIOLET .VIOLET-fill {
+  fill: #554ba0;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .divider-bottom-VIOLET svg {
+    width: calc(129% + 1.3px);
+    height: 75px;
+  }
+}
+
+.divider-bottom-WHITE {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.divider-bottom-WHITE svg {
+  position: relative;
+  display: block;
+  width: calc(129% + 1.3px);
+  height: 78px;
+  transform: rotateY(180deg);
+}
+
+.divider-bottom-WHITE .WHITE-fill {
+  fill: #ffffff;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .divider-bottom-1686857352 svg {
+    width: calc(129% + 1.3px);
+    height: 75px;
+  }
+}
+
+.divider-top-RED {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.divider-top-RED svg {
+  position: relative;
+  display: block;
+  width: calc(129% + 1.3px);
+  height: 78px;
+  transform: rotateY(180deg);
+}
+
+.divider-top-RED .RED-fill {
+  fill: #ffffff;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .divider-top-RED svg {
+    width: calc(129% + 1.3px);
+    height: 75px;
+  }
+}
