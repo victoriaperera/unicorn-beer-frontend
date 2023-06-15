@@ -4,6 +4,7 @@ import { Collapse, Form, InputGroup, Modal } from 'react-bootstrap';
 import "./styles.css";
 import { useVerifyAge } from '../../../hook/useVerifyAge';
 import { toggleModal } from './verifyAgeSlice';
+
 function Verify() {
 
   const show = useSelector( state => state.verify )
@@ -12,7 +13,6 @@ function Verify() {
   const [birthDay, setDay] = useState();
   const [birthMonth, setMonth] = useState();
   const [birthYear, setYear] = useState();
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,21 +24,21 @@ function Verify() {
         setChild(true)
       }
     }
-    
   }
+
   return(
     
-        <Modal show={show} size="lg" backdrop="static" className='unicornModal'>
+        <Modal show={show} size="xl" backdrop="static" className='unicornModal'>
             <Modal.Header className="border-0 d-flex flex-column justify-content-center">
               <img src="src/assets/icons/Unicorn-beer-icon-black.svg"alt='Unicorn Logo' className='w-50'/>
               <Modal.Title>
                 <h3 className='mt-5 text-center'>Please, tell us: When where you born?</h3>
-                {child && <small className='ups'>Ups! We're sorry, you have to be an adult to get into this site</small>}
+                {child && <small className='oops'>Oops! We're sorry, but you have to be an adult to get into this site</small>}
               </Modal.Title>
             </Modal.Header>
             <Modal.Body className='mt-5'>
               <Form onSubmit={handleSubmit}>
-                <div className='d-flex mb-5'>
+                <div className='d-flex my-3'>
                   <InputGroup className="m-2">
                     <Form.Control
                       className='dateInput month'
@@ -75,7 +75,7 @@ function Verify() {
                     </InputGroup>
                 </div>
                 <div className='d-flex justify-content-center'>
-                  <InputGroup className="my-4 w-75">
+                  <InputGroup className="my-4 w-50">
                    <Form.Control
                     className='text-center enterBtn'
                     value="enter"
