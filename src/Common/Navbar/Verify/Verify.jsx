@@ -33,7 +33,7 @@ function Verify() {
               <img src="src/assets/icons/Unicorn-beer-icon-black.svg"alt='Unicorn Logo' className='w-50'/>
               <Modal.Title>
                 <h3 className='mt-5 text-center'>Please, tell us: When where you born?</h3>
-                {child && <small className='ups'>Ups! We sorry, you have to be an adult to get into the site</small>}
+                {child && <small className='ups'>Ups! We're sorry, you have to be an adult to get into this site</small>}
               </Modal.Title>
             </Modal.Header>
             <Modal.Body className='mt-5'>
