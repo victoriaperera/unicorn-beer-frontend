@@ -83,7 +83,6 @@ function Verify() {
                 </div>
               </Form>
             </Modal.Body>
-        
         </Modal>
   )
 }
