@@ -5,9 +5,10 @@ import "./styles.css";
 import { useVerifyAge } from '../../../hook/useVerifyAge';
 import { toggleModal } from './verifyAgeSlice';
 function Verify() {
+
   const show = useSelector( state => state.verify )
   const dispatch = useDispatch();
-  
+  const [child, setChild] = useState();
   const [birthDay, setDay] = useState();
   const [birthMonth, setMonth] = useState();
   const [birthYear, setYear] = useState();
@@ -15,10 +16,15 @@ function Verify() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const isOldEnough = useVerifyAge(birthDay, birthMonth, birthYear)
-    if(isOldEnough){
-      dispatch(toggleModal()) ;
-    }  
+    if(birthDay & birthMonth & birthYear){
+      const isOldEnough = useVerifyAge(birthDay, birthMonth, birthYear)
+      if(isOldEnough){
+        dispatch(toggleModal());
+      }else{
+        setChild(true)
+      }
+    }
+    
   }
   return(
     
@@ -26,10 +32,11 @@ function Verify() {
             <Modal.Header className="border-0 d-flex flex-column justify-content-center">
               <img alt='Unicorn Logo'/>
               <Modal.Title>
-                <h3 className='mt-5 text-center'>Please, tell us: When where you born?</h3>
+                <h3 className='my-4 text-center'>Please, tell us: When where you born?</h3>
+                {child && <small className='ups'>Ups! We sorry, you have to be adult to get into the site</small>}
               </Modal.Title>
             </Modal.Header>
-            <Modal.Body>
+            <Modal.Body className='mt-5'>
               <Form onSubmit={handleSubmit}>
                 <div className='d-flex'>
                   <InputGroup className="m-2">
@@ -39,7 +46,8 @@ function Verify() {
                       aria-label="Month"
                       name="month"
                       type="number"
-                      range="1-12"
+                      min={1}
+                      max={12}
                       onChange={(e) => setMonth(e.target.value)}
                     />
                   </InputGroup>
@@ -50,6 +58,8 @@ function Verify() {
                       aria-label="Day"
                       name="day"
                       type="number"
+                      min={1}
+                      max={31}
                       onChange={(e) => setDay(e.target.value)}
                     />
                   </InputGroup>
@@ -59,6 +69,7 @@ function Verify() {
                       placeholder="YYYY"
                       aria-label="Year"
                       name="year"
+                      min={1900}
                       onChange={(e) => setYear(e.target.value)}
                     />
                     </InputGroup>
