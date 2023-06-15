@@ -49,36 +49,35 @@ input[type=number] {
 
 .month, .month::placeholder {
     color: var(--blue);
-    background-color: var(--lightBlue);
+    
 }
 
 .month:focus, .month:hover {
     color: var(--blue);
     border: solid 1px var(--blue);
     box-shadow: 0 0 5px .25rem var(--blue);
-    background-color: var(--white);
 }
 
 .day, .day::placeholder {
     color: var(--darkGreen);
-    background-color: var(--green); 
+   
 }
 
 .day:focus, .day:hover {
     color: var(--green);
     border: solid 1px var(--darkGreen);
     box-shadow: 0 0 5px .25rem var(--darkGreen);
-    background-color: var(--white);
+    
 }
 
 .year, .year::placeholder {
     color: var(--orange);
-    background-color: var(--lightOrange);
+    
 }
 
 .year:focus, .year:hover {
     color: var(--orange);
     border: solid 1px var(--orange);
     box-shadow: 0 0 5px .25rem var(--orange);
-    background-color: var(--white);
+    
 }

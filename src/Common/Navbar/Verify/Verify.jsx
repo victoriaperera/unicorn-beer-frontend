@@ -16,7 +16,7 @@ function Verify() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(birthDay & birthMonth & birthYear){
+    if(birthDay && birthMonth && birthYear){
       const isOldEnough = useVerifyAge(birthDay, birthMonth, birthYear)
       if(isOldEnough){
         dispatch(toggleModal());
@@ -30,7 +30,7 @@ function Verify() {
     
         <Modal show={show} size="xl" backdrop="static" className='unicornModal'>
             <Modal.Header className="border-0 d-flex flex-column justify-content-center">
-              <img alt='Unicorn Logo'/>
+              <img src="src/assets/icons/Unicorn-beer-icon-black.svg"alt='Unicorn Logo' className='w-50'/>
               <Modal.Title>
                 <h3 className='my-4 text-center'>Please, tell us: When where you born?</h3>
                 {child && <small className='ups'>Ups! We sorry, you have to be an adult to get into the site</small>}
