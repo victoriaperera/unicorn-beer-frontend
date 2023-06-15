@@ -28,17 +28,17 @@ function Verify() {
   }
   return(
     
-        <Modal show={show} size="xl" backdrop="static" className='unicornModal'>
+        <Modal show={show} size="lg" backdrop="static" className='unicornModal'>
             <Modal.Header className="border-0 d-flex flex-column justify-content-center">
               <img src="src/assets/icons/Unicorn-beer-icon-black.svg"alt='Unicorn Logo' className='w-50'/>
               <Modal.Title>
-                <h3 className='my-4 text-center'>Please, tell us: When where you born?</h3>
+                <h3 className='mt-5 text-center'>Please, tell us: When where you born?</h3>
                 {child && <small className='ups'>Ups! We sorry, you have to be an adult to get into the site</small>}
               </Modal.Title>
             </Modal.Header>
             <Modal.Body className='mt-5'>
               <Form onSubmit={handleSubmit}>
-                <div className='d-flex'>
+                <div className='d-flex mb-5'>
                   <InputGroup className="m-2">
                     <Form.Control
                       className='dateInput month'
@@ -77,8 +77,8 @@ function Verify() {
                 <div className='d-flex justify-content-center'>
                   <InputGroup className="my-4 w-75">
                    <Form.Control
-                    className='text-center btn-primary'
-                    value="ENTER"
+                    className='text-center enterBtn'
+                    value="enter"
                     type="submit"
                     />
                   </InputGroup>
