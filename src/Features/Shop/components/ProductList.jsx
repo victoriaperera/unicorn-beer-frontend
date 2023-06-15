@@ -1,18 +1,20 @@
 import "./styles.css";
 import Product from "./Product";
-import { Col, Container, Form, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 
-import React from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function ProductList() {
-  const products = [
-    { name: "IPA", style: "IPA", img: "/src/assets/img/IPA_bottle.png" },
-    {
-      name: "Scottish",
-      style: "Scottish",
-      img: "/src/assets/img/Scottish_bottle.png",
-    },
-  ];
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const getProducts = async () => {
+      const res = await axios.get(`http://localhost:3000/products`);
+      setProducts(res.data);
+    };
+    getProducts();
+  }, []);
   return (
     <>
       <Row className="pt-3">

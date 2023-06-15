@@ -5,13 +5,6 @@
 .product-card {
   height: width;
 }
-.product-card:nth-child(odd) {
-  background-color: var(--violet);
-}
-
-.product-card:nth-child(even) {
-  background-color: var(--red);
-}
 
 /* .product-card:nth-child(even) {
   background-color: var(--yellow);
