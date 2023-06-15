@@ -14,8 +14,8 @@ function Product({ product }) {
       <Col
         md={6}
         lg={4}
-        className="p-3 text-center product-card"
-        style={{  }}
+        className="p-3 text-center product-card text-white"
+        style={{ backgroundColor: bgColor }}
       >
         <img src={photos[0]} alt="Product image" className="product-img m-3" />
         <h4>{product.name}</h4>

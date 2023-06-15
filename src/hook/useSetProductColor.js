@@ -1,12 +1,15 @@
 export const useSetProductColor = (style) => {
   switch (style) {
     case "Scottish":
-      return "backgroundColor: var(--red)"
+      return "var(--red)";
     case "IPA":
-        return "backgroundColor: var(--violet)"
+      return "var(--violet)";
     case "Stout":
-        return "backgroundColor: var(--violet)"
-   
+      return "var(--graphite)";
+    case "Blonde":
+      return "var(--yellow)";
+    case "APA":
+      return "var(--green)";
 
     default:
       break;
