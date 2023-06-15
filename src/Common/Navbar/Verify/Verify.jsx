@@ -25,9 +25,7 @@ function Verify() {
       }
     }
   }
-
   return(
-    
         <Modal show={show} size="xl" backdrop="static" className='unicornModal'>
             <Modal.Header className="border-0 d-flex flex-column justify-content-center">
               <img src="src/assets/icons/Unicorn-beer-icon-black.svg"alt='Unicorn Logo' className='w-50'/>
@@ -87,12 +85,7 @@ function Verify() {
             </Modal.Body>
         
         </Modal>
-  
-  
   )
-    
-          
-  
 }
 
 export default Verify;

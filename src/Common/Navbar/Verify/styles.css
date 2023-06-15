@@ -8,7 +8,10 @@ input[type=number] {
   -moz-appearance: textfield;
   appearance: textfield;
 }
-
+.form-control:focus {
+    border: none;
+    box-shadow: none;
+}
 .unicornModal {
     background: rgb(180,128,58);
     background: linear-gradient(13deg, rgba(180,128,58,1) 0%, rgba(253,238,29,0.5821353912353515) 38%, rgba(252,176,69,1) 100%); 
@@ -47,8 +50,9 @@ input[type=number] {
 }
 .enterBtn:hover, .enterBtn:focus {
     color: var(--white);
-    background-color: red;
-    filter: drop-shadow(0 0 6px var(--darkRed)) contrast(2) brightness(2);
+    background-color: var(--darkRed);
+    border: 3px solid var(--lightRed);
+    filter: drop-shadow(0 0 10px var(--darkRed)) drop-shadow(0 0 10px var(--darkRed)) contrast(2) brightness(2);
 }
 
 .dateInput {
