@@ -3,7 +3,6 @@ import "./styles.css";
 import React from "react";
 
 import { useState } from "react";
-import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
 function Cart() {
@@ -14,19 +13,12 @@ function Cart() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Launch
-      </Button>
-
-      <Offcanvas show={show} onHide={handleClose}>
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
-        </Offcanvas.Header>
-        <Offcanvas.Body>
-          Some text as placeholder. In real life you can have the elements you
-          have chosen. Like, text, images, lists, etc.
-        </Offcanvas.Body>
-      </Offcanvas>
+      <Offcanvas.Header closeButton>
+        <Offcanvas.Title>Shopping Cart</Offcanvas.Title>
+      </Offcanvas.Header>
+      <Offcanvas.Body>
+        <img src="/src/assets/img/Scottish_bottle.png" alt="Product image" />
+      </Offcanvas.Body>
     </>
   );
 }
