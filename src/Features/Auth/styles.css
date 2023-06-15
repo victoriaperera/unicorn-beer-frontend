@@ -1,0 +1,14 @@
+.btn-login {
+  background-color: var(--orange);
+}
+
+.btn-login:hover {
+  background-color: var(--lightOrange);
+}
+
+.btn-logout {
+  background-color: var(--red);
+}
+.btn-logout:hover {
+  background-color: var(--lightred);
+}
