@@ -6,17 +6,40 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Cart from "./Cart/Cart";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function UnicornNavbar() {
   const [show, setShow] = useState(false);
+  const [navbarBlur, setNavbarBlur] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 1220) {
+        setNavbarBlur(true);
+      } else {
+        setNavbarBlur(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <Navbar collapseOnSelect bg="white" expand="lg" sticky="top">
+      <Navbar
+        collapseOnSelect
+        bg="white"
+        expand="lg"
+        sticky="top"
+        className={navbarBlur ? "navbar-blur" : "custom-navbar"}
+      >
         <Container fluid>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Brand href="/">
