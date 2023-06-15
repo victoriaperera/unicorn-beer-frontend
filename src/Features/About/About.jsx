@@ -1,4 +1,5 @@
 import "./styles.css";
+import { Container, Row, Col } from "react-bootstrap";
 import Header from "../../Common/Header/Header";
 import TeamMemberCard from "./Components/TeamMemberCard";
 
@@ -15,7 +16,8 @@ function About() {
   return (
     <>
       <Header />
-      <div className="container-fluid mt-5 text-center">
+      <div className="container-fluid text-center">
+        <Row className="white-row"></Row>
         <div className="row">
           <div className="col-12 col-lg-6 about-card about-card-one">
             <h3>TECHNOLOGIES</h3>

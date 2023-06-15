@@ -1,3 +1,6 @@
+.white-row {
+  height: 50px;
+}
 .scottish-row {
   background-color: #f84143;
 }
@@ -44,4 +47,64 @@
   background-size: 100% 90px;
   background-position: 50% 0%;
   background-image: url('data:image/svg+xml;charset=utf8, <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="%FFFFF"></path></svg>');
+}
+
+header {
+  position: relative;
+  background-color: black;
+  height: 75vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translate(-50%, -50%) scale(0.6); /* Ajusta el valor de scale para alejar o acercar el video */
+  -moz-transform: translate(-50%, -50%) scale(0.6);
+  -webkit-transform: translate(-50%, -50%) scale(0.6);
+  transform: translate(-50%, -50%) scale(0.6);
+}
+
+header .container {
+  position: relative;
+  z-index: 2;
+}
+
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+/* Media Query for devices withi coarse pointers and no hover functionality */
+
+/* This will use a fallback image instead of a video for devices that commonly do not support the HTML5 video element */
+
+@media (pointer: coarse) and (hover: none) {
+  header {
+    background: url("/src//assets/videos/home_header_video.mp4") black no-repeat
+      center center scroll;
+  }
+
+  header video {
+    display: none;
+  }
+}
+
+.header-logo {
+  height: 500px;
+  opacity: 0.8;
 }

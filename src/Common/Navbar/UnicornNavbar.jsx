@@ -20,7 +20,11 @@ function UnicornNavbar() {
         <Container fluid>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Brand href="/">
-            <img src="" alt="Unicorn Logo" />
+            <img
+              src="/src/assets/icons/Unicorn-beer-icon-black-iso.svg"
+              alt="Unicorn Logo"
+              className="icon-beer"
+            />
           </Navbar.Brand>
           <Navbar.Collapse
             id="responsive-navbar-nav"
