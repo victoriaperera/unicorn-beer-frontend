@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <UnicornNavbar />
-      {/* <Verify/> */}
+      <Verify/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
