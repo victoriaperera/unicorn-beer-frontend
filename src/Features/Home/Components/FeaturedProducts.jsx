@@ -1,4 +1,5 @@
 import { Row, Col, Button } from "react-bootstrap";
+import AddToCardBtn from "../../../Common/components/AddToCardBtn";
 
 function FeaturedProducts() {
   return (
@@ -11,10 +12,9 @@ function FeaturedProducts() {
             className="beer-logo mb-3"
           />
           <p className="product-text">
-            A unique and flavorful amber or brown beer with a malty character
-            and caramel notes. Balancing sweetness and bitterness, it offers a
-            medium to full body with a prominent malt profile and subtle hints
-            of toffee and nuts. Perfect for those seeking intense and
+            A unique and flavorful amber or brown beer with a malty character and caramel notes.
+            Balancing sweetness and bitterness, it offers a medium to full body with a prominent
+            malt profile and subtle hints of toffee and nuts. Perfect for those seeking intense and
             full-bodied beer experiences.
           </p>
           <img
@@ -34,25 +34,18 @@ function FeaturedProducts() {
           <p>VOL.</p>
           <h4 className="fw-bolder fs-1">4.4%</h4>
           <p>AMBER</p>
-          <Button variant="outline-light" size="lg" className="rounded-pill">
-            Buy Now
-          </Button>
+          <AddToCardBtn />
         </Col>
       </Row>
 
       <Row className="ipa-row align-items-center justify-content-center text-white py-5 ">
         <Col xs={12} sm={8} md={4} lg={3} xxl={3} className="p-0 px-4">
-          <img
-            src="/src/assets/icons/IPA_logo.svg"
-            alt="IPA logo"
-            className="beer-logo mb-3"
-          />
+          <img src="/src/assets/icons/IPA_logo.svg" alt="IPA logo" className="beer-logo mb-3" />
           <p className="product-text">
-            An exceptional India Pale Ale with a golden color and captivating
-            aroma of citrus and tropical fruits. It perfectly balances hop
-            bitterness and malt sweetness, offering a refreshing and
-            invigorating flavor with notes of grapefruit, pine, and resin. A
-            bold and vibrant beer journey.
+            An exceptional India Pale Ale with a golden color and captivating aroma of citrus and
+            tropical fruits. It perfectly balances hop bitterness and malt sweetness, offering a
+            refreshing and invigorating flavor with notes of grapefruit, pine, and resin. A bold and
+            vibrant beer journey.
           </p>
           <img
             src="/src/assets/icons/containers-06.svg"
@@ -71,9 +64,7 @@ function FeaturedProducts() {
           <p>VOL.</p>
           <h4 className="fw-bolder fs-1">5%</h4>
           <p>CITRUS</p>
-          <Button variant="outline-light" size="lg" className="rounded-pill">
-            Buy Now
-          </Button>
+          <AddToCardBtn />
         </Col>
       </Row>
     </>
