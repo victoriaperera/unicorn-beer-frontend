@@ -16,7 +16,7 @@ function UnicornNavbar() {
 
   return (
     <>
-      <Navbar collapseOnSelect bg="white" expand="lg" sticky="top">
+      <Navbar collapseOnSelect bg="white" expand="lg"  sticky="top">
         <Container fluid>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Brand href="/">

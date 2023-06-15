@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./App.css";
 import Verify from "./Common/Navbar/Verify/Verify";
 import UnicornNavbar from "./Common/Navbar/UnicornNavbar";
@@ -7,16 +6,18 @@ import About from "./Features/About/About";
 import Cart from "./Common/Navbar/Cart/Cart";
 
 import { Routes, Route } from "react-router-dom";
+import Login from "./Features/Auth/Login";
 
 function App() {
   return (
     <>
       <UnicornNavbar />
-      <Verify/>
+      <Verify />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </>
   );
