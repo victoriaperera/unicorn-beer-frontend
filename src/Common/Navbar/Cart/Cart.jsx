@@ -1,16 +1,9 @@
 import "./styles.css";
+import Offcanvas from "react-bootstrap/Offcanvas";
 
 import React from "react";
 
-import { useState } from "react";
-import Offcanvas from "react-bootstrap/Offcanvas";
-
 function Cart() {
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
   return (
     <>
       <Offcanvas.Header closeButton>
