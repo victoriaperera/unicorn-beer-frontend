@@ -1,5 +1,6 @@
 .unicornModal {
-    background-color: #728d72;
+    background: rgb(180,128,58);
+    background: linear-gradient(13deg, rgba(180,128,58,1) 0%, rgba(253,238,29,0.5821353912353515) 38%, rgba(252,176,69,1) 100%); 
 }
 .btn-primary {
     background-color: var(--red);

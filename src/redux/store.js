@@ -11,12 +11,14 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import userReducer from "../Features/Auth/userSlice";
+import verifyReducer from "../Common/Navbar/Verify/verifyAgeSlice"
 // import productReducer from "../Features/Shop/productSlice";
 // import orderReducer from "./orderSlice";
 // import cartSlice from "../Coomon/Navbar/Cart/cartSlice";
 
 const rootReducer = combineReducers({
   user: userReducer,
+  verify: verifyReducer,
   // product: productReducer,
   // order: orderReducer,
   // cart: cartSlice
