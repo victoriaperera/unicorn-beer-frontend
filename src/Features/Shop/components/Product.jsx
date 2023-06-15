@@ -20,7 +20,9 @@ function Product({ product }) {
         <img src={photos[0]} alt={`${product.name} image`} className="m-3 product-img" />
         <h5>{product.name}</h5>
         <p className="fw-semibold">$ 19.99</p>
-        <AddToCardBtn />
+        <span className="addToCartBtn-shop">
+          <AddToCardBtn />
+        </span>
       </Col>
     </>
   );

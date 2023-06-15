@@ -7,11 +7,18 @@ import React from "react";
 function Shop() {
   return (
     <>
-      <Container fluid>
-        <Row className="p-3">
-          <Col lg={10}></Col>
-          <Col lg={2}>
-            <Form className="d-flex">
+      <header className="shop-header">
+        <Row className="d-flex shop-heading">
+          <Col lg={10}>
+            <h2>Welcome to our shop.</h2>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur iure, suscipit
+              commodi in saepe aspernatur aperiam, quo quidem, dolor ab neque natus necessitatibus
+              quae odio ex libero minima iusto eius?
+            </p>
+          </Col>
+          <Col lg={2} className="align-self-end">
+            <Form>
               <Form.Control
                 type="search"
                 placeholder="Search products..."
@@ -21,6 +28,8 @@ function Shop() {
             </Form>
           </Col>
         </Row>
+      </header>
+      <Container fluid>
         <ProductList />
       </Container>
     </>
