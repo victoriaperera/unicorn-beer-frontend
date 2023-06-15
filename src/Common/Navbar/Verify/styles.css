@@ -1,55 +1,83 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
 .unicornModal {
     background: rgb(180,128,58);
     background: linear-gradient(13deg, rgba(180,128,58,1) 0%, rgba(253,238,29,0.5821353912353515) 38%, rgba(252,176,69,1) 100%); 
 }
+
+.ups {
+ color: var(--lightRed);
+ position: absolute;
+ text-align: center;
+ font-size: 1rem
+}
+
+.modal-content {
+    border: none;
+    background-color: var(--lightGrey);
+}
+
 .btn-primary {
-    background-color: var(--red);
+    background-color: var(--darkRed);
     border: none;
     text-transform: uppercase;
     color: #ffffff;
+    width: 50%;
 }
-.btn-primary:hover{
-    background-color: var(--violet);
+.btn-primary:hover {
+    background-color: var(--red);
+    color: var(--lightGrey);
+    border: none;
+    box-shadow: 0 0 5px .25rem var(--darkRed);
 }
 
-.month {
-    border: solid 1px var(--blue);
+.dateInput {
+    height: 10vh;
+    text-align: center;
+    border: none;
+    border-radius: 2px;
 }
+
 .month, .month::placeholder {
     color: var(--blue);
-    background-color: rgb(170, 170, 235);
+    
 }
 
-.month:focus {
+.month:focus, .month:hover {
     color: var(--blue);
-    background-color: #ffffff;
     border: solid 1px var(--blue);
     box-shadow: 0 0 5px .25rem var(--blue);
 }
-.day {
-    border: solid 1px var(--green);
-}
-.day ,.day::placeholder {
-    color: var(--green);
-    background-color: #728d72; 
+
+.day, .day::placeholder {
+    color: var(--darkGreen);
+   
 }
 
-.day:focus {
+.day:focus, .day:hover {
     color: var(--green);
-    background-color: #ffffff;
-    border: solid 1px var(--green);
-    box-shadow: 0 0 5px .25rem var(--green);
+    border: solid 1px var(--darkGreen);
+    box-shadow: 0 0 5px .25rem var(--darkGreen);
+    
 }
-.year {
-    border: solid 1px var(--orange);
-}
-.year, .year::placeholder{
-    color: rgb(219, 170, 81);
-    background-color: var(--orange);
-}
-.year:focus {
+
+.year, .year::placeholder {
     color: var(--orange);
-    background-color: #ffffff;
+    
+}
+
+.year:focus, .year:hover {
+    color: var(--orange);
     border: solid 1px var(--orange);
     box-shadow: 0 0 5px .25rem var(--orange);
+    
 }
