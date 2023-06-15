@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Form, InputGroup, Modal } from 'react-bootstrap';
+import { Collapse, Form, InputGroup, Modal } from 'react-bootstrap';
 import "./styles.css";
 import { useVerifyAge } from '../../../hook/useVerifyAge';
 import { toggleModal } from './verifyAgeSlice';
@@ -21,7 +21,8 @@ function Verify() {
     }  
   }
   return(
-    <Modal show={show} size="xl" className='unicornModal'>
+    
+        <Modal show={show} size="xl" backdrop="static" className='unicornModal'>
             <Modal.Header className="border-0 d-flex flex-column justify-content-center">
               <img alt='Unicorn Logo'/>
               <Modal.Title>
@@ -37,6 +38,8 @@ function Verify() {
                       placeholder="MM"
                       aria-label="Month"
                       name="month"
+                      type="number"
+                      range="1-12"
                       onChange={(e) => setMonth(e.target.value)}
                     />
                   </InputGroup>
@@ -46,6 +49,7 @@ function Verify() {
                       placeholder="DD"
                       aria-label="Day"
                       name="day"
+                      type="number"
                       onChange={(e) => setDay(e.target.value)}
                     />
                   </InputGroup>
@@ -59,8 +63,8 @@ function Verify() {
                     />
                     </InputGroup>
                 </div>
-                <div>
-                  <InputGroup className="my-4">
+                <div className='d-flex justify-content-center'>
+                  <InputGroup className="my-4 w-75">
                    <Form.Control
                     className='text-center btn-primary'
                     value="ENTER"
@@ -71,7 +75,9 @@ function Verify() {
               </Form>
             </Modal.Body>
         
-          </Modal>
+        </Modal>
+  
+  
   )
     
           
