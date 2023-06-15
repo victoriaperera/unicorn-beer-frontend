@@ -3,13 +3,10 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import Tooltip from "react-bootstrap/Tooltip";
+import Offcanvas from "react-bootstrap/Offcanvas";
+import Cart from "./Cart/Cart";
 
 import { useState } from "react";
-import Button from "react-bootstrap/Button";
-import Offcanvas from "react-bootstrap/Offcanvas";
 
 function UnicornNavbar() {
   const [show, setShow] = useState(false);
@@ -52,18 +49,14 @@ function UnicornNavbar() {
                   <NavDropdown.Item href="#">Log out</NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link href="#" className="mx-2">
-                  <Button variant="" onClick={handleShow}>
-                    <i className="bi bi-cart-fill fs-5"></i>
-                  </Button>
+                  <i
+                    className="bi bi-cart-fill fs-5"
+                    variant=""
+                    onClick={handleShow}
+                  ></i>
 
-                  <Offcanvas show={show} onHide={handleClose}>
-                    <Offcanvas.Header closeButton>
-                      <Offcanvas.Title>Offcanvas</Offcanvas.Title>
-                    </Offcanvas.Header>
-                    <Offcanvas.Body>
-                      Some text as placeholder. In real life you can have the
-                      elements you have chosen. Like, text, images, lists, etc.
-                    </Offcanvas.Body>
+                  <Offcanvas show={show} onHide={handleClose} placement="end">
+                    <Cart />
                   </Offcanvas>
                 </Nav.Link>
                 <Nav.Link href="#" className="mx-2 mt-1">
