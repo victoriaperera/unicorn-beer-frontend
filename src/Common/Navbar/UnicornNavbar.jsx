@@ -17,7 +17,7 @@ function UnicornNavbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 900) {
+      if (window.scrollY > 0) {
         setNavbarBlur(true);
       } else {
         setNavbarBlur(false);
@@ -49,23 +49,20 @@ function UnicornNavbar() {
               className="icon-beer"
             />
           </Navbar.Brand>
-          <Navbar.Collapse
-            id="responsive-navbar-nav"
-            className="justify-content-end"
-          >
+          <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
             <Navbar.Text>
-              <Nav className="ms-auto fw-semibold">
-                <Nav.Link href="/about" className="mx-2 mt-1">
+              <Nav className="ms-auto">
+                <Nav.Link href="/about" className="mx-2 mt-1 text-white">
                   ABOUT OUR PROJECT
                 </Nav.Link>
-                <Nav.Link href="#" className="mx-2 mt-1">
+                <Nav.Link href="#" className="mx-2 mt-1 text-white">
                   OUR BEER
                 </Nav.Link>
-                <Nav.Link href="/shop" className="mx-2 mt-1">
+                <Nav.Link href="/shop" className="mx-2 mt-1 text-white">
                   SHOP
                 </Nav.Link>
                 <NavDropdown
-                  title={<i className="bi bi-person-fill fs-5"></i>}
+                  title={<i className="bi bi-person-fill fs-5 text-white"></i>}
                   id="basic-nav-dropdown"
                   className="p-0 mx-2"
                 >
@@ -77,7 +74,7 @@ function UnicornNavbar() {
                 </NavDropdown>
                 <Nav.Link href="#" className="mx-2">
                   <i
-                    className="bi bi-cart-fill fs-5"
+                    className="bi bi-cart-fill fs-5 text-white"
                     variant=""
                     onClick={handleShow}
                   ></i>
@@ -86,7 +83,7 @@ function UnicornNavbar() {
                     <Cart />
                   </Offcanvas>
                 </Nav.Link>
-                <Nav.Link href="#" className="mx-2 mt-1">
+                <Nav.Link href="#" className="mx-2 mt-1 text-white">
                   CONTACT
                 </Nav.Link>
               </Nav>
