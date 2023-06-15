@@ -13,7 +13,7 @@ function Footer() {
               />
       </NavLink>
       <div>
-        <Nav className="d-flex flex-column">
+        <Nav className="d-none d-sm-block d-flex flex-column">
           <Nav.Link href="/about" className="mx-2 mt-1 footerLink text-white">
             ABOUT OUR PROJECT
           </Nav.Link>
