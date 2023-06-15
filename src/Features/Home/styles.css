@@ -108,3 +108,8 @@ header .overlay {
   height: 500px;
   opacity: 0.8;
 }
+.our-beers {
+  position: relative;
+  top: -90px;
+  left: 0;
+}

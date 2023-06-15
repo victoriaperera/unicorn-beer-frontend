@@ -17,7 +17,7 @@ function UnicornNavbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 1220) {
+      if (window.scrollY > 900) {
         setNavbarBlur(true);
       } else {
         setNavbarBlur(false);
