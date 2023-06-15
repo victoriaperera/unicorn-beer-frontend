@@ -83,7 +83,7 @@ function UnicornNavbar() {
                     <Cart />
                   </Offcanvas>
                 </Nav.Link>
-                <Nav.Link href="#" className="mx-2 mt-1 text-white">
+                <Nav.Link href="/contact" className="mx-2 mt-1 text-white">
                   CONTACT
                 </Nav.Link>
               </Nav>
