@@ -7,19 +7,22 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 
+import { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Offcanvas from "react-bootstrap/Offcanvas";
+
 function UnicornNavbar() {
-  const renderCartTip = (props) => (
-    <Tooltip id="button-tooltip" className="mt-2" {...props}>
-      Cart
-    </Tooltip>
-  );
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <>
       <Navbar collapseOnSelect bg="white" expand="lg" sticky="top">
         <Container fluid>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/">
             <img src="" alt="Unicorn Logo" />
           </Navbar.Brand>
           <Navbar.Collapse
@@ -27,8 +30,8 @@ function UnicornNavbar() {
             className="justify-content-end"
           >
             <Navbar.Text>
-              <Nav className="ms-auto">
-                <Nav.Link href="#" className="mx-2 mt-1">
+              <Nav className="ms-auto fw-semibold">
+                <Nav.Link href="/about" className="mx-2 mt-1">
                   ABOUT OUR PROJECT
                 </Nav.Link>
                 <Nav.Link href="#" className="mx-2 mt-1">
@@ -49,13 +52,19 @@ function UnicornNavbar() {
                   <NavDropdown.Item href="#">Log out</NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link href="#" className="mx-2">
-                  <OverlayTrigger
-                    placement="bottom"
-                    delay={{ show: 250, hide: 400 }}
-                    overlay={renderCartTip}
-                  >
+                  <Button variant="" onClick={handleShow}>
                     <i className="bi bi-cart-fill fs-5"></i>
-                  </OverlayTrigger>
+                  </Button>
+
+                  <Offcanvas show={show} onHide={handleClose}>
+                    <Offcanvas.Header closeButton>
+                      <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+                    </Offcanvas.Header>
+                    <Offcanvas.Body>
+                      Some text as placeholder. In real life you can have the
+                      elements you have chosen. Like, text, images, lists, etc.
+                    </Offcanvas.Body>
+                  </Offcanvas>
                 </Nav.Link>
                 <Nav.Link href="#" className="mx-2 mt-1">
                   CONTACT

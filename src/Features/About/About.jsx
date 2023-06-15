@@ -18,16 +18,16 @@ function About() {
       <div className="container-fluid mt-5 text-center">
         <div className="row">
           <div className="col-12 col-lg-6 about-card about-card-one">
-            TECHNOLOGIES
+            <h3>TECHNOLOGIES</h3>
           </div>
           <div className="col-12 col-lg-6 about-card about-card-two">
-            PROJECT ORGANIZATION - MER
+            <h3>PROJECT ORGANIZATION - MER</h3>
           </div>
           <div className="col-12 col-lg-6 about-card about-card-three">
-            PRODUCT DESIGN
+            <h3>PRODUCT DESIGN</h3>
           </div>
           <div className="col-12 col-lg-6 about-card about-card-four">
-            ADMIN DASHBOARD
+            <h3>ADMIN DASHBOARD</h3>
           </div>
         </div>
       </div>

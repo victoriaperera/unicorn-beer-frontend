@@ -6,7 +6,7 @@ function TeamMemberCard({ admin }) {
     <>
       <div className="col">
         <img src="" alt="" className="img-team-member" />
-        <h4>{admin.name}</h4>
+        <h4 className="mt-4">{admin.name}</h4>
         <p>Full Stack Developer Jr.</p>
       </div>
     </>
