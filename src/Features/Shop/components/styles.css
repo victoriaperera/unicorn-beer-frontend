@@ -3,9 +3,47 @@
 }
 
 .product-card {
-  height: width;
+  height: 100vw;
 }
 
-/* .product-card:nth-child(even) {
-  background-color: var(--yellow);
-} */
+@media (min-width: 375px) {
+  .product-img {
+    height: 190px;
+  }
+}
+
+@media (min-width: 576px) {
+  .product-img {
+    height: 350px;
+  }
+}
+
+@media (min-width: 768px) {
+  .product-card {
+    height: 50vw;
+  }
+  .product-img {
+    height: 200px;
+  }
+}
+
+@media (min-width: 992px) {
+  .product-card {
+    height: 33.33333333vw;
+  }
+  .product-img {
+    height: 160px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .product-img {
+    height: 230px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .product-img {
+    height: 300px;
+  }
+}

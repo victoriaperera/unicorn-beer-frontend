@@ -1,9 +1,9 @@
 import "./styles.css";
 import { Col } from "react-bootstrap";
 
-import React from "react";
 import { useCheckImg } from "../../../hook/useCheckImg";
 import { useSetProductColor } from "../../../hook/useSetProductColor";
+import AddToCardBtn from "../../../Common/components/AddToCardBtn";
 
 function Product({ product }) {
   const photos = useCheckImg(product.photos);
@@ -14,13 +14,13 @@ function Product({ product }) {
       <Col
         md={6}
         lg={4}
-        className="p-3 text-center product-card text-white"
+        className="d-flex flex-column justify-content-center align-items-center p-3 text-center text-white product-card"
         style={{ backgroundColor: bgColor }}
       >
-        <img src={photos[0]} alt="Product image" className="product-img m-3" />
-        <h4>{product.name}</h4>
-        <p>Some really great beer description.</p>
+        <img src={photos[0]} alt={`${product.name} image`} className="m-3 product-img" />
+        <h5>{product.name}</h5>
         <p className="fw-semibold">$ 19.99</p>
+        <AddToCardBtn />
       </Col>
     </>
   );
