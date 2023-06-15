@@ -1,0 +1,20 @@
+.about-card {
+  height: 350px;
+  padding: 5%;
+}
+
+.about-card-one {
+  background-color: var(--violet);
+}
+
+.about-card-two {
+  background-color: var(--blue);
+}
+
+.about-card-three {
+  background-color: var(--yellow);
+}
+
+.about-card-four {
+  background-color: var(--orange);
+}
