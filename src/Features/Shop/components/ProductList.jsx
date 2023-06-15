@@ -5,18 +5,20 @@ import { Col, Container, Form, Row } from "react-bootstrap";
 import React from "react";
 
 function ProductList() {
+  const products = [
+    { name: "IPA", style: "IPA", img: "/src/assets/img/IPA_bottle.png" },
+    {
+      name: "Scottish",
+      style: "Scottish",
+      img: "/src/assets/img/Scottish_bottle.png",
+    },
+  ];
   return (
     <>
-      <Row>
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
+      <Row className="pt-3">
+        {products.map((product, index) => (
+          <Product product={product} key={index}></Product>
+        ))}
       </Row>
     </>
   );

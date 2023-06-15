@@ -8,10 +8,10 @@ function Shop() {
   return (
     <>
       <Container fluid>
-        <Row>
+        <Row className="p-3">
           <Col lg={10}></Col>
           <Col lg={2}>
-            <Form className="d-flex mt-3">
+            <Form className="d-flex">
               <Form.Control
                 type="search"
                 placeholder="Search products..."
