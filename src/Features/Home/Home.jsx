@@ -1,5 +1,5 @@
 import "./styles.css";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import HomeHeader from "./HomeHeader";
 import FeaturedProducts from "./Components/FeaturedProducts";
 
@@ -8,9 +8,9 @@ function Home() {
     <>
       <HomeHeader />
       <Container fluid className="text-center">
-        <Row className="py-3">
+        <Row className="white-row align-items-center justify-content-center">
           <Col>
-            <h2>Our Beers</h2>
+            <h2 className="m-0">Our Beers</h2>
           </Col>
         </Row>
         <FeaturedProducts />

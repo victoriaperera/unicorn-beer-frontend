@@ -14,6 +14,13 @@ input[type=number] {
     background: linear-gradient(13deg, rgba(180,128,58,1) 0%, rgba(253,238,29,0.5821353912353515) 38%, rgba(252,176,69,1) 100%); 
 }
 
+.ups {
+ color: var(--lightRed);
+ position: absolute;
+ text-align: center;
+ font-size: 1rem
+}
+
 .modal-content {
     border: none;
     background-color: var(--lightGrey);

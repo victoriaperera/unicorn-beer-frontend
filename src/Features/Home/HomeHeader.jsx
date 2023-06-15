@@ -1,8 +1,32 @@
-import { Carousel } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 
 function HomeHeader() {
   return (
-    <>
+    <header>
+      <div className="overlay"></div>
+      <video playsInline autoPlay muted loop>
+        <source src="/src/assets/videos/home_header_video.mp4" />
+      </video>
+      <Container className="h-100">
+        <div className="d-flex h-100 text-center align-items-center">
+          <div className="w-100 text-white">
+            <img
+              src="/src/assets/icons/Unicorn-beer-white-logo.svg"
+              alt="Unicorn Logo"
+              className="header-logo"
+            />
+            {/*<p className="lead mb-0">Unlock the magic in every sip</p>*/}
+          </div>
+        </div>
+      </Container>
+    </header>
+  );
+}
+
+export default HomeHeader;
+
+{
+  /*
       <Carousel>
         <Carousel.Item interval={2000}>
           <img
@@ -39,9 +63,5 @@ function HomeHeader() {
             </p>
           </Carousel.Caption>
         </Carousel.Item>
-      </Carousel>
-    </>
-  );
+      </Carousel>*/
 }
-
-export default HomeHeader;
