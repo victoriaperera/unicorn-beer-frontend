@@ -27,17 +27,6 @@ function UnicornNavbar() {
             className="justify-content-end"
           >
             <Navbar.Text>
-<<<<<<< Updated upstream
-              <Nav className="me-auto">
-                <Nav.Link href="#">ABOUT OUR PROJECT</Nav.Link>
-                <Nav.Link href="#">OUR BEER</Nav.Link>
-                <Nav.Link href="#">SHOP</Nav.Link>
-                <Nav.Link href="#" className="py-1 px-2">
-                  <i className="bi bi-person-fill fs-5"></i>
-                </Nav.Link>
-                <Nav.Link href="#" className="py-1 px-2">
-                  <i className="bi bi-cart-fill fs-5"></i>
-=======
               <Nav className="ms-auto">
                 <Nav.Link href="#" className="mx-2 mt-1">
                   ABOUT OUR PROJECT
@@ -49,7 +38,7 @@ function UnicornNavbar() {
                   SHOP
                 </Nav.Link>
                 <NavDropdown
-                  title={<i class="bi bi-person-fill fs-5"></i>}
+                  title={<i className="bi bi-person-fill fs-5"></i>}
                   id="basic-nav-dropdown"
                   className="p-0 mx-2"
                 >
@@ -65,12 +54,11 @@ function UnicornNavbar() {
                     delay={{ show: 250, hide: 400 }}
                     overlay={renderCartTip}
                   >
-                    <i class="bi bi-cart-fill fs-5"></i>
+                    <i className="bi bi-cart-fill fs-5"></i>
                   </OverlayTrigger>
                 </Nav.Link>
                 <Nav.Link href="#" className="mx-2 mt-1">
                   CONTACT
->>>>>>> Stashed changes
                 </Nav.Link>
               </Nav>
             </Navbar.Text>
