@@ -21,8 +21,8 @@
 }
 .div-empty {
   position: absolute;
-  top: -100;
+  top: -90px;
   background-color: var(--graphite);
-  height: 100px;
+  height: 95px;
   width: 100vw;
 }

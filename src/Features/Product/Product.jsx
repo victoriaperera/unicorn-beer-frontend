@@ -1,9 +1,8 @@
 import "./styles.css";
 import AddToCardBtn from "../../Common/components/AddToCardBtn";
-import QuantitySelector from "./components/QuantitySelector";
 import { useState, useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
-import Form from "react-bootstrap/Form";
+
 import axios from "axios";
 
 import React from "react";
@@ -25,29 +24,10 @@ function Product() {
   const handleSelect = (selectedIndex, e) => {
     setActiveIndex(selectedIndex);
   };
-  const [quantity, setQuantity] = useState(1);
-
-  useEffect(() => {
-    async function fetchQuantity() {
-      try {
-        const response = await axios.get("/quantity");
-        const data = response.data;
-        setQuantity(data);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-
-    fetchQuantity();
-  }, []);
-
-  const handleQuantityChange = (event) => {
-    setQuantity(event.target.value);
-  };
 
   return (
-    <div className="container">
-      <div className="row my-5">
+    <div className="container-fluid product-view-bg">
+      <div className="row">
         <div className="col-12 col-md-6 product-view-img">
           <Carousel
             variant="dark"
@@ -73,14 +53,11 @@ function Product() {
             <hr />
             <p className="fs-3 fw-bold">$9.99</p>
           </div>
-
-          <QuantitySelector value={quantity} onChange={handleQuantityChange} min={1} max={10} />
-
           <div className="addToCartBtn-product">
             <AddToCardBtn />
           </div>
           <div className="d-flex align-items-center pt-2">
-            <i className="bi bi-truck fs-5 text-black me-2"></i>
+            <i className="bi bi-truck fs-5 text-white me-2"></i>
             <p className="m-0">Delivery available.</p>
           </div>
         </div>
