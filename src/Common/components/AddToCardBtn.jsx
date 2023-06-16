@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap";
 function AddToCardBtn() {
   return (
     <>
-      <Button variant="outline-light" size="lg" className="rounded-pill">
+      <Button variant="light" size="lg" className="rounded-pill">
         Buy Now
       </Button>
     </>
