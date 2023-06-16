@@ -71,15 +71,7 @@ function Contact() {
               </Form.Control.Feedback>
             </Form.Group>
           </Row>
-          <Form.Group className="mb-3">
-            <Form.Check
-              required
-              label="Agree to terms and conditions"
-              feedback="You must agree before submitting."
-              feedbackType="invalid"
-            />
-          </Form.Group>
-          <Button type="submit">Send</Button>
+          <Button type="submit" className="contactBtn">Send</Button>
         </Form>
       </Container>
     </div>
