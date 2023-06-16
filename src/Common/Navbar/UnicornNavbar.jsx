@@ -7,6 +7,7 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import Cart from "./Cart/Cart";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import Logout from "../../Features/Auth/components/Logout";
 
 function UnicornNavbar() {
@@ -38,29 +39,37 @@ function UnicornNavbar() {
       <Navbar collapseOnSelect expand="lg" sticky="top" className={`custom-navbar ${navbarBlur}`}>
         <Container fluid className="collapsed-nav">
           <Navbar.Toggle aria-controls="responsive-navbar-nav" className="nav-toggler-btn" />
-          <Navbar.Brand href="/">
-            <img
-              src="/src/assets/icons/Unicorn-beer-white-logo-iso.svg"
-              alt="Unicorn Logo"
-              className="icon-beer"
-            />
+          <Navbar.Brand>
+            <Link to={"/"}>
+              <img
+                src="/src/assets/icons/Unicorn-beer-white-logo-iso.svg"
+                alt="Unicorn Logo"
+                className="icon-beer"
+              />
+            </Link>
           </Navbar.Brand>
           <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
             <Navbar.Text>
               <Nav className="ms-auto">
-                <Nav.Link href="/about" className="mx-2 mt-1 text-white">
-                  ABOUT OUR PROJECT
+                <Nav.Link className="mx-2 mt-1">
+                  <Link to={"/about"} className="nav-link">
+                    ABOUT OUR PROJECT
+                  </Link>
                 </Nav.Link>
-                <Nav.Link href="#" className="mx-2 mt-1 text-white">
-                  OUR BEER
+                <Nav.Link className="mx-2 mt-1">
+                  <Link to={""} className="nav-link">
+                    OUR BEER
+                  </Link>
                 </Nav.Link>
-                <Nav.Link href="/shop" className="mx-2 mt-1 text-white">
-                  SHOP
+                <Nav.Link className="mx-2 mt-1">
+                  <Link to={"/shop"} className="nav-link">
+                    SHOP
+                  </Link>
                 </Nav.Link>
                 <NavDropdown
                   title={<i className="bi bi-person-fill fs-5 text-white"></i>}
                   id="basic-nav-dropdown"
-                  className="p-0 mx-2"
+                  className="pt-2 mx-2"
                 >
                   {!user && <NavDropdown.Item href="/login">Log in</NavDropdown.Item>}
 
@@ -77,8 +86,10 @@ function UnicornNavbar() {
                     <Cart />
                   </Offcanvas>
                 </Nav.Link>
-                <Nav.Link href="/contact" className="mx-2 mt-1 text-white">
-                  CONTACT
+                <Nav.Link className="mx-2 mt-1">
+                  <Link to={"/contact"} className="nav-link">
+                    CONTACT
+                  </Link>
                 </Nav.Link>
               </Nav>
             </Navbar.Text>
