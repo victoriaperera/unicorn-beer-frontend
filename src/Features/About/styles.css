@@ -26,3 +26,6 @@
   flex-direction: column;
   margin: 10px;
 }
+.iconTech i, .iconTech p {
+  cursor: pointer;
+}
