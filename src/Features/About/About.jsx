@@ -73,9 +73,9 @@ function About() {
       </div>
       <div className="container-fluid mt-5 text-center">
         <div className="row">
-          <h3>OUR TEAM</h3>
+          <h3 className="my-5">OUR TEAM</h3>
         </div>
-        <div className="row">
+        <div className="row my-5">
           {admins.map((admin) => (
             <TeamMemberCard admin={admin}></TeamMemberCard>
           ))}
