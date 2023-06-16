@@ -7,24 +7,26 @@ function ShopHeader() {
     <Container fluid className="shop-header p-0">
       <div className="overlay">
         <div className="gradient-overlay"></div>
-        <Row className="content">
-          <Col>
+        <Row className="content ps-5">
+          <Col sm={6}>
             <h2>Welcome to our shop.</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime corrupti, placeat
-              perferendis molestiae praesentium itaque dolorum aspernatur dolores iusto fugiat
-              accusantium veniam eveniet similique consequatur explicabo autem nulla. Asperiores,
-              non?
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur magnam velit
+              exercitationem aut, cupiditate sunt eum distinctio nisi, fugiat laudantium, odit
             </p>
-            <Form>
-              <Form.Control
-                type="search"
-                placeholder="Search products..."
-                className="me-2 rounded-pill"
-                aria-label="Search"
-              />
-            </Form>
           </Col>
+          <Row>
+            <Col sm={6} lg={6}>
+              <Form>
+                <Form.Control
+                  type="search"
+                  placeholder="Search products..."
+                  className="rounded-pill"
+                  aria-label="Search"
+                />
+              </Form>
+            </Col>
+          </Row>
         </Row>
       </div>
     </Container>
