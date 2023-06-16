@@ -1,4 +1,6 @@
-.addtocart-btn {
+span .addtocart-btn {
   background-color: transparent;
   border: white 1px solid;
+  font-family: "Roboto" !important;
 }
+
