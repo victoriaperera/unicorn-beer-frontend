@@ -1,19 +1,19 @@
 export const useSetProductColor = (style) => {
   switch (style) {
     case "Scottish":
-      return "var(--red)";
+      return "radial-gradient(var(--lightRed), var(--red))";
     case "Pilsener":
-      return "var(--orange)";
+      return "radial-gradient(var(--lightOrange), var(--orange))";
     case "Blonde":
-      return "var(--yellow)";
+      return "radial-gradient(var(--lightYellow), var(--yellow))";
     case "APA":
-      return "var(--green)";
+      return "radial-gradient(var(--lightGreen), var(--green))";
     case "ZERO":
-      return "var(--blue)";
+      return "radial-gradient(var(--lightBlue), var(--blue))";
     case "IPA":
-      return "var(--violet)";
+      return "radial-gradient(var(--lightViolet), var(--violet))";
     case "Stout":
-      return "var(--graphite)";
+      return "radial-gradient(var(--lightGraphite), var(--graphite))";
 
     default:
       break;
