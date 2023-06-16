@@ -14,7 +14,7 @@ function Footer() {
           </NavLink>
           <small className="text-white fw-lighter">{`© ${new Date().getFullYear()} Unicorn Beer Craft Beer & Co.`}</small>
         </div>
-        <Nav className=" d-flex flex-md-row">
+        <Nav className="footerLinkContainer">
           <Nav.Link href="/about" className="footerLink text-white">
             ABOUT OUR PROJECT
           </Nav.Link>
@@ -28,7 +28,6 @@ function Footer() {
             CONTACT
           </Nav.Link>
         </Nav>
-
         <div>
           <h4 className="text-white">Our Social:</h4>
           <div className="d-flex justify-content-around">

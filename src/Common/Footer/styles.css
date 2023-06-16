@@ -2,6 +2,18 @@
   background-color: var(--graphite);
   padding: 20px;
 }
+.footerLinkContainer {
+  display: flex;
+  flex-direction: column;
+}
 .footerLink {
-  font-size: 0.9rem;
+  font-size: 0.7rem;
+}
+@media(min-width: 720){
+ .footerLinkContainer {
+  flex-direction: row;
+ }
+ .footerLink {
+  font-size: 0.9rem; 
+ }
 }
