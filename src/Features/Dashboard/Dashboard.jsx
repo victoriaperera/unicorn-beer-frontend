@@ -1,16 +1,15 @@
 import "./styles.css";
 import Sidebar from "./DashboardSidebar";
-
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { toggleNavs } from "./adminSlice";
+import { useLocation } from "react-router-dom";
 
 function Dashboard() {
   return (
     <>
-      <div className="dashboard-relative">
-        <div className="div-empty"></div>
-        <div className="container-fluid p-0">
-          <Sidebar />
-        </div>
+      <div className="container-fluid p-0">
+        <Sidebar />
       </div>
     </>
   );

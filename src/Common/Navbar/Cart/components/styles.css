@@ -4,6 +4,11 @@
   padding: 100px;
 }
 
+.addToCartBtn-product {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
 .selector {
   font-size: 14px;
   width: 25%;
@@ -12,20 +17,8 @@
   border-radius: 4px;
 }
 
-@media (max-width: 991px) {
-  .product-view-img {
-    padding: 0;
-  }
-  .product-view-text {
-    padding-right: 2rem;
-  }
-}
-
 @media (max-width: 767px) {
   .product-view-img {
     margin-bottom: 50px;
-  }
-  .product-view-text {
-    padding: 0 !important;
   }
 }

@@ -3,7 +3,7 @@
 }
 .ul-board {
   padding-top: 70px;
-  font-size: 2rem;
+  font-size: 1.7rem;
   list-style: none;
 }
 .col-board {
@@ -17,12 +17,5 @@
 }
 .logout {
   padding-bottom: 70px;
-  font-size: 2rem;
-}
-.div-empty {
-  position: absolute;
-  top: -100;
-  background-color: var(--graphite);
-  height: 100px;
-  width: 100vw;
+  font-size: 1.7rem;
 }
