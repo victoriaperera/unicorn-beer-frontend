@@ -1,9 +1,15 @@
 import "./styles.css";
 import Sidebar from "./DashboardSidebar";
-
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { toggleNavs } from "./adminSlice";
 
 function Dashboard() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(toggleNavs());
+  });
+
   return (
     <>
       <div className="dashboard-relative">

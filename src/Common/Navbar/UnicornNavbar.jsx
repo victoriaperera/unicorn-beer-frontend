@@ -13,6 +13,7 @@ function UnicornNavbar() {
   const [show, setShow] = useState(false);
   const [navbarBlur, setNavbarBlur] = useState(false);
   const user = useSelector((state) => state.user);
+  const display = useSelector((state) => state.admin);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -35,61 +36,63 @@ function UnicornNavbar() {
 
   return (
     <>
-      <Navbar
-        collapseOnSelect
-        expand="lg"
-        sticky="top"
-        className={navbarBlur ? "navbar-blur" : "custom-navbar"}
-      >
-        <Container fluid className="collapsed-nav">
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" className="nav-toggler-btn" />
-          <Navbar.Brand href="/">
-            <img
-              src="/src/assets/icons/Unicorn-beer-white-logo-iso.svg"
-              alt="Unicorn Logo"
-              className="icon-beer"
-            />
-          </Navbar.Brand>
-          <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
-            <Navbar.Text>
-              <Nav className="ms-auto">
-                <Nav.Link href="/about" className="mx-2 mt-1 text-white">
-                  ABOUT OUR PROJECT
-                </Nav.Link>
-                <Nav.Link href="#" className="mx-2 mt-1 text-white">
-                  OUR BEER
-                </Nav.Link>
-                <Nav.Link href="/shop" className="mx-2 mt-1 text-white">
-                  SHOP
-                </Nav.Link>
-                <NavDropdown
-                  title={<i className="bi bi-person-fill fs-5 text-white"></i>}
-                  id="basic-nav-dropdown"
-                  className="p-0 mx-2"
-                >
-                  {!user && <NavDropdown.Item href="/login">Log in</NavDropdown.Item>}
+      {display ? (
+        <Navbar
+          collapseOnSelect
+          expand="lg"
+          sticky="top"
+          className={navbarBlur ? "navbar-blur" : "custom-navbar"}
+        >
+          <Container fluid className="collapsed-nav">
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" className="nav-toggler-btn" />
+            <Navbar.Brand href="/">
+              <img
+                src="/src/assets/icons/Unicorn-beer-white-logo-iso.svg"
+                alt="Unicorn Logo"
+                className="icon-beer"
+              />
+            </Navbar.Brand>
+            <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
+              <Navbar.Text>
+                <Nav className="ms-auto">
+                  <Nav.Link href="/about" className="mx-2 mt-1 text-white">
+                    ABOUT OUR PROJECT
+                  </Nav.Link>
+                  <Nav.Link href="#" className="mx-2 mt-1 text-white">
+                    OUR BEER
+                  </Nav.Link>
+                  <Nav.Link href="/shop" className="mx-2 mt-1 text-white">
+                    SHOP
+                  </Nav.Link>
+                  <NavDropdown
+                    title={<i className="bi bi-person-fill fs-5 text-white"></i>}
+                    id="basic-nav-dropdown"
+                    className="p-0 mx-2"
+                  >
+                    {!user && <NavDropdown.Item href="/login">Log in</NavDropdown.Item>}
 
-                  {!user && <NavDropdown.Item href="/signin">Sign in</NavDropdown.Item>}
+                    {!user && <NavDropdown.Item href="/signin">Sign in</NavDropdown.Item>}
 
-                  {user && <NavDropdown.Item href="#">My account</NavDropdown.Item>}
+                    {user && <NavDropdown.Item href="#">My account</NavDropdown.Item>}
 
-                  {user && <Logout></Logout>}
-                </NavDropdown>
-                <Nav.Link href="#" className="mx-2">
-                  <i className="bi bi-cart-fill fs-5 text-white" onClick={handleShow}></i>
+                    {user && <Logout></Logout>}
+                  </NavDropdown>
+                  <Nav.Link href="#" className="mx-2">
+                    <i className="bi bi-cart-fill fs-5 text-white" onClick={handleShow}></i>
 
-                  <Offcanvas show={show} onHide={handleClose} placement="end">
-                    <Cart />
-                  </Offcanvas>
-                </Nav.Link>
-                <Nav.Link href="/contact" className="mx-2 mt-1 text-white">
-                  CONTACT
-                </Nav.Link>
-              </Nav>
-            </Navbar.Text>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+                    <Offcanvas show={show} onHide={handleClose} placement="end">
+                      <Cart />
+                    </Offcanvas>
+                  </Nav.Link>
+                  <Nav.Link href="/contact" className="mx-2 mt-1 text-white">
+                    CONTACT
+                  </Nav.Link>
+                </Nav>
+              </Navbar.Text>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
+      ) : null}
     </>
   );
 }

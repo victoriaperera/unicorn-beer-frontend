@@ -5,7 +5,7 @@ import React from "react";
 function DashboardSidebar() {
   return (
     <div className="col-3 d-flex flex-column justify-content-between align-items-center  col-board">
-      <div>
+      <div className="d-flex flex-column align-items-center">
         <i class="bi bi-person-circle picture"></i>
         <h1>Hello, Admin</h1>
         <ul className="ul-board">
