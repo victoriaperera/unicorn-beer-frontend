@@ -1,15 +1,15 @@
 import "./styles.css";
-import { Col, Form, Row, Container } from "react-bootstrap";
+import { Col, Row, Container } from "react-bootstrap";
 
 import React from "react";
 
 function AboutHeader() {
   return (
     <Container fluid className="shop-header p-0">
-      <div className="overlay">
+      <div className="overlay-cans">
         <div className="gradient-overlay"></div>
         <Row className="content ps-5">
-          <Col md={6}>
+          <Col md={5} lg={6} xl={4}>
             <h2>What is Unicorn Beer?</h2>
             <p>
               Unicorn Beer is an app developed using the MERN stack as the final project of a Coding

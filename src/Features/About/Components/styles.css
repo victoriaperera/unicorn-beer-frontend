@@ -20,11 +20,11 @@
   width: 100%;
 }
 
-.overlay {
+.overlay-cans {
   position: relative;
   width: 100%;
   height: 60vh;
-  background-image: url("/src/assets/img/Unicorn_bottles_background.jpg");
+  background-image: url("/src/assets/img/Unicorn_cans_background.jpg");
   background-size: cover;
   background-position: center;
 }
