@@ -1,16 +1,30 @@
 .custom-navbar {
   background-color: rgba(0, 0, 0, 0) !important;
   transition: background-color 0.3s;
+  padding: 0;
 }
 
 .navbar-blur {
   backdrop-filter: blur(5px);
   background-color: rgba(0, 0, 0, 0.37) !important;
 }
+
 .icon-beer {
   width: 150px;
 }
 .text-graphite {
   font-weight: 700;
   color: var(--white) !important;
+}
+
+@media (max-width: 991px) {
+  .collapsed-nav {
+    position: relative;
+    top: 0;
+    background-color: black;
+  }
+  .nav-toggler-btn {
+    background-color: var(--white);
+    color: rgba(255, 255, 255, 0);
+  }
 }

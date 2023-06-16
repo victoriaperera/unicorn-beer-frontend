@@ -37,16 +37,15 @@ function UnicornNavbar() {
     <>
       <Navbar
         collapseOnSelect
-        bg="white"
         expand="lg"
         sticky="top"
         className={navbarBlur ? "navbar-blur" : "custom-navbar"}
       >
-        <Container fluid>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Container fluid className="collapsed-nav">
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" className="nav-toggler-btn" />
           <Navbar.Brand href="/">
             <img
-              src="/src/assets/icons/Unicorn-beer-icon-black-iso.svg"
+              src="/src/assets/icons/Unicorn-beer-white-logo-iso.svg"
               alt="Unicorn Logo"
               className="icon-beer"
             />
@@ -83,7 +82,7 @@ function UnicornNavbar() {
                     <Cart />
                   </Offcanvas>
                 </Nav.Link>
-                <Nav.Link href="#" className="mx-2 mt-1 text-white">
+                <Nav.Link href="/contact" className="mx-2 mt-1 text-white">
                   CONTACT
                 </Nav.Link>
               </Nav>
