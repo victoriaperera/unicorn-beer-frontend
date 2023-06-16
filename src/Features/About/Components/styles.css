@@ -2,3 +2,11 @@
   width: 200px;
   height: 200px;
 }
+
+.about-header {
+  height: 75vh;
+  min-height: 25rem;
+  overflow: auto;
+  background-color: var(--graphite);
+  color: var(--white);
+}
