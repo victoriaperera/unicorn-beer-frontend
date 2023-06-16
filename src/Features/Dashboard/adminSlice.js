@@ -5,7 +5,7 @@ const adminSlice = createSlice({
   initialState: true,
   reducers: {
     toggleNavs(state, action) {
-      return (state = false);
+      return (state = !state);
     },
   },
 });

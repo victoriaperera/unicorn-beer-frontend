@@ -11,7 +11,8 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import userReducer from "../Features/Auth/userSlice";
-import verifyReducer from "../Common/Navbar/Verify/verifyAgeSlice"
+import verifyReducer from "../Common/Navbar/Verify/verifyAgeSlice";
+import adminReducer from "../Features/Dashboard/adminSlice";
 // import productReducer from "../Features/Shop/productSlice";
 // import orderReducer from "./orderSlice";
 // import cartSlice from "../Coomon/Navbar/Cart/cartSlice";
@@ -19,6 +20,7 @@ import verifyReducer from "../Common/Navbar/Verify/verifyAgeSlice"
 const rootReducer = combineReducers({
   user: userReducer,
   verify: verifyReducer,
+  admin: adminReducer,
   // product: productReducer,
   // order: orderReducer,
   // cart: cartSlice
