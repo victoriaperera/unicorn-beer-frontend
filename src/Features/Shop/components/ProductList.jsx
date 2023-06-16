@@ -16,7 +16,7 @@ function ProductList() {
   }, []);
   return (
     <>
-      <Row className="">
+      <Row>
         {products.map((product) => (
           <Product product={product} key={product.id}></Product>
         ))}

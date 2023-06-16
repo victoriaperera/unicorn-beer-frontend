@@ -14,7 +14,7 @@ function Cart() {
         <Offcanvas.Title>Shopping Cart</Offcanvas.Title>
       </Offcanvas.Header>
       <Offcanvas.Body className="cart-body">
-        <div className="cart-product-list">
+        <div className="scrollable">
           {cart.length > 0 &&
             cart.map((product) => <CartProduct product={product} key={product.id} />)}
         </div>
