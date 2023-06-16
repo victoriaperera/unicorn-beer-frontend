@@ -7,7 +7,7 @@ import React from "react";
 
 function About() {
   const admins = [
-    { name: "Ivanna Sugliero" },
+    { name: "Ivanna Sugliano" },
     { name: "Esteban Castañeira" },
     { name: "Lorena Rincón" },
     { name: "Nicolás Martínez Latorraca" },
