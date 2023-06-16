@@ -6,7 +6,11 @@ function DashboardSidebar() {
   return (
     <div className="col-3 d-flex flex-column justify-content-between align-items-center col-board px-0">
       <div className="d-flex flex-column align-items-center">
-        <i class="bi bi-person-circle picture"></i>
+        <img
+          src="https://i.pinimg.com/564x/9c/35/40/9c35407ec812c293ba7bd3a7bd1967d1.jpg"
+          alt="gatito fachero"
+          className="gatito"
+        />
         <h3>Hello, Admin</h3>
         <ul className="ul-board">
           <li>

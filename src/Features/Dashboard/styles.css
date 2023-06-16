@@ -20,6 +20,10 @@
   padding-bottom: 70px;
   font-size: 1.5rem;
 }
+.gatito {
+  height: 200px;
+  border-radius: 50%;
+}
 /* .logo {
   height: 70vh;
 }
