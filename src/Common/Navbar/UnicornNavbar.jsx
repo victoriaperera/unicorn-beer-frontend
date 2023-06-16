@@ -11,7 +11,7 @@ import Logout from "../../Features/Auth/components/Logout";
 
 function UnicornNavbar() {
   const [show, setShow] = useState(false);
-  const [navbarBlur, setNavbarBlur] = useState(false);
+  const [navbarBlur, setNavbarBlur] = useState("");
   const user = useSelector((state) => state.user);
 
   const handleClose = () => setShow(false);
@@ -20,9 +20,9 @@ function UnicornNavbar() {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
-        setNavbarBlur(true);
+        setNavbarBlur("navbar-blur");
       } else {
-        setNavbarBlur(false);
+        setNavbarBlur("");
       }
     };
 
@@ -35,12 +35,7 @@ function UnicornNavbar() {
 
   return (
     <>
-      <Navbar
-        collapseOnSelect
-        expand="lg"
-        sticky="top"
-        className={navbarBlur ? "navbar-blur" : "custom-navbar"}
-      >
+      <Navbar collapseOnSelect expand="lg" sticky="top" className={`custom-navbar ${navbarBlur}`}>
         <Container fluid className="collapsed-nav">
           <Navbar.Toggle aria-controls="responsive-navbar-nav" className="nav-toggler-btn" />
           <Navbar.Brand href="/">

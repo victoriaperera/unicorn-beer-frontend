@@ -19,10 +19,23 @@
 .about-card-four {
   background-color: var(--orange);
 }
-
+@keyframes iconTechMove {
+  from {bottom: 0;}
+  to {bottom: 5px;}
+}
 .iconTech {
   width: 15%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: 10px;
+  position: relative; 
+}
+.iconTech:hover{
+  position: relative;
+  animation: iconTechMove .5s forwards;
+  
+}
+.iconTech i, .iconTech p {
+  cursor: pointer;
 }
