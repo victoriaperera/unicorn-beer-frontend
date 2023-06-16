@@ -57,7 +57,7 @@ function Product() {
             <AddToCardBtn />
           </div>
           <div className="d-flex align-items-center pt-2">
-            <i className="bi bi-truck fs-4 text-white me-2"></i>
+            <i className="bi bi-truck fs-4 text-black me-2"></i>
             <p className="m-0">Delivery available.</p>
           </div>
         </div>

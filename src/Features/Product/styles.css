@@ -1,6 +1,6 @@
 .product-view-bg {
-  background-color: var(--graphite);
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--graphite);
   height: 100vh;
   padding: 100px;
 }
