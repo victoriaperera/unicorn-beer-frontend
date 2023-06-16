@@ -21,8 +21,9 @@
   font-size: 1.5rem;
 }
 .gatito {
-  height: 200px;
+  height: 130px;
   border-radius: 50%;
+  margin-bottom: 40px;
 }
 /* .logo {
   height: 70vh;
