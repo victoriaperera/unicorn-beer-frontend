@@ -13,7 +13,10 @@ function Contact() {
     </div>
     <div className="contact">
       <Container className="contactContainer py-5">
-        <h2 className="py-5">Leave Us a message</h2>
+        <div className="d-flex align-items-center">
+          <img src="src/assets/icons/Unicorn-beer-icon-3.svg" alt="unicron icon" className="contactIcon"/>
+          <h2 className="py-5 ms-3">Leave Us a message</h2>
+        </div>
         <Form onSubmit={handleSubmit}>
           <Row className="mb-3">
             <Form.Group as={Col} md="4" className="my-2">
