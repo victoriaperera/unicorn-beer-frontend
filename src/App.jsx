@@ -11,6 +11,7 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Login from "./Features/Auth/Login";
 import Product from "./Features/Product/Product";
+import Dashboard from "./Features/Dashboard/Dashboard";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/shop" element={<Shop />} />
         <Route path="/product" element={<Product />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/board" element={<Dashboard />} />
       </Routes>
       <Footer />
     </>
