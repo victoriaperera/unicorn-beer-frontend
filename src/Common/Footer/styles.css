@@ -1,7 +1,7 @@
 .footer {
-    background-color: var(--graphite);
-    padding: 20px;
+  background-color: var(--graphite);
+  padding: 20px;
 }
 .footerLink {
-    font-size: .9rem
+  font-size: 0.9rem;
 }
