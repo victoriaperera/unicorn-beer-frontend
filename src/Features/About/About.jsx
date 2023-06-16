@@ -7,7 +7,7 @@ import React from "react";
 
 function About() {
   const admins = [
-    { name: "Ivanna Sugliero" },
+    { name: "Ivanna Sugliano" },
     { name: "Esteban Castañeira" },
     { name: "Lorena Rincón" },
     { name: "Nicolás Martínez Latorraca" },
@@ -21,6 +21,7 @@ function About() {
         <div className="row">
           <div className="col-12 col-lg-6 about-card about-card-one">
             <h3>TECHNOLOGIES</h3>
+            
           </div>
           <div className="col-12 col-lg-6 about-card about-card-two">
             <h3>PROJECT ORGANIZATION - MER</h3>

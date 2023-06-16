@@ -16,7 +16,7 @@ function Contact() {
         <h2 className="py-5">Leave Us a message</h2>
         <Form onSubmit={handleSubmit}>
           <Row className="mb-3">
-            <Form.Group as={Col} md="4">
+            <Form.Group as={Col} md="4" className="my-2">
               <Form.Label>First name</Form.Label>
               <Form.Control
                 required
@@ -25,7 +25,7 @@ function Contact() {
               />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             </Form.Group>
-            <Form.Group as={Col} md="4">
+            <Form.Group as={Col} md="4" className="my-2">
               <Form.Label>Last name</Form.Label>
               <Form.Control
                 required
@@ -34,7 +34,7 @@ function Contact() {
               />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             </Form.Group>
-            <Form.Group as={Col} md="4">
+            <Form.Group as={Col} md="4" className="my-2">
               <Form.Label>Email</Form.Label>
               <InputGroup hasValidation>
                 <Form.Control
@@ -49,21 +49,21 @@ function Contact() {
             </Form.Group>
           </Row>
           <Row className="mb-3">
-            <Form.Group as={Col} md="6">
+            <Form.Group as={Col} md="6" className="my-2">
               <Form.Label>City</Form.Label>
               <Form.Control type="text" placeholder="City" required />
               <Form.Control.Feedback type="invalid">
                 Please provide a valid city.
               </Form.Control.Feedback>
             </Form.Group>
-            <Form.Group as={Col} md="3">
+            <Form.Group as={Col} md="3" className="my-2">
               <Form.Label>State</Form.Label>
               <Form.Control type="text" placeholder="State" required />
               <Form.Control.Feedback type="invalid">
                 Please provide a valid state.
               </Form.Control.Feedback>
             </Form.Group>
-            <Form.Group as={Col} md="3">
+            <Form.Group as={Col} md="3" className="my-2">
               <Form.Label>Zip</Form.Label>
               <Form.Control type="text" placeholder="Zip" required />
               <Form.Control.Feedback type="invalid">
@@ -71,15 +71,9 @@ function Contact() {
               </Form.Control.Feedback>
             </Form.Group>
           </Row>
-          <Form.Group className="mb-3">
-            <Form.Check
-              required
-              label="Agree to terms and conditions"
-              feedback="You must agree before submitting."
-              feedbackType="invalid"
-            />
-          </Form.Group>
-          <Button type="submit">Send</Button>
+          <Row className="justify-content-end">
+            <Button type="submit" variant="outline-light" size="lg" className="rounded-pill w-25 me-3 mt-5">Send</Button>
+          </Row> 
         </Form>
       </Container>
     </div>

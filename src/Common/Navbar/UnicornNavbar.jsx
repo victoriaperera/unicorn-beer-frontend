@@ -5,12 +5,14 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Cart from "./Cart/Cart";
-
 import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import Logout from "../../Features/Auth/components/Logout";
 
 function UnicornNavbar() {
   const [show, setShow] = useState(false);
   const [navbarBlur, setNavbarBlur] = useState(false);
+  const user = useSelector((state) => state.user);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -35,13 +37,12 @@ function UnicornNavbar() {
     <>
       <Navbar
         collapseOnSelect
-        bg="white"
         expand="lg"
         sticky="top"
         className={navbarBlur ? "navbar-blur" : "custom-navbar"}
       >
-        <Container fluid>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Container fluid className="collapsed-nav">
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" className="nav-toggler-btn" />
           <Navbar.Brand href="/">
             <img
               src="/src/assets/icons/Unicorn-beer-white-logo-iso.svg"
@@ -66,18 +67,16 @@ function UnicornNavbar() {
                   id="basic-nav-dropdown"
                   className="p-0 mx-2"
                 >
-                  <NavDropdown.Item href="#">Sign in</NavDropdown.Item>
-                  <NavDropdown.Item href="#">Create account</NavDropdown.Item>
-                  <NavDropdown.Item href="#">My account</NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#">Log out</NavDropdown.Item>
+                  {!user && <NavDropdown.Item href="/login">Log in</NavDropdown.Item>}
+
+                  {!user && <NavDropdown.Item href="/signin">Sign in</NavDropdown.Item>}
+
+                  {user && <NavDropdown.Item href="#">My account</NavDropdown.Item>}
+
+                  {user && <Logout></Logout>}
                 </NavDropdown>
                 <Nav.Link href="#" className="mx-2">
-                  <i
-                    className="bi bi-cart-fill fs-5 text-white"
-                    variant=""
-                    onClick={handleShow}
-                  ></i>
+                  <i className="bi bi-cart-fill fs-5 text-white" onClick={handleShow}></i>
 
                   <Offcanvas show={show} onHide={handleClose} placement="end">
                     <Cart />
