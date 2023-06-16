@@ -35,7 +35,10 @@ function Footer() {
             <Nav.Link href="#" className="mx-2 mt-1 footerLink text-white">
               <i className="bi bi-facebook text-white"></i>
             </Nav.Link>
-            <Nav.Link href="#" className="mx-2 mt-1 footerLink text-white">
+            <Nav.Link
+              href="https://www.instagram.com/unicorn_craftedbeer/"
+              className="mx-2 mt-1 footerLink text-white"
+            >
               <i className="bi bi-instagram text-white"></i>
             </Nav.Link>
             <Nav.Link href="#" className="mx-2 mt-1 footerLink text-white">
