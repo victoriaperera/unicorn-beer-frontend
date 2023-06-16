@@ -13,7 +13,7 @@ function HomeHeader() {
             <img
               src="/src/assets/icons/Unicorn-beer-white-logo.svg"
               alt="Unicorn Logo"
-              className="header-logo"
+              className="header-logo w-sm-50 w-100"
             />
             {/*<p className="lead mb-0">Unlock the magic in every sip</p>*/}
           </div>
