@@ -1,0 +1,28 @@
+.picture {
+  font-size: 11rem;
+}
+.ul-board {
+  padding-top: 70px;
+  font-size: 2rem;
+  list-style: none;
+}
+.col-board {
+  height: 100vh;
+  background-color: var(--graphite);
+  padding-top: 100px;
+  color: var(--white);
+}
+.dashboard-relative {
+  position: relative;
+}
+.logout {
+  padding-bottom: 70px;
+  font-size: 2rem;
+}
+.div-empty {
+  position: absolute;
+  top: -100;
+  background-color: var(--graphite);
+  height: 100px;
+  width: 100vw;
+}
