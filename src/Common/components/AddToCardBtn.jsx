@@ -8,9 +8,8 @@ function AddToCardBtn({ product }) {
   return (
     <>
       <Button
-        variant="light"
         size="lg"
-        className="rounded-pill"
+        className="rounded-pill addtocart-btn mt-2"
         onClick={() => dispatch(addToCart(product))}
       >
         Buy Now
