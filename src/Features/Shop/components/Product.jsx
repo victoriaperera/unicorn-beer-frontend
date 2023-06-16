@@ -14,17 +14,19 @@ function Product({ product }) {
       <Col
         md={6}
         lg={4}
-        className="d-flex flex-column justify-content-center align-items-center p-3 text-center text-white product-card"
+        className="d-flex flex-column justify-content-evenly text-center text-white product-card p-0"
         style={{ backgroundColor: bgColor }}
       >
         <Link to="/product">
-          <img src={photos[0]} alt={`${product.name} image`} className="m-3 product-img" />
+          <img src={photos[0]} alt={`${product.name} image`} className=" product-img" />
         </Link>
-        <h5>{product.name}</h5>
-        <p className="fw-semibold">$ 19.99</p>
-        <span className="addToCartBtn-shop">
-          <AddToCardBtn />
-        </span>
+        <div>
+          <h5>{product.name}</h5>
+          <p className="fw-semibold mb-2">$ 19.99</p>
+          <span className="addToCartBtn-shop">
+            <AddToCardBtn />
+          </span>
+        </div>
       </Col>
     </>
   );

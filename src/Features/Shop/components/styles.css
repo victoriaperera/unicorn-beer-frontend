@@ -14,15 +14,27 @@
   height: 100vw;
 }
 
+@media (min-width: 320px) {
+  .product-img {
+    height: 200px;
+  }
+}
+
 @media (min-width: 375px) {
   .product-img {
-    height: 190px;
+    height: 250px;
+  }
+}
+
+@media (min-width: 480px) {
+  .product-img {
+    height: 350px;
   }
 }
 
 @media (min-width: 576px) {
   .product-img {
-    height: 350px;
+    height: 420px;
   }
 }
 
@@ -31,7 +43,7 @@
     height: 50vw;
   }
   .product-img {
-    height: 200px;
+    height: 250px;
   }
 }
 
@@ -40,19 +52,25 @@
     height: 33.33333333vw;
   }
   .product-img {
-    height: 160px;
+    height: 190px;
   }
 }
 
 @media (min-width: 1200px) {
   .product-img {
-    height: 230px;
+    height: 250px;
   }
 }
 
 @media (min-width: 1400px) {
   .product-img {
-    height: 300px;
+    height: 320px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .product-img {
+    height: 400px;
   }
 }
 

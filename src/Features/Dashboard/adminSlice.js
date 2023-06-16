@@ -3,13 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 const adminSlice = createSlice({
   name: "admin",
   initialState: true,
-  reducers: {
-    toggleNavs(state, action) {
-      return (state = !state);
-    },
-  },
+  reducers: {},
 });
 
 const { actions, reducer } = adminSlice;
-export const { toggleNavs } = actions;
+export const {} = actions;
 export default reducer;
