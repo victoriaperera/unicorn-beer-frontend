@@ -25,9 +25,10 @@ function About() {
               <div className="iconTech">
                 <i>
                   <img
-                    src="src/assets/icons/icons8-bootstrap-48.png"
+                    src="src/assets/icons/bootstrap_logo.png"
                     alt="bootrapp icon"
                     typeof="png/image"
+                    className="tech-icon"
                   />
                 </i>
                 <small>Bootsrapp</small>
@@ -35,9 +36,10 @@ function About() {
               <div className="iconTech">
                 <i>
                   <img
-                    src="src/assets/icons/icons8-css3-48.png"
+                    src="src/assets/icons/css_logo.png"
                     alt="css4 icon"
                     typeof="png/image"
+                    className="tech-icon"
                   />
                 </i>
                 <small>CSS3</small>
@@ -45,9 +47,10 @@ function About() {
               <div className="iconTech">
                 <i>
                   <img
-                    src="src/assets/icons/icons8-figma-48.png"
+                    src="src/assets/icons/figma_logo.png"
                     alt="figma icon"
                     typeof="png/image"
+                    className="tech-icon"
                   />
                 </i>
                 <small>Figma</small>
@@ -55,9 +58,10 @@ function About() {
               <div className="iconTech">
                 <i>
                   <img
-                    src="src/assets/icons/icons8-github-48.png"
+                    src="src/assets/icons/github_logo.png"
                     alt="github icon"
                     typeof="png/image"
+                    className="tech-icon"
                   />
                 </i>
                 <small>Github</small>
@@ -65,9 +69,10 @@ function About() {
               <div className="iconTech">
                 <i>
                   <img
-                    src="src/assets/icons/icons8-javascript-48.png"
+                    src="src/assets/icons/javascript_logo.png"
                     alt="javascript icon"
                     typeof="png/image"
+                    className="tech-icon"
                   />
                 </i>
                 <small>JavaScript</small>
@@ -75,9 +80,10 @@ function About() {
               <div className="iconTech">
                 <i>
                   <img
-                    src="src/assets/icons/icons8-mongodb-48.png"
+                    src="src/assets/icons/mongodb_logo.png"
                     alt="mongodb icon"
                     typeof="png/image"
+                    className="tech-icon"
                   />
                 </i>
                 <small>MongoDB</small>
@@ -85,9 +91,10 @@ function About() {
               <div className="iconTech">
                 <i>
                   <img
-                    src="src/assets/icons/icons8-nodejs-48.png"
+                    src="src/assets/icons/nodejs_logo.png"
                     alt="node icon"
                     typeof="png/image"
+                    className="tech-icon"
                   />
                 </i>
                 <small>NodeJS</small>
@@ -95,9 +102,10 @@ function About() {
               <div className="iconTech">
                 <i>
                   <img
-                    src="src/assets/icons/icons8-react-native-48.png"
+                    src="src/assets/icons/react_logo.png"
                     alt="react icon"
                     typeof="png/image"
+                    className="tech-icon"
                   />
                 </i>
                 <small>React</small>
@@ -105,9 +113,10 @@ function About() {
               <div className="iconTech">
                 <i>
                   <img
-                    src="src/assets/icons/icons8-redux-48.png"
+                    src="src/assets/icons/redux_logo.png"
                     alt="redux icon"
                     typeof="png/image"
+                    className="tech-icon"
                   />
                 </i>
                 <small>Redux</small>

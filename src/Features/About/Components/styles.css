@@ -10,3 +10,7 @@
   background-color: var(--graphite);
   color: var(--white);
 }
+
+.team-member-icon {
+  width: 30px;
+}

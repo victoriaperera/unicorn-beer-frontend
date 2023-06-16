@@ -16,6 +16,10 @@
   color: var(--white) !important;
 }
 
+.nav-link {
+  color: var(--white) !important;
+}
+
 @media (max-width: 991px) {
   .nav-toggler-btn {
     background-color: var(--white);
