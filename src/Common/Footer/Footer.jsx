@@ -1,10 +1,9 @@
 import "./styles.css";
-import { NavLink, Nav } from "react-bootstrap";
-
+import { NavDropdown, NavLink, Nav } from "react-bootstrap";
 function Footer() {
   return (
     <footer className="footer container-fluid">
-      <div className="d-flex justify-content-between align-items-center">
+      <div className="d-flex justify-content-between align-items-center mb-5">
         <NavLink href="/">
           <img
             src="/src/assets/icons/Unicorn-beer-white-logo-iso.svg"
@@ -23,7 +22,6 @@ function Footer() {
             <Nav.Link href="/shop" className="mx-2 mt-1 footerLink text-white">
               SHOP
             </Nav.Link>
-
             <Nav.Link href="/contact" className="mx-2 mt-1 footerLink text-white">
               CONTACT
             </Nav.Link>
@@ -32,12 +30,19 @@ function Footer() {
         <div>
           <h4 className="text-white">Our Social:</h4>
           <div className="d-flex justify-content-around">
-            <i className="bi bi-facebook text-white"></i>
-            <i className="bi bi-instagram text-white"></i>
-            <i className="bi bi-twitter text-white"></i>
+            <Nav.Link href="#" className="mx-2 mt-1 footerLink text-white">
+              <i className="bi bi-facebook text-white"></i>
+            </Nav.Link>
+            <Nav.Link href="#" className="mx-2 mt-1 footerLink text-white">
+              <i className="bi bi-instagram text-white"></i>
+            </Nav.Link>
+            <Nav.Link href="#" className="mx-2 mt-1 footerLink text-white">
+              <i className="bi bi-twitter text-white"></i>
+            </Nav.Link>
           </div>
         </div>
       </div>
+      <small className="text-white text-end fw-lighter">{`© ${new Date().getFullYear()} Unicorn Beer Craft Beer & Co.`}</small>
     </footer>
   );
 }
