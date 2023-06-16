@@ -1,23 +1,19 @@
 import React from "react";
 
 import "./styles.css";
-import QuantitySelector from "./QuantitySelector";
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import Offcanvas from "react-bootstrap/Offcanvas";
-import Form from "react-bootstrap/Form";
-import axios from "axios";
+import { useCheckImg } from "../../../../hook/useCheckImg";
 
-function CartProduct() {
+function CartProduct({ product }) {
+  const img = useCheckImg(product.photos);
+
   return (
     <div className="cart-product">
       <div className="">
-        <img src="/src/assets/img/Scottish_bottle.png" alt="Product image" className="cart-img" />
+        <img src={img[0]} alt="Product image" className="cart-img" />
       </div>
       <div className="">
-        <p>Product Name</p>
-        <p>$9.99</p>
-        <div>Q SELECTOR</div>
+        <p>{product.name}</p>
+        <p>${product.price}</p>
       </div>
     </div>
   );

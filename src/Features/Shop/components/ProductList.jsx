@@ -1,7 +1,6 @@
 import "./styles.css";
 import Product from "./Product";
 import { Row } from "react-bootstrap";
-
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -18,8 +17,8 @@ function ProductList() {
   return (
     <>
       <Row className="">
-        {products.map((product, index) => (
-          <Product product={product} key={index}></Product>
+        {products.map((product) => (
+          <Product product={product} key={product.id}></Product>
         ))}
       </Row>
     </>

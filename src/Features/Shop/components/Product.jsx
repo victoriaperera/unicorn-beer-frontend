@@ -18,13 +18,13 @@ function Product({ product }) {
         style={{ backgroundColor: bgColor }}
       >
         <Link to="/product">
-          <img src={photos[0]} alt={`${product.name} image`} className=" product-img" />
+          <img src={photos[0]} alt={`${product.name} image`} className="product-img" />
         </Link>
         <div>
           <h5>{product.name}</h5>
           <p className="fw-semibold mb-2">$ 19.99</p>
           <span className="addToCartBtn-shop">
-            <AddToCardBtn />
+            <AddToCardBtn product={product} />
           </span>
         </div>
       </Col>

@@ -7,7 +7,7 @@ import FeaturedProducts from "./Components/FeaturedProducts";
 function Home() {
   return (
     <>
-      <div className="our-beers">
+      <div>
         <HomeHeader />
         <Container fluid className="text-center">
           <Row className="white-row align-items-center justify-content-center">

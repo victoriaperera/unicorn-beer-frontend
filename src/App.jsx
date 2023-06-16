@@ -7,16 +7,19 @@ import About from "./Features/About/About";
 import Cart from "./Common/Navbar/Cart/Cart";
 import Shop from "./Features/Shop/Shop";
 import Contact from "./Features/Contact/Contact";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Login from "./Features/Auth/Login";
 import Product from "./Features/Product/Product";
 import Dashboard from "./Features/Dashboard/Dashboard";
 
 function App() {
+  const { pathname: currentPage } = useLocation();
+  const pagesWONavbars = ["/board"];
+
   return (
     <>
       <Verify />
-      <UnicornNavbar />
+      {!pagesWONavbars.includes(currentPage) && <UnicornNavbar />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -27,7 +30,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/board" element={<Dashboard />} />
       </Routes>
-      <Footer />
+      {!pagesWONavbars.includes(currentPage) && <Footer />}
     </>
   );
 }

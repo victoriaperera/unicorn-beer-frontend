@@ -36,7 +36,7 @@ function UnicornNavbar() {
 
   return (
     <>
-      <Navbar collapseOnSelect expand="lg" sticky="top" className={`custom-navbar ${navbarBlur}`}>
+      <Navbar collapseOnSelect expand="lg" fixed="top" className={`custom-navbar ${navbarBlur}`}>
         <Container fluid className="collapsed-nav">
           <Navbar.Toggle aria-controls="responsive-navbar-nav" className="nav-toggler-btn" />
           <Navbar.Brand>
@@ -51,25 +51,25 @@ function UnicornNavbar() {
           <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
             <Navbar.Text>
               <Nav className="ms-auto">
-                <Nav.Link className="mx-2 mt-1">
+                <div className="mx-2 mt-1">
                   <Link to={"/about"} className="nav-link">
                     ABOUT OUR PROJECT
                   </Link>
-                </Nav.Link>
-                <Nav.Link className="mx-2 mt-1">
+                </div>
+                <div className="mx-2 mt-1">
                   <Link to={""} className="nav-link">
                     OUR BEER
                   </Link>
-                </Nav.Link>
-                <Nav.Link className="mx-2 mt-1">
+                </div>
+                <div className="mx-2 mt-1">
                   <Link to={"/shop"} className="nav-link">
                     SHOP
                   </Link>
-                </Nav.Link>
+                </div>
                 <NavDropdown
                   title={<i className="bi bi-person-fill fs-5 text-white"></i>}
                   id="basic-nav-dropdown"
-                  className="pt-2 mx-2"
+                  className="mx-2 "
                 >
                   {!user && <NavDropdown.Item href="/login">Log in</NavDropdown.Item>}
 
@@ -79,18 +79,18 @@ function UnicornNavbar() {
 
                   {user && <Logout></Logout>}
                 </NavDropdown>
-                <Nav.Link href="#" className="mx-2">
+                <div className="mx-2 mt-2">
                   <i className="bi bi-cart-fill fs-5 text-white" onClick={handleShow}></i>
 
                   <Offcanvas show={show} onHide={handleClose} placement="end">
                     <Cart />
                   </Offcanvas>
-                </Nav.Link>
-                <Nav.Link className="mx-2 mt-1">
+                </div>
+                <div className="mx-2 mt-1">
                   <Link to={"/contact"} className="nav-link">
                     CONTACT
                   </Link>
-                </Nav.Link>
+                </div>
               </Nav>
             </Navbar.Text>
           </Navbar.Collapse>

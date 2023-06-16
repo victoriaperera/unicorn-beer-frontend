@@ -1,15 +1,13 @@
 import "./styles.css";
-import QuantitySelector from "./components/QuantitySelector";
 import CartProduct from "./components/CartProduct";
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import Form from "react-bootstrap/Form";
-import axios from "axios";
-
-import React from "react";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 function Cart() {
+  const cart = useSelector((state) => state.cart);
+
   return (
     <>
       <Offcanvas.Header closeButton>
@@ -17,7 +15,8 @@ function Cart() {
       </Offcanvas.Header>
       <Offcanvas.Body className="cart-body">
         <div className="cart-product-list">
-          <CartProduct />
+          {cart.length > 0 &&
+            cart.map((product) => <CartProduct product={product} key={product.id} />)}
         </div>
 
         <div className="cart-footer">

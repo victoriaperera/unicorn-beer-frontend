@@ -20,9 +20,9 @@
   color: var(--white) !important;
 }
 
-@media (max-width: 991px) {
-  .nav-toggler-btn {
-    background-color: var(--white);
-    color: rgba(255, 255, 255, 0);
-  }
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+.navbar-toggler-icon {
+  background-image: url("/src/assets/icons/Unicorn-beer-icon-3.svg");
 }
