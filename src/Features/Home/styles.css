@@ -2,11 +2,19 @@
   height: 50px;
 }
 .scottish-row {
-  background-color: #f84143;
+  background-color: var(--red);
 }
 
 .ipa-row {
-  background-color: #554ba0;
+  background-color: var(--violet);
+}
+
+.pilsener-row {
+  background-color: var(--orange);
+}
+
+.blonde-row {
+  background-color: var(--yellow);
 }
 
 .home-product-img {
@@ -132,7 +140,7 @@ header .overlay {
   transform: rotateY(180deg);
 }
 
-.divider-bottom-VIOLET .VIOLET-fill {
+.VIOLET-fill {
   fill: #554ba0;
 }
 

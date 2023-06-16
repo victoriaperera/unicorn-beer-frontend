@@ -20,8 +20,12 @@
   background-color: var(--orange);
 }
 @keyframes iconTechMove {
-  from {bottom: 0;}
-  to {bottom: 5px;}
+  from {
+    bottom: 0;
+  }
+  to {
+    bottom: 5px;
+  }
 }
 .iconTech {
   width: 15%;
@@ -29,13 +33,19 @@
   flex-direction: column;
   align-items: center;
   margin: 10px;
-  position: relative; 
-}
-.iconTech:hover{
   position: relative;
-  animation: iconTechMove .5s forwards;
-  
+  opacity: 0.7;
 }
-.iconTech i, .iconTech p {
+.iconTech:hover {
+  position: relative;
+  animation: iconTechMove 0.5s forwards;
+  opacity: 1;
+}
+.iconTech i,
+.iconTech p {
   cursor: pointer;
+}
+
+.tech-icon {
+  width: 50px;
 }
