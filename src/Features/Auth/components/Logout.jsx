@@ -1,12 +1,11 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
-import { clearUser } from "../reducers/userSlice";
-
+import { clearToken } from "../userSlice";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { NavDropdown } from "react-bootstrap";
 
-function LogoutBtn() {
+function Logout() {
   const navigate = useNavigate();
   const [response, setResponse] = useState();
   const user = useSelector((state) => state.user);
@@ -19,24 +18,16 @@ function LogoutBtn() {
       },
     });
     setResponse(res);
-    dispatch(clearUser());
+    dispatch(clearToken());
 
     navigate("/");
   };
 
   return (
-    <button
-      onClick={handlerLogout}
-      className="nav-btn btn-logout disable-text-btn"
-    >
-      <img
-        src="/src/assets/twitter-icons/icons/logout.png"
-        alt="Logo de salida, presiona para cerrar tu sesión"
-        className="me-2"
-      />
-      <span>Logout</span>
-    </button>
+    <NavDropdown.Item href="/" onClick={handlerLogout}>
+      Log out
+    </NavDropdown.Item>
   );
 }
 
-export default LogoutBtn;
+export default Logout;
