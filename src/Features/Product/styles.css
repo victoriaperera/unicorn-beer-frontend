@@ -1,15 +1,8 @@
 .product-view-bg {
   background-color: var(--graphite);
   color: var(--white);
+  height: 100vh;
   padding: 100px;
-}
-
-.selector {
-  font-size: 14px;
-  width: 25%;
-  height: 32px;
-
-  border-radius: 4px;
 }
 
 @media (max-width: 991px) {

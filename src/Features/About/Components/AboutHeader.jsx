@@ -5,7 +5,7 @@ import React from "react";
 
 function AboutHeader() {
   return (
-    <Container fluid className="shop-header p-0">
+    <Container fluid className="about-header p-0">
       <div className="overlay-cans">
         <div className="gradient-overlay"></div>
         <Row className="content ps-5">
