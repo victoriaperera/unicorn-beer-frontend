@@ -1,7 +1,6 @@
 .custom-navbar {
   background-color: rgba(0, 0, 0, 0) !important;
   transition: background-color 0.3s;
-  padding: 0;
 }
 
 .navbar-blur {
@@ -17,11 +16,14 @@
   color: var(--white) !important;
 }
 
+.nav-link {
+  color: var(--white) !important;
+}
+
 @media (max-width: 991px) {
   .collapsed-nav {
     position: relative;
     top: 0;
-    background-color: black;
   }
   .nav-toggler-btn {
     background-color: var(--white);

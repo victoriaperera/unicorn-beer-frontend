@@ -6,6 +6,11 @@
 .about-header {
   height: 75vh;
   min-height: 25rem;
+  overflow: auto;
   background-color: var(--graphite);
   color: var(--white);
+}
+
+.team-member-icon {
+  width: 30px;
 }

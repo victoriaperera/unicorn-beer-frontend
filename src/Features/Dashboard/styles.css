@@ -1,9 +1,10 @@
 .picture {
-  font-size: 11rem;
+  font-size: 9rem;
+  color: var(--yellow);
 }
 .ul-board {
   padding-top: 70px;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   list-style: none;
 }
 .col-board {
@@ -17,5 +18,12 @@
 }
 .logout {
   padding-bottom: 70px;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
 }
+/* .logo {
+  height: 70vh;
+}
+.fondo {
+  background-color: var(--graphite);
+  background-size: cover;
+} */

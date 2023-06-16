@@ -1,6 +1,7 @@
 import "./styles.css";
 import QuantitySelector from "./components/QuantitySelector";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
@@ -54,6 +55,12 @@ function Cart() {
 
         <div className="row">
           <p className="fw-bold">Order total: $...</p>
+        </div>
+
+        <div>
+          <Link className="btn rounded-pill bg-black fw-medium text-white w-100" to="">
+            Checkout
+          </Link>
         </div>
       </Offcanvas.Body>
     </>
