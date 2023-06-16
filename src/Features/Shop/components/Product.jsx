@@ -1,9 +1,9 @@
 import "./styles.css";
 import { Col } from "react-bootstrap";
-
 import { useCheckImg } from "../../../hook/useCheckImg";
 import { useSetProductColor } from "../../../hook/useSetProductColor";
 import AddToCardBtn from "../../../Common/components/AddToCardBtn";
+import { Link } from "react-router-dom";
 
 function Product({ product }) {
   const photos = useCheckImg(product.photos);
@@ -17,7 +17,9 @@ function Product({ product }) {
         className="d-flex flex-column justify-content-center align-items-center p-3 text-center text-white product-card"
         style={{ backgroundColor: bgColor }}
       >
-        <img src={photos[0]} alt={`${product.name} image`} className="m-3 product-img" />
+        <Link to="/product">
+          <img src={photos[0]} alt={`${product.name} image`} className="m-3 product-img" />
+        </Link>
         <h5>{product.name}</h5>
         <p className="fw-semibold">$ 19.99</p>
         <span className="addToCartBtn-shop">

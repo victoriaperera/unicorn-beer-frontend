@@ -2,6 +2,14 @@
   height: 100px;
 }
 
+.product-img {
+  transition: transform 0.2s ease-in-out;
+}
+
+.product-img:hover {
+  transform: scale(1.1);
+}
+
 .product-card {
   height: 100vw;
 }

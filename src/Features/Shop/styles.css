@@ -1,16 +1,14 @@
 .shop-header {
-  /* position: relative; */
-  background-color: var(--graphite);
-  color: var(--white);
-  height: 25vh;
-  min-height: 25rem;
+  position: relative;
+  height: 60vh;
   width: 100%;
-  overflow: hidden;
+  background-color: rgb(0, 0, 0);
+  overflow: visible;
 }
 
 .shop-heading {
-  min-height: 25rem;
+  color: var(--white);
+  background-color: black;
   width: 100%;
   padding: 5%;
-  overflow: hidden;
 }
