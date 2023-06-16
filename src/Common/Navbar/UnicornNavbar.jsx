@@ -51,9 +51,7 @@ function UnicornNavbar() {
                 <Nav.Link href="/about" className="mx-2 mt-1 text-white">
                   ABOUT OUR PROJECT
                 </Nav.Link>
-                <Nav.Link href="#" className="mx-2 mt-1 text-white">
-                  OUR BEER
-                </Nav.Link>
+                <Nav.Link className="mx-2 mt-1 text-white">OUR BEER</Nav.Link>
                 <Nav.Link href="/shop" className="mx-2 mt-1 text-white">
                   SHOP
                 </Nav.Link>

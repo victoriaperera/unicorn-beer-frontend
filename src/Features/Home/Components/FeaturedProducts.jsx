@@ -4,7 +4,7 @@ import AddToCardBtn from "../../../Common/components/AddToCardBtn";
 function FeaturedProducts() {
   return (
     <>
-      <section>
+      <section id="section1">
         <Row className="scottish-row align-items-center justify-content-center text-white py-5 product-divider">
           <div className="divider-top-RED p-0">
             <svg

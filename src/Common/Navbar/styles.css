@@ -17,10 +17,6 @@
 }
 
 @media (max-width: 991px) {
-  .collapsed-nav {
-    position: relative;
-    top: 0;
-  }
   .nav-toggler-btn {
     background-color: var(--white);
     color: rgba(255, 255, 255, 0);
