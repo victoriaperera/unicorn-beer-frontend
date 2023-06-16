@@ -3,7 +3,7 @@ import "./styles.css";
 function TeamMemberCard({ admin }) {
   return (
     <>
-      <div className="col">
+      <div className="col m-4">
         <img src="/src/assets/icons/user-0.png" alt="User Avatar" className="img-team-member" />
         <h4 className="mt-4">{admin.name}</h4>
         <p>Full Stack Developer Jr.</p>
