@@ -24,7 +24,6 @@
 }
 
 .cart-body {
-  /* position: relative; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -36,8 +35,4 @@
 
 .cart-product {
   display: flex;
-}
-
-.cart-product-list {
-  overflow: auto;
 }
