@@ -10,13 +10,13 @@ function Verify() {
   const show = useSelector( state => state.verify )
   const dispatch = useDispatch();
   const [child, setChild] = useState();
-  const [birthDay, setDay] = useState();
-  const [birthMonth, setMonth] = useState();
-  const [birthYear, setYear] = useState();
-
+  const [birthDay, setDay] = useState("");
+  const [birthMonth, setMonth] = useState("");
+  const [birthYear, setYear] = useState("");
+  const allInputsSeted = birthDay && birthMonth && birthYear.length > 3;
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(birthDay && birthMonth && birthYear){
+    if(allInputsSeted){
       const isOldEnough = useVerifyAge(birthDay, birthMonth, birthYear)
       if(isOldEnough){
         dispatch(toggleModal());
@@ -75,7 +75,11 @@ function Verify() {
                 <div className='d-flex justify-content-center'>
                   <InputGroup className="my-4 w-50">
                    <Form.Control
-                    className='text-center enterBtn'
+                    className={
+                      allInputsSeted 
+                      ? "enterBtnActive" 
+                      : "enterBtnInactive"
+                    }
                     value="enter"
                     type="submit"
                     />

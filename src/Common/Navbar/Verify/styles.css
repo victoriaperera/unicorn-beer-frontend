@@ -35,20 +35,27 @@ input[type=number] {
     background-color: var(--lightGrey);
     opacity: 0.85;
 }
-
-.enterBtn {
+.enterBtnActive {
     color: var(--darkRed);
     background-color: var(--white);
-    font-size: 1.3rem;
-    letter-spacing: 5px;
     border: 3px solid var(--darkRed);
+    filter: drop-shadow(0 0 6px var(--darkRed)) drop-shadow(0 0 6px var(--darkRed)) contrast(2) brightness(2);
+}
+.enterBtnInactive {
+    z-index: -1;
+    color: #7b7676;
+    background-color: #a96e6e;
+    border: 3px solid rgb(79, 1, 1);
+    filter: drop-shadow(0 0 6px rgb(143, 2, 2)) drop-shadow(0 0 6px rgb(114, 2, 2)) contrast(2) brightness(2);
+}
+.enterBtnActive, .enterBtnInactive { 
+    font-size: 1.3rem;
     border-radius:15px;
     text-transform: uppercase;
     font-weight: bold;
-    filter: drop-shadow(0 0 6px var(--darkRed)) drop-shadow(0 0 6px var(--darkRed)) contrast(2) brightness(2);
     transition: .9s;
 }
-.enterBtn:hover, .enterBtn:focus {
+.enterBtnActive:hover, .enterBtnActive:focus {
     color: var(--white);
     background-color: var(--darkRed);
     border: 3px solid var(--lightRed);
@@ -66,32 +73,32 @@ input[type=number] {
 }
 
 .month, .month::placeholder {
-    color: var(--blue);  
+    color: var(--yellow);  
 }
 
 .month:focus, .month:hover {
-    color: var(--blue);
-    border: solid 1px var(--blue); 
+    color: var(--yellow);
+    border: solid 1px var(--yellow); 
     box-shadow: none;  
 }
 
 .day, .day::placeholder {
-    color: var(--darkGreen);  
+    color: #622c79; ;  
 }
 
 .day:focus, .day:hover {
-    color: var(--green);
-    border: solid 1px var(--darkGreen); 
+    color: var(--violet);
+    border: solid 1px #622c79; 
     box-shadow: none;
 }
 
 .year, .year::placeholder {
-    color: var(--orange);
+    color: var(--red);
     
 }
 
 .year:focus, .year:hover {
-    color: var(--orange);
-    border: solid 1px var(--orange); 
+    color: var(--red);
+    border: solid 1px var(--red); 
     box-shadow: none;
 }
