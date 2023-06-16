@@ -35,13 +35,12 @@ function UnicornNavbar() {
     <>
       <Navbar
         collapseOnSelect
-        bg="white"
         expand="lg"
         sticky="top"
         className={navbarBlur ? "navbar-blur" : "custom-navbar"}
       >
-        <Container fluid>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Container fluid className="collapsed-nav">
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" className="nav-toggler-btn" />
           <Navbar.Brand href="/">
             <img
               src="/src/assets/icons/Unicorn-beer-white-logo-iso.svg"
