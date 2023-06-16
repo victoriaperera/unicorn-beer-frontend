@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer className="footer container-fluid">
       <div className="d-flex justify-content-between align-items-center ">
-        <div className="d-flex flex-column gap-1">
+        <div className="d-flex flex-column gap-3">
           <NavLink href="/">
             <img
               src="/src/assets/icons/Unicorn-beer-white-logo-iso.svg"
@@ -14,7 +14,6 @@ function Footer() {
           </NavLink>
           <small className="text-white fw-lighter">{`© ${new Date().getFullYear()} Unicorn Beer Craft Beer & Co.`}</small>
         </div>
-
         <Nav className=" d-flex flex-md-row">
           <Nav.Link href="/about" className="footerLink text-white">
             ABOUT OUR PROJECT

@@ -21,7 +21,7 @@ function About() {
         <div className="row">
           <div className="col-12 col-lg-6 about-card about-card-one">
             <h3>TECHNOLOGIES</h3>
-            <div className="iconsTechContainer mt-5 d-flex justify-content-around flex-wrap flex-md-nowrap">
+            <div className="iconsTechContainer mt-4 d-flex justify-content-around flex-wrap flex-xxl-nowrap">
               <div className="iconTech">
                 <i><img src="src/assets/icons/icons8-bootstrap-48.png" alt="bootrapp icon" typeof="png/image" /></i>
                 <small>Bootsrapp</small>
