@@ -3,7 +3,9 @@
   padding: 5%;
   color: white;
 }
-
+.about-card h3 {
+  font-size: 1.3rem;
+}
 .about-card-one {
   background-color: var(--violet);
 }
