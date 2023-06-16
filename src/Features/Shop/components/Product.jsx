@@ -15,7 +15,7 @@ function Product({ product }) {
         md={6}
         lg={4}
         className="d-flex flex-column justify-content-evenly text-center text-white product-card p-0"
-        style={{ backgroundColor: bgColor }}
+        style={{ background: bgColor }}
       >
         <Link to="/product">
           <img src={photos[0]} alt={`${product.name} image`} className="product-img" />

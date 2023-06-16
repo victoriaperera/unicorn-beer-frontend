@@ -1,25 +1,25 @@
 :root {
   --green: #8fbd6d;
-  --lightGreen: #b2ef87;
+  --lightGreen: #c5fd9d;
 
   --blue: #597ec9;
-  --lightBlue: #6994eb;
+  --lightBlue: #6696e3;
 
   --violet: #554ba0;
-  --lightViolet: #7a6aef;
+  --lightViolet: #8558c4;
 
   --orange: #ff9522;
-  --lightOrange: #feaf5b;
+  --lightOrange: #fed980;
 
   --yellow: #ffc550;
   --lightYellow: #fed990;
   --darkRed: #ff000d;
   --red: #ff434d;
-  --lightRed: #fe8389;
+  --lightRed: #f56c6c;
   --lightGrey: #fff1f1;
   --white: #ffffff;
-  --graphite: #333333;
-  --lightGraphite: #343333;
+  --graphite: #242424;
+  --lightGraphite: #525252;
 }
 h1,h2,h3,h4,h5,h6, a{
   font-family: 'Bebas Neue', sans-serif;
