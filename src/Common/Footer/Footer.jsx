@@ -1,32 +1,35 @@
 import "./styles.css";
-import { NavDropdown, NavLink, Nav } from "react-bootstrap";
+import { NavLink, Nav } from "react-bootstrap";
 function Footer() {
   return (
     <footer className="footer container-fluid">
-      <div className="d-flex justify-content-between align-items-center mb-5">
-        <NavLink href="/">
-          <img
-            src="/src/assets/icons/Unicorn-beer-white-logo-iso.svg"
-            alt="Unicorn Logo"
-            className="icon-beer d-inline"
-          />
-        </NavLink>
-        <div>
-          <Nav className=" d-flex flex-column">
-            <Nav.Link href="/about" className="mx-2 mt-1 footerLink text-white">
-              ABOUT OUR PROJECT
-            </Nav.Link>
-            <Nav.Link href="#" className="mx-2 mt-1 footerLink text-white">
-              OUR BEER
-            </Nav.Link>
-            <Nav.Link href="/shop" className="mx-2 mt-1 footerLink text-white">
-              SHOP
-            </Nav.Link>
-            <Nav.Link href="/contact" className="mx-2 mt-1 footerLink text-white">
-              CONTACT
-            </Nav.Link>
-          </Nav>
+      <div className="d-flex justify-content-between align-items-center ">
+        <div className="d-flex flex-column gap-1">
+          <NavLink href="/">
+            <img
+              src="/src/assets/icons/Unicorn-beer-white-logo-iso.svg"
+              alt="Unicorn Logo"
+              className="icon-beer d-inline"
+            />
+          </NavLink>
+          <small className="text-white fw-lighter">{`© ${new Date().getFullYear()} Unicorn Beer Craft Beer & Co.`}</small>
         </div>
+
+        <Nav className=" d-flex flex-md-row">
+          <Nav.Link href="/about" className="footerLink text-white">
+            ABOUT OUR PROJECT
+          </Nav.Link>
+          <Nav.Link href="#" className="footerLink text-white">
+            OUR BEER
+          </Nav.Link>
+          <Nav.Link href="/shop" className="footerLink text-white">
+            SHOP
+          </Nav.Link>
+          <Nav.Link href="/contact" className="footerLink text-white">
+            CONTACT
+          </Nav.Link>
+        </Nav>
+
         <div>
           <h4 className="text-white">Our Social:</h4>
           <div className="d-flex justify-content-around">
@@ -42,7 +45,6 @@ function Footer() {
           </div>
         </div>
       </div>
-      <small className="text-white text-end fw-lighter">{`© ${new Date().getFullYear()} Unicorn Beer Craft Beer & Co.`}</small>
     </footer>
   );
 }
