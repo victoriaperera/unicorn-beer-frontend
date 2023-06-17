@@ -1,3 +1,5 @@
+/* PRODUCT */
+
 .product-img {
   height: 100px;
 }
@@ -76,4 +78,27 @@
 
 .addToCartBtn-shop {
   font-size: 1rem !important;
+}
+
+/* HEADER */
+
+.form-control::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--lightGraphite);
+  opacity: 1; /* Firefox */
+}
+
+.form-control:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: var(--lightGraphite);
+}
+
+.form-control::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: var(--lightGraphite);
+}
+
+.filter-btn {
+  text-decoration: none;
+  cursor: pointer;
 }

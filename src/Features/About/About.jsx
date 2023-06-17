@@ -138,8 +138,8 @@ function About() {
           <h3 className="my-5">OUR TEAM</h3>
         </div>
         <div className="row my-5">
-          {admins.map((admin) => (
-            <TeamMemberCard admin={admin}></TeamMemberCard>
+          {admins.map((admin, index) => (
+            <TeamMemberCard admin={admin} key={index}></TeamMemberCard>
           ))}
         </div>
       </div>

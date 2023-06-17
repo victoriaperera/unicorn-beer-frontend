@@ -1,16 +1,19 @@
 import "./styles.css";
 import Product from "./Product";
 import { Row } from "react-bootstrap";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { setProductList } from "../shopSlice";
 
 function ProductList() {
-  const [products, setProducts] = useState([]);
+  const products = useSelector((state) => state.shop);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const getProducts = async () => {
       const res = await axios.get(`http://localhost:3000/products`);
-      setProducts(res.data);
+      dispatch(setProductList(res.data));
     };
     getProducts();
   }, []);
