@@ -10,12 +10,14 @@ function Home() {
       <div>
         <HomeHeader />
         <Container fluid className="text-center">
-          <Row className="white-row align-items-center justify-content-center">
-            <Col>
-              <h2 className="m-0">Our Beers</h2>
-            </Col>
-          </Row>
-          <FeaturedProducts />
+          <section id="our-beer-section">
+            <Row className="white-row align-items-center justify-content-center">
+              <Col>
+                <h2 className="m-0">Our Beers</h2>
+              </Col>
+            </Row>
+            <FeaturedProducts />
+          </section>
         </Container>
       </div>
     </>

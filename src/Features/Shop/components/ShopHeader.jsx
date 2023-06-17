@@ -1,9 +1,18 @@
 import "./styles.css";
 import { Col, Form, Row, Container } from "react-bootstrap";
+import { useState } from "react";
 import React from "react";
 import ProductFilter from "./ProductFilter";
 
 function ShopHeader() {
+  //para poder filtrar las cervezas por estilos con los botones, pero falta el reducer
+  const [filterStyle, setFilterStyle] = useState("");
+
+  function handleFilterClick(style) {
+    props.getBeersByStyle(style);
+    setFilterStyle(style);
+  }
+
   return (
     <Container fluid className="shop-header p-0">
       <div className="overlay-bottles">

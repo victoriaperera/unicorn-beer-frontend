@@ -1,14 +1,14 @@
-.img-team-member {
-  width: 200px;
-  height: 200px;
-}
-
 .about-header {
   height: 100vh;
   min-height: 25rem;
   overflow: auto;
   background-color: var(--graphite);
   color: var(--white);
+}
+
+.img-team-member {
+  width: 200px;
+  height: 200px;
 }
 
 .team-member-icon {

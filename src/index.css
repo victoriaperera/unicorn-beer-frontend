@@ -21,9 +21,19 @@
   --graphite: #242424;
   --lightGraphite: #525252;
 }
-h1,h2,h3,h4,h5,h6, a{
-  font-family: 'Bebas Neue', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+  font-family: "Bebas Neue", sans-serif;
 }
-p, label, input, small {
-  font-family: "Roboto" !important;
+p,
+label,
+input,
+small,
+button {
+  font-family: "Oswald" !important;
 }

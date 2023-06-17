@@ -1,7 +1,10 @@
 .contact {
-    background-color: var(--lightGraphite);
-    color: var(--white);
+  background-color: var(--lightGraphite);
+  color: var(--white);
+  height: 80vh;
+  display: flex;
+  align-items: center;
 }
 .contactIcon {
-    width: 4vh;
+  width: 4vh;
 }

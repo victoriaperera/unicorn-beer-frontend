@@ -1,26 +1,36 @@
-.about-card {
-  height: 350px;
-  padding: 5%;
-  color: white;
+.about-section {
+  padding: 8%;
+  color: var(--white);
 }
-.about-card h3 {
+.about-section h3 {
   font-size: 1.3rem;
+  height: 100vh;
 }
-.about-card-one {
+.about-section-one {
+  background-color: var(--red);
+  height: 100vh;
+}
+
+.about-section-two {
   background-color: var(--violet);
+  height: 100vh;
 }
 
-.about-card-two {
-  background-color: var(--blue);
-}
-
-.about-card-three {
-  background-color: var(--yellow);
-}
-
-.about-card-four {
+.about-section-three {
   background-color: var(--orange);
+  height: 100vh;
 }
+
+.about-section-four {
+  background-color: var(--yellow);
+  height: 100vh;
+}
+
+.about-section-team {
+  height: 100vh;
+  color: var(--graphite);
+}
+
 @keyframes iconTechMove {
   from {
     bottom: 0;
@@ -29,6 +39,7 @@
     bottom: 5px;
   }
 }
+
 .iconTech {
   width: 15%;
   display: flex;
@@ -38,11 +49,13 @@
   position: relative;
   opacity: 0.7;
 }
+
 .iconTech:hover {
   position: relative;
   animation: iconTechMove 0.5s forwards;
   opacity: 1;
 }
+
 .iconTech i,
 .iconTech p {
   cursor: pointer;
@@ -50,4 +63,48 @@
 
 .tech-icon {
   width: 50px;
+}
+
+.about-nav {
+  position: absolute;
+}
+
+.about-nav-container {
+  position: sticky;
+  top: 90%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.nav-btn {
+  border: none;
+  color: var(--white);
+  font-size: 0.8rem;
+  padding: 0.4rem;
+  margin-bottom: 0;
+  cursor: pointer;
+  width: 65px;
+}
+
+.nav-btn-1 {
+  background-color: var(--graphite);
+}
+.nav-btn-2 {
+  background-color: var(--red);
+}
+.nav-btn-3 {
+  background-color: var(--violet);
+}
+.nav-btn-4 {
+  background-color: var(--orange);
+}
+.nav-btn-5 {
+  background-color: var(--yellow);
+}
+.nav-btn-6 {
+  background-color: var(--green);
 }

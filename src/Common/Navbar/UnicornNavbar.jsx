@@ -57,7 +57,7 @@ function UnicornNavbar() {
                   </Link>
                 </div>
                 <div className="mx-2 mt-1">
-                  <Link to={""} className="nav-link">
+                  <Link to="/#our-beer-section" className="nav-link">
                     OUR BEER
                   </Link>
                 </div>
