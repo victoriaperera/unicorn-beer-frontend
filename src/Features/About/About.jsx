@@ -31,7 +31,7 @@ function About() {
             About
           </button>
           <button className="nav-btn nav-btn-2" onClick={() => scrollToSection(sectionTech)}>
-            Technologies
+            Technology
           </button>
           <button className="nav-btn nav-btn-3" onClick={() => scrollToSection(sectionMer)}>
             Mer

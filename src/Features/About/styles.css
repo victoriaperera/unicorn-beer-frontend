@@ -84,10 +84,10 @@
   border: none;
   color: var(--white);
   font-size: 0.8rem;
-  padding: 0.5rem;
+  padding: 0.4rem;
   margin-bottom: 0;
   cursor: pointer;
-  width: 5vw;
+  width: 4vw;
 }
 
 .nav-btn-1 {
@@ -106,5 +106,5 @@
   background-color: var(--yellow);
 }
 .nav-btn-6 {
-  background-color: var(--green);
+  background-color: var(--lightGraphite);
 }

@@ -33,6 +33,7 @@ a {
 p,
 label,
 input,
-small {
+small,
+button {
   font-family: "Oswald" !important;
 }

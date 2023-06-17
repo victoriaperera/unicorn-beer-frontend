@@ -77,3 +77,38 @@
 .addToCartBtn-shop {
   font-size: 1rem !important;
 }
+
+.btn-shop {
+  border: none;
+  border-radius: 20px;
+  padding: 0.2rem 0.9rem;
+  margin-right: 1rem;
+  color: var(--white);
+}
+
+.btn-shop:hover {
+  color: var(--graphite);
+  background-color: var(--white);
+}
+
+.btn-shop-scottish {
+  background-color: var(--red);
+}
+.btn-shop-pilsener {
+  background-color: var(--orange);
+}
+.btn-shop-blonde {
+  background-color: var(--yellow);
+}
+.btn-shop-apa {
+  background-color: var(--green);
+}
+.btn-shop-zero {
+  background-color: var(--blue);
+}
+.btn-shop-ipa {
+  background-color: var(--violet);
+}
+.btn-shop-stout {
+  background-color: var(--graphite);
+}
