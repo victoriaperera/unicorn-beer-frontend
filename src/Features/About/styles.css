@@ -71,7 +71,7 @@
 
 .about-nav-container {
   position: sticky;
-  top: 95%;
+  top: 90%;
   left: 0;
   display: flex;
   flex-direction: column;
@@ -87,7 +87,7 @@
   padding: 0.4rem;
   margin-bottom: 0;
   cursor: pointer;
-  width: 4vw;
+  width: 65px;
 }
 
 .nav-btn-1 {
@@ -106,5 +106,5 @@
   background-color: var(--yellow);
 }
 .nav-btn-6 {
-  background-color: var(--lightGraphite);
+  background-color: var(--green);
 }
