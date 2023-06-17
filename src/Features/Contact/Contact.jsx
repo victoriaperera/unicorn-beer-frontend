@@ -4,85 +4,80 @@ import React from "react";
 
 function Contact() {
   const handleSubmit = (e) => {
-    e.preventDefault()
-  }
+    e.preventDefault();
+  };
   return (
     <>
-    <div className="header">
-       <h1>Contact</h1>
-    </div>
-    <div className="contact">
-      <Container className="contactContainer py-5">
-        <div className="d-flex align-items-center">
-          <img src="src/assets/icons/Unicorn-beer-icon-3.svg" alt="unicron icon" className="contactIcon"/>
-          <h2 className="py-5 ms-3">Leave Us a message</h2>
-        </div>
-        <Form onSubmit={handleSubmit}>
-          <Row className="mb-3">
-            <Form.Group as={Col} md="4" className="my-2">
-              <Form.Label>First name</Form.Label>
-              <Form.Control
-                required
-                type="text"
-                placeholder="First name" 
-              />
-              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group as={Col} md="4" className="my-2">
-              <Form.Label>Last name</Form.Label>
-              <Form.Control
-                required
-                type="text"
-                placeholder="Last name"
-              />
-              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group as={Col} md="4" className="my-2">
-              <Form.Label>Email</Form.Label>
-              <InputGroup hasValidation>
-                <Form.Control
-                  type="email"
-                  placeholder="Email"
-                  required
-                />
+      <div className="contact-header">{/* <h2>Contact</h2> */}</div>
+      <div className="contact">
+        <Container className="contactContainer py-5">
+          <div className="d-flex align-items-center">
+            <img
+              src="src/assets/icons/Unicorn-beer-icon-3.svg"
+              alt="unicron icon"
+              className="contactIcon"
+            />
+            <h2 className="py-5 ms-3">Leave Us a message</h2>
+          </div>
+          <Form onSubmit={handleSubmit}>
+            <Row className="mb-3">
+              <Form.Group as={Col} md="4" className="my-2">
+                <Form.Label>First name</Form.Label>
+                <Form.Control required type="text" placeholder="First name" />
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+              </Form.Group>
+              <Form.Group as={Col} md="4" className="my-2">
+                <Form.Label>Last name</Form.Label>
+                <Form.Control required type="text" placeholder="Last name" />
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+              </Form.Group>
+              <Form.Group as={Col} md="4" className="my-2">
+                <Form.Label>Email</Form.Label>
+                <InputGroup hasValidation>
+                  <Form.Control type="email" placeholder="Email" required />
+                  <Form.Control.Feedback type="invalid">
+                    Please put a contact e-mail.
+                  </Form.Control.Feedback>
+                </InputGroup>
+              </Form.Group>
+            </Row>
+            <Row className="mb-3">
+              <Form.Group as={Col} md="6" className="my-2">
+                <Form.Label>City</Form.Label>
+                <Form.Control type="text" placeholder="City" required />
                 <Form.Control.Feedback type="invalid">
-                  Please put a contact e-mail.
+                  Please provide a valid city.
                 </Form.Control.Feedback>
-              </InputGroup>
-            </Form.Group>
-          </Row>
-          <Row className="mb-3">
-            <Form.Group as={Col} md="6" className="my-2">
-              <Form.Label>City</Form.Label>
-              <Form.Control type="text" placeholder="City" required />
-              <Form.Control.Feedback type="invalid">
-                Please provide a valid city.
-              </Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group as={Col} md="3" className="my-2">
-              <Form.Label>State</Form.Label>
-              <Form.Control type="text" placeholder="State" required />
-              <Form.Control.Feedback type="invalid">
-                Please provide a valid state.
-              </Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group as={Col} md="3" className="my-2">
-              <Form.Label>Zip</Form.Label>
-              <Form.Control type="text" placeholder="Zip" required />
-              <Form.Control.Feedback type="invalid">
-                Please provide a valid zip.
-              </Form.Control.Feedback>
-            </Form.Group>
-          </Row>
-          <Row className="justify-content-end">
-            <Button type="submit" variant="outline-light" size="lg" className="rounded-pill w-25 me-3 mt-5">Send</Button>
-          </Row> 
-        </Form>
-      </Container>
-    </div>
-   
-   </>
-
+              </Form.Group>
+              <Form.Group as={Col} md="3" className="my-2">
+                <Form.Label>State</Form.Label>
+                <Form.Control type="text" placeholder="State" required />
+                <Form.Control.Feedback type="invalid">
+                  Please provide a valid state.
+                </Form.Control.Feedback>
+              </Form.Group>
+              <Form.Group as={Col} md="3" className="my-2">
+                <Form.Label>Zip</Form.Label>
+                <Form.Control type="text" placeholder="Zip" required />
+                <Form.Control.Feedback type="invalid">
+                  Please provide a valid zip.
+                </Form.Control.Feedback>
+              </Form.Group>
+            </Row>
+            <Row className="justify-content-end">
+              <Button
+                type="submit"
+                variant="outline-light"
+                size="lg"
+                className="rounded-pill w-25 me-3 mt-5"
+              >
+                Send
+              </Button>
+            </Row>
+          </Form>
+        </Container>
+      </div>
+    </>
   );
 }
 

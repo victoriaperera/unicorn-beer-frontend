@@ -1,5 +1,6 @@
 import "./styles.css";
 import { NavLink, Nav } from "react-bootstrap";
+
 function Footer() {
   return (
     <footer className="footer container-fluid">
@@ -29,19 +30,19 @@ function Footer() {
           </Nav.Link>
         </Nav>
         <div>
-          <h4 className="text-white">Our Social:</h4>
+          <h5 className="text-white">Social:</h5>
           <div className="d-flex justify-content-around">
             <Nav.Link href="#" className="mx-2 mt-1 footerLink text-white">
-              <i className="bi bi-facebook text-white"></i>
+              <i className="bi bi-facebook fs-6 text-white"></i>
             </Nav.Link>
             <Nav.Link
               href="https://www.instagram.com/unicorn_craftedbeer/"
               className="mx-2 mt-1 footerLink text-white"
             >
-              <i className="bi bi-instagram text-white"></i>
+              <i className="bi bi-instagram fs-6 text-white"></i>
             </Nav.Link>
             <Nav.Link href="#" className="mx-2 mt-1 footerLink text-white">
-              <i className="bi bi-twitter text-white"></i>
+              <i className="bi bi-twitter fs-6 text-white"></i>
             </Nav.Link>
           </div>
         </div>
