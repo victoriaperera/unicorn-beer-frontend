@@ -210,3 +210,8 @@ header .overlay {
     height: 75px;
   }
 }
+
+.beers-heading {
+  color: var(--white);
+  text-shadow: 1px 1px 5px var(--graphite);
+}
