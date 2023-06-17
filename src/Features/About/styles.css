@@ -28,6 +28,7 @@
 
 .about-section-team {
   height: 100vh;
+  color: var(--graphite);
 }
 
 @keyframes iconTechMove {

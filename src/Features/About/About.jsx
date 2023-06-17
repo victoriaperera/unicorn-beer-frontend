@@ -165,16 +165,14 @@ function About() {
           <div className="col-12 about-section about-section-four" ref={sectionAdmin}>
             <h4>ADMIN DASHBOARD</h4>
           </div>
-        </div>
-      </div>
-      <div className="container-fluid my-5 text-center about-section-team" ref={sectionTeam}>
-        <div className="row">
-          <h4 className="my-5">OUR TEAM</h4>
-        </div>
-        <div className="row my-5">
-          {admins.map((admin) => (
-            <TeamMemberCard admin={admin}></TeamMemberCard>
-          ))}
+          <div className="col-12 about-section about-section-team" ref={sectionTeam}>
+            <h4>OUR TEAM</h4>
+            <div className="row my-5">
+              {admins.map((admin) => (
+                <TeamMemberCard admin={admin}></TeamMemberCard>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </>
