@@ -13,13 +13,22 @@
 
   --yellow: #ffc550;
   --lightYellow: #fed990;
+
   --darkRed: #ff000d;
   --red: #ff434d;
   --lightRed: #f56c6c;
-  --lightGrey: #fff1f1;
+
   --white: #ffffff;
+  --lightGrey: #fff1f1;
+  
   --graphite: #242424;
   --lightGraphite: #525252;
+}
+html, body{
+  height: 100%;
+}
+.container {
+  height: 87vh;
 }
 h1,
 h2,

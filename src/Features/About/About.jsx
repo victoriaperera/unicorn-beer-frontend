@@ -53,7 +53,7 @@ function About() {
       <div className="container-fluid text-center">
         <div className="row d-flex">
           <div className="col-12 about-section about-section-one" ref={sectionTech}>
-            <h4>TOOLS & TECHNOLOGIES USED</h4>
+            <h3>TECHNOLOGIES & TOOLS USED</h3>
             <div className="iconsTechContainer mt-4 d-flex justify-content-around flex-wrap flex-xxl-nowrap">
               <div className="iconTech">
                 <i>
@@ -157,22 +157,22 @@ function About() {
             </div>
           </div>
           <div className="col-12 about-section about-section-two" ref={sectionMer}>
-            <h4>PROJECT ORGANIZATION - MER</h4>
+            <h3>PROJECT ORGANIZATION - MER</h3>
             <div className="py-5">
               <img src="src/assets/img/Proyecto-final-MER.png" alt="" className="mer-img" />
             </div>
           </div>
           <div className="col-12 about-section about-section-three" ref={sectionDesign}>
-            <h4>PRODUCT DESIGN</h4>
-            <div className="py-5">
-              <img src="src/assets/img/Proyecto-final-endpoints.png" alt="" className="mer-img" />
+            <h3>PRODUCT DESIGN</h3>
+            <div className="">
+              <img src="src/assets/img/Proyecto-final-endpoints.png" alt="" className="arq-img" />
             </div>
           </div>
           <div className="col-12 about-section about-section-four" ref={sectionAdmin}>
-            <h4>ADMIN DASHBOARD</h4>
+            <h3>ADMIN DASHBOARD</h3>
           </div>
           <div className="col-12 about-section about-section-team" ref={sectionTeam}>
-            <h4>OUR TEAM</h4>
+            <h3>OUR TEAM</h3>
             <div className="row my-5">
               {admins.map((admin, index) => (
                 <TeamMemberCard admin={admin} key={index}></TeamMemberCard>

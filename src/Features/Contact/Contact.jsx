@@ -8,10 +8,9 @@ function Contact() {
   };
   return (
     <>
-      <div className="contact-header">{/* <h2>Contact</h2> */}</div>
-      <div className="contact">
-        <Container className="contactContainer py-5">
-          <div className="d-flex align-items-center">
+      <div className="contact p-5">
+        <Container className="contactContainer py-5 container">
+          <div className="d-flex justify-content-start align-items-center">
             <img
               src="src/assets/icons/Unicorn-beer-icon-3.svg"
               alt="unicron icon"

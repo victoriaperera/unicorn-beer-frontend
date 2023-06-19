@@ -47,7 +47,7 @@ function Login() {
     <div className="auth">
         <Container className="authContainer py-5">
             <div className="d-flex flex-column justify-content-start align-items-start">
-                <div className="d-flex align-items-center">
+                <div className="d-flex align-items-center my-3">
                     <img
                     src="src/assets/icons/Unicorn-beer-icon-3.svg"
                     alt="unicron icon"
@@ -55,12 +55,11 @@ function Login() {
                     />
                     <h1 className="m-0">Login</h1>
                 </div>
-               
                 <small>Ready to drink some M%$#F!*r Beer?</small>
             </div>
             <Form onSubmit={handleSubmit}>
-                <Row className="mb-3">
-                    <Form.Group as={Col} md="4" className="my-2">
+                <Row className="mb-3 flex-column">
+                    <Form.Group as={Col} className="my-2">
                         <Form.Label>Email</Form.Label>
                         <InputGroup hasValidation>
                         <Form.Control 
@@ -74,7 +73,7 @@ function Login() {
                         </Form.Control.Feedback>
                         </InputGroup>
                     </Form.Group>
-                    <Form.Group as={Col} md="4" className="my-2">
+                    <Form.Group as={Col} className="my-2">
                         <Form.Label>Password</Form.Label>
                         <Form.Control 
                         type="password" 
@@ -94,7 +93,7 @@ function Login() {
                     Log in
                     </Button>
                     <small className="d-block">
-                        Don't you have an account? <Link to="/signup">Create an Account</Link>
+                        Don't you have an account? <Link className="authLink" to="/signup">Create an Account</Link>
                     </small>
                     {alertToggle && <Alert variant="danger">{alertText}</Alert>}
                 </Row>
