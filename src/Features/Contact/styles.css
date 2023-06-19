@@ -1,7 +1,3 @@
-.contact {
-  background-color: var(--lightGraphite);
-  color: var(--white);
-}
 .contactContainer {
   display: flex;
   justify-content: center;

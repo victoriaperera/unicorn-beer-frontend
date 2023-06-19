@@ -32,7 +32,7 @@ function Contact() {
   };
   return (
     <>
-      <div className="contact p-5">
+      <div className="graphiteBackground p-5">
         <Container className="contactContainer my-5 py-5 container">
           <div className="d-flex align-items-end">
             <img

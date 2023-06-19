@@ -46,3 +46,8 @@ small,
 button {
   font-family: "Oswald" !important;
 }
+.graphiteBackground {
+    background-color: var(--lightGraphite);
+    color: var(--white);
+  
+}

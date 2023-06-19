@@ -13,11 +13,6 @@
   background-color: var(--lightred);
 }
 
-.auth {
-  background-color: var(--lightGraphite);
-  color: var(--white);
- 
-}
 .authContainer {
   display: flex;
   flex-direction: column;
