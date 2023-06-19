@@ -1,14 +1,11 @@
 .contact {
   background-color: var(--lightGraphite);
   color: var(--white);
-  height: 80vh;
-  display: flex;
-  align-items: center;
 }
-@media (max-width:768px){
-  .contact {
-   height: 130vh;
-  }
+.contactContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 .contactIcon {
   width: 4vh;

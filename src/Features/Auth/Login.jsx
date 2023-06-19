@@ -55,12 +55,11 @@ function Login() {
                     />
                     <h1 className="m-0">Login</h1>
                 </div>
-               
                 <small>Ready to drink some M%$#F!*r Beer?</small>
             </div>
             <Form onSubmit={handleSubmit}>
-                <Row className="mb-3">
-                    <Form.Group as={Col} md="4" className="my-2">
+                <Row className="mb-3 flex-column">
+                    <Form.Group as={Col} className="my-2">
                         <Form.Label>Email</Form.Label>
                         <InputGroup hasValidation>
                         <Form.Control 
@@ -74,7 +73,7 @@ function Login() {
                         </Form.Control.Feedback>
                         </InputGroup>
                     </Form.Group>
-                    <Form.Group as={Col} md="4" className="my-2">
+                    <Form.Group as={Col} className="my-2">
                         <Form.Label>Password</Form.Label>
                         <Form.Control 
                         type="password" 
