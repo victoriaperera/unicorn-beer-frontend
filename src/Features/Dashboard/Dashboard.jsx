@@ -7,13 +7,6 @@ function Dashboard() {
     <>
       <div className="container-fluid p-0">
         <Sidebar />
-        {/* <div className="col-9 d-flex justify-content-center align-items-center fondo p-0">
-            <img
-              src="/src/assets/icons/Unicorn-beer-white-logo.svg"
-              alt="Unicorn Logo"
-              className="logo"
-            />
-          </div> */}
       </div>
     </>
   );
