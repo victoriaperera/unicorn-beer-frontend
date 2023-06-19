@@ -4,22 +4,26 @@
 }
 
 .footerLinkContainer {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  align-items: center;
+  display: none;
 }
 
 .footerLink {
   padding: 8px 0;
   font-size: 0.8rem;
 }
-
-@media (min-width: 720) {
+@media (min-width: 576px) {
+  .footerLinkContainer {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (min-width: 768px) {
   .footerLinkContainer {
     flex-direction: row;
+    margin-right: 30px;
   }
   .footerLink {
-    font-size: 0.9rem;
+    font-size: 1rem;
+    margin: 0 10px;
   }
 }

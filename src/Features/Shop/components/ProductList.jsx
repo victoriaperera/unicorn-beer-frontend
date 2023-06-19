@@ -7,7 +7,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { setProductList } from "../shopSlice";
 
 function ProductList() {
+  // const filter = useSelector((state) => state.shop.filter);
   const products = useSelector((state) => state.shop);
+  // const products = useSelector((state) => {
+  //   if (filter === null) {
+  //     return state.shop.products;
+  //   } else {
+  //     return state.shop.products.filter((product) => product.style.name === filter);
+  //   }
+  // });
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -17,6 +25,7 @@ function ProductList() {
     };
     getProducts();
   }, []);
+
   return (
     <>
       <Row>

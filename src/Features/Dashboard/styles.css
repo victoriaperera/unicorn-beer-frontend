@@ -1,21 +1,28 @@
 .ul-board {
-  padding-top: 70px;
-  font-size: 1.4rem;
+  padding-top: 50px;
+  font-size: 1.1rem;
   list-style: none;
 }
 .col-board {
+  height: 100vh;
   background-color: var(--graphite);
-  padding-top: 70px;
+  padding-top: 10px;
   color: var(--white);
 }
 
 .logout {
-  padding-bottom: 70px;
+  padding-bottom: 20px;
   padding-top: 70px;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
 }
 .gatito {
-  height: 130px;
+  height: 100px;
   border-radius: 50%;
   margin-bottom: 40px;
+}
+.grafica {
+  height: 400px;
+}
+.background {
+  background-color: #9c9c9c;
 }
