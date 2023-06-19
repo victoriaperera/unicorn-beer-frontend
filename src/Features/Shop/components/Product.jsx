@@ -1,13 +1,13 @@
 import "./styles.css";
 import { Col } from "react-bootstrap";
 import { useCheckImg } from "../../../hook/useCheckImg";
-import { useSetProductColor } from "../../../hook/useSetProductColor";
+import { useSetGradientColor } from "../../../hook/useSetGradientColor";
 import AddToCardBtn from "../../../Common/components/AddToCardBtn";
 import { Link } from "react-router-dom";
 
 function Product({ product }) {
   const photos = useCheckImg(product.photos);
-  const bgColor = useSetProductColor(product.style.name);
+  const bgColor = useSetGradientColor(product);
 
   return (
     <>

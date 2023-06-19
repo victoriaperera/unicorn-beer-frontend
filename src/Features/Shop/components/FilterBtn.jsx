@@ -1,9 +1,9 @@
 import React, { useRef, useState } from "react";
-import { useSetBtnColor } from "../../../hook/useSetBtnColor";
+import { useSetColor } from "../../../hook/useSetColor";
 
 function FilterBtn({ style }) {
   const [isHovering, setIsHovering] = useState(false);
-  let color = useSetBtnColor(style.name);
+  let color = useSetColor(style.name);
 
   const handleMouseEnter = () => {
     setIsHovering(true);
