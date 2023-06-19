@@ -1,9 +1,12 @@
 import React, { useRef, useState } from "react";
 import { useSetColor } from "../../../hook/useSetColor";
+import { useDispatch } from "react-redux";
+import { clearFilter, setFilter } from "../shopSlice";
 
-function FilterBtn({ style }) {
+function FilterBtn({ product }) {
   const [isHovering, setIsHovering] = useState(false);
-  let color = useSetColor(style.name);
+  let color = useSetColor(product);
+  const dispatch = useDispatch();
 
   const handleMouseEnter = () => {
     setIsHovering(true);
@@ -18,6 +21,8 @@ function FilterBtn({ style }) {
   };
 
   const handlerFilter = () => {
+    dispatch(clearFilter());
+    dispatch(setFilter(product.style.name));
     setIsHovering(true);
     console.log(isHovering, color);
   };
@@ -25,7 +30,7 @@ function FilterBtn({ style }) {
   return (
     <a
       className="filter-btn h2 me-3"
-      key={style.id}
+      key={product.style.id}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onFocus={handlerOnFocus}
@@ -34,7 +39,7 @@ function FilterBtn({ style }) {
       }}
       onClick={handlerFilter}
     >
-      {style.name}
+      {product.style.name}
     </a>
   );
 }

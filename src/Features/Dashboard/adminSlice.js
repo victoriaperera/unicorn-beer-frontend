@@ -2,10 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const adminSlice = createSlice({
   name: "admin",
-  initialState: true,
-  reducers: {},
+  initialState: [],
+  reducers: {
+    setProductList(state, action) {
+      return action.payload;
+    },
+  },
 });
 
-const { actions, reducer } = adminSlice;
-export const {} = actions;
-export default reducer;
+export const { setProductList } = adminSlice.actions;
+export default adminSlice.reducer;
