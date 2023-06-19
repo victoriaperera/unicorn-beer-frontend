@@ -27,3 +27,8 @@
     width: 4vh;
     margin: 0 10px 0 0 
 }
+.authLink {
+  color: var(--orange);
+  text-decoration: none;
+  border: var(--white) 1px;
+}

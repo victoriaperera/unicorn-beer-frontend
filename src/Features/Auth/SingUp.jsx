@@ -53,7 +53,7 @@ function SignUp() {
         <div className="auth">
             <Container className="authContainer py-5">
                 <div className="d-flex flex-column justify-content-start align-items-start">
-                    <div className="d-flex align-items-center">
+                    <div className="d-flex align-items-center my-3">
                         <img
                         src="src/assets/icons/Unicorn-beer-icon-3.svg"
                         alt="unicron icon"
@@ -145,7 +145,7 @@ function SignUp() {
                         Create an Account
                         </Button>
                         <small className="d-block">
-                            Already have an account? <Link to="/login">Log in</Link>
+                            Already have an account? <Link className="authLink" to="/login">Log in</Link>
                         </small>
                         {alertToggle && <Alert variant="danger">{alertText}</Alert>}
                     </Row>
