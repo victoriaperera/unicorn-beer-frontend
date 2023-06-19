@@ -159,13 +159,13 @@ function About() {
           <div className="col-12 about-section about-section-two" ref={sectionMer}>
             <h4>PROJECT ORGANIZATION - MER</h4>
             <div className="py-5">
-              <img src="src/assets/img/Proyecto-final-MER.png" alt="" className="mer-img" />
+              <img src="src/assets/img/Proyecto-final-MER.png" alt="" className="about-img" />
             </div>
           </div>
           <div className="col-12 about-section about-section-three" ref={sectionDesign}>
             <h4>PRODUCT DESIGN</h4>
-            <div className="py-5">
-              <img src="src/assets/img/Proyecto-final-endpoints.png" alt="" className="mer-img" />
+            <div className="">
+              <img src="src/assets/img/Proyecto-final-endpoints.png" alt="" className="about-img" />
             </div>
           </div>
           <div className="col-12 about-section about-section-four" ref={sectionAdmin}>
