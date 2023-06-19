@@ -4,101 +4,116 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
   appearance: textfield;
 }
 .form-control:focus {
-    border: none;
-    box-shadow: none;
+  border: none;
+  box-shadow: none;
 }
 .unicornModal {
-    background: rgb(180,128,58);
-    background: linear-gradient(13deg, rgba(180,128,58,1) 0%, rgba(253,238,29,0.5821353912353515) 38%, rgba(252,176,69,1) 100%); 
+  background: rgb(180, 128, 58);
+  background: linear-gradient(
+    13deg,
+    rgba(180, 128, 58, 1) 0%,
+    rgba(253, 238, 29, 0.5821353912353515) 38%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  z-index: 99999;
 }
 
 .oops {
-    color: var(--lightRed);
-    position: absolute;
-    text-align: center;
-    font-size: 1rem;
-    left: 50%;
-    transform: translate(-50%);
-    width: 90%;
+  color: var(--lightRed);
+  position: absolute;
+  text-align: center;
+  font-size: 1rem;
+  left: 50%;
+  transform: translate(-50%);
+  width: 90%;
 }
 .modal-title {
-    position: relative;
+  position: relative;
 }
 
 .modal-content {
-    border: none;
-    background-color: var(--lightGrey);
-    opacity: 0.85;
+  border: none;
+  background-color: var(--lightGrey);
+  opacity: 0.85;
 }
 .enterBtnActive {
-    color: var(--darkRed);
-    background-color: var(--white);
-    border: 3px solid var(--darkRed);
-    filter: drop-shadow(0 0 6px var(--darkRed)) drop-shadow(0 0 6px var(--darkRed)) contrast(2) brightness(2);
+  color: var(--darkRed);
+  background-color: var(--white);
+  border: 3px solid var(--darkRed);
+  filter: drop-shadow(0 0 6px var(--darkRed)) drop-shadow(0 0 6px var(--darkRed)) contrast(2)
+    brightness(2);
 }
 .enterBtnInactive {
-    z-index: -1;
-    color: #7b7676;
-    background-color: #a96e6e;
-    border: 3px solid rgb(79, 1, 1);
-    filter: drop-shadow(0 0 6px rgb(143, 2, 2)) drop-shadow(0 0 6px rgb(114, 2, 2)) contrast(2) brightness(2);
+  z-index: -1;
+  color: #7b7676;
+  background-color: #a96e6e;
+  border: 3px solid rgb(79, 1, 1);
+  filter: drop-shadow(0 0 6px rgb(143, 2, 2)) drop-shadow(0 0 6px rgb(114, 2, 2)) contrast(2)
+    brightness(2);
 }
-.enterBtnActive, .enterBtnInactive { 
-    font-size: 1.3rem;
-    border-radius:15px;
-    text-transform: uppercase;
-    font-weight: bold;
-    transition: .9s;
+.enterBtnActive,
+.enterBtnInactive {
+  font-size: 1.3rem;
+  border-radius: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: 0.9s;
 }
-.enterBtnActive:hover, .enterBtnActive:focus {
-    color: var(--white);
-    background-color: var(--darkRed);
-    border: 3px solid var(--lightRed);
-    filter: drop-shadow(0 0 10px var(--darkRed)) drop-shadow(0 0 10px var(--darkRed)) contrast(2) brightness(2);
+.enterBtnActive:hover,
+.enterBtnActive:focus {
+  color: var(--white);
+  background-color: var(--darkRed);
+  border: 3px solid var(--lightRed);
+  filter: drop-shadow(0 0 10px var(--darkRed)) drop-shadow(0 0 10px var(--darkRed)) contrast(2)
+    brightness(2);
 }
 
 .dateInput {
-    height: 10vh;
-    text-align: center;
-    border: none;
-    border-radius: 2px;
-    letter-spacing: 3px;
-    font-size: 1.3rem;
-   
+  height: 10vh;
+  text-align: center;
+  border: none;
+  border-radius: 2px;
+  letter-spacing: 3px;
+  font-size: 1.3rem;
 }
 
-.month, .month::placeholder {
-    color: var(--yellow);  
+.month,
+.month::placeholder {
+  color: var(--yellow);
 }
 
-.month:focus, .month:hover {
-    color: var(--yellow);
-    border: solid 1px var(--yellow); 
-    box-shadow: none;  
+.month:focus,
+.month:hover {
+  color: var(--yellow);
+  border: solid 1px var(--yellow);
+  box-shadow: none;
 }
 
-.day, .day::placeholder {
-    color: #622c79; ;  
+.day,
+.day::placeholder {
+  color: #622c79;
 }
 
-.day:focus, .day:hover {
-    color: var(--violet);
-    border: solid 1px #622c79; 
-    box-shadow: none;
+.day:focus,
+.day:hover {
+  color: var(--violet);
+  border: solid 1px #622c79;
+  box-shadow: none;
 }
 
-.year, .year::placeholder {
-    color: var(--red);
-    
+.year,
+.year::placeholder {
+  color: var(--red);
 }
 
-.year:focus, .year:hover {
-    color: var(--red);
-    border: solid 1px var(--red); 
-    box-shadow: none;
+.year:focus,
+.year:hover {
+  color: var(--red);
+  border: solid 1px var(--red);
+  box-shadow: none;
 }

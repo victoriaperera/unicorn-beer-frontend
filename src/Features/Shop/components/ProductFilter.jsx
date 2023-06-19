@@ -4,24 +4,22 @@ import { useEffect, useState } from "react";
 import FilterBtn from "./FilterBtn";
 
 function ProductFilter() {
-  const [productStyles, setProductStyles] = useState([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    const getProductStyles = async () => {
-      try {
-        const res = await axios({ method: "GET", url: "http://localhost:3000/styles" });
-        setProductStyles(res.data);
-      } catch (error) {
-        console.log(error);
-      }
+    const getProducts = async () => {
+      const res = await axios.get(`http://localhost:3000/products`);
+
+      const aux = res.data.filter((p) => p.container.name === "Bottle");
+      setProducts(aux);
     };
-    getProductStyles();
+    getProducts();
   }, []);
 
   return (
     <div className="d-flex mt-3 ">
-      {productStyles.map((style) => (
-        <FilterBtn style={style} key={style.id}></FilterBtn>
+      {products.map((product) => (
+        <FilterBtn product={product} key={product.style.id}></FilterBtn>
       ))}
     </div>
   );
