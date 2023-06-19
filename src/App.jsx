@@ -12,7 +12,7 @@ import Login from "./Features/Auth/Login";
 import Product from "./Features/Product/Product";
 import Dashboard from "./Features/Dashboard/Dashboard";
 import SignUp from "./Features/Auth/Singup";
-
+import Err404 from "./Features/err404/err404";
 function App() {
   const { pathname: currentPage } = useLocation();
   const pagesWONavbars = ["/board"];
@@ -31,6 +31,7 @@ function App() {
         <Route path="/product" element={<Product />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/board" element={<Dashboard />} />
+        <Route path="*" element={<Err404/>} />
       </Routes>
       {!pagesWONavbars.includes(currentPage) && <Footer />}
     </>
