@@ -44,7 +44,7 @@ function Login() {
   }, [user]);
 
   return (
-    <div className="auth">
+    <div className="graphiteBackground">
         <Container className="authContainer py-5">
             <div className="d-flex flex-column justify-content-start align-items-start">
                 <div className="d-flex align-items-center my-3">
@@ -55,7 +55,7 @@ function Login() {
                     />
                     <h1 className="m-0">Login</h1>
                 </div>
-                <small>Ready to drink some M%$#F!*r Beer?</small>
+                <small>Our Damn Tasty Beer is Just a Click Away</small>
             </div>
             <Form onSubmit={handleSubmit}>
                 <Row className="mb-3 flex-column">
