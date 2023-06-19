@@ -1,19 +1,34 @@
 import { Row, Col, Button } from "react-bootstrap";
 import AddToCardBtn from "../../../Common/components/AddToCardBtn";
+import { useSetColor } from "../../../hook/useSetColor";
+import { useSetGradientColor } from "../../../hook/useSetGradientColor";
+import { useCheckImg } from "../../../hook/useCheckImg";
 
-function FeaturedProducts() {
+function FeaturedProducts({ product, afterColor }) {
+  const color = useSetColor(product);
+
+  const topDividerColor = useSetColor(afterColor);
+
+  const photos = useCheckImg(product.photos);
+
   return (
     <>
-      <section className="scottish-section">
-        <Row className="scottish-row align-items-center justify-content-center text-white py-5 product-divider">
-          <div className="divider-top-RED p-0">
+      <section className={`${product.style.name}-section`}>
+        <Row
+          className=" align-items-center justify-content-center text-white py-5 product-divider"
+          style={{ backgroundColor: color }}
+        >
+          <div className="divider-top p-0">
             <svg
               data-name="Layer 1"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 1200 120"
               preserveAspectRatio="none"
             >
-              <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" className="RED-fill"></path>
+              <path
+                d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
+                style={{ fill: topDividerColor }}
+              ></path>
             </svg>
           </div>
           <Col xs={12} sm={8} md={4} lg={3} xxl={3} className="p-0 px-4 pt-5">
@@ -22,12 +37,7 @@ function FeaturedProducts() {
               alt="Scottish logo"
               className="beer-logo mb-3"
             />
-            <p className="product-text">
-              A unique and flavorful amber or brown beer with a malty character and caramel notes.
-              Balancing sweetness and bitterness, it offers a medium to full body with a prominent
-              malt profile and subtle hints of toffee and nuts. Perfect for those seeking intense
-              and full-bodied beer experiences.
-            </p>
+            <p className="product-text">{product.style.description}</p>
             <img
               src="/src/assets/icons/containers-06.svg"
               alt="beer containers"
@@ -35,137 +45,24 @@ function FeaturedProducts() {
             />
           </Col>
           <Col xs={12} sm={8} md={4} lg={4} xxl={3} className="p-0 py-5">
-            <img
-              src="/src/assets/img/Scottish_bottle.png"
-              alt="Scottish Bottle"
-              className="home-product-img img-fluid"
-            />
+            <img src={photos[0]} alt="Scottish Bottle" className="home-product-img img-fluid" />
           </Col>
           <Col xs={12} sm={8} md={4} lg={3} xxl={3} className="py-3">
             <p>VOL.</p>
             <h4 className="fw-bolder fs-1">4.4%</h4>
             <p>AMBER</p>
-            <Button variant="outline-light mb-5" size="lg" className="rounded-pill">
-              Buy Now
-            </Button>
+            <AddToCardBtn product={product}></AddToCardBtn>
           </Col>
-          <div className="divider-bottom-VIOLET VIOLET-fill p-0">
+          <div className="divider-bottom p-0">
             <svg
               data-name="Layer 1"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 1200 120"
               preserveAspectRatio="none"
             >
-              <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z"></path>
+              <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" style={{ fill: color }}></path>
             </svg>
           </div>
-        </Row>
-      </section>
-      <section className="ipa-section">
-        <Row className="ipa-row align-items-center justify-content-center text-white py-5 ">
-          <Col xs={12} sm={8} md={4} lg={3} xxl={3} className="p-0 px-4">
-            <img src="/src/assets/icons/IPA_logo.svg" alt="IPA logo" className="beer-logo mb-3" />
-            <p className="product-text">
-              An exceptional India Pale Ale with a golden color and captivating aroma of citrus and
-              tropical fruits. It perfectly balances hop bitterness and malt sweetness, offering a
-              refreshing and invigorating flavor with notes of grapefruit, pine, and resin. A bold
-              and vibrant beer journey.
-            </p>
-            <img
-              src="/src/assets/icons/containers-06.svg"
-              alt="beer containers"
-              className="beer-containers pb-3 pb-md-0"
-            />
-          </Col>
-          <Col xs={12} sm={8} md={4} lg={4} xxl={3} className="p-0">
-            <img
-              src="/src/assets/img/IPA_bottle.png"
-              alt="IPA Bottle"
-              className="home-product-img img-fluid"
-            />
-          </Col>
-          <Col xs={12} sm={8} md={4} lg={3} xxl={3} className="py-3">
-            <p>VOL.</p>
-            <h4 className="fw-bolder fs-1">5%</h4>
-            <p>CITRUS</p>
-            <Button variant="outline-light mb-5" size="lg" className="rounded-pill">
-              Buy Now
-            </Button>
-          </Col>
-        </Row>
-      </section>
-      <section className="pilsener-section">
-        <Row className="pilsener-row align-items-center justify-content-center text-white py-5 ">
-          <Col xs={12} sm={8} md={4} lg={3} xxl={3} className="p-0 px-4">
-            <img
-              src="/src/assets/icons/PILSENER_logo.svg"
-              alt="PILSENER logo"
-              className="beer-logo mb-3"
-            />
-            <p className="product-text">
-              An exceptional India Pale Ale with a golden color and captivating aroma of citrus and
-              tropical fruits. It perfectly balances hop bitterness and malt sweetness, offering a
-              refreshing and invigorating flavor with notes of grapefruit, pine, and resin. A bold
-              and vibrant beer journey.
-            </p>
-            <img
-              src="/src/assets/icons/containers-06.svg"
-              alt="beer containers"
-              className="beer-containers pb-3 pb-md-0"
-            />
-          </Col>
-          <Col xs={12} sm={8} md={4} lg={4} xxl={3} className="p-0">
-            <img
-              src="/src/assets/img/PILSENER_bottle.png"
-              alt="IPA Bottle"
-              className="home-product-img img-fluid"
-            />
-          </Col>
-          <Col xs={12} sm={8} md={4} lg={3} xxl={3} className="py-3">
-            <p>VOL.</p>
-            <h4 className="fw-bolder fs-1">5%</h4>
-            <p>CITRUS</p>
-            <Button variant="outline-light mb-5" size="lg" className="rounded-pill">
-              Buy Now
-            </Button>
-          </Col>
-        </Row>
-      </section>
-      <section className="blonde-section">
-        <Row className="blonde-row align-items-center justify-content-center text-white py-5 ">
-          <Col xs={12} sm={8} md={4} lg={3} xxl={3} className="p-0 px-4">
-            <img
-              src="/src/assets/icons/BLONDE_logo.svg"
-              alt="BLONDE logo"
-              className="beer-logo mb-3"
-            />
-            <p className="product-text">
-              An exceptional India Pale Ale with a golden color and captivating aroma of citrus and
-              tropical fruits. It perfectly balances hop bitterness and malt sweetness, offering a
-              refreshing and invigorating flavor with notes of grapefruit, pine, and resin. A bold
-              and vibrant beer journey.
-            </p>
-            <img
-              src="/src/assets/icons/containers-06.svg"
-              alt="beer containers"
-              className="beer-containers pb-3 pb-md-0"
-            />
-          </Col>
-          <Col xs={12} sm={8} md={4} lg={4} xxl={3} className="p-0">
-            <img
-              src="/src/assets/img/BLONDE_bottle.png"
-              alt="BLONDE Bottle"
-              className="home-product-img img-fluid"
-            />
-          </Col>
-          <Col xs={12} sm={8} md={4} lg={3} xxl={3} className="py-3">
-            <p>VOL.</p>
-            <h4 className="fw-bolder fs-1">5%</h4>
-            <p>CITRUS</p>
-            <Button variant="outline-light mb-5" size="lg" className="rounded-pill">
-              Buy Now
-            </Button>
-          </Col>
         </Row>
       </section>
     </>
