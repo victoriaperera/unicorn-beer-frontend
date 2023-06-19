@@ -65,6 +65,10 @@
   width: 50px;
 }
 
+.mer-img {
+  height: 70vh;
+}
+
 .about-nav {
   position: absolute;
 }

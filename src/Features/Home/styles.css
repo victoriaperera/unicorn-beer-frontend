@@ -1,61 +1,4 @@
-.white-row {
-  height: 50px;
-}
-.scottish-row {
-  background-color: var(--red);
-}
-
-.ipa-row {
-  background-color: var(--violet);
-}
-
-.pilsener-row {
-  background-color: var(--orange);
-}
-
-.blonde-row {
-  background-color: var(--yellow);
-}
-
-.home-product-img {
-  max-height: 7000px;
-}
-
-.beer-logo {
-  width: 150px;
-}
-
-.beer-description {
-  width: 300px;
-}
-
-.product-text {
-  font-size: 0.8rem;
-}
-
-.beer-containers {
-  width: 150px;
-}
-
-.product-divider {
-  overflow: hidden;
-  position: relative;
-}
-.product-divider::before {
-  content: "";
-  font-family: "shape divider from ShapeDividers.com";
-  position: absolute;
-  bottom: -1px;
-  left: -1px;
-  right: -1px;
-  top: -1px;
-  z-index: 3;
-  pointer-events: none;
-  background-repeat: no-repeat;
-  background-size: 100% 90px;
-  background-position: 50% 0%;
-  background-image: url('data:image/svg+xml;charset=utf8, <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="%FFFFF"></path></svg>');
-}
+/* Home Header */
 
 header {
   position: relative;
@@ -121,68 +64,53 @@ header .overlay {
   left: 0;
 }
 
-.divider-bottom-VIOLET,
-.divider-bottom-WHITE {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+/* FeaturedProduct */
+
+.white-row {
+  height: 50px;
+}
+
+.home-product-img {
+  max-height: 7000px;
+}
+
+.beer-logo {
+  width: 150px;
+}
+
+.beer-description {
+  width: 300px;
+}
+
+.product-text {
+  font-size: 0.8rem;
+}
+
+.beer-containers {
+  width: 150px;
+}
+
+.product-divider {
   overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
-}
-
-.divider-bottom-VIOLET svg {
   position: relative;
-  display: block;
-  width: calc(129% + 1.3px);
-  height: 78px;
-  transform: rotateY(180deg);
 }
-
-.VIOLET-fill {
-  fill: #554ba0;
-}
-
-/** For mobile devices **/
-@media (max-width: 767px) {
-  .divider-bottom-VIOLET svg {
-    width: calc(129% + 1.3px);
-    height: 75px;
-  }
-}
-
-.divider-bottom-WHITE {
+.product-divider::before {
+  content: "";
+  font-family: "shape divider from ShapeDividers.com";
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  top: -1px;
+  z-index: 3;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: 100% 90px;
+  background-position: 50% 0%;
+  background-image: url('data:image/svg+xml;charset=utf8, <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="%FFFFF"></path></svg>');
 }
 
-.divider-bottom-WHITE svg {
-  position: relative;
-  display: block;
-  width: calc(129% + 1.3px);
-  height: 78px;
-  transform: rotateY(180deg);
-}
-
-.divider-bottom-WHITE .WHITE-fill {
-  fill: #ffffff;
-}
-
-/** For mobile devices **/
-@media (max-width: 767px) {
-  .divider-bottom-1686857352 svg {
-    width: calc(129% + 1.3px);
-    height: 75px;
-  }
-}
-
-.divider-top-RED {
+.divider-top {
   position: absolute;
   top: 0;
   left: 0;
@@ -191,7 +119,7 @@ header .overlay {
   line-height: 0;
 }
 
-.divider-top-RED svg {
+.divider-top svg {
   position: relative;
   display: block;
   width: calc(129% + 1.3px);
@@ -199,13 +127,51 @@ header .overlay {
   transform: rotateY(180deg);
 }
 
-.divider-top-RED .RED-fill {
+.divider-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.divider-bottom svg {
+  position: relative;
+  display: block;
+  width: calc(129% + 1.3px);
+  height: 78px;
+  transform: rotateY(180deg);
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .divider-bottom svg {
+    width: calc(129% + 1.3px);
+    height: 75px;
+  }
+}
+
+.divider-bottom-WHITE .WHITE-fill {
   fill: #ffffff;
 }
 
 /** For mobile devices **/
 @media (max-width: 767px) {
-  .divider-top-RED svg {
+  .divider-bottom svg {
+    width: calc(129% + 1.3px);
+    height: 75px;
+  }
+}
+
+.divider-top {
+  fill: #ffffff;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .divider-top svg {
     width: calc(129% + 1.3px);
     height: 75px;
   }
