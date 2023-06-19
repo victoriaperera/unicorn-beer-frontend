@@ -6,9 +6,12 @@
 .footerLinkContainer {
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
 }
 
 .footerLink {
+  padding: 8px 0;
   font-size: 0.8rem;
 }
 
