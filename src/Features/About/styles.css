@@ -1,34 +1,29 @@
 .about-section {
-  padding: 8%;
+  padding: 6em;
   color: var(--white);
 }
 .about-section h3 {
-  font-size: 1.3rem;
+  font-size: 2rem;
   width: 100%;
 }
 .about-section-one {
   background-color: var(--red);
-  width: 100%;
 }
 
 .about-section-two {
   background-color: var(--violet);
-  width: 100%;
 }
 
 .about-section-three {
   background-color: var(--orange);
-  width: 100%;
 }
 
 .about-section-four {
   background-color: var(--yellow);
-  width: 100%;
 }
 
 .about-section-team {
   color: var(--graphite);
-  width: 100%;
 }
 
 @keyframes moveUp {
@@ -65,7 +60,11 @@
   width: 50px;
 }
 
-.about-img {
+.mer-img {
+  width: 70%;
+}
+
+.arq-img {
   width: 100%;
 }
 
