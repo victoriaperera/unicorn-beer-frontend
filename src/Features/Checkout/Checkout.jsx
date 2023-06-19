@@ -3,14 +3,31 @@ import { Button, Container, Col, InputGroup, Form, Row, FormSelect } from "react
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Select from 'react-select';
 
 function  Checkout() {
-    const user = useSelector(store => store.user);
+    const user = useSelector(state => state.user);
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [alertText, setAlertText] = useState("");
     const [alertToggle, setAlertToggle] = useState(false);
+
+    const options = [
+        { value: 'visa', label: 'Visa', imgage:"src/assets/icons/icons8-tarjeta-visa-48.png" },
+        { value: 'mastercard', label: 'Master Card', image:"src/assets/icons/icons8-mastercard-48.png" },
+        { value: 'paypal', label: 'PayPal', image:"src/assets/icons/icons8-paypal-48.png" }
+      ];
+    const customStyles = {
+        option: (provided, state) => ({
+          ...provided,
+          color: "black",
+          background: `url(${state.data.image}) no-repeat center left`,
+          paddingLeft: '50px',
+        }),
+    };
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -21,6 +38,7 @@ function  Checkout() {
 
         }
     }
+
     return (
       <div className="graphiteBackground">
          <Container className="authContainer py-5">
@@ -40,20 +58,35 @@ function  Checkout() {
                     <Form.Group as={Col} md="5" className="my-2">
                         <Form.Label>Client</Form.Label>
                         <Form.Control
+                        type="text"
                         value={`${user.firstname} ${user.lastname}`}
                         disabled
                         readOnly  
                         />
                     </Form.Group>
                     <Form.Group as={Col} md="5" className="my-2">
-                        <Form.Label>Shipping Address</Form.Label>
-                        <InputGroup hasValidation>
+                        <Form.Label>Shipping Address</Form.Label>                    
                         <FormSelect name="shippingAddress">
-                            <option value="">{user.address}</option>
-                            <option value="">{user.shippingAddress}</option>
+                            <option value={user.address}>{user.address}</option>
+                            <option value={user.shippingAddress}>{user.shippingAddress}</option>
                         </FormSelect>
-                        </InputGroup>
                         <p className="my-2">Choose another <Link className="authLink">address</Link></p>
+                    </Form.Group>
+                    <Form.Group as={Col} md="5" className="my-2">
+                        <Form.Label>Select Payment Method</Form.Label>                    
+                        <Select
+                        options={options}
+                        styles={customStyles}/>
+                    </Form.Group>
+                    <Form.Group as={Col} md="3" className="my-2">
+                        <Form.Label>Total</Form.Label>
+                        <Form.Control
+                            type="number"
+                            value={123}
+                            name="totalAmount"
+                            disabled
+                            readOnly  
+                        />
                     </Form.Group>
                 </Row>
                 <Row className="justify-content-end">

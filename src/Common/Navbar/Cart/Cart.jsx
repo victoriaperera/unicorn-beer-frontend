@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 
 function Cart() {
-  const cart = useSelector((state) => state.cart);
+  const {cart, user} = useSelector((state) => state);
 
   return (
     <>
@@ -24,7 +24,7 @@ function Cart() {
             <p className="fw-bold">Order total: $...</p>
           </div>
 
-          <Link className="btn rounded-pill bg-black fw-medium text-white" to="/checkout">
+          <Link className="btn rounded-pill bg-black fw-medium text-white" to={ user ? "/checkout" : "/login"}>
             Checkout
           </Link>
         </div>

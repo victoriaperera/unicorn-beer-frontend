@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Alert } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { setToken } from "./userSlice";
+
 function SignUp() {
     
     const [firstname, setFirstname] = useState("");

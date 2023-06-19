@@ -43,7 +43,9 @@ p,
 label,
 input,
 small,
-button {
+button,
+select,
+option {
   font-family: "Oswald" !important;
 }
 .graphiteBackground {
