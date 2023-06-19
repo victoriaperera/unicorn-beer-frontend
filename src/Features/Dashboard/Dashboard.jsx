@@ -1,12 +1,16 @@
 import "./styles.css";
 import Sidebar from "./DashboardSidebar";
+import Board from "./Board";
 import React from "react";
 
 function Dashboard() {
   return (
     <>
       <div className="container-fluid p-0">
-        <Sidebar />
+        <div className="row">
+          <Sidebar />
+          <Board />
+        </div>
       </div>
     </>
   );
