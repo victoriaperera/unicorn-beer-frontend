@@ -1,8 +1,12 @@
 import axios from "axios";
 import { useState } from "react";
 import { Button, Col, Container, Form, Row, InputGroup } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { Alert } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { setToken } from "./userSlice";
 function SignUp() {
+    
     const [firstname, setFirstname] = useState("");
     const [lastname, setLastname] = useState("");
     const [email, setEmail] = useState("");
@@ -10,10 +14,11 @@ function SignUp() {
     const [phone, setPhone] = useState("");
     const [address, setAddress] = useState("");
     const [shippingAddress, setShippingAddress] = useState("");
-
-
     const [alertText, setAlertText] = useState("");
     const [alertToggle, setAlertToggle] = useState(false);
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
 
     const handleSubmit = async (e) =>{
@@ -33,12 +38,15 @@ function SignUp() {
                  },
                 headers: {
                   "Content-Type": "application/json",
-                },
-            })
-            console.log(response)
+                }
+            });
+            dispatch(setToken(response.data))
+            navigate("/shop")
+            
         } catch(err) {
             console.error(err.response);
-
+            setAlertToggle(true);
+            setAlertText(err.response.data.message);
         }
     }
     return (
@@ -139,6 +147,7 @@ function SignUp() {
                         <small className="d-block">
                             Already have an account? <Link to="/login">Log in</Link>
                         </small>
+                        {alertToggle && <Alert variant="danger">{alertText}</Alert>}
                     </Row>
                 </Form>
             </Container>
