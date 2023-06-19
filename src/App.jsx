@@ -11,6 +11,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Login from "./Features/Auth/Login";
 import Product from "./Features/Product/Product";
 import Dashboard from "./Features/Dashboard/Dashboard";
+import SignUp from "./Features/Auth/Singup";
 
 function App() {
   const { pathname: currentPage } = useLocation();
@@ -25,6 +26,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/product" element={<Product />} />
         <Route path="/contact" element={<Contact />} />

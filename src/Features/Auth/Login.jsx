@@ -43,10 +43,10 @@ function Login() {
   }, [user]);
 
   return (
-    <div className="container">
+    <div className="container authContainer">
       <form onSubmit={handlerSubmit} method="post" className="w-100 p-3">
         <h1>Login</h1>
-        <small>Ready to start using Twitter?</small>
+        <small>Ready to drink some M%$#F!*r Beer?</small>
         <div className="form my-3">
           <input
             onChange={(e) => {
@@ -79,7 +79,7 @@ function Login() {
         </div>
 
         <small className="d-block text-center">
-          Don't have an account? <Link to="/signup">Sign Up</Link>
+          Don't have an account? <Link to="/signup">Create an account</Link>
         </small>
       </form>
     </div>
