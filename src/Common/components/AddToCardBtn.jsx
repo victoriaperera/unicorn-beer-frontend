@@ -1,13 +1,13 @@
 import { useDispatch } from "react-redux";
 import "./styles.css";
 import { addToCart } from "../Navbar/Cart/cartSlice";
-import { useSetBtnColor } from "../../hook/useSetBtnColor";
+import { useSetColor } from "../../hook/useSetColor";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
 
 function AddToCardBtn({ product }) {
   const dispatch = useDispatch();
-  const color = useSetBtnColor(product.style.name);
+  const color = useSetColor(product);
   const [isHovering, setIsHovering] = useState(false);
 
   const handleMouseEnter = () => {

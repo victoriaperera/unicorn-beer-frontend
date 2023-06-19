@@ -1,10 +1,27 @@
 import "./styles.css";
-import { Container, Row, Col } from "react-bootstrap";
 import HomeHeader from "./HomeHeader";
-import UnicornNavbar from "../../Common/Navbar/UnicornNavbar";
+import axios from "axios";
 import FeaturedProducts from "./Components/FeaturedProducts";
+import { Container, Row, Col } from "react-bootstrap";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setProductList } from "../../redux/productSlice";
 
 function Home() {
+  const products = useSelector((state) => state.product);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const getProducts = async () => {
+      const res = await axios.get(`http://localhost:3000/products`);
+
+      console.log(res.data.length);
+      const aux = res.data.filter((p) => p.container.name === "Bottle");
+      dispatch(setProductList(aux));
+    };
+    getProducts();
+  }, []);
+
   return (
     <>
       <div>
@@ -16,7 +33,10 @@ function Home() {
                 <h2 className="m-0 beers-heading">Our Beers</h2>
               </Col>
             </Row>
-            <FeaturedProducts />
+            {products.length > 0 &&
+              products.map((product, i) => (
+                <FeaturedProducts product={product} afterColor={products[i - 1]} key={product.id} />
+              ))}
           </section>
         </Container>
       </div>

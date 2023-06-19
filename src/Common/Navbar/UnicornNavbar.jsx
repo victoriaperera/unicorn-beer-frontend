@@ -38,7 +38,7 @@ function UnicornNavbar() {
     <>
       <Navbar collapseOnSelect expand="lg" fixed="top" className={`custom-navbar ${navbarBlur}`}>
         <Container fluid className="collapsed-nav">
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" className="nav-toggler-btn" />
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" className="nav-toggler-btn" onClick={()=> setNavbarBlur("navbar-blur")} />
           <Navbar.Brand>
             <Link to={"/"}>
               <img
@@ -73,7 +73,7 @@ function UnicornNavbar() {
                 >
                   {!user && <NavDropdown.Item href="/login">Log in</NavDropdown.Item>}
 
-                  {!user && <NavDropdown.Item href="/signin">Sign in</NavDropdown.Item>}
+                  {!user && <NavDropdown.Item href="/signup">Create an Account</NavDropdown.Item>}
 
                   {user && <NavDropdown.Item href="#">My account</NavDropdown.Item>}
 

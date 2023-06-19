@@ -1,8 +1,8 @@
 import "./styles.css";
 import Product from "./Product";
+import axios from "axios";
 import { Row } from "react-bootstrap";
 import { useEffect } from "react";
-import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setProductList } from "../shopSlice";
 
@@ -20,9 +20,8 @@ function ProductList() {
   return (
     <>
       <Row>
-        {products.map((product) => (
-          <Product product={product} key={product.id}></Product>
-        ))}
+        {products.length > 0 &&
+          products.map((product) => <Product product={product} key={product.id}></Product>)}
       </Row>
     </>
   );

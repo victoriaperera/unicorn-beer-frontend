@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Alert } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { setToken } from "./userSlice";
+import { Button, Col, Container, Form, Row, InputGroup } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 
 import "./styles.css";
@@ -16,7 +17,7 @@ function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handlerSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios({
@@ -43,46 +44,64 @@ function Login() {
   }, [user]);
 
   return (
-    <div className="container">
-      <form onSubmit={handlerSubmit} method="post" className="w-100 p-3">
-        <h1>Login</h1>
-        <small>Ready to start using Twitter?</small>
-        <div className="form my-3">
-          <input
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-            type="text"
-            className="form-control mb-3"
-            name="username"
-            placeholder="Email"
-          />
-
-          <input
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-            type="password"
-            className="form-control"
-            placeholder="Password"
-            name="password"
-          />
-        </div>
-        <div className="d-grid my-3">
-          <button
-            id="logInButton"
-            className="btn btn-login rounded-pill btn-fluid text-white mb-5 "
-          >
-            Login
-          </button>
-          {alertToggle && <Alert variant="danger">{alertText}</Alert>}
-        </div>
-
-        <small className="d-block text-center">
-          Don't have an account? <Link to="/signup">Sign Up</Link>
-        </small>
-      </form>
+    <div className="auth">
+        <Container className="authContainer py-5">
+            <div className="d-flex flex-column justify-content-start align-items-start">
+                <div className="d-flex align-items-center">
+                    <img
+                    src="src/assets/icons/Unicorn-beer-icon-3.svg"
+                    alt="unicron icon"
+                    className="uniIcon"
+                    />
+                    <h1 className="m-0">Login</h1>
+                </div>
+               
+                <small>Ready to drink some M%$#F!*r Beer?</small>
+            </div>
+            <Form onSubmit={handleSubmit}>
+                <Row className="mb-3">
+                    <Form.Group as={Col} md="4" className="my-2">
+                        <Form.Label>Email</Form.Label>
+                        <InputGroup hasValidation>
+                        <Form.Control 
+                        type="email" 
+                        placeholder="Email" 
+                        required
+                        onChange={(e) => setEmail(e.target.value)} 
+                        />
+                        <Form.Control.Feedback type="invalid">
+                            Please put a contact e-mail.
+                        </Form.Control.Feedback>
+                        </InputGroup>
+                    </Form.Group>
+                    <Form.Group as={Col} md="4" className="my-2">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control 
+                        type="password" 
+                        placeholder="Password" 
+                        required
+                        onChange={(e) => setPassword(e.target.value)} 
+                        />
+                    </Form.Group>
+                </Row>
+                <Row className="justify-content-end">
+                    <Button
+                    type="submit"
+                    variant="outline-light"
+                    size="lg"
+                    className="rounded-pill w-25 me-3 mt-5"
+                    >
+                    Log in
+                    </Button>
+                    <small className="d-block">
+                        Don't you have an account? <Link to="/signup">Create an Account</Link>
+                    </small>
+                    {alertToggle && <Alert variant="danger">{alertText}</Alert>}
+                </Row>
+            </Form>
+        </Container>
     </div>
+   
   );
 }
 
