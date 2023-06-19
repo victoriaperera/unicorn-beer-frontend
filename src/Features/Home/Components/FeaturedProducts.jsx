@@ -49,7 +49,7 @@ function FeaturedProducts({ product, afterColor }) {
           </Col>
           <Col xs={12} sm={8} md={4} lg={3} xxl={3} className="py-3">
             <p>VOL.</p>
-            <h4 className="fw-bolder fs-1">4.4%</h4>
+            <h4 className="fw-bolder fs-1">{product.style.abv}%</h4>
             <p>AMBER</p>
             <AddToCardBtn product={product}></AddToCardBtn>
           </Col>
