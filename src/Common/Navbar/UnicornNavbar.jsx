@@ -38,7 +38,7 @@ function UnicornNavbar() {
     <>
       <Navbar collapseOnSelect expand="lg" fixed="top" className={`custom-navbar ${navbarBlur}`}>
         <Container fluid className="collapsed-nav">
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" className="nav-toggler-btn" />
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" className="nav-toggler-btn" onClick={()=> setNavbarBlur("navbar-blur")} />
           <Navbar.Brand>
             <Link to={"/"}>
               <img

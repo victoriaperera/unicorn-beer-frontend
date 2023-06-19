@@ -1,6 +1,6 @@
 import "./styles.css";
-import Sidebar from "./DashboardSidebar";
-import Board from "./Board";
+import Sidebar from "./components/DashboardSidebar";
+import Board from "./components/Board";
 import React from "react";
 
 function Dashboard() {
