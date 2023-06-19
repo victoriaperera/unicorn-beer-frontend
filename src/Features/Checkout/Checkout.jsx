@@ -15,7 +15,7 @@ function  Checkout() {
     const [alertToggle, setAlertToggle] = useState(false);
 
     const options = [
-        { value: 'visa', label: 'Visa', imgage:"src/assets/icons/icons8-tarjeta-visa-48.png" },
+        { value: 'visa', label: 'Visa', image:"src/assets/icons/icons8-tarjeta-visa-48.png" },
         { value: 'mastercard', label: 'Master Card', image:"src/assets/icons/icons8-mastercard-48.png" },
         { value: 'paypal', label: 'PayPal', image:"src/assets/icons/icons8-paypal-48.png" }
       ];
@@ -32,7 +32,8 @@ function  Checkout() {
         e.preventDefault();
         try {
             const response = await axios({
-                method: "POST"
+                method: "POST",
+                url: "http://localhost:3000/orders",
             })
         } catch(err) {
 
