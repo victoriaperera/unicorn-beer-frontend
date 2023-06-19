@@ -181,3 +181,48 @@ header .overlay {
   color: var(--white);
   text-shadow: 1px 1px 5px var(--graphite);
 }
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInBack {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes productAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-col-left {
+  animation: slideIn 0.5s ease-in-out forwards;
+}
+
+.animate-col-right {
+  animation: slideInBack 0.5s ease-in-out backwards;
+}
+
+.animate-col-center {
+  animation: productAppear 0.3s ease-in-out forwards;
+}

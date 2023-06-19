@@ -31,7 +31,7 @@ function FeaturedProducts({ product, afterColor }) {
               ></path>
             </svg>
           </div>
-          <Col xs={12} sm={8} md={4} lg={3} xxl={3} className="p-0 px-4 pt-5">
+          <Col xs={12} sm={8} md={4} lg={3} xxl={3} className="p-0 px-4 pt-5 animate-col-left">
             <img
               src="/src/assets/icons/Scottish_logo.svg"
               alt="Scottish logo"
@@ -44,10 +44,10 @@ function FeaturedProducts({ product, afterColor }) {
               className="beer-containers pb-3 pb-md-0"
             />
           </Col>
-          <Col xs={12} sm={8} md={4} lg={4} xxl={3} className="p-0 py-5">
+          <Col xs={12} sm={8} md={4} lg={4} xxl={3} className="p-0 py-5 animate-col-center">
             <img src={photos[0]} alt="Scottish Bottle" className="home-product-img img-fluid" />
           </Col>
-          <Col xs={12} sm={8} md={4} lg={3} xxl={3} className="py-3">
+          <Col xs={12} sm={8} md={4} lg={3} xxl={3} className="py-3 animate-col-right">
             <p>VOL.</p>
             <h4 className="fw-bolder fs-1">{product.style.abv}%</h4>
             <p>AMBER</p>
