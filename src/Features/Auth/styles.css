@@ -16,17 +16,19 @@
 .auth {
   background-color: var(--lightGraphite);
   color: var(--white);
-  height: 80vh;
-  display: flex;
-  align-items: center;
+ 
 }
-
-@media (max-width:768px){
-  .auth {
-   height: 130vh;
-  }
+.authContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .uniIcon {
     width: 4vh;
     margin: 0 10px 0 0 
+}
+.authLink {
+  color: var(--orange);
+  text-decoration: none;
+  border: var(--white) 1px;
 }

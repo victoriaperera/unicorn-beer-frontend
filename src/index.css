@@ -24,6 +24,12 @@
   --graphite: #242424;
   --lightGraphite: #525252;
 }
+html, body{
+  height: 100%;
+}
+.container {
+  height: 87vh;
+}
 h1,
 h2,
 h3,
