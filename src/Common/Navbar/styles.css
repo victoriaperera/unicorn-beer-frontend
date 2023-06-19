@@ -27,3 +27,7 @@
 .navbar-toggler-icon {
   background-image: url("/src/assets/icons/Unicorn-beer-icon-3.svg");
 }
+
+.navbar-nav .dropdown-menu {
+ width: 25%;
+}

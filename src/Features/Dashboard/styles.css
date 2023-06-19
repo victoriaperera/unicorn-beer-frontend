@@ -1,34 +1,21 @@
-.picture {
-  font-size: 9rem;
-  color: var(--yellow);
-}
 .ul-board {
   padding-top: 70px;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   list-style: none;
 }
 .col-board {
-  height: 100vh;
   background-color: var(--graphite);
-  padding-top: 100px;
+  padding-top: 70px;
   color: var(--white);
 }
-.dashboard-relative {
-  position: relative;
-}
+
 .logout {
   padding-bottom: 70px;
-  font-size: 1.5rem;
+  padding-top: 70px;
+  font-size: 1.4rem;
 }
 .gatito {
   height: 130px;
   border-radius: 50%;
   margin-bottom: 40px;
 }
-/* .logo {
-  height: 70vh;
-}
-.fondo {
-  background-color: var(--graphite);
-  background-size: cover;
-} */

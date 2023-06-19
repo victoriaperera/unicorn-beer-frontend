@@ -30,7 +30,7 @@ function Home() {
           <section id="our-beer-section">
             <Row className="white-row align-items-center justify-content-center">
               <Col>
-                <h2 className="m-0">Our Beers</h2>
+                <h2 className="m-0 beers-heading">Our Beers</h2>
               </Col>
             </Row>
             {products.length > 0 &&

@@ -69,11 +69,11 @@ function UnicornNavbar() {
                 <NavDropdown
                   title={<i className="bi bi-person-fill fs-5 text-white"></i>}
                   id="basic-nav-dropdown"
-                  className="mx-2 "
+                  className="mx-2"
                 >
                   {!user && <NavDropdown.Item href="/login">Log in</NavDropdown.Item>}
 
-                  {!user && <NavDropdown.Item href="/signin">Sign in</NavDropdown.Item>}
+                  {!user && <NavDropdown.Item href="/signup">Create an Account</NavDropdown.Item>}
 
                   {user && <NavDropdown.Item href="#">My account</NavDropdown.Item>}
 

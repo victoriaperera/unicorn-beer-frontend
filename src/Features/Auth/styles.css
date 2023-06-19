@@ -12,3 +12,21 @@
 .btn-logout:hover {
   background-color: var(--lightred);
 }
+
+.auth {
+  background-color: var(--lightGraphite);
+  color: var(--white);
+  height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width:768px){
+  .auth {
+   height: 130vh;
+  }
+}
+.uniIcon {
+    width: 4vh;
+    margin: 0 10px 0 0 
+}
