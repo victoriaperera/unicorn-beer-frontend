@@ -1,6 +1,6 @@
 .ul-board {
   padding-top: 50px;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   list-style: none;
 }
 .col-board {
@@ -13,16 +13,26 @@
 .logout {
   padding-bottom: 20px;
   padding-top: 70px;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 .gatito {
-  height: 100px;
+  height: 150px;
   border-radius: 50%;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 .grafica {
-  height: 400px;
+  width: 300px;
 }
 .background {
-  background-color: #9c9c9c;
+  background-color: #282828;
+}
+.background-graphite {
+  background-color: var(--graphite);
+}
+.scottish {
+  height: 350px;
+}
+.shadow {
+  border-bottom: solid white !important;
+  border-right: solid white !important;
 }
