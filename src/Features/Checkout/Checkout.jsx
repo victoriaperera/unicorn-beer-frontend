@@ -1,9 +1,75 @@
-import "./styles.css"
+import "./styles.css";
+import { Button, Container, Col, InputGroup, Form, Row, FormSelect } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
+function  Checkout() {
+    const user = useSelector(store => store.user);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const [alertText, setAlertText] = useState("");
+    const [alertToggle, setAlertToggle] = useState(false);
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios({
+                method: "POST"
+            })
+        } catch(err) {
 
-function  Checkout()   {
+        }
+    }
     return (
-      <div>Checkout</div>
+      <div className="graphiteBackground">
+         <Container className="authContainer py-5">
+            <div className="d-flex flex-column justify-content-start align-items-start">
+                <div className="d-flex align-items-center my-3">
+                    <img
+                    src="src/assets/icons/Unicorn-beer-icon-3.svg"
+                    alt="unicron icon"
+                    className="uniIcon"
+                    />
+                    <h1 className="m-0">Check Out</h1>
+                </div>
+                <small>Our Damn Tasty Beer is Just a Click Away</small>
+            </div>
+            <Form method="POST" onSubmit={handleSubmit}>
+                <Row className="mb-3">
+                    <Form.Group as={Col} md="5" className="my-2">
+                        <Form.Label>Client</Form.Label>
+                        <Form.Control
+                        value={`${user.firstname} ${user.lastname}`}
+                        disabled
+                        readOnly  
+                        />
+                    </Form.Group>
+                    <Form.Group as={Col} md="5" className="my-2">
+                        <Form.Label>Shipping Address</Form.Label>
+                        <InputGroup hasValidation>
+                        <FormSelect name="shippingAddress">
+                            <option value="">{user.address}</option>
+                            <option value="">{user.shippingAddress}</option>
+                        </FormSelect>
+                        </InputGroup>
+                        <p className="my-2">Choose another <Link className="authLink">address</Link></p>
+                    </Form.Group>
+                </Row>
+                <Row className="justify-content-end">
+                    <Button
+                    type="submit"
+                    variant="outline-light"
+                    size="lg"
+                    className="rounded-pill w-25 me-3 mt-5"
+                    >
+                    Confirm Buy
+                    </Button>
+                    {alertToggle && <Alert variant="danger">{alertText}</Alert>}
+                </Row>
+            </Form>
+        </Container>
+      </div>
     )
 
 }

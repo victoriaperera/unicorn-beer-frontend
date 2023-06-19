@@ -24,7 +24,7 @@ function Cart() {
             <p className="fw-bold">Order total: $...</p>
           </div>
 
-          <Link className="btn rounded-pill bg-black fw-medium text-white" to="">
+          <Link className="btn rounded-pill bg-black fw-medium text-white" to="/checkout">
             Checkout
           </Link>
         </div>
