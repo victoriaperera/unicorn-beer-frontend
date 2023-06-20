@@ -3,10 +3,10 @@ import CartProduct from "./components/CartProduct";
 import { Link } from "react-router-dom";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { useDispatch, useSelector } from "react-redux";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { setTotal } from "./cartSlice";
 
-function Cart() {
+function Cart({ show, handleClose }) {
   const cart = useSelector((state) => state.cart.products);
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
@@ -42,6 +42,7 @@ function Cart() {
           <Link
             className="btn rounded-pill bg-black fw-medium text-white"
             to={user ? "/checkout" : "/login"}
+            onClick={handleClose}
           >
             Checkout
           </Link>
