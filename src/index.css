@@ -45,7 +45,10 @@ input,
 small,
 button,
 select,
-option {
+option,
+li,
+ul,
+ol {
   font-family: "Oswald" !important;
 }
 .graphiteBackground {
