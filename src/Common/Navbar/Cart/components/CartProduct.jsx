@@ -26,7 +26,11 @@ function CartProduct({ product }) {
           <div className="d-flex">
             <i
               className="bi bi-dash-circle"
-              onClick={() => dispatch(decrementQuantity(product.id))}
+              onClick={() =>
+                product.quantity < 1
+                  ? dispatch(removeItem(product.id))
+                  : dispatch(decrementQuantity(product.id))
+              }
             ></i>
             <span className="px-2 fw-bold">{product.quantity}</span>
             <i

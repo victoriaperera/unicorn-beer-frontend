@@ -13,20 +13,20 @@ const cartSlice = createSlice({
     },
 
     addToCart: (state, action) => {
-      const itemInCart = state.products.find((item) => item.id === action.payload.id);
+      const itemInCart = state.products.find((item) => item._id === action.payload.id);
       itemInCart ? itemInCart.quantity++ : state.products.push({ ...action.payload, quantity: 1 });
     },
     incrementQuantity: (state, action) => {
-      const item = state.products.find((item) => item.id === action.payload);
+      const item = state.products.find((item) => item._id === action.payload);
       item.quantity++;
     },
     decrementQuantity: (state, action) => {
-      const item = state.products.find((item) => item.id === action.payload);
+      const item = state.products.find((item) => item._id === action.payload);
       item.quantity === 1 ? (item.quantity = 1) : item.quantity--;
     },
     removeItem: (state, action) => {
-      const removeItem = state.products.filter((item) => item.id !== action.payload);
-      state.cart = removeItem;
+      const removeItem = state.products.filter((item) => item._id !== action.payload);
+      state.products = removeItem;
     },
     clearCart: (state) => {
       state.products = [];

@@ -20,9 +20,9 @@ function UnicornNavbar() {
   const handleShow = () => setShow(true);
 
   const getTotalQuantity = () => {
-    var total = 0;
+    let total = 0;
     if (Array.isArray(cart)) {
-      cart.forEach((item) => {
+      cart.map((item) => {
         total += item.quantity;
       });
       return total;

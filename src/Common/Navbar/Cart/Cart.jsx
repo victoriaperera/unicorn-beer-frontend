@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import React, { useEffect, useState } from "react";
 import { setTotal } from "./cartSlice";
 
-function Cart({ show, handleClose }) {
+function Cart({ handleClose }) {
   const cart = useSelector((state) => state.cart.products);
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ function Cart({ show, handleClose }) {
   const calculateTotal = () => {
     let total = 0;
     if (Array.isArray(cart)) {
-      cart.forEach((product) => {
+      cart.map((product) => {
         total += product.price * product.quantity;
       });
       dispatch(setTotal({ totalAmount: total.toFixed(2) }));
