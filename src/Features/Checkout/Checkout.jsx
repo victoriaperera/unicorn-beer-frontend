@@ -86,7 +86,9 @@ function  Checkout() {
                             />
                         <p className="my-2">Change <Link to="#" className="authLink">address</Link></p>
                     </Form.Group>
+                    <p>Cart</p>
                     <ListGroup as="ul" numbered className="px-2">
+                        
                         {cart 
                             ? cart.map((item) => 
                             <ListGroup.Item key={item.id}
