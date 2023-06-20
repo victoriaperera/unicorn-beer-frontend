@@ -101,7 +101,7 @@ function UnicornNavbar() {
                   </i>
 
                   <Offcanvas show={show} onHide={handleClose} placement="end">
-                    <Cart />
+                    <Cart show={show} handleClose={handleClose} />
                   </Offcanvas>
                 </div>
                 <div className="mx-2 mt-1">

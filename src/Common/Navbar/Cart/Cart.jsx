@@ -3,10 +3,10 @@ import CartProduct from "./components/CartProduct";
 import { Link } from "react-router-dom";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { useDispatch, useSelector } from "react-redux";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { setTotal } from "./cartSlice";
 
-function Cart() {
+function Cart({ show, handleClose }) {
   const cart = useSelector((state) => state.cart.products);
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
@@ -33,15 +33,28 @@ function Cart() {
           {cart.length > 0 &&
             cart.map((product) => <CartProduct product={product} key={product.id} />)}
         </div>
-
-        <div className="cart-footer border-top">
-          <div>
-            <p className="fw-bold">Order total: ${calculateTotal()}</p>
+        <div className="border-top cart-footer">
+          <div className="d-flex justify-content-between px-2">
+            <div>
+              <p className="fw-bold">Order total</p>
+            </div>
+            <div>
+              <p className="fw-bold">${calculateTotal()}</p>
+            </div>
           </div>
 
+          <div className="d-flex justify-content-between px-2">
+            <div>
+              <p className="fw-bold">Shipping</p>
+            </div>
+            <div>
+              <p className="fw-bold">Free</p>
+            </div>
+          </div>
           <Link
-            className="btn rounded-pill bg-black fw-medium text-white"
+            className="btn rounded-pill bg-black fw-medium text-white w-100"
             to={user ? "/checkout" : "/login"}
+            onClick={handleClose}
           >
             Checkout
           </Link>
