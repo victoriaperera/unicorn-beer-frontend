@@ -44,17 +44,17 @@ function Contact() {
           </div>
           <Form method="POST" onSubmit={handleSubmit}>
             <Row className="mb-3">
-              <Form.Group as={Col} md="4" className="my-2">
+              <Form.Group as={Col} md="6" className="my-2">
                 <Form.Label>First name</Form.Label>
                 <Form.Control required type="text" placeholder="First name"
                 onChange={(e)=> setFirstname(e.target.value)}/>
               </Form.Group>
-              <Form.Group as={Col} md="4" className="my-2">
+              <Form.Group as={Col} md="6" className="my-2">
                 <Form.Label>Last name</Form.Label>
                 <Form.Control required type="text" placeholder="Last name" 
                 onChange={(e)=> setLastname(e.target.value)}/>
               </Form.Group>
-              <Form.Group as={Col} md="4" className="my-2">
+              <Form.Group as={Col} md="6" className="my-2">
                 <Form.Label>Email</Form.Label>
                 <InputGroup hasValidation>
                   <Form.Control type="email" placeholder="Email" required 
@@ -64,7 +64,7 @@ function Contact() {
                   </Form.Control.Feedback>
                 </InputGroup>
               </Form.Group>
-              <Form.Group as={Col} md="4" className="my-2">
+              <Form.Group as={Col} md="6" className="my-2">
                 <Form.Label>Phone</Form.Label>
                   <Form.Control type="number" placeholder="Phone"
                   onChange={(e)=> setPhone(e.target.value)}/>

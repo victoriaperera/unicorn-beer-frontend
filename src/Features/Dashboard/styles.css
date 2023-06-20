@@ -4,7 +4,6 @@
   list-style: none;
 }
 .col-board {
-  height: 100vh;
   background-color: var(--graphite);
   padding-top: 10px;
   color: var(--white);

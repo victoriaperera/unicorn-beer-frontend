@@ -2,10 +2,7 @@ import "./styles.css";
 import AddToCardBtn from "../../Common/components/AddToCardBtn";
 import { useState, useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
-
-import axios from "axios";
-
-import React from "react";
+import { useParams } from "react-router";
 
 function Product() {
   const [activeIndex, setActiveIndex] = useState(0);
