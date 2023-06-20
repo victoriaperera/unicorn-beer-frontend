@@ -11,11 +11,13 @@ function  Checkout() {
     const cart = useSelector((state) => state.cart);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    console.log(cart)
+   
     const [paymentMethod, setPaymentMet] = useState();
   
     const [alertText, setAlertText] = useState("");
     const [alertToggle, setAlertToggle] = useState(false);
+
+   // const totalAmount = cart.reduce((currentTotal, item) => currentTotal + item.quantity * item.price, 0);
 
     const options = [
         { value: 'visa', label: 'Visa', image:"src/assets/icons/icons8-tarjeta-visa-48.png" },
@@ -41,6 +43,7 @@ function  Checkout() {
                 data: {
                     products: cart,
                     paymentMethod,
+                    totalAmount: cart.totalAmount
                 }
             })
         } catch(err) {
@@ -75,15 +78,17 @@ function  Checkout() {
                     </Form.Group>
                     <Form.Group as={Col} md="6" className="my-2">
                         <Form.Label>Shipping Address</Form.Label>                    
-                        <FormSelect name="shippingAddress">
-                            <option value={user.address}>{user.address}</option>
-                            <option value={user.shippingAddress}>{user.shippingAddress}</option>
-                        </FormSelect>
+                            <Form.Control
+                            type="text"
+                            value={`${user.shippingAddress}`}
+                            disabled
+                            readOnly  
+                            />
                         <p className="my-2">Change <Link to="#" className="authLink">address</Link></p>
                     </Form.Group>
                     <ListGroup as="ul" numbered className="px-2">
                         {cart 
-                            ? cart.map( (item) => 
+                            ? cart.map((item) => 
                             <ListGroup.Item key={item.id}
                                 as="li"
                                 className="d-flex justify-content-between align-items-start"
@@ -124,8 +129,8 @@ function  Checkout() {
                     <Form.Group as={Col} md="6" className="my-2">
                         <Form.Label>Total</Form.Label>
                         <Form.Control
-                            type="number"
-                            value={123}
+                            type="text"
+                            value={"$"+ cart.totalAmount}
                             name="totalAmount"
                             disabled
                             readOnly  
