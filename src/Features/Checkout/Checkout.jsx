@@ -13,7 +13,7 @@ function  Checkout() {
     const cart = useSelector((state) => state.cart);
     const dispatch = useDispatch();
     const [paymentMethod, setPaymentMet] = useState();
-  
+
     const [alertText, setAlertText] = useState("");
     const [alertToggle, setAlertToggle] = useState(null);
     
@@ -99,7 +99,7 @@ function  Checkout() {
                     <p>Cart</p>
                     <ListGroup as="ul" className="px-2">
                         
-                        {Array.isArray(cart.products) 
+                        {cart.products.length > 0
                             ? cart.products.map((item) => 
                             <ListGroup.Item key={item.id}
                                 as="li"
@@ -120,7 +120,7 @@ function  Checkout() {
                                 className="d-flex justify-content-between align-items-start"
                             >
                                 <div className="ms-2 me-auto">
-                                    <p className="m-0 fw-bold">The cart it's emtpy :(</p> 
+                                    <p className="m-0 fw-bold">Your cart it's emtpy :(</p> 
                                 </div>
                                 <Badge bg="primary" pill>
                                 0

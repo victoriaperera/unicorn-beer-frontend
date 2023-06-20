@@ -40,7 +40,7 @@ function FeaturedProducts({ product, afterColor }) {
             />
           </Col>
           <Col xs={12} sm={8} md={4} lg={4} xxl={3} className="p-0 py-5 animate-col-center">
-            <img src={main} alt="Scottish Bottle" className="home-product-img img-fluid" />
+            <img src={main} alt={`${product.style.name} ${product.container.name}`} className="home-product-img img-fluid" />
           </Col>
           <Col xs={12} sm={8} md={4} lg={3} xxl={3} className="py-3 animate-col-right">
             <p>VOL.</p>
