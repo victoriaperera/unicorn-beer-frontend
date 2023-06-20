@@ -34,7 +34,7 @@ function CartProduct({ product }) {
               onClick={() => dispatch(incrementQuantity(product.id))}
             ></i>
           </div>
-          <span className="ms-2 fw-bold">${product.price * product.quantity}</span>
+          <span className="ms-2 fw-bold">${(product.price * product.quantity).toFixed(2)}</span>
         </div>
       </div>
     </div>
