@@ -18,7 +18,7 @@ function Cart() {
         total += product.price * product.quantity;
       });
       dispatch(setTotal({ totalAmount: total }));
-      return total;
+      return total.toFixed(2);
     }
     return total;
   };
