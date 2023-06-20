@@ -8,18 +8,6 @@ import axios from "axios";
 import React from "react";
 
 function Product() {
-  // const [products, setProducts] = useState([]);
-
-  // useEffect(() => {
-  //   const getProducts = async () => {
-  //     const res = await axios.get("http://localhost:3000/products");
-  //     setProducts(res.data);
-  //   };
-  //   getProducts();
-  // }, []);
-
-  // const selectedProduct = products.length > 0 ? products[0] : {};
-  // console.log(selectedProduct);
   const [activeIndex, setActiveIndex] = useState(0);
   const handleSelect = (selectedIndex, e) => {
     setActiveIndex(selectedIndex);

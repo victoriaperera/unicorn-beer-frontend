@@ -14,9 +14,21 @@ function UnicornNavbar() {
   const [show, setShow] = useState(false);
   const [navbarBlur, setNavbarBlur] = useState("");
   const user = useSelector((state) => state.user);
+  const cart = useSelector((state) => state.cart.products);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const getTotalQuantity = () => {
+    var total = 0;
+    if (Array.isArray(cart)) {
+      cart.forEach((item) => {
+        total += item.quantity;
+      });
+      return total;
+    }
+    return total;
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,7 +50,11 @@ function UnicornNavbar() {
     <>
       <Navbar collapseOnSelect expand="lg" fixed="top" className={`custom-navbar ${navbarBlur}`}>
         <Container fluid className="collapsed-nav">
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" className="nav-toggler-btn" onClick={()=> setNavbarBlur("navbar-blur")} />
+          <Navbar.Toggle
+            aria-controls="responsive-navbar-nav"
+            className="nav-toggler-btn"
+            onClick={() => setNavbarBlur("navbar-blur")}
+          />
           <Navbar.Brand>
             <Link to={"/"}>
               <img
@@ -80,7 +96,9 @@ function UnicornNavbar() {
                   {user && <Logout></Logout>}
                 </NavDropdown>
                 <div className="mx-2 mt-2">
-                  <i className="bi bi-cart-fill fs-5 text-white" onClick={handleShow}></i>
+                  <i className="bi bi-cart-fill fs-5 text-white" onClick={handleShow}>
+                    <sup>({getTotalQuantity() || 0})</sup>
+                  </i>
 
                   <Offcanvas show={show} onHide={handleClose} placement="end">
                     <Cart />
