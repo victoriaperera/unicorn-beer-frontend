@@ -11,7 +11,6 @@ function CartProduct({ product }) {
   const main = photos.find(
     (photo) => photo.includes("Main") && photo.includes(product.container.name),
   );
-  console.log(product.style);
 
   return (
     <div className="cart-product my-3">
