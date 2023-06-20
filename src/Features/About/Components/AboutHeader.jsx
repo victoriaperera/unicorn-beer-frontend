@@ -17,11 +17,13 @@ function AboutHeader() {
               programming courses. The Bootcamp is an immersive and intensive full-time course that
               lasts for three months and requires a workload of 600 hours. Its goal is to prepare
               its students to be Junior Full Stack Developers.
-              <hr className="border-0" />
+            </p>
+            <p>
               This final project aims to showcase the application of the diverse technologies
               learned throughout the Bootcamp. Unicorn Beer was developed over a period of three
               weeks by a team of five students, totaling approximately 700 hours of work.
-              <hr className="border-0" />
+            </p>
+            <p>
               Unicorn beer is a fully functional app designed to be user-friendly and easy to
               navigate.
             </p>
