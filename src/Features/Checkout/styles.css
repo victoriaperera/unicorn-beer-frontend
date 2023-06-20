@@ -1,4 +1,8 @@
-
+.checkOutContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
 #paymentMethod option[value="visa"] {
     background-image: url("src/assets/icons/icons8-tarjeta-visa-48.png");
     background-repeat: no-repeat;
