@@ -28,7 +28,7 @@ html, body{
   height: 100%;
 }
 .container {
-  height: 87vh;
+  min-height: 87vh;
 }
 h1,
 h2,

@@ -56,7 +56,7 @@ function  Checkout() {
             </div>
             <Form method="POST" onSubmit={handleSubmit}>
                 <Row className="mb-3">
-                    <Form.Group as={Col} md="5" className="my-2">
+                    <Form.Group as={Col} md="6" className="my-2">
                         <Form.Label>Client</Form.Label>
                         <Form.Control
                         type="text"
@@ -65,37 +65,54 @@ function  Checkout() {
                         readOnly  
                         />
                     </Form.Group>
-                    <Form.Group as={Col} md="5" className="my-2">
+                    <Form.Group as={Col} md="6" className="my-2">
                         <Form.Label>Shipping Address</Form.Label>                    
                         <FormSelect name="shippingAddress">
                             <option value={user.address}>{user.address}</option>
                             <option value={user.shippingAddress}>{user.shippingAddress}</option>
                         </FormSelect>
-                        <p className="my-2">Choose another <Link className="authLink">address</Link></p>
+                        <p className="my-2">Change <Link className="authLink">address</Link></p>
                     </Form.Group>
-                    <ListGroup as="ul" numbered>
-                        {cart.map( (item) => 
+                    <ListGroup as="ul" numbered className="px-2">
+                        {cart 
+                            ? cart.map( (item) => 
                             <ListGroup.Item
                                 as="li"
                                 className="d-flex justify-content-between align-items-start"
                             >
                                 <div className="ms-2 me-auto">
                                     <p className="m-0 fw-bold">{item.style.name}</p>
-                                    <p className="m-0">{item.container.name}</p>
+                                    <p className="m-0">{item.container.name}  ${item.price}</p>
                                 </div>
                                 <Badge bg="primary" pill>
-                                14
+                                item.quantity
                                 </Badge>
                             </ListGroup.Item>
-                        )}      
+                        ) 
+                            :
+                            <ListGroup.Item
+                                as="li"
+                                className="d-flex justify-content-between align-items-start"
+                            >
+                                <div className="ms-2 me-auto">
+                                    <p className="m-0 fw-bold">The cart it's emtpy</p>
+                                    
+                                </div>
+                                <Badge bg="primary" pill>
+                                0
+                                </Badge>
+                            </ListGroup.Item>
+                        
+                        }
+                            
                     </ListGroup>
-                    <Form.Group as={Col} md="5" className="my-2">
+                    <Form.Group as={Col} md="6" className="my-2">
                         <Form.Label>Select Payment Method</Form.Label>                    
                         <Select
                         options={options}
                         styles={customStyles}/>
                     </Form.Group>
-                    <Form.Group as={Col} md="5" className="my-2">
+                    <Form.Group as={Col} md="6" className="my-2">
                         <Form.Label>Total</Form.Label>
                         <Form.Control
                             type="number"
