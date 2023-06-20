@@ -31,7 +31,7 @@ function FeaturedProducts({ product, afterColor }) {
             </svg>
           </div>
           <Col xs={12} sm={8} md={4} lg={3} xxl={3} className="p-0 px-4 pt-5 animate-col-left">
-            <img src={logo} alt="Scottish logo" className="beer-logo mb-3" />
+            <img src={logo} alt={`${product.style.name} logo`} className="beer-logo mb-3" />
             <p className="product-text">{product.style.description}</p>
             <img
               src="/src/assets/icons/containers-06.svg"
