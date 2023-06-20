@@ -9,7 +9,6 @@ function FeaturedProducts({ product, afterColor }) {
   const photos = useCheckImg(product.style.photos);
   const logo = photos.filter((photo) => photo.includes("logo"));
   const main = photos.filter((photo) => photo.includes("Main") && photo.includes("bottle"));
-  console.log(main);
 
   return (
     <>

@@ -5,9 +5,8 @@ import Carousel from "react-bootstrap/Carousel";
 import { useParams } from "react-router";
 
 function Product() {
-  const params = useParams();
   const [activeIndex, setActiveIndex] = useState(0);
-  const handleSelect = (selectedIndex, e) => {
+  const handleSelect = (selectedIndex) => {
     setActiveIndex(selectedIndex);
   };
 

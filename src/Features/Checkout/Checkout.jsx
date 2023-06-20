@@ -11,7 +11,7 @@ function  Checkout() {
     const cart = useSelector((state) => state.cart);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-   
+   console.log(cart)
     const [paymentMethod, setPaymentMet] = useState();
   
     const [alertText, setAlertText] = useState("");
@@ -86,9 +86,11 @@ function  Checkout() {
                             />
                         <p className="my-2">Change <Link to="#" className="authLink">address</Link></p>
                     </Form.Group>
-                    <ListGroup as="ul" numbered className="px-2">
-                        {cart 
-                            ? cart.map((item) => 
+                    <p>Cart</p>
+                    <ListGroup as="ul" className="px-2">
+                        
+                        {Array.isArray(cart.products) 
+                            ? cart.products.map((item) => 
                             <ListGroup.Item key={item.id}
                                 as="li"
                                 className="d-flex justify-content-between align-items-start"
@@ -108,7 +110,7 @@ function  Checkout() {
                                 className="d-flex justify-content-between align-items-start"
                             >
                                 <div className="ms-2 me-auto">
-                                    <p className="m-0 fw-bold">The cart it's emtpy</p> 
+                                    <p className="m-0 fw-bold">The cart it's emtpy :(</p> 
                                 </div>
                                 <Badge bg="primary" pill>
                                 0
