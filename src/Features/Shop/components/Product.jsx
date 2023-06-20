@@ -11,7 +11,6 @@ function Product({ product }) {
   const main = photos.filter(
     (photo) => photo.includes("Main") && photo.includes(product.container.name),
   );
-  console.log(product.container);
 
   return (
     <>
