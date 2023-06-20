@@ -2,24 +2,10 @@ import "./styles.css";
 import AddToCardBtn from "../../Common/components/AddToCardBtn";
 import { useState, useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
-
-import axios from "axios";
-
-import React from "react";
+import { useParams } from "react-router";
 
 function Product() {
-  // const [products, setProducts] = useState([]);
-
-  // useEffect(() => {
-  //   const getProducts = async () => {
-  //     const res = await axios.get("http://localhost:3000/products");
-  //     setProducts(res.data);
-  //   };
-  //   getProducts();
-  // }, []);
-
-  // const selectedProduct = products.length > 0 ? products[0] : {};
-  // console.log(selectedProduct);
+  const params = useParams();
   const [activeIndex, setActiveIndex] = useState(0);
   const handleSelect = (selectedIndex, e) => {
     setActiveIndex(selectedIndex);

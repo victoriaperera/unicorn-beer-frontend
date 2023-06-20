@@ -30,10 +30,10 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/checkout" element={<Checkout />} />
-        <Route path="/product" element={<Product />} />
+        <Route path="/product/:id" element={<Product />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/board" element={<Dashboard />} />
-        <Route path="*" element={<Err404/>} />
+        <Route path="*" element={<Err404 />} />
       </Routes>
       {!pagesWONavbars.includes(currentPage) && <Footer />}
     </>

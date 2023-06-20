@@ -4,12 +4,13 @@ import "./styles.css";
 import { useCheckImg } from "../../../../hook/useCheckImg";
 
 function CartProduct({ product }) {
-  const img = useCheckImg(product.photos);
+  const photos = useCheckImg(product.style.photos);
+  const main = photos.filter((photo) => photo.includes("Main") && photo.includes("bottle"));
 
   return (
     <div className="cart-product my-3">
       <div className="">
-        <img src={img[0]} alt="Product image" className="cart-img" />
+        <img src={main} alt="Product image" className="cart-img" />
       </div>
       <div>
         <div className="mt-2">

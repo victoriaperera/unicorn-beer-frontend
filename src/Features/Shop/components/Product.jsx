@@ -6,8 +6,9 @@ import AddToCardBtn from "../../../Common/components/AddToCardBtn";
 import { Link } from "react-router-dom";
 
 function Product({ product }) {
-  const photos = useCheckImg(product.photos);
   const bgColor = useSetGradientColor(product);
+  const photos = useCheckImg(product.style.photos);
+  const main = photos.filter((photo) => photo.includes("Main") && photo.includes("bottle"));
 
   return (
     <>
@@ -18,7 +19,7 @@ function Product({ product }) {
         style={{ background: bgColor }}
       >
         <Link to="/product">
-          <img src={photos[0]} alt={`${product.name} image`} className="product-img" />
+          <img src={main} alt={`${product.name} image`} className="product-img" />
         </Link>
         <div>
           <h5>{product.name}</h5>
