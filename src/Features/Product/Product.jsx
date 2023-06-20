@@ -1,11 +1,20 @@
 import "./styles.css";
 import AddToCardBtn from "../../Common/components/AddToCardBtn";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import { useParams } from "react-router";
+import { useSelector } from "react-redux";
+import { useCheckImg } from "../../hook/useCheckImg";
 
 function Product() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const params = useParams();
+  const products = useSelector((state) => state.shop.products);
+  const product = products.filter((product) => product._id === params.id);
+  console.log(product.style);
+  const checkedPhotos = useCheckImg(product.style.photos);
+  const photos = checkedPhotos.filter((chk) => chk === product.container.name);
+
   const handleSelect = (selectedIndex) => {
     setActiveIndex(selectedIndex);
   };
@@ -20,12 +29,11 @@ function Product() {
             onSelect={handleSelect}
             interval={null}
           >
-            <Carousel.Item>
-              <img className="d-block w-100" src="/src/assets/img/IPA-1.png" alt="First slide" />
-            </Carousel.Item>
-            <Carousel.Item>
-              <img className="d-block w-100" src="/src/assets/img/IPA-2.png" alt="Second slide" />
-            </Carousel.Item>
+            {photos.map((photo, index) => (
+              <Carousel.Item key={index}>
+                <img className="d-block w-100" src={photo} alt="First slide" />
+              </Carousel.Item>
+            ))}
           </Carousel>
         </div>
         <div className="col-12 col-md-7 align-self-center px-5 product-view-text">

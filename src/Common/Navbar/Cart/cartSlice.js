@@ -29,7 +29,7 @@ const cartSlice = createSlice({
       state.cart = removeItem;
     },
     clearCart: (state) => {
-      return [];
+      state.products = [];
     },
   },
 });
