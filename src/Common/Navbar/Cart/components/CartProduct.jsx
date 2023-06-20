@@ -20,7 +20,7 @@ function CartProduct({ product }) {
       <div className="w-75">
         <div className="mt-2 d-flex justify-content-between">
           <span>{product.name}</span>
-          <span className="ms-2">${product.price}</span>
+          <span className="ms-2">${product.price.toFixed(2)}</span>
         </div>
         <div className="mt-2 d-flex justify-content-between">
           <div className="d-flex">
