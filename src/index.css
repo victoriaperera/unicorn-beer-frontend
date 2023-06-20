@@ -49,8 +49,10 @@ select,
 option,
 li,
 ul,
-ol {
-  font-family: "Oswald" !important;
+ol,
+span,
+.btn {
+  font-family: "Helvetica" !important;
 }
 
 sup {

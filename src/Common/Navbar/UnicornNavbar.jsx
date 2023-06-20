@@ -100,8 +100,8 @@ function UnicornNavbar() {
                     <sup className="superscript">({getTotalQuantity() || 0})</sup>
                   </i>
 
-                  <Offcanvas show={show} onHide={handleClose} placement="end" >
-                    <Cart handleClose={handleClose} show={show}/>
+                  <Offcanvas show={show} onHide={handleClose} placement="end">
+                    <Cart show={show} handleClose={handleClose} />
                   </Offcanvas>
                 </div>
                 <div className="mx-2 mt-1">

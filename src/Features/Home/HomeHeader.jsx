@@ -1,6 +1,17 @@
 import { Container } from "react-bootstrap";
+import { gsap } from "gsap";
+import { useRef, useEffect } from "react";
 
 function HomeHeader() {
+  const logoRef = useRef(null);
+  useEffect(() => {
+    const el = logoRef.current;
+    gsap.fromTo(
+      el,
+      { scale: 0.5 },
+      { duration: 1, scale: 1, ease: "expoScale(0.5, 1, power2.inOut)" },
+    );
+  }, []);
   return (
     <header>
       <div className="overlay"></div>
@@ -14,6 +25,7 @@ function HomeHeader() {
               src="/src/assets/icons/Unicorn-beer-white-logo.svg"
               alt="Unicorn Logo"
               className="header-logo w-sm-50 w-100"
+              ref={logoRef}
             />
             {/*<p className="lead mb-0">Unlock the magic in every sip</p>*/}
           </div>

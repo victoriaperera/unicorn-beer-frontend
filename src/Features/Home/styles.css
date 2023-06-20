@@ -83,7 +83,7 @@ header .overlay {
 }
 
 .product-text {
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .beer-containers {
@@ -174,8 +174,13 @@ header .overlay {
 }
 
 .beers-heading {
-  color: var(--white);
-  text-shadow: 1px 1px 5px var(--graphite);
+  color: var(--lightGraphite);
+  font-size: 2.3rem;
+}
+
+.char {
+  transform: translateY(115px);
+  transition: transform 0.5s;
 }
 
 @keyframes slideIn {
@@ -203,22 +208,10 @@ header .overlay {
 @keyframes productAppear {
   0% {
     opacity: 0;
-    transform: scale(0.7);
+    transform: scale(0.9);
   }
   100% {
     opacity: 1;
     transform: scale(1);
   }
-}
-
-.animate-col-left {
-  animation: slideIn 0.5s ease-in-out forwards;
-}
-
-.animate-col-right {
-  animation: slideInBack 0.5s ease-in-out backwards;
-}
-
-.animate-col-center {
-  animation: productAppear 0.3s ease-in-out forwards;
 }
