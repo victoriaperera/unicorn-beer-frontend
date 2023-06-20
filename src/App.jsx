@@ -14,6 +14,7 @@ import Checkout from "./Features/Checkout/Checkout";
 import Dashboard from "./Features/Dashboard/Dashboard";
 import SignUp from "./Features/Auth/Singup";
 import Err404 from "./Features/err404/err404";
+
 function App() {
   const { pathname: currentPage } = useLocation();
   const pagesWONavbars = ["/board"];
