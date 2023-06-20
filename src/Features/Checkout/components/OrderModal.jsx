@@ -15,7 +15,7 @@ function OrderModal({show}) {
             </Modal.Header>
             <Modal.Body className='mt-5 d-flex justify-content-center'>
               
-               <Link to="/" className="modalBtn modalBtn-Success">Yankees Go Home</Link>
+               <Link to="/" className="modalBtn modalBtn-Success">Go to Home</Link>
               
             </Modal.Body>
         </Modal>
