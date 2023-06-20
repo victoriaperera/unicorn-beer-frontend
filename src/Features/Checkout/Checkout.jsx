@@ -41,7 +41,7 @@ function  Checkout() {
     }
 
     return (
-      <div className="graphiteBackground">
+      <div className="graphiteBackground py-5">
          <Container className="container checkOutContainer py-5">
             <div className="d-flex flex-column justify-content-start align-items-start">
                 <div className="d-flex align-items-center my-3">
@@ -76,7 +76,7 @@ function  Checkout() {
                     <ListGroup as="ul" numbered className="px-2">
                         {cart 
                             ? cart.map( (item) => 
-                            <ListGroup.Item
+                            <ListGroup.Item key={item.id}
                                 as="li"
                                 className="d-flex justify-content-between align-items-start"
                             >
