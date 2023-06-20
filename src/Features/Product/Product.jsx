@@ -9,7 +9,7 @@ import React from "react";
 
 function Product() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const handleSelect = (selectedIndex, e) => {
+  const handleSelect = (selectedIndex) => {
     setActiveIndex(selectedIndex);
   };
 

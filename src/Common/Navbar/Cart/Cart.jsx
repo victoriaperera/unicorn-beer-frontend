@@ -34,7 +34,7 @@ function Cart() {
             cart.map((product) => <CartProduct product={product} key={product.id} />)}
         </div>
 
-        <div className="cart-footer">
+        <div className="cart-footer border-top">
           <div>
             <p className="fw-bold">Order total: ${calculateTotal()}</p>
           </div>

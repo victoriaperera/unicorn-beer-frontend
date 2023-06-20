@@ -1,8 +1,8 @@
 .cart-body {
-  /* position: relative; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-bottom: 0.5rem;
 }
 
 .cart-img {
@@ -15,4 +15,8 @@
 
 .cart-product-list {
   overflow: auto;
+}
+
+.cart-footer {
+  padding-top: 0.5rem;
 }
