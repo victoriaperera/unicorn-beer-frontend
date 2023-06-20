@@ -3,14 +3,16 @@ import { Badge, Button, Container, Col, InputGroup, ListGroup, Form, Row, FormSe
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Select from 'react-select';
 
 function  Checkout() {
     const {user, cart} = useSelector(state => state);
-
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    console.log(cart)
+    const [paymentMethod, setPaymentMet] = useState();
+  
     const [alertText, setAlertText] = useState("");
     const [alertToggle, setAlertToggle] = useState(false);
 
@@ -25,6 +27,7 @@ function  Checkout() {
           color: "black",
           background: `url(${state.data.image}) no-repeat center left`,
           paddingLeft: '50px',
+          fontFamily: "Oswald",
         }),
     };
     
@@ -34,6 +37,10 @@ function  Checkout() {
             const response = await axios({
                 method: "POST",
                 url: "http://localhost:3000/orders",
+                data: {
+                    products: cart,
+                    paymentMethod,
+                }
             })
         } catch(err) {
 
@@ -85,7 +92,7 @@ function  Checkout() {
                                     <p className="m-0">{item.container.name}  ${item.price}</p>
                                 </div>
                                 <Badge bg="primary" pill>
-                                item.quantity
+                                {item.quantity}
                                 </Badge>
                             </ListGroup.Item>
                         ) 
@@ -95,22 +102,24 @@ function  Checkout() {
                                 className="d-flex justify-content-between align-items-start"
                             >
                                 <div className="ms-2 me-auto">
-                                    <p className="m-0 fw-bold">The cart it's emtpy</p>
-                                    
+                                    <p className="m-0 fw-bold">The cart it's emtpy</p> 
                                 </div>
                                 <Badge bg="primary" pill>
                                 0
                                 </Badge>
                             </ListGroup.Item>
                         
-                        }
-                            
+                        }      
                     </ListGroup>
                     <Form.Group as={Col} md="6" className="my-2">
                         <Form.Label>Select Payment Method</Form.Label>                    
                         <Select
+                        name="paymentMethod"
                         options={options}
-                        styles={customStyles}/>
+                        styles={customStyles}
+                        onChange={(e)=> setPaymentMet(e.value)}
+                        />
+                        
                     </Form.Group>
                     <Form.Group as={Col} md="6" className="my-2">
                         <Form.Label>Total</Form.Label>
