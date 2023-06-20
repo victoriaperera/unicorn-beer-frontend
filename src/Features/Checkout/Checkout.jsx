@@ -87,9 +87,9 @@ function  Checkout() {
                         <p className="my-2">Change <Link to="#" className="authLink">address</Link></p>
                     </Form.Group>
                     <p>Cart</p>
-                    <ListGroup as="ul" numbered className="px-2">
+                    <ListGroup as="ul" className="px-2">
                         
-                        {cart 
+                        {Array.isArray(cart) 
                             ? cart.map((item) => 
                             <ListGroup.Item key={item.id}
                                 as="li"
@@ -110,7 +110,7 @@ function  Checkout() {
                                 className="d-flex justify-content-between align-items-start"
                             >
                                 <div className="ms-2 me-auto">
-                                    <p className="m-0 fw-bold">The cart it's emtpy</p> 
+                                    <p className="m-0 fw-bold">The cart it's emtpy :(</p> 
                                 </div>
                                 <Badge bg="primary" pill>
                                 0

@@ -16,7 +16,7 @@ function Contact() {
     try {
       const response = await axios({
         method: "POST",
-        url: "http://localhost:3000/auth/contact", // TODO: probablemente como una op de mejora
+        url: "http://localhost:3000/auth/contact", // TODO: probablemente como una opción de mejora
         data: {
           firstname,
           lastname,
