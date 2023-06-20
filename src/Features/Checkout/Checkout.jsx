@@ -7,7 +7,8 @@ import { useState } from "react";
 import Select from 'react-select';
 
 function  Checkout() {
-    const {user, cart} = useSelector(state => state);
+    const user = useSelector((state) => state.user);
+    const cart = useSelector((state) => state.cart);
     const dispatch = useDispatch();
     const navigate = useNavigate();
     console.log(cart)
@@ -78,7 +79,7 @@ function  Checkout() {
                             <option value={user.address}>{user.address}</option>
                             <option value={user.shippingAddress}>{user.shippingAddress}</option>
                         </FormSelect>
-                        <p className="my-2">Change <Link className="authLink">address</Link></p>
+                        <p className="my-2">Change <Link to="#" className="authLink">address</Link></p>
                     </Form.Group>
                     <ListGroup as="ul" numbered className="px-2">
                         {cart 
@@ -108,7 +109,6 @@ function  Checkout() {
                                 0
                                 </Badge>
                             </ListGroup.Item>
-                        
                         }      
                     </ListGroup>
                     <Form.Group as={Col} md="6" className="my-2">
