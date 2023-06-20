@@ -7,6 +7,7 @@ import { useState } from "react";
 import Select from 'react-select';
 import axios from "axios";
 import { clearCart } from "../../Common/Navbar/Cart/cartSlice";
+import { Alert } from "react-bootstrap";
 
 function  Checkout() {
     const user = useSelector((state) => state.user);
@@ -36,26 +37,33 @@ function  Checkout() {
     
     const handleSubmit = async (e) => {
         e.preventDefault();
-        try {
-            const response = await axios({
-                method: "POST",
-                url: "http://localhost:3000/orders",
-                headers: {
-                    Authorization: `Bearer ${user.token}`,
-                },
-                data: {
-                    products: cart.products,
-                    paymentMethod,
-                    totalAmount: cart.totalAmount,
-                    status: "paid",
-                    shippingDate: new Date(),
-                    deliveryDate: new Date(),
-                }
-            })
-            dispatch(clearCart())
-            setShow(true);
-        } catch(err) {
-            console.log(err)
+        if(!paymentMethod){
+            setAlertText("You must choose a valid payment method");
+            setAlertToggle(true);
+        }else{
+            try {
+                const response = await axios({
+                    method: "POST",
+                    url: "http://localhost:3000/orders",
+                    headers: {
+                        Authorization: `Bearer ${user.token}`,
+                    },
+                    data: {
+                        products: cart.products,
+                        paymentMethod,
+                        totalAmount: cart.totalAmount,
+                        status: "paid",
+                        shippingDate: new Date(),
+                        deliveryDate: new Date(),
+                    }
+                })
+                setAlertToggle(false);
+                dispatch(clearCart());
+                setShow(true);
+            } catch(err) {
+                console.log(err)
+            }
+
         }
     }
 
@@ -158,7 +166,7 @@ function  Checkout() {
                     >
                     Proceed to Checkout
                     </Button>
-                    {alertToggle && <Alert variant="danger">{alertText}</Alert>}
+                    {alertToggle && <Alert className="mt-5" variant="danger">{alertText}</Alert>}
                 </Row>
             </Form>
         </Container>
