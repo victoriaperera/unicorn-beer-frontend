@@ -5,7 +5,7 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 
 function Contact() {
-  const user = useSelector(state => state.user )
+  const user = useSelector((state) => state.user);
 
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
@@ -18,7 +18,7 @@ function Contact() {
     try {
       const response = await axios({
         method: "POST",
-        url: "http://localhost:3000/auth/contact", // TODO: probablemente como una opción de mejora
+        url: `${import.meta.env.VITE_BACK_URL}/auth/contact `, // TODO: probablemente como una opción de mejora
         data: {
           firstname,
           lastname,

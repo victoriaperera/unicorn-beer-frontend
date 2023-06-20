@@ -4,11 +4,13 @@ import { Badge, Button, Container, Col, ListGroup, Form, Row, } from "react-boot
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import Select from 'react-select';
+import Select from "react-select";
 import axios from "axios";
 import { clearCart } from "../../Common/Navbar/Cart/cartSlice";
+import { Alert } from "react-bootstrap";
 
 function  Checkout() {
+    
     const user = useSelector((state) => state.user);
     const cart = useSelector((state) => state.cart);
     const dispatch = useDispatch();
@@ -36,28 +38,34 @@ function  Checkout() {
     
     const handleSubmit = async (e) => {
         e.preventDefault();
-        try {
-            const response = await axios({
-                method: "POST",
-                url: "http://localhost:3000/orders",
-                headers: {
-                    Authorization: `Bearer ${user.token}`,
-                },
-                data: {
-                    products: cart.products,
-                    paymentMethod,
-                    totalAmount: cart.totalAmount,
-                    status: "paid",
-                    shippingDate: new Date(),
-                    deliveryDate: new Date(),
-                }
-            })
-            dispatch(clearCart())
-            setShow(true);
-        } catch(err) {
-            console.log(err)
+        if(!paymentMethod){
+            setAlertText("You must choose a valid payment method");
+            setAlertToggle(true);
+        }else{
+            try {
+                const response = await axios({
+                    method: "POST",
+                    url: `${import.meta.env.VITE_BACK_URL}/orders`,
+                    headers: {
+                        Authorization: `Bearer ${user.token}`,
+                    },
+                    data: {
+                        products: cart.products,
+                        paymentMethod,
+                        totalAmount: cart.totalAmount,
+                        status: "paid",
+                        shippingDate: new Date(),
+                        deliveryDate: new Date(),
+                    }
+                })
+                setAlertToggle(false);
+                dispatch(clearCart());
+                setShow(true);
+            } catch(err) {
+                console.log(err)
+            }
         }
-    }
+    };
 
     return (
       <div className="graphiteBackground py-5">
@@ -78,12 +86,12 @@ function  Checkout() {
                 <Row className="mb-3">
                     <Form.Group as={Col} md="6" className="my-2">
                         <Form.Label>Client</Form.Label>
-                        <Form.Control
-                        type="text"
-                        value={`${user.firstname} ${user.lastname}`}
-                        disabled
-                        readOnly  
-                        />
+                            <Form.Control
+                            type="text"
+                            value={`${user.firstname} ${user.lastname}`}
+                            disabled
+                            readOnly  
+                            />
                     </Form.Group>
                     <Form.Group as={Col} md="6" className="my-2">
                         <Form.Label>Shipping Address</Form.Label>                    
@@ -101,31 +109,31 @@ function  Checkout() {
                         
                         {cart.products.length > 0
                             ? cart.products.map((item) => 
-                            <ListGroup.Item key={item.id}
-                                as="li"
-                                className="d-flex justify-content-between align-items-start"
-                            >
-                                <div className="ms-2 me-auto">
-                                    <p className="m-0 fw-bold">{item.style.name}</p>
-                                    <p className="m-0">{item.container.name}  ${item.price}</p>
-                                </div>
-                                <Badge bg="primary" pill>
-                                {item.quantity}
-                                </Badge>
-                            </ListGroup.Item>
-                        ) 
+                                <ListGroup.Item key={item.id}
+                                    as="li"
+                                    className="d-flex justify-content-between align-items-start"
+                                >
+                                    <div className="ms-2 me-auto">
+                                        <p className="m-0 fw-bold">{item.style.name}</p>
+                                        <p className="m-0">{item.container.name}  ${item.price}</p>
+                                    </div>
+                                    <Badge bg="primary" pill>
+                                    {item.quantity}
+                                    </Badge>
+                                </ListGroup.Item>
+                             ) 
                             :
-                            <ListGroup.Item
-                                as="li"
-                                className="d-flex justify-content-between align-items-start"
-                            >
-                                <div className="ms-2 me-auto">
-                                    <p className="m-0 fw-bold">Your cart it's emtpy :(</p> 
-                                </div>
-                                <Badge bg="primary" pill>
-                                0
-                                </Badge>
-                            </ListGroup.Item>
+                                <ListGroup.Item
+                                    as="li"
+                                    className="d-flex justify-content-between align-items-start"
+                                >
+                                    <div className="ms-2 me-auto">
+                                        <p className="m-0 fw-bold">Your cart it's emtpy :(</p> 
+                                    </div>
+                                    <Badge bg="danger" pill>
+                                    0
+                                    </Badge>
+                                </ListGroup.Item>
                         }      
                     </ListGroup>
                     <Form.Group as={Col} md="6" className="my-2">
@@ -135,6 +143,7 @@ function  Checkout() {
                         options={options}
                         styles={customStyles}
                         onChange={(e)=> setPaymentMet(e.value)}
+                        required
                         />
                         
                     </Form.Group>
@@ -158,7 +167,7 @@ function  Checkout() {
                     >
                     Proceed to Checkout
                     </Button>
-                    {alertToggle && <Alert variant="danger">{alertText}</Alert>}
+                    {alertToggle && <Alert className="mt-5" variant="danger">{alertText}</Alert>}
                 </Row>
             </Form>
         </Container>
@@ -168,4 +177,4 @@ function  Checkout() {
 
 }
 
-export default Checkout
+export default Checkout;
