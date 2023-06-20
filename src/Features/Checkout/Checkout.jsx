@@ -10,10 +10,10 @@ import { clearCart } from "../../Common/Navbar/Cart/cartSlice";
 import { Alert } from "react-bootstrap";
 
 function Checkout() {
-  const user = useSelector((state) => state.user);
-  const cart = useSelector((state) => state.cart);
-  const dispatch = useDispatch();
-  const [paymentMethod, setPaymentMet] = useState();
+    const user = useSelector((state) => state.user);
+    const cart = useSelector((state) => state.cart);
+    const dispatch = useDispatch();
+    const [paymentMethod, setPaymentMet] = useState();
 
     const [alertText, setAlertText] = useState("");
     const [alertToggle, setAlertToggle] = useState(null);
@@ -112,7 +112,6 @@ function Checkout() {
                                     as="li"
                                     className="d-flex justify-content-between align-items-start"
                                 >
-                                    <img src={item.style.photos[0]} alt={`{item.style.name} {item.container.name}`} />
                                     <div className="ms-2 me-auto">
                                         <p className="m-0 fw-bold">{item.style.name}</p>
                                         <p className="m-0">{item.container.name}  ${item.price}</p>

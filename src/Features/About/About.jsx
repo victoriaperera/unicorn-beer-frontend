@@ -7,14 +7,6 @@ import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 
 function About() {
-  const admins = [
-    { name: "Esteban Castañeira" },
-    { name: "Ivanna Sugliano" },
-    { name: "Lorena Rincón" },
-    { name: "Nicolás Martínez Latorraca" },
-    { name: "Victoria Perera" },
-  ];
-
   const sectionTech = useRef(null);
   const sectionMer = useRef(null);
   const sectionDesign = useRef(null);
@@ -213,9 +205,7 @@ function About() {
           <div className="col-12 about-section about-section-team" ref={sectionTeam}>
             <h3>OUR TEAM</h3>
             <div className="row my-5">
-              {admins.map((admin, index) => (
-                <TeamMemberCard admin={admin} key={index}></TeamMemberCard>
-              ))}
+              <TeamMemberCard />
             </div>
           </div>
         </div>
