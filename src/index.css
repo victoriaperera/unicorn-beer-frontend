@@ -20,16 +20,16 @@
 
   --white: #ffffff;
   --lightGrey: #fff1f1;
-  
+
   --graphite: #242424;
   --lightGraphite: #525252;
 }
-html, body{
+
+html,
+body {
   height: 100%;
 }
-.container {
-  min-height: 87vh;
-}
+
 h1,
 h2,
 h3,
@@ -39,6 +39,7 @@ h6,
 a {
   font-family: "Bebas Neue", sans-serif;
 }
+
 p,
 label,
 input,
@@ -51,8 +52,16 @@ ul,
 ol {
   font-family: "Oswald" !important;
 }
+
+sup {
+  font-size: small;
+}
+
+.container {
+  min-height: 87vh;
+}
+
 .graphiteBackground {
-    background-color: var(--lightGraphite);
-    color: var(--white);
-  
+  background-color: var(--lightGraphite);
+  color: var(--white);
 }

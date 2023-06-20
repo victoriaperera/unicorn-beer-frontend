@@ -15,7 +15,6 @@ function Home() {
     const getProducts = async () => {
       const res = await axios.get(`http://localhost:3000/products`);
 
-      console.log(res.data.length);
       const aux = res.data.filter((p) => p.container.name === "Bottle");
       dispatch(setProductList(aux));
     };

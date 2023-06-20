@@ -2,8 +2,11 @@ import "./styles.css";
 import { Button, Col, Container, Form, Row, InputGroup } from "react-bootstrap";
 import { useState } from "react";
 import axios from "axios";
+import { useSelector } from "react-redux";
 
 function Contact() {
+  const user = useSelector(state => state.user )
+
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
@@ -45,6 +48,7 @@ function Contact() {
               <Form.Group as={Col} md="6" className="my-2">
                 <Form.Label>First name</Form.Label>
                 <Form.Control
+                  value={user && `${user.firstname}`}
                   required
                   type="text"
                   placeholder="First name"
@@ -54,6 +58,7 @@ function Contact() {
               <Form.Group as={Col} md="6" className="my-2">
                 <Form.Label>Last name</Form.Label>
                 <Form.Control
+                  value={user && `${user.lastname}`}
                   required
                   type="text"
                   placeholder="Last name"
@@ -64,6 +69,7 @@ function Contact() {
                 <Form.Label>Email</Form.Label>
                 <InputGroup hasValidation>
                   <Form.Control
+                    value={user && `${user.email}`}
                     type="email"
                     placeholder="Email"
                     required
@@ -77,6 +83,7 @@ function Contact() {
               <Form.Group as={Col} md="6" className="my-2">
                 <Form.Label>Phone</Form.Label>
                 <Form.Control
+                  value={user && `${user.phone}`}
                   type="number"
                   placeholder="Phone"
                   onChange={(e) => setPhone(e.target.value)}

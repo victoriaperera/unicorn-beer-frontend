@@ -24,7 +24,7 @@ function Logout() {
   };
 
   return (
-    <NavDropdown.Item href="/" onClick={handlerLogout}>
+    <NavDropdown.Item onClick={handlerLogout}>
       Log out
     </NavDropdown.Item>
   );
