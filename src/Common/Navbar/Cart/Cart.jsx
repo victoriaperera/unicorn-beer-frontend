@@ -17,7 +17,7 @@ function Cart() {
       cart.forEach((product) => {
         total += product.price * product.quantity;
       });
-      dispatch(setTotal({ totalAmount: total }));
+      dispatch(setTotal({ totalAmount: total.toFixed(2) }));
       return total.toFixed(2);
     }
     return total;
