@@ -65,8 +65,7 @@ function  Checkout() {
                 console.log(err)
             }
         }
-    }
-  };
+    };
 
     return (
       <div className="graphiteBackground py-5">
