@@ -15,60 +15,56 @@ function Checkout() {
   const dispatch = useDispatch();
   const [paymentMethod, setPaymentMet] = useState();
 
-  const [alertText, setAlertText] = useState("");
-  const [alertToggle, setAlertToggle] = useState(null);
-
-  const [show, setShow] = useState(false);
-
-  const options = [
-    { value: "visa", label: "Visa", image: "src/assets/icons/icons8-tarjeta-visa-48.png" },
-    {
-      value: "mastercard",
-      label: "Master Card",
-      image: "src/assets/icons/icons8-mastercard-48.png",
-    },
-    { value: "paypal", label: "PayPal", image: "src/assets/icons/icons8-paypal-48.png" },
-  ];
-  const customStyles = {
-    option: (provided, state) => ({
-      ...provided,
-      color: "black",
-      background: `url(${state.data.image}) no-repeat center left`,
-      paddingLeft: "50px",
-      fontFamily: "Oswald",
-    }),
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!paymentMethod) {
-      setAlertText("You must choose a valid payment method");
-      setAlertToggle(true);
-    } else {
-      try {
-        const response = await axios({
-          method: "POST",
-          url: `${import.meta.env.VITE_BACK_URL}/orders`,
-          headers: {
-            Authorization: `Bearer ${user.token}`,
-          },
-          data: {
-            products: cart.products,
-            paymentMethod,
-            totalAmount: cart.totalAmount,
-            status: "paid",
-            shippingDate: new Date(),
-            deliveryDate: new Date(),
-          },
-        });
-        setAlertToggle(false);
-        dispatch(clearCart());
-        setShow(true);
-      } catch (err) {
-        console.log(err);
-      }
-    }
-  };
+    const [alertText, setAlertText] = useState("");
+    const [alertToggle, setAlertToggle] = useState(null);
+    
+    const [show, setShow] = useState(false);
+    
+    const options = [
+        { value: 'visa', label: 'Visa', image:"src/assets/icons/icons8-tarjeta-visa-48.png" },
+        { value: 'mastercard', label: 'Master Card', image:"src/assets/icons/icons8-mastercard-48.png" },
+        { value: 'paypal', label: 'PayPal', image:"src/assets/icons/icons8-paypal-48.png" }
+      ];
+    const customStyles = {
+        option: (provided, state) => ({
+          ...provided,
+          color: "black",
+          background: `url(${state.data.image}) no-repeat center left`,
+          paddingLeft: '50px',
+          fontFamily: "Oswald",
+        }),
+    };
+    
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if(!paymentMethod){
+            setAlertText("You must choose a valid payment method");
+            setAlertToggle(true);
+        }else{
+            try {
+                const response = await axios({
+                    method: "POST",
+                    url: `${import.meta.env.VITE_BACK_URL}/orders`,
+                    headers: {
+                        Authorization: `Bearer ${user.token}`,
+                    },
+                    data: {
+                        products: cart.products,
+                        paymentMethod,
+                        totalAmount: cart.totalAmount,
+                        status: "paid",
+                        shippingDate: new Date(),
+                        deliveryDate: new Date(),
+                    }
+                })
+                setAlertToggle(false);
+                dispatch(clearCart());
+                setShow(true);
+            } catch(err) {
+                console.log(err)
+            }
+        }
+    };
 
   return (
     <div className="graphiteBackground py-5">

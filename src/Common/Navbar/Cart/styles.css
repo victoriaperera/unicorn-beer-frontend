@@ -5,14 +5,6 @@
   padding-bottom: 0.5rem;
 }
 
-.cart-img {
-  height: 100px;
-}
-
-.cart-product {
-  display: flex;
-}
-
 .cart-product-list {
   overflow: auto;
 }

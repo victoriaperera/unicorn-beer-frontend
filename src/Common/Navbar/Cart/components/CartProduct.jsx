@@ -15,10 +15,10 @@ function CartProduct({ product }) {
 
   return (
     <div className="cart-product my-3">
-      <div className="w-50">
+      <div className="w-25 me-3 text-center">
         <img src={main} alt={`${product.name} img`} className="cart-img" />
       </div>
-      <div className="w-50">
+      <div className="w-75">
         <div className="mt-2 d-flex justify-content-between">
           <span>{product.name}</span>
           <span className="ms-2">${product.price}</span>
