@@ -6,10 +6,10 @@ import { useCheckImg } from "../../../hook/useCheckImg";
 
 function FeaturedProducts({ product, afterColor }) {
   const color = useSetColor(product);
-
   const topDividerColor = useSetColor(afterColor);
-
-  const photos = useCheckImg(product.photos);
+  const photos = useCheckImg(product.style.photos);
+  const logo = photos.filter((photo) => photo.includes("logo"));
+  const main = photos.filter((photo) => photo.includes("main"));
 
   return (
     <>
@@ -32,11 +32,7 @@ function FeaturedProducts({ product, afterColor }) {
             </svg>
           </div>
           <Col xs={12} sm={8} md={4} lg={3} xxl={3} className="p-0 px-4 pt-5 animate-col-left">
-            <img
-              src="/src/assets/icons/Scottish_logo.svg"
-              alt="Scottish logo"
-              className="beer-logo mb-3"
-            />
+            <img src={logo} alt="Scottish logo" className="beer-logo mb-3" />
             <p className="product-text">{product.style.description}</p>
             <img
               src="/src/assets/icons/containers-06.svg"
@@ -45,7 +41,7 @@ function FeaturedProducts({ product, afterColor }) {
             />
           </Col>
           <Col xs={12} sm={8} md={4} lg={4} xxl={3} className="p-0 py-5 animate-col-center">
-            <img src={photos[0]} alt="Scottish Bottle" className="home-product-img img-fluid" />
+            <img src={main} alt="Scottish Bottle" className="home-product-img img-fluid" />
           </Col>
           <Col xs={12} sm={8} md={4} lg={3} xxl={3} className="py-3 animate-col-right">
             <p>VOL.</p>

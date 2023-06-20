@@ -153,10 +153,6 @@ header .overlay {
   }
 }
 
-.divider-bottom-WHITE .WHITE-fill {
-  fill: #ffffff;
-}
-
 /** For mobile devices **/
 @media (max-width: 767px) {
   .divider-bottom svg {
