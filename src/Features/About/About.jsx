@@ -1,8 +1,10 @@
 import "./styles.css";
 import AboutHeader from "./Components/AboutHeader";
 import TeamMemberCard from "./Components/TeamMemberCard";
-
-import React, { useRef } from "react";
+import { gsap } from "gsap";
+import { useRef, useEffect } from "react";
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger);
 
 function About() {
   const admins = [
@@ -22,6 +24,29 @@ function About() {
   const scrollToSection = (ref) => {
     ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+
+  const logoRef = useRef(null);
+  const merRef = useRef(null);
+  const productRef = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      logoRef.current,
+      {
+        opacity: 0,
+        y: 40,
+      },
+      {
+        duration: 2,
+        opacity: 1,
+        y: 0,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: logoRef.current,
+        },
+      },
+    );
+  }, []);
 
   return (
     <>
@@ -54,7 +79,10 @@ function About() {
         <div className="row d-flex">
           <div className="col-12 about-section about-section-one" ref={sectionTech}>
             <h3>TECHNOLOGIES & TOOLS USED</h3>
-            <div className="iconsTechContainer mt-4 d-flex justify-content-around flex-wrap flex-xxl-nowrap">
+            <div
+              className="iconsTechContainer mt-4 d-flex justify-content-around flex-wrap flex-xxl-nowrap"
+              ref={logoRef}
+            >
               <div className="iconTech">
                 <i>
                   <img
@@ -153,6 +181,17 @@ function About() {
                   />
                 </i>
                 <small>Redux</small>
+              </div>
+              <div className="iconTech">
+                <i>
+                  <img
+                    src="src/assets/icons/greensock_logo.png"
+                    alt="greensock icon"
+                    typeof="png/image"
+                    className="tech-icon"
+                  />
+                </i>
+                <small>Green Sock</small>
               </div>
             </div>
           </div>
