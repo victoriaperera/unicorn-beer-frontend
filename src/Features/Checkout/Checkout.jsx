@@ -112,7 +112,7 @@ function Checkout() {
                                     as="li"
                                     className="d-flex justify-content-between align-items-start"
                                 >
-                                    <img src={item.style.photos[0]} alt={`{item.style.name} {item.container.name}`} />
+                                    <img alt={`${item.style.name} ${item.container.name}`} />
                                     <div className="ms-2 me-auto">
                                         <p className="m-0 fw-bold">{item.style.name}</p>
                                         <p className="m-0">{item.container.name}  ${item.price}</p>
