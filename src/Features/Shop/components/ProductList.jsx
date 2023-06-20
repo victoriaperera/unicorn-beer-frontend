@@ -7,21 +7,21 @@ import { useDispatch, useSelector } from "react-redux";
 import { setProductList } from "../shopSlice";
 
 function ProductList() {
-  // const filter = useSelector((state) => state.shop.filter);
-  const products = useSelector((state) => state.shop);
-  // const products = useSelector((state) => {
-  //   if (filter === null) {
-  //     return state.shop.products;
-  //   } else {
-  //     return state.shop.products.filter((product) => product.style.name === filter);
-  //   }
-  // });
+  const filter = useSelector((state) => state.shop.filter);
   const dispatch = useDispatch();
+  const products = useSelector((state) => {
+    const all = state.shop.products;
+    if (filter === "all") {
+      return all;
+    } else {
+      return all.filter((product) => product.style.name === filter);
+    }
+  });
 
   useEffect(() => {
     const getProducts = async () => {
       const res = await axios.get(`http://localhost:3000/products`);
-      dispatch(setProductList(res.data));
+      dispatch(setProductList({ products: res.data }));
     };
     getProducts();
   }, []);

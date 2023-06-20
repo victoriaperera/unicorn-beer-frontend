@@ -1,9 +1,7 @@
 import "./styles.css";
-import ProductList from "./components/ProductList";
 import { Container } from "react-bootstrap";
+import ProductList from "./components/ProductList";
 import ShopHeader from "./components/ShopHeader";
-
-import React from "react";
 
 function Shop() {
   return (

@@ -2,16 +2,16 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const shopSlice = createSlice({
   name: "shop",
-  initialState: { products: [], filter: null },
+  initialState: { products: [], filter: "all" },
   reducers: {
     setProductList(state, action) {
-      return action.payload;
+      state.products = action.payload.products;
     },
     setFilter(state, action) {
-      state.filter = action.payload;
+      state.filter = action.payload.filter;
     },
     clearFilter(state, action) {
-      state.filter = null;
+      state.filter = "all";
     },
   },
 });

@@ -2,6 +2,7 @@ import "./styles.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import FilterBtn from "./FilterBtn";
+import FilterAllBtn from "./FilterAllBtn";
 
 function ProductFilter() {
   const [products, setProducts] = useState([]);
@@ -21,6 +22,7 @@ function ProductFilter() {
       {products.map((product) => (
         <FilterBtn product={product} key={product.style.id}></FilterBtn>
       ))}
+      <FilterAllBtn></FilterAllBtn>
     </div>
   );
 }
