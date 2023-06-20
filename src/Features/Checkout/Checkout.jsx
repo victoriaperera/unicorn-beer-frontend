@@ -11,7 +11,6 @@ function  Checkout() {
     const cart = useSelector((state) => state.cart);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-   console.log(cart)
     const [paymentMethod, setPaymentMet] = useState();
   
     const [alertText, setAlertText] = useState("");
@@ -84,7 +83,8 @@ function  Checkout() {
                             disabled
                             readOnly  
                             />
-                        <p className="my-2">Change <Link to="#" className="authLink">address</Link></p>
+                        <p className="my-2">Change <Link to="#" className="authLink">address</Link></p> 
+                        {/* TODO Fuera del alcance del proyecto */}
                     </Form.Group>
                     <p>Cart</p>
                     <ListGroup as="ul" className="px-2">
