@@ -11,7 +11,7 @@ function  Checkout() {
     const cart = useSelector((state) => state.cart);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-   
+   console.log(cart)
     const [paymentMethod, setPaymentMet] = useState();
   
     const [alertText, setAlertText] = useState("");
@@ -89,8 +89,8 @@ function  Checkout() {
                     <p>Cart</p>
                     <ListGroup as="ul" className="px-2">
                         
-                        {Array.isArray(cart) 
-                            ? cart.map((item) => 
+                        {Array.isArray(cart.products) 
+                            ? cart.products.map((item) => 
                             <ListGroup.Item key={item.id}
                                 as="li"
                                 className="d-flex justify-content-between align-items-start"
