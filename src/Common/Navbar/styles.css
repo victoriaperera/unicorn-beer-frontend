@@ -19,6 +19,7 @@
 
 .nav-link {
   color: var(--white) !important;
+  user-select: none;
 }
 
 .navbar-toggler:focus {
