@@ -1,6 +1,6 @@
 import "./styles.css";
 import OrderModal from "./components/OrderModal";
-import { Badge, Button, Container, Col, ListGroup, Form, Row, } from "react-bootstrap";
+import { Badge, Button, Container, Col, ListGroup, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
@@ -9,12 +9,11 @@ import axios from "axios";
 import { clearCart } from "../../Common/Navbar/Cart/cartSlice";
 import { Alert } from "react-bootstrap";
 
-function  Checkout() {
-    
-    const user = useSelector((state) => state.user);
-    const cart = useSelector((state) => state.cart);
-    const dispatch = useDispatch();
-    const [paymentMethod, setPaymentMet] = useState();
+function Checkout() {
+  const user = useSelector((state) => state.user);
+  const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+  const [paymentMethod, setPaymentMet] = useState();
 
     const [alertText, setAlertText] = useState("");
     const [alertToggle, setAlertToggle] = useState(null);

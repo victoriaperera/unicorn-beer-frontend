@@ -99,7 +99,6 @@ function UnicornNavbar() {
                   <i className="bi bi-cart-fill fs-5 text-white" onClick={handleShow}>
                     <sup className="superscript">({getTotalQuantity() || 0})</sup>
                   </i>
-
                   <Offcanvas show={show} onHide={handleClose} placement="end">
                     <Cart show={show} handleClose={handleClose} />
                   </Offcanvas>

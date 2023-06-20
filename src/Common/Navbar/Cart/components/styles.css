@@ -23,12 +23,6 @@
   }
 }
 
-.cart-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 .cart-img {
   height: 100px;
 }
