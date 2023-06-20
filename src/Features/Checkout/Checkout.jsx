@@ -76,7 +76,7 @@ function  Checkout() {
                     <ListGroup as="ul" numbered className="px-2">
                         {cart 
                             ? cart.map( (item) => 
-                            <ListGroup.Item
+                            <ListGroup.Item key={item.id}
                                 as="li"
                                 className="d-flex justify-content-between align-items-start"
                             >
