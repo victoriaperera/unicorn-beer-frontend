@@ -1,24 +1,24 @@
 import "./styles.css";
+import OrderModal from "./components/OrderModal";
 import { Badge, Button, Container, Col, ListGroup, Form, Row, } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Select from 'react-select';
 import axios from "axios";
+import { clearCart } from "../../Common/Navbar/Cart/cartSlice";
 
 function  Checkout() {
     const user = useSelector((state) => state.user);
     const cart = useSelector((state) => state.cart);
     const dispatch = useDispatch();
-    const navigate = useNavigate();
     const [paymentMethod, setPaymentMet] = useState();
   
     const [alertText, setAlertText] = useState("");
-    const [alertToggle, setAlertToggle] = useState(false);
-
-   // const totalAmount = cart.reduce((currentTotal, item) => currentTotal + item.quantity * item.price, 0);
-
+    const [alertToggle, setAlertToggle] = useState(null);
+    
+    const [show, setShow] = useState(false);
+    
     const options = [
         { value: 'visa', label: 'Visa', image:"src/assets/icons/icons8-tarjeta-visa-48.png" },
         { value: 'mastercard', label: 'Master Card', image:"src/assets/icons/icons8-mastercard-48.png" },
@@ -51,9 +51,9 @@ function  Checkout() {
                     shippingDate: new Date(),
                     deliveryDate: new Date(),
                 }
-            
             })
-            console.log(response);
+            dispatch(clearCart())
+            setShow(true);
         } catch(err) {
             console.log(err)
         }
@@ -61,6 +61,7 @@ function  Checkout() {
 
     return (
       <div className="graphiteBackground py-5">
+        <OrderModal show={show}/>
          <Container className="container checkOutContainer py-5">
             <div className="d-flex flex-column justify-content-start align-items-start">
                 <div className="d-flex align-items-center my-3">
@@ -162,6 +163,7 @@ function  Checkout() {
             </Form>
         </Container>
       </div>
+     
     )
 
 }
