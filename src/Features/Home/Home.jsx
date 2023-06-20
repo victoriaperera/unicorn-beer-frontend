@@ -19,7 +19,7 @@ function Home() {
     const getProducts = async () => {
       const res = await axios.get(`http://localhost:3000/products`);
 
-      const aux = res.data.filter((p) => p.container.name === "Bottle");
+      const aux = res.data.filter((p) => p.container.name === "bottle");
       dispatch(setProductList(aux));
       const myText = new SplitType(".beers-heading");
       gsap.to(".char", {
