@@ -72,7 +72,7 @@ function About() {
           <div className="col-12 about-section about-section-one" ref={sectionTech}>
             <h3>TECHNOLOGIES & TOOLS USED</h3>
             <div
-              className="iconsTechContainer mt-4 d-flex justify-content-around flex-wrap flex-xxl-nowrap"
+              className="iconsTechContainer mt-4 d-flex justify-content-around flex-wrap"
               ref={logoRef}
             >
               <div className="iconTech">
