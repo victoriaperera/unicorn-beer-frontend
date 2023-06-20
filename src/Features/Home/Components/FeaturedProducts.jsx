@@ -1,7 +1,6 @@
-import { Row, Col, Button } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import AddToCardBtn from "../../../Common/components/AddToCardBtn";
 import { useSetColor } from "../../../hook/useSetColor";
-import { useSetGradientColor } from "../../../hook/useSetGradientColor";
 import { useCheckImg } from "../../../hook/useCheckImg";
 
 function FeaturedProducts({ product, afterColor }) {
@@ -9,7 +8,8 @@ function FeaturedProducts({ product, afterColor }) {
   const topDividerColor = useSetColor(afterColor);
   const photos = useCheckImg(product.style.photos);
   const logo = photos.filter((photo) => photo.includes("logo"));
-  const main = photos.filter((photo) => photo.includes("main"));
+  const main = photos.filter((photo) => photo.includes("Main") && photo.includes("bottle"));
+  console.log(main);
 
   return (
     <>
