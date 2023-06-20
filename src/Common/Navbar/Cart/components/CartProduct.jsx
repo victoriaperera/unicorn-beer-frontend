@@ -13,12 +13,13 @@ function CartProduct({ product }) {
         <img src={main} alt="Product image" className="cart-img" />
       </div>
       <div>
-        <div className="mt-2">
-          <span>{product.name}</span>
-          <span className="ms-2">${product.price}</span>
+        <div className="mt-2 d-flex justify-content-between">
+          <p>{product.name}</p>
+          <p className="ms-2">${product.price}</p>
         </div>
-        <div className="mt-2">
-          <span className="fw-bold">{product.quantity}</span>
+        <div className="mt-2 d-flex justify-content-between">
+          <p className="fw-bold">{product.quantity}</p>
+          <p className="ms-2 fw-bold">${product.price * product.quantity}</p>
         </div>
       </div>
     </div>
