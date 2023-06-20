@@ -1,10 +1,11 @@
 import "./styles.css";
-import { Badge, Button, Container, Col, InputGroup, ListGroup, Form, Row, FormSelect } from "react-bootstrap";
+import { Badge, Button, Container, Col, ListGroup, Form, Row, } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Select from 'react-select';
+import axios from "axios";
 
 function  Checkout() {
     const user = useSelector((state) => state.user);
@@ -39,14 +40,22 @@ function  Checkout() {
             const response = await axios({
                 method: "POST",
                 url: "http://localhost:3000/orders",
+                headers: {
+                    Authorization: `Bearer ${user.token}`,
+                },
                 data: {
-                    products: cart,
+                    products: cart.products,
                     paymentMethod,
-                    totalAmount: cart.totalAmount
+                    totalAmount: cart.totalAmount,
+                    status: "paid",
+                    shippingDate: new Date(),
+                    deliveryDate: new Date(),
                 }
+            
             })
+            console.log(response);
         } catch(err) {
-
+            console.log(err)
         }
     }
 
