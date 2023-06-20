@@ -50,12 +50,9 @@ option,
 li,
 ul,
 ol,
+span,
 .btn {
-<<<<<<< Updated upstream
-  font-family: "Oswald" !important;
-=======
   font-family: "Helvetica" !important;
->>>>>>> Stashed changes
 }
 
 sup {
