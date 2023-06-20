@@ -2,11 +2,13 @@ import { useSelector } from "react-redux";
 import "./styles.css";
 import { NavLink, Nav } from "react-bootstrap";
 import { useSetColor } from "../../hook/useSetColor";
+import { useLocation } from "react-router";
 
 function Footer() {
   const lastProduct = useSelector((state) => state.product);
   const lastProductColor = useSetColor(lastProduct[lastProduct.length - 1]);
-  console.log(lastProductColor);
+  const location = useLocation();
+
   return (
     <footer className="footer d-flex justify-content-between align-items-center product-divider ">
       <div className="divider-top p-0">
@@ -18,7 +20,7 @@ function Footer() {
         >
           <path
             d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
-            style={{ fill: lastProductColor }}
+            style={{ fill: location.pathname === "/" ? lastProductColor : "transparent" }}
           ></path>
         </svg>
       </div>
