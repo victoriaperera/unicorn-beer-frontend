@@ -20,7 +20,7 @@ function ProductList() {
 
   useEffect(() => {
     const getProducts = async () => {
-      const res = await axios.get(`http://localhost:3000/products`);
+      const res = await axios.get(`${import.meta.env.VITE_BACK_URL}/products`);
       dispatch(setProductList({ products: res.data }));
     };
     getProducts();

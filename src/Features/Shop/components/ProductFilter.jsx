@@ -9,9 +9,9 @@ function ProductFilter() {
 
   useEffect(() => {
     const getProducts = async () => {
-      const res = await axios.get(`http://localhost:3000/products`);
+      const res = await axios.get(`${import.meta.env.VITE_BACK_URL}/products`);
 
-      const aux = res.data.filter((p) => p.container.name === "Bottle");
+      const aux = res.data.filter((p) => p.container.name === "bottle");
       setProducts(aux);
     };
     getProducts();

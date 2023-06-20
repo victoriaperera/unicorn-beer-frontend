@@ -12,7 +12,7 @@ function Logout() {
   const dispatch = useDispatch();
 
   const handlerLogout = async () => {
-    const res = await axios.get("http://localhost:3000/auth/logout", {
+    const res = await axios.get(`${import.meta.env.VITE_BACK_URL}/auth/logout`, {
       headers: {
         Authorization: `Bearer ${user.token}`,
       },
@@ -23,11 +23,7 @@ function Logout() {
     navigate("/");
   };
 
-  return (
-    <NavDropdown.Item onClick={handlerLogout}>
-      Log out
-    </NavDropdown.Item>
-  );
+  return <NavDropdown.Item onClick={handlerLogout}>Log out</NavDropdown.Item>;
 }
 
 export default Logout;

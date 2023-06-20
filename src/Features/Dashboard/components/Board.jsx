@@ -11,7 +11,7 @@ function Board() {
   useEffect(() => {
     const getProductList = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/products");
+        const res = await axios.get(`${import.meta.env.VITE_BACK_URL}/products`);
         const productList = res.data;
         dispatch(setProductList(productList));
       } catch (error) {
