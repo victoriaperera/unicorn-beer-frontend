@@ -8,7 +8,10 @@ import { Link } from "react-router-dom";
 function Product({ product }) {
   const bgColor = useSetGradientColor(product);
   const photos = useCheckImg(product.style.photos);
-  const main = photos.filter((photo) => photo.includes("Main") && photo.includes("bottle"));
+  const main = photos.filter(
+    (photo) => photo.includes("Main") && photo.includes(product.container.name),
+  );
+  console.log(product.container);
 
   return (
     <>
