@@ -35,21 +35,12 @@ function Cart({ show, handleClose }) {
         </div>
         <div className="border-top cart-footer">
           <div className="d-flex justify-content-between px-2">
-            <div>
-              <p className="fw-bold">Order total</p>
-            </div>
-            <div>
-              <p className="fw-bold">${calculateTotal()}</p>
-            </div>
+            <p className="fw-bold">Order total</p>
+            <p className="fw-bold">${calculateTotal()}</p>
           </div>
-
           <div className="d-flex justify-content-between px-2">
-            <div>
-              <p className="fw-bold">Shipping</p>
-            </div>
-            <div>
-              <p className="fw-bold">Free</p>
-            </div>
+            <p className="fw-bold">Shipping</p>
+            <p className="fw-bold">Free</p>
           </div>
           <Link
             className="btn rounded-pill bg-black fw-medium text-white w-100"

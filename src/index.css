@@ -49,7 +49,8 @@ select,
 option,
 li,
 ul,
-ol {
+ol,
+.btn {
   font-family: "Oswald" !important;
 }
 
