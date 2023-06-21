@@ -4,6 +4,7 @@ import TeamMemberCard from "./Components/TeamMemberCard";
 import { gsap } from "gsap";
 import { useRef, useEffect } from "react";
 import { ScrollTrigger } from "gsap/all";
+import BackToTopBtn from "../../Common/components/BackToTopBtn";
 gsap.registerPlugin(ScrollTrigger);
 
 function About() {
@@ -18,8 +19,6 @@ function About() {
   };
 
   const logoRef = useRef(null);
-  const merRef = useRef(null);
-  const productRef = useRef(null);
 
   useEffect(() => {
     gsap.fromTo(
@@ -42,28 +41,35 @@ function About() {
 
   return (
     <>
-      <div className="about-nav-container">
+      <div className="about-nav-container me-3">
         <nav className="about-nav">
-          <button className="nav-btn nav-btn-1" onClick={() => scrollToSection(sectionAbout)}>
-            About
-          </button>
-          <button className="nav-btn nav-btn-2" onClick={() => scrollToSection(sectionTech)}>
-            Technology
-          </button>
-          <button className="nav-btn nav-btn-3" onClick={() => scrollToSection(sectionMer)}>
-            Mer
-          </button>
-          <button className="nav-btn nav-btn-4" onClick={() => scrollToSection(sectionDesign)}>
-            Design
-          </button>
-          <button className="nav-btn nav-btn-5" onClick={() => scrollToSection(sectionAdmin)}>
-            Admin
-          </button>
-          <button className="nav-btn nav-btn-6" onClick={() => scrollToSection(sectionTeam)}>
-            Team
-          </button>
+          <button
+            className="nav-btn nav-btn-1"
+            onClick={() => scrollToSection(sectionAbout)}
+          ></button>
+          <button
+            className="nav-btn nav-btn-2"
+            onClick={() => scrollToSection(sectionTech)}
+          ></button>
+          <button
+            className="nav-btn nav-btn-3"
+            onClick={() => scrollToSection(sectionMer)}
+          ></button>
+          <button
+            className="nav-btn nav-btn-4"
+            onClick={() => scrollToSection(sectionDesign)}
+          ></button>
+          <button
+            className="nav-btn nav-btn-5"
+            onClick={() => scrollToSection(sectionAdmin)}
+          ></button>
+          <button
+            className="nav-btn nav-btn-6"
+            onClick={() => scrollToSection(sectionTeam)}
+          ></button>
         </nav>
       </div>
+      <BackToTopBtn />
       <div ref={sectionAbout}>
         <AboutHeader />
       </div>
