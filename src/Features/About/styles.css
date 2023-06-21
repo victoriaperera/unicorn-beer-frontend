@@ -28,7 +28,6 @@
 
 .about-section-team {
   color: var(--graphite);
-  height: 100vh;
 }
 
 @keyframes moveUp {

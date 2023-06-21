@@ -11,10 +11,14 @@ function ProductList() {
   const dispatch = useDispatch();
   const products = useSelector((state) => {
     const all = state.shop.products;
-    if (filter === "all") {
+    if (filter === "all" || filter === "") {
       return all;
     } else {
-      return all.filter((product) => product.style.name === filter);
+      return all.filter(
+        (product) =>
+          product.style.name.toLowerCase().includes(filter.toLowerCase()) ||
+          product.name.toLowerCase().includes(filter.toLowerCase()),
+      );
     }
   });
 
