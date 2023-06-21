@@ -1,7 +1,6 @@
 .product-view-bg {
-  background-color: var(--white);
-  color: var(--graphite);
-  padding: 100px;
+  color: var(--white);
+  padding-bottom: 0px;
 }
 
 @media (max-width: 991px) {
@@ -24,6 +23,6 @@
   }
 }
 
-.addToCartBtn-product {
+/* .addToCartBtn-product {
   background-color: var(--graphite);
-}
+} */

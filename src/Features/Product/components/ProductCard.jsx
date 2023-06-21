@@ -46,7 +46,7 @@ function ProductCard({ product }) {
         </div>
       </div>
       <div className="d-flex align-items-center border-top pt-2">
-        <i className="bi bi-truck fs-6 text-black me-2"></i>
+        <i className="bi bi-truck fs-6 text-white me-2"></i>
         <span className="m-0">Delivery available.</span>
       </div>
     </div>
