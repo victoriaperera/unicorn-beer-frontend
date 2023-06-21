@@ -20,7 +20,6 @@ function Checkout() {
   const [alertToggle, setAlertToggle] = useState(null);
 
   const [show, setShow] = useState(false);
-
   const paymentOptions = [
     { value: "Visa", label: "Visa", image: "src/assets/icons/icons8-tarjeta-visa-48.png" },
     {
@@ -60,8 +59,8 @@ function Checkout() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!paymentMethod) {
-      setAlertText("You must choose a valid payment method");
+    if (!paymentMethod || !deliveryDate) {
+      setAlertText("You MUST fill in your payment method and delivery date, please");
       setAlertToggle(true);
     } else {
       try {
@@ -76,7 +75,7 @@ function Checkout() {
             paymentMethod,
             totalAmount: cart.totalAmount,
             status: "paid",
-            shippingDate: new Date(),
+            shippingDate: new Date(deliveryDate.getFullYear(), deliveryDate.getMonth(), deliveryDate.getDate() - 1),
             deliveryDate
           },
         });
