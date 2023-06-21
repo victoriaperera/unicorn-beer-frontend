@@ -9,6 +9,7 @@ import { setProductList } from "../../redux/productSlice";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import SplitType from "split-type";
+import BackToTopBtn from "../../Common/components/BackToTopBtn";
 gsap.registerPlugin(ScrollTrigger);
 
 function Home() {
@@ -51,6 +52,7 @@ function Home() {
                 <FeaturedProducts product={product} afterColor={products[i - 1]} key={product.id} />
               ))}
           </section>
+          <BackToTopBtn />
         </Container>
       </div>
     </>
