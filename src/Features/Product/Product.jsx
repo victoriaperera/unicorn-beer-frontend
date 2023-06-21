@@ -15,7 +15,7 @@ function Product() {
 
   return (
     <div style={{ backgroundColor: bgColor }}>
-      <div className="container product-view-bg" style={{ backgroundColor: bgColor }}>
+      <div className="container d-flex justify-content-center align-items-center product-view-bg" style={{ backgroundColor: bgColor }}>
         <div className="row">
           <ProductCarousel product={product} />
           <ProductCard product={product} />
