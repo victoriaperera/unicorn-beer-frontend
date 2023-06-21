@@ -4,7 +4,7 @@ import ProductCard from "./components/ProductCard";
 import { useParams } from "react-router";
 import { useSelector } from "react-redux";
 import { useSetColor } from "../../hook/useSetColor";
-import React from "react";
+
 
 function Product() {
   const params = useParams();

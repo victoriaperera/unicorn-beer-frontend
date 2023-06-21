@@ -1,9 +1,11 @@
 import "../styles.css";
 import AddToCartBtn from "../../../Common/components/AddToCartBtn";
-
-import React from "react";
+import { incrementQuantity, decrementQuantity } from "../../../Common/Navbar/Cart/cartSlice";
+import { useDispatch } from "react-redux";
 
 function ProductCard({ product }) {
+  const dispatch = useDispatch();
+  
   const containerVolume =
     product.container === "keg"
       ? (product.container.volume * 1000 * 0.033814).toFixed(2)
