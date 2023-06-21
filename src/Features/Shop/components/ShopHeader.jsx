@@ -1,5 +1,5 @@
 import "./styles.css";
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import ProductFilter from "./ProductFilter";
 import SearchInput from "./SearchInput";
 import { gsap } from "gsap";
@@ -44,18 +44,20 @@ function ShopHeader() {
     <Container fluid className="shop-header p-0">
       <div className="overlay-bottles">
         <div className="gradient-overlay"></div>
-        <div className="container-fluid w-50 ms-0 d-flex flex-column content-header ps-5">
-          <h2 className="mt-auto" ref={titleRef}>
-            Welcome to our shop.
-          </h2>
-          <p className="fs-5" ref={textRef}>
-            Explore the Magic of Unicorn Beer; where Craftsmanship Awaits
-          </p>
-          <div className="mt-auto">
-            <SearchInput></SearchInput>
-            <ProductFilter></ProductFilter>
-          </div>
-        </div>
+        <Row className="content-header ps-5 w-100">
+          <Col className="d-flex flex-column">
+            <div className="content ps-5">
+              <h2 ref={titleRef}>Welcome to our shop.</h2>
+              <p className="fs-5" ref={textRef}>
+                Explore the Magic of Unicorn Beer; where Craftsmanship Awaits
+              </p>
+            </div>
+            <div className="mt-auto">
+              <SearchInput />
+              <ProductFilter />
+            </div>
+          </Col>
+        </Row>
       </div>
     </Container>
   );

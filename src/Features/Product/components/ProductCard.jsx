@@ -1,10 +1,12 @@
 import "../styles.css";
 import AddToCartBtn from "../../../Common/components/AddToCartBtn";
-import { incrementQuantity, decrementQuantity } from "../../../Common/Navbar/Cart/cartSlice";
 import { useDispatch } from "react-redux";
+import { useState } from "react";
 
 function ProductCard({ product }) {
   const dispatch = useDispatch();
+
+  const [counter, setCounter] = useState(1);
   
   const containerVolume =
     product.container === "keg"
@@ -35,16 +37,16 @@ function ProductCard({ product }) {
         <div className="d-flex align-items-center">
           <i
             className="bi bi-dash-circle"
-            onClick={() => dispatch(decrementQuantity(product.id))}
+            onClick={() => {counter > 1 && setCounter(counter-1) }}
           ></i>
-          <span className="px-2 fw-bold">1</span>
+          <span className="px-2 fw-bold">{counter}</span>
           <i
             className="bi bi-plus-circle"
-            onClick={() => dispatch(incrementQuantity(product.id))}
+            onClick={() => setCounter(counter+1) }
           ></i>
         </div>
         <div className="addToCartBtn-product d-flex justify-content-end">
-          <AddToCartBtn />
+          <AddToCartBtn product={product} counter={counter} />
         </div>
       </div>
       <div className="d-flex align-items-center border-top pt-2">

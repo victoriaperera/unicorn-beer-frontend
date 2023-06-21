@@ -13,8 +13,12 @@ const cartSlice = createSlice({
     },
 
     addToCart: (state, action) => {
-      const itemInCart = state.products.find((item) => item._id === action.payload.id);
-      itemInCart ? itemInCart.quantity++ : state.products.push({ ...action.payload, quantity: 1 });
+      const {product, counter} = action.payload
+      
+      const itemInCart = state.products.find((item) => item._id === product.id);
+      counter === 1 ? 
+      itemInCart ? itemInCart.quantity++ : state.products.push({ ...product, quantity: 1 })
+      : itemInCart ? itemInCart.quantity += counter : state.products.push({ ...product, quantity: counter })
     },
     incrementQuantity: (state, action) => {
       const item = state.products.find((item) => item._id === action.payload);
