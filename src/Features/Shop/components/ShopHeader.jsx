@@ -3,6 +3,7 @@ import { Col, Form, Row, Container } from "react-bootstrap";
 import { useState } from "react";
 import React from "react";
 import ProductFilter from "./ProductFilter";
+import SearchInput from "./SearchInput";
 
 function ShopHeader() {
   return (
@@ -16,14 +17,7 @@ function ShopHeader() {
             exercitationem aut, cupiditate sunt eum distinctio nisi, fugiat laudantium, odit
           </p>
           <div className="mt-auto">
-            <Form>
-              <Form.Control
-                type="search"
-                placeholder="Search products..."
-                className="rounded-pill"
-                aria-label="Search"
-              />
-            </Form>
+            <SearchInput></SearchInput>
             <ProductFilter></ProductFilter>
           </div>
         </div>
