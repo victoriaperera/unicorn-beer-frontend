@@ -82,32 +82,32 @@ input[type="number"] {
   font-size: 1.3rem;
 }
 
-.month,
-.month::placeholder {
+#month,
+#month::placeholder {
   color: var(--yellow);
 }
 
-.month:focus,
-.month:hover {
+#month:focus,
+#month:hover {
   color: var(--yellow);
   border: solid 1px var(--yellow);
   box-shadow: none;
 }
 
-.day,
-.day::placeholder {
+#day,
+#day::placeholder {
   color: #622c79;
 }
 
-.day:focus,
-.day:hover {
+#day:focus,
+#day:hover {
   color: var(--violet);
   border: solid 1px #622c79;
   box-shadow: none;
 }
 
-.year,
-.year::placeholder {
+#year,
+#year::placeholder {
   color: var(--red);
 }
 

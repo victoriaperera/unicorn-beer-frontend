@@ -39,7 +39,8 @@ function Verify() {
                 <div className='d-flex my-3'>
                   <InputGroup className="m-2">
                     <Form.Control
-                      className='dateInput month'
+                      id='month'
+                      className='dateInput'
                       placeholder="MM"
                       aria-label="Month"
                       name="month"
@@ -51,7 +52,8 @@ function Verify() {
                   </InputGroup>
                   <InputGroup className="m-2">
                     <Form.Control
-                      className='dateInput day'
+                      id='day'
+                      className='dateInput'
                       placeholder="DD"
                       aria-label="Day"
                       name="day"
@@ -63,6 +65,7 @@ function Verify() {
                   </InputGroup>
                   <InputGroup className="m-2">
                     <Form.Control
+                      id='year'
                       className='dateInput year'
                       placeholder="YYYY"
                       aria-label="Year"
