@@ -40,13 +40,15 @@ function Checkout() {
   const deliveryOptions = [];
 
   var today = new Date();
-  
+
   for (var i = 0; i < 5; i++) {
-    var date = new Date(today.getTime() + (1 * 24 * 60 * 60 * 1000));
+    var date = new Date(today.getTime() + 1 * 24 * 60 * 60 * 1000);
     deliveryOptions.push({
-      value : date, 
-      label: `${date.toLocaleDateString("en-US", {weekday: "long"})}, ${date.toLocaleDateString("en-US", {month: "long"})} ${date.getDate()}, ${date.getFullYear()}`
-            
+      value: date,
+      label: `${date.toLocaleDateString("en-US", { weekday: "long" })}, ${date.toLocaleDateString(
+        "en-US",
+        { month: "long" },
+      )} ${date.getDate()}, ${date.getFullYear()}`,
     });
     today = date;
   }
@@ -75,8 +77,12 @@ function Checkout() {
             paymentMethod,
             totalAmount: cart.totalAmount,
             status: "paid",
-            shippingDate: new Date(deliveryDate.getFullYear(), deliveryDate.getMonth(), deliveryDate.getDate() - 1),
-            deliveryDate
+            shippingDate: new Date(
+              deliveryDate.getFullYear(),
+              deliveryDate.getMonth(),
+              deliveryDate.getDate() - 1,
+            ),
+            deliveryDate,
           },
         });
         setAlertToggle(false);
@@ -104,14 +110,16 @@ function Checkout() {
           <small>Our Damn Tasty Beer is Just a Click Away</small>
         </div>
         <Row className="mt-5 mb-3">
-               <div className="d-flex align-items-center">
-                    <p className="me-2 text-orange">Client:</p>
-                    <p>{user.firstname} {user.lastname}</p>
-               </div>
-               <div className="d-flex align-items-center">
-                    <p className="me-2 text-orange">Address:</p>
-                    <p>{user.shippingAddress}</p>
-               </div>
+          <div className="d-flex align-items-center">
+            <p className="me-2 text-orange">Client:</p>
+            <p>
+              {user.firstname} {user.lastname}
+            </p>
+          </div>
+          <div className="d-flex align-items-center">
+            <p className="me-2 text-orange">Address:</p>
+            <p>{user.shippingAddress}</p>
+          </div>
         </Row>
         <Form method="POST" onSubmit={handleSubmit}>
           <Row className="mb-3">
@@ -119,31 +127,30 @@ function Checkout() {
             <ListGroup as="ul" className="px-2">
               {cart.products.length > 0 ? (
                 cart.products.map((item) => {
-                  const photo = item.product.style.photos.filter(
-                    (photo) =>
-                      photo.includes("Main") && photo.includes(`${item.product.container.name}`),
+                  const photo = item.style.photos.filter(
+                    (photo) => photo.includes("Main") && photo.includes(`${item.container.name}`),
                   );
                   return (
                     <ListGroup.Item
-                      key={item.product.id}
+                      key={item.id}
                       as="li"
                       className="d-flex align-items-center justify-content-between"
                     >
                       <div className="col-1 text-center">
                         <img
                           src={`${import.meta.env.VITE_BACK_URL}/img/${photo}`}
-                          alt={`${item.product.style.name} ${item.product.container.name}`}
-                          className={item.product.container.name === "can" ? "w-20" : "w-35"}
+                          alt={`${item.style.name} ${item.container.name}`}
+                          className={item.container.name === "can" ? "w-20" : "w-35"}
                         />
                       </div>
                       <div className="col-6 me-auto d-flex flex-column justify-content-center">
-                        <p className="m-0 fw-bold">{item.product.style.name}</p>
+                        <p className="m-0 fw-bold">{item.style.name}</p>
                         <p className="m-0">
-                          {item.product.container.name} ${item.product.price}
+                          {item.container.name} ${item.price}
                         </p>
                       </div>
                       <Badge bg="primary" pill>
-                        {item.productQuantity}
+                        {item.quantity}
                       </Badge>
                     </ListGroup.Item>
                   );
@@ -154,7 +161,7 @@ function Checkout() {
                   className="d-flex justify-content-between align-items-start"
                 >
                   <div className="ms-2 me-auto">
-                    <p className="m-0 fw-bold">Your cart it's emtpy :(</p>
+                    <p className="m-0 text-body-secondary">Your cart it's emtpy :(</p>
                   </div>
                   <Badge bg="danger" pill>
                     0
@@ -163,7 +170,7 @@ function Checkout() {
               )}
             </ListGroup>
             <Form.Group as={Col} md="6" className="my-2">
-              <Form.Label>Select Payment Method</Form.Label>
+              <Form.Label><i className="bi bi-credit-card-fill me-2"></i> Select Payment Method</Form.Label>
                 <Select
                   name="paymentMethod"
                   options={paymentOptions}
@@ -173,7 +180,7 @@ function Checkout() {
                 />
             </Form.Group>
             <Form.Group as={Col} md="6" className="my-2">
-              <Form.Label>Select Delivery Date</Form.Label>                    
+              <Form.Label> <i className="bi bi-truck fs-6 text-white me-2"></i> Select Delivery Date</Form.Label>                    
                 <Select
                  name="deliveryDate"
                  options={deliveryOptions}
@@ -181,9 +188,9 @@ function Checkout() {
                  styles={customStylesDD}
                 />  
             </Form.Group>
-            <Col  md="12" className="my-2 d-flex justify-content-end align-items-end">
-                        <p className="m-0 me-2 fs-3 fw-bold text-orange">TOTAL: </p>
-                        <p className="m-0 fs-3 fw-bold">$ {cart.totalAmount}</p>
+            <Col md="12" className="my-2 d-flex justify-content-end align-items-end">
+              <p className="m-0 me-2 fs-3 fw-bold text-orange">TOTAL: </p>
+              <p className="m-0 fs-3 fw-bold">$ {cart.totalAmount}</p>
             </Col>
           </Row>
           <Row className="justify-content-end">

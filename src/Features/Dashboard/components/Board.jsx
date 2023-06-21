@@ -13,7 +13,9 @@ function Board() {
       try {
         const productResponse = await axios.get("http://localhost:3000/products");
         const userResponse = await axios.get("http://localhost:3000/users");
-        console.log(userResponse);
+        const orders = await axios.get("http://localhost:3000/orders");
+
+        console.log(orders.data);
         const productListData = productResponse.data;
         const usersListData = userResponse.data;
         dispatch(setProductList(productListData));

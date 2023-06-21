@@ -62,7 +62,7 @@ function TeamMemberCard({ admin }) {
     <>
       <div className="col mb-5" ref={circleOne}>
         <img
-          src="/src/assets/icons/user-0.png"
+          src="/src/assets/icons/user-1.png"
           alt="User Avatar"
           className="img-team-member"
           onMouseEnter={handleExpand}
@@ -81,7 +81,7 @@ function TeamMemberCard({ admin }) {
           </a>
           <a href="#">
             <img
-              src="src/assets/icons/github_black_logo.png"
+              src="src/assets/icons/github_logo.png"
               alt="github icon"
               typeof="png/image"
               className="team-member-icon"
@@ -91,7 +91,7 @@ function TeamMemberCard({ admin }) {
       </div>
       <div className="col mb-5" ref={circleTwo}>
         <img
-          src="/src/assets/icons/user-0.png"
+          src="/src/assets/icons/user-2.png"
           alt="User Avatar"
           className="img-team-member"
           onMouseEnter={handleExpand}
@@ -110,7 +110,7 @@ function TeamMemberCard({ admin }) {
           </a>
           <a href="#">
             <img
-              src="src/assets/icons/github_black_logo.png"
+              src="src/assets/icons/github_logo.png"
               alt="github icon"
               typeof="png/image"
               className="team-member-icon"
@@ -120,7 +120,7 @@ function TeamMemberCard({ admin }) {
       </div>
       <div className="col mb-5" ref={circleThree}>
         <img
-          src="/src/assets/icons/user-0.png"
+          src="/src/assets/icons/user-3.png"
           alt="User Avatar"
           className="img-team-member"
           onMouseEnter={handleExpand}
@@ -139,7 +139,7 @@ function TeamMemberCard({ admin }) {
           </a>
           <a href="#">
             <img
-              src="src/assets/icons/github_black_logo.png"
+              src="src/assets/icons/github_logo.png"
               alt="github icon"
               typeof="png/image"
               className="team-member-icon"
@@ -149,7 +149,7 @@ function TeamMemberCard({ admin }) {
       </div>
       <div className="col mb-5" ref={circleFour}>
         <img
-          src="/src/assets/icons/user-0.png"
+          src="/src/assets/icons/user-4.png"
           alt="User Avatar"
           className="img-team-member"
           onMouseEnter={handleExpand}
@@ -168,7 +168,7 @@ function TeamMemberCard({ admin }) {
           </a>
           <a href="#">
             <img
-              src="src/assets/icons/github_black_logo.png"
+              src="src/assets/icons/github_logo.png"
               alt="github icon"
               typeof="png/image"
               className="team-member-icon"
@@ -178,7 +178,7 @@ function TeamMemberCard({ admin }) {
       </div>
       <div className="col mb-5" ref={circleFive}>
         <img
-          src="/src/assets/icons/user-0.png"
+          src="/src/assets/icons/user-5.png"
           alt="User Avatar"
           className="img-team-member"
           onMouseEnter={handleExpand}
@@ -197,7 +197,7 @@ function TeamMemberCard({ admin }) {
           </a>
           <a href="#">
             <img
-              src="src/assets/icons/github_black_logo.png"
+              src="src/assets/icons/github_logo.png"
               alt="github icon"
               typeof="png/image"
               className="team-member-icon"

@@ -5,6 +5,8 @@
 }
 .text-orange {
     color: var(--orange);
+    font-size: 1.4rem;
+    font-family: "Bebas Neue", sans-serif !important;
 }
 
 .w-20 {

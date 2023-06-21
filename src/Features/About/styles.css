@@ -27,7 +27,8 @@
 }
 
 .about-section-team {
-  color: var(--graphite);
+  color: var(--white);
+  background-color: var(--lightGraphite);
 }
 
 @keyframes moveUp {
@@ -78,44 +79,31 @@
 
 .about-nav-container {
   position: sticky;
-  top: 90%;
-  left: 0;
+  top: 50%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  align-items: flex-end;
   z-index: 1;
 }
 
 .nav-btn {
-  border: none;
-  color: var(--white);
-  font-size: 0.7rem;
+  border: 2px solid var(--white);
+  border-radius: 50%;
   padding: 0.4rem;
-  margin-bottom: 0;
+  margin-right: 20px;
+  margin-bottom: 10px;
   cursor: pointer;
-  width: 70px;
-  position: relative;
-}
-.nav-btn:hover {
-  animation: moveUp 0.5s forwards;
+  width: 10px;
+  height: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  transition: background-color 0.3s;
 }
 
-.nav-btn-1 {
-  background-color: var(--graphite);
-}
-.nav-btn-2 {
-  background-color: var(--red);
-}
-.nav-btn-3 {
-  background-color: var(--violet);
-}
-.nav-btn-4 {
-  background-color: var(--orange);
-}
-.nav-btn-5 {
-  background-color: var(--yellow);
-}
-.nav-btn-6 {
-  background-color: var(--green);
+.nav-btn:hover,
+.nav-btn:focus {
+  background-color: var(--white);
+  transform: scale(1.1);
 }
