@@ -6,15 +6,17 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Cart from "./Cart/Cart";
 import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Logout from "../../Features/Auth/components/Logout";
+import { clearFilter } from "../../Features/Shop/shopSlice";
 
 function UnicornNavbar() {
   const [show, setShow] = useState(false);
   const [navbarBlur, setNavbarBlur] = useState("");
   const user = useSelector((state) => state.user);
   const cart = useSelector((state) => state.cart.products);
+  const dispatch = useDispatch();
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -78,7 +80,7 @@ function UnicornNavbar() {
                   </Link>
                 </div>
                 <div className="mx-2 mt-1">
-                  <Link to={"/shop"} className="nav-link">
+                  <Link to={"/shop"} className="nav-link" onClick={() => dispatch(clearFilter())}>
                     SHOP
                   </Link>
                 </div>
