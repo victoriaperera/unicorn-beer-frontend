@@ -27,6 +27,7 @@ function BuyNowBtn({ product }) {
   return (
     <>
       <button
+        type="button"
         className="rounded-pill addtocart-btn mt-2  "
         onClick={handleClick}
         onMouseEnter={handleMouseEnter}

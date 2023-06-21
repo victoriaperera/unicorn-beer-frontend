@@ -36,6 +36,7 @@ function CartFooter({ handleClose }) {
         className="btn rounded-pill bg-black fw-medium text-white w-100"
         to={user ? "/checkout" : "/login"}
         onClick={handleClose}
+        aria-label="Check Out Button"
       >
         Checkout
       </Link>
