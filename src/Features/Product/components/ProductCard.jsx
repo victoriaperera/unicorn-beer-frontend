@@ -18,15 +18,15 @@ function ProductCard({ product }) {
       <div className="border-top pt-2">
         <div className="w-100 d-flex justify-content-between pb-2">
           <span>Container type</span>
-          <span>{product.container.name}</span>
+          <span className="fw-bold text-capitalize">{product.container.name}</span>
         </div>
         <div className="w-100 d-flex justify-content-between pb-2">
           <span>Size</span>
-          <span>{containerVolume} Oz.</span>
+          <span className="fw-bold">{containerVolume} Oz.</span>
         </div>
         <div className="w-100 d-flex justify-content-between pb-2">
           <span>Price</span>
-          <span className="fw-bold">${product.price}</span>
+          <span className="fw-bold">$ {product.price.toFixed(2)}</span>
         </div>
       </div>
       <div className="w-100 d-flex justify-content-between border-top pt-2">

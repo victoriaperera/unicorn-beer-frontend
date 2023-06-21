@@ -25,7 +25,7 @@ function Product({ product }) {
         </Link>
         <div>
           <h5>{product.name}</h5>
-          <p className="fw-semibold mb-2">$ 19.99</p>
+          <p className="fw-semibold mb-2">$ {product.price.toFixed(2)}</p>
           <span className="addToCartBtn-shop">
             <AddToCartBtn product={product} />
           </span>
