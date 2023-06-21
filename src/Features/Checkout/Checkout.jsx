@@ -22,13 +22,13 @@ function Checkout() {
   const [show, setShow] = useState(false);
 
   const paymentOptions = [
-    { value: "visa", label: "Visa", image: "src/assets/icons/icons8-tarjeta-visa-48.png" },
+    { value: "Visa", label: "Visa", image: "src/assets/icons/icons8-tarjeta-visa-48.png" },
     {
-      value: "mastercard",
+      value: "Mastercard",
       label: "Master Card",
       image: "src/assets/icons/icons8-mastercard-48.png",
     },
-    { value: "paypal", label: "PayPal", image: "src/assets/icons/icons8-paypal-48.png" },
+    { value: "Paypal", label: "PayPal", image: "src/assets/icons/icons8-paypal-48.png" },
   ];
   const customStylesPM = {
     option: (provided, state) => ({
@@ -36,7 +36,6 @@ function Checkout() {
       color: "black",
       background: `url(${state.data.image}) no-repeat center left`,
       paddingLeft: "50px",
-      fontFamily: "Oswald",
     }),
   };
   const deliveryOptions = [];
@@ -78,7 +77,7 @@ function Checkout() {
             totalAmount: cart.totalAmount,
             status: "paid",
             shippingDate: new Date(),
-            deliveryDate: new Date(),
+            deliveryDate
           },
         });
         setAlertToggle(false);
@@ -166,22 +165,22 @@ function Checkout() {
             </ListGroup>
             <Form.Group as={Col} md="6" className="my-2">
               <Form.Label>Select Payment Method</Form.Label>
-              <Select
-                name="paymentMethod"
-                options={paymentOptions}
-                styles={customStylesPM}
-                onChange={(e) => setPaymentMet(e.value)}
-                required
-              />
+                <Select
+                  name="paymentMethod"
+                  options={paymentOptions}
+                  styles={customStylesPM}
+                  onChange={(e) => setPaymentMet(e.value)}
+                  required
+                />
             </Form.Group>
             <Form.Group as={Col} md="6" className="my-2">
-                        <Form.Label>Select Delivery Date</Form.Label>                    
-                        <Select
-                        name="deliveryDate"
-                        options={deliveryOptions}
-                        onChange={(e)=> setDeliveryDate(e.value)}
-                        styles={customStylesDD}
-                        />  
+              <Form.Label>Select Delivery Date</Form.Label>                    
+                <Select
+                 name="deliveryDate"
+                 options={deliveryOptions}
+                 onChange={(e)=> setDeliveryDate(e.value)}
+                 styles={customStylesDD}
+                />  
             </Form.Group>
             <Col  md="12" className="my-2 d-flex justify-content-end align-items-end">
                         <p className="m-0 me-2 fs-3 fw-bold text-orange">TOTAL: </p>
