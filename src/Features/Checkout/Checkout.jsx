@@ -14,13 +14,14 @@ function Checkout() {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const [paymentMethod, setPaymentMet] = useState();
+  const [deliveryDate, setDeliveryDate] = useState();
 
   const [alertText, setAlertText] = useState("");
   const [alertToggle, setAlertToggle] = useState(null);
 
   const [show, setShow] = useState(false);
 
-  const options = [
+  const paymentOptions = [
     { value: "visa", label: "Visa", image: "src/assets/icons/icons8-tarjeta-visa-48.png" },
     {
       value: "mastercard",
@@ -29,13 +30,32 @@ function Checkout() {
     },
     { value: "paypal", label: "PayPal", image: "src/assets/icons/icons8-paypal-48.png" },
   ];
-  const customStyles = {
+  const customStylesPM = {
     option: (provided, state) => ({
       ...provided,
       color: "black",
       background: `url(${state.data.image}) no-repeat center left`,
       paddingLeft: "50px",
       fontFamily: "Oswald",
+    }),
+  };
+  const deliveryOptions = [];
+
+  var today = new Date();
+  
+  for (var i = 0; i < 5; i++) {
+    var date = new Date(today.getTime() + (1 * 24 * 60 * 60 * 1000));
+    deliveryOptions.push({
+      value : date, 
+      label: `${date.toLocaleDateString("en-US", {weekday: "long"})}, ${date.toLocaleDateString("en-US", {month: "long"})} ${date.getDate()}, ${date.getFullYear()}`
+            
+    });
+    today = date;
+  }
+  const customStylesDD = {
+    option: (provided) => ({
+      ...provided,
+      color: "black",
     }),
   };
 
@@ -85,29 +105,19 @@ function Checkout() {
           </div>
           <small>Our Damn Tasty Beer is Just a Click Away</small>
         </div>
+        <Row className="mt-5 mb-3">
+               <div className="d-flex align-items-center">
+                    <p className="me-2 text-orange">Client:</p>
+                    <p>{user.firstname} {user.lastname}</p>
+               </div>
+               <div className="d-flex align-items-center">
+                    <p className="me-2 text-orange">Address:</p>
+                    <p>{user.shippingAddress}</p>
+               </div>
+        </Row>
         <Form method="POST" onSubmit={handleSubmit}>
           <Row className="mb-3">
-            <Form.Group as={Col} md="6" className="my-2">
-              <Form.Label>Client</Form.Label>
-              <Form.Control
-                type="text"
-                value={`${user.firstname} ${user.lastname}`}
-                disabled
-                readOnly
-              />
-            </Form.Group>
-            <Form.Group as={Col} md="6" className="my-2">
-              <Form.Label>Shipping Address</Form.Label>
-              <Form.Control type="text" value={`${user.shippingAddress}`} disabled readOnly />
-              <p className="my-2">
-                Change{" "}
-                <Link to="#" className="authLink">
-                  address
-                </Link>
-              </p>
-              {/* TODO Fuera del alcance del proyecto */}
-            </Form.Group>
-            <p>Cart</p>
+            <p className="text-orange">Cart</p>
             <ListGroup as="ul" className="px-2">
               {cart.products.length > 0 ? (
                 cart.products.map((item) => {
@@ -158,22 +168,25 @@ function Checkout() {
               <Form.Label>Select Payment Method</Form.Label>
               <Select
                 name="paymentMethod"
-                options={options}
-                styles={customStyles}
+                options={paymentOptions}
+                styles={customStylesPM}
                 onChange={(e) => setPaymentMet(e.value)}
                 required
               />
             </Form.Group>
             <Form.Group as={Col} md="6" className="my-2">
-              <Form.Label>Total</Form.Label>
-              <Form.Control
-                type="text"
-                value={"$" + cart.totalAmount}
-                name="totalAmount"
-                disabled
-                readOnly
-              />
+                        <Form.Label>Select Delivery Date</Form.Label>                    
+                        <Select
+                        name="deliveryDate"
+                        options={deliveryOptions}
+                        onChange={(e)=> setDeliveryDate(e.value)}
+                        styles={customStylesDD}
+                        />  
             </Form.Group>
+            <Col  md="12" className="my-2 d-flex justify-content-end align-items-end">
+                        <p className="m-0 me-2 fs-3 fw-bold text-orange">TOTAL: </p>
+                        <p className="m-0 fs-3 fw-bold">$ {cart.totalAmount}</p>
+            </Col>
           </Row>
           <Row className="justify-content-end">
             <Button
