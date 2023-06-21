@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 
 function ProductCard({ product }) {
   const dispatch = useDispatch();
-  
+
   const containerVolume =
     product.container === "keg"
       ? (product.container.volume * 1000 * 0.033814).toFixed(2)
@@ -44,7 +44,7 @@ function ProductCard({ product }) {
           ></i>
         </div>
         <div className="addToCartBtn-product d-flex justify-content-end">
-          <AddToCartBtn />
+          <AddToCartBtn product={product} />
         </div>
       </div>
       <div className="d-flex align-items-center border-top pt-2">
