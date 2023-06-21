@@ -154,7 +154,7 @@ function Checkout() {
                   className="d-flex justify-content-between align-items-start"
                 >
                   <div className="ms-2 me-auto">
-                    <p className="m-0 fw-bold">Your cart it's emtpy :(</p>
+                    <p className="m-0 text-body-secondary">Your cart it's emtpy :(</p>
                   </div>
                   <Badge bg="danger" pill>
                     0
@@ -163,7 +163,7 @@ function Checkout() {
               )}
             </ListGroup>
             <Form.Group as={Col} md="6" className="my-2">
-              <Form.Label>Select Payment Method</Form.Label>
+              <Form.Label><i className="bi bi-credit-card-fill me-2"></i> Select Payment Method</Form.Label>
                 <Select
                   name="paymentMethod"
                   options={paymentOptions}
@@ -173,7 +173,7 @@ function Checkout() {
                 />
             </Form.Group>
             <Form.Group as={Col} md="6" className="my-2">
-              <Form.Label>Select Delivery Date</Form.Label>                    
+              <Form.Label> <i className="bi bi-truck fs-6 text-white me-2"></i> Select Delivery Date</Form.Label>                    
                 <Select
                  name="deliveryDate"
                  options={deliveryOptions}
