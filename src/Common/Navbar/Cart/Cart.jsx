@@ -3,12 +3,11 @@ import CartProduct from "./components/CartProduct";
 import CartFooter from "./components/CartFooter";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { useDispatch, useSelector } from "react-redux";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 function Cart({ handleClose }) {
   const cart = useSelector((state) => state.cart.products);
   const user = useSelector((state) => state.user);
-  const dispatch = useDispatch();
 
   return (
     <>
@@ -20,7 +19,7 @@ function Cart({ handleClose }) {
           {cart.length > 0 &&
             cart.map((product) => <CartProduct product={product} key={product.id} />)}
         </div>
-        <CartFooter />
+        <CartFooter handleClose={handleClose} />
       </Offcanvas.Body>
     </>
   );
