@@ -7,27 +7,4 @@
     background-color: var(--white);
     opacity: 1;
   }
-#paymentMethod option[value="visa"] {
-    background-image: url("src/assets/icons/icons8-tarjeta-visa-48.png");
-    background-repeat: no-repeat;
-    background-position: center left;
-    padding-left: 20px;
-    -moz-appearance: none; 
-    appearance: none;
-}
-#paymentMethod option[value="master"] {
-    background-image: url("src/assets/icons/icons8-mastercard-48.png");
-    background-repeat: no-repeat;
-    background-position: center left;
-    padding-left: 20px;
-    -moz-appearance: none; 
-    appearance: none;
-}
-#paymentMethod option[value="paypal"] {
-    background-image: url("src/assets/icons/icons8-paypal-48.png");
-    background-repeat: no-repeat;
-    background-position: center left;
-    padding-left: 20px;
-    -moz-appearance: none; 
-    appearance: none;
-}
+

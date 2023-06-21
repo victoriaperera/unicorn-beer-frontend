@@ -5,7 +5,7 @@ import { useSetColor } from "../../hook/useSetColor";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
 
-function AddToCardBtn({ product }) {
+function AddToCartBtn({ product }) {
   const dispatch = useDispatch();
   const color = useSetColor(product);
   const [isHovering, setIsHovering] = useState(false);
@@ -36,4 +36,4 @@ function AddToCardBtn({ product }) {
   );
 }
 
-export default AddToCardBtn;
+export default AddToCartBtn;

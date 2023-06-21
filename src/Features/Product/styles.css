@@ -1,7 +1,6 @@
 .product-view-bg {
   background-color: var(--white);
   color: var(--graphite);
-  height: 100vh;
   padding: 100px;
 }
 
@@ -11,6 +10,7 @@
   }
   .product-view-text {
     padding-right: 2rem;
+    font-size: smaller;
   }
 }
 
@@ -20,5 +20,10 @@
   }
   .product-view-text {
     padding: 0 !important;
+    font-size: smaller;
   }
+}
+
+.addToCartBtn-product {
+  background-color: var(--graphite);
 }

@@ -20,9 +20,9 @@ function UnicornNavbar() {
   const handleShow = () => setShow(true);
 
   const getTotalQuantity = () => {
-    var total = 0;
+    let total = 0;
     if (Array.isArray(cart)) {
-      cart.forEach((item) => {
+      cart.map((item) => {
         total += item.quantity;
       });
       return total;
@@ -96,7 +96,7 @@ function UnicornNavbar() {
                   {user && <Logout></Logout>}
                 </NavDropdown>
                 <div className="mx-2 mt-2">
-                  <i className="bi bi-cart-fill fs-5 text-white" onClick={handleShow}>
+                  <i className="cartIcon bi bi-cart-fill fs-5 text-white" onClick={handleShow}>
                     <sup className="superscript">({getTotalQuantity() || 0})</sup>
                   </i>
                   <Offcanvas show={show} onHide={handleClose} placement="end">
