@@ -107,12 +107,19 @@ function Checkout() {
                     <ListGroup as="ul" className="px-2">
                         
                         {cart.products.length > 0
-                            ? cart.products.map((item) => 
-                                <ListGroup.Item key={item.id}
+                            ? cart.products.map((item) =>{
+                                const photo = item.style.photos.filter(photo => photo.includes("Main") && photo.includes(`${item.container.name}`) );                       
+                               return <ListGroup.Item key={item.id}
                                     as="li"
-                                    className="d-flex justify-content-between align-items-start"
+                                    className="d-flex align-items-center justify-content-between"
                                 >
-                                    <div className="ms-2 me-auto">
+                                    <div className="col-1 text-center">
+                                        <img src={`${import.meta.env.VITE_BACK_URL}/img/${photo}`} 
+                                        alt={`${item.style.name} ${item.container.name}`} 
+                                        className={item.container.name === "can" ? "w-20" : "w-35"} 
+                                        />
+                                    </div>
+                                    <div className="col-6 me-auto d-flex flex-column justify-content-center">
                                         <p className="m-0 fw-bold">{item.style.name}</p>
                                         <p className="m-0">{item.container.name}  ${item.price}</p>
                                     </div>
@@ -120,7 +127,7 @@ function Checkout() {
                                     {item.quantity}
                                     </Badge>
                                 </ListGroup.Item>
-                             ) 
+                                }) 
                             :
                                 <ListGroup.Item
                                     as="li"
@@ -162,7 +169,7 @@ function Checkout() {
                     type="submit"
                     variant="outline-light"
                     size="lg"
-                    className="rounded-pill w-25 me-3 mt-5"
+                    className="rounded-pill w-50 me-3 mt-5"
                     >
                     Proceed to Checkout
                     </Button>

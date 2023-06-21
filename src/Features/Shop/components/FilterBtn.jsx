@@ -12,10 +12,6 @@ function FilterBtn({ product }) {
     setIsHovering(true);
   };
 
-  const handleMouseLeave = () => {
-    setIsHovering(false);
-  };
-
   const handlerOnFocus = () => {
     setIsHovering(true);
   };
@@ -26,17 +22,20 @@ function FilterBtn({ product }) {
     setIsHovering(true);
   };
 
+  const handlerOnMouseOut = () => {
+    setIsHovering(false);
+  };
+
   return (
     <a
       className="filter-btn h2 me-3"
       key={product.style.id}
       onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      onFocus={handlerOnFocus}
       style={{
         color: isHovering ? color : "var(--lightGraphite)",
       }}
       onClick={handlerFilter}
+      onMouseOut={handlerOnMouseOut}
     >
       {product.style.name}
     </a>

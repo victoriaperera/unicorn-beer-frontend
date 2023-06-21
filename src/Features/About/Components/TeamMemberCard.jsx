@@ -155,7 +155,7 @@ function TeamMemberCard({ admin }) {
           onMouseEnter={handleExpand}
           onMouseLeave={handleShrink}
         />
-        <h4 className="mt-4">Nicolás Martínez Latorraca</h4>
+        <h4 className="mt-4">Nicolás Martínez</h4>
         <p>Full Stack Developer Jr.</p>
         <div>
           <a href="#">

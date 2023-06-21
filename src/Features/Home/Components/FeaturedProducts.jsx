@@ -17,17 +17,54 @@ function FeaturedProducts({ product, afterColor }) {
   const main = photos.filter((photo) => photo.includes("Main") && photo.includes("bottle"));
 
   const imgRef = useRef(null);
+  const leftRef = useRef(null);
+  const rightRef = useRef(null);
 
   useEffect(() => {
     gsap.fromTo(
       imgRef.current,
-      { scale: 0.5 },
+      { scale: 0.5, opacity: 0 },
       {
-        duration: 1.5,
+        duration: 2,
         scale: 1,
-        ease: "expoScale(0.5, 1, power2.inOut)",
+        opacity: 1,
+        ease: Expo.easeOut,
         scrollTrigger: {
           trigger: imgRef.current,
+          start: "center bottom",
+          end: "center top",
+        },
+      },
+    );
+    gsap.fromTo(
+      leftRef.current,
+      { x: "20%", opacity: 0 },
+      {
+        duration: 2,
+        x: 0,
+        opacity: 1,
+        delay: 0.3,
+        ease: Expo.easeOut,
+        scrollTrigger: {
+          trigger: leftRef.current,
+          start: "center bottom",
+          end: "center top",
+        },
+      },
+    );
+    gsap.fromTo(
+      rightRef.current,
+      { x: "-20%", opacity: 0 },
+      {
+        duration: 2,
+        x: 0,
+        opacity: 1,
+        delay: 0.3,
+        ease: Expo.easeOut,
+        scrollTrigger: {
+          trigger: rightRef.current,
+          start: "center bottom",
+          end: "center top",
         },
       },
     );
@@ -53,7 +90,7 @@ function FeaturedProducts({ product, afterColor }) {
               ></path>
             </svg>
           </div>
-          <Col xs={12} sm={8} md={4} lg={3} xxl={3} className="p-0 px-4 pt-5">
+          <Col xs={12} sm={8} md={4} lg={3} xxl={3} className="p-0 px-4 pt-5" ref={leftRef}>
             <img src={logo} alt={`${product.style.name} logo`} className="beer-logo mb-3" />
             <p className="product-text">{product.style.description}</p>
             <img
@@ -70,7 +107,7 @@ function FeaturedProducts({ product, afterColor }) {
               ref={imgRef}
             />
           </Col>
-          <Col xs={12} sm={8} md={4} lg={3} xxl={3} className="py-3">
+          <Col xs={12} sm={8} md={4} lg={3} xxl={3} className="py-3" ref={rightRef}>
             <p>VOL.</p>
             <h4 className="fw-bolder fs-1">{product.style.abv}%</h4>
             <p>AMBER</p>
