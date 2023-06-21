@@ -4,7 +4,7 @@ import { useSetColor } from "../../hook/useSetColor";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 
-function AddToCartBtn({ product }) {
+function AddToCartBtn({ product, counter }) {
   const dispatch = useDispatch();
   const color = useSetColor(product);
   const [isHovering, setIsHovering] = useState(false);
@@ -22,7 +22,7 @@ function AddToCartBtn({ product }) {
       <button
         type="button"
         className="rounded-pill addtocart-btn mt-2  "
-        onClick={() => dispatch(addToCart(product))}
+        onClick={() => dispatch(addToCart({product, counter}))}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         style={{
