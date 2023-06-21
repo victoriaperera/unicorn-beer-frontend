@@ -3,10 +3,9 @@
     justify-content: center;
     flex-direction: column;
 }
-.form-control:disabled {
-    background-color: var(--white);
-    opacity: 1;
-  }
+.text-orange {
+    color: var(--orange);
+}
 
 .w-20 {
     width: 20%;
