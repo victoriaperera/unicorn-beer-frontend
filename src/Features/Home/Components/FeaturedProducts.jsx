@@ -1,5 +1,5 @@
 import { Row, Col } from "react-bootstrap";
-import AddToCardBtn from "../../../Common/components/AddToCardBtn";
+import AddToCartBtn from "../../../Common/components/AddToCartBtn";
 import { useSetColor } from "../../../hook/useSetColor";
 import { useCheckImg } from "../../../hook/useCheckImg";
 import { gsap } from "gsap";
@@ -72,7 +72,7 @@ function FeaturedProducts({ product, afterColor }) {
             <p>VOL.</p>
             <h4 className="fw-bolder fs-1">{product.style.abv}%</h4>
             <p>AMBER</p>
-            <AddToCardBtn product={product}></AddToCardBtn>
+            <AddToCartBtn product={product}></AddToCartBtn>
           </Col>
           <div className="divider-bottom p-0">
             <svg

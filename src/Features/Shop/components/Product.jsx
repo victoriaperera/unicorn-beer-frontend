@@ -2,7 +2,7 @@ import "./styles.css";
 import { Col } from "react-bootstrap";
 import { useCheckImg } from "../../../hook/useCheckImg";
 import { useSetGradientColor } from "../../../hook/useSetGradientColor";
-import AddToCardBtn from "../../../Common/components/AddToCardBtn";
+import AddToCartBtn from "../../../Common/components/AddToCartBtn";
 import { Link } from "react-router-dom";
 
 function Product({ product }) {
@@ -11,7 +11,6 @@ function Product({ product }) {
   const main = photos.filter(
     (photo) => photo.includes("Main") && photo.includes(product.container.name),
   );
- 
 
   return (
     <>
@@ -28,7 +27,7 @@ function Product({ product }) {
           <h5>{product.name}</h5>
           <p className="fw-semibold mb-2">$ 19.99</p>
           <span className="addToCartBtn-shop">
-            <AddToCardBtn product={product} />
+            <AddToCartBtn product={product} />
           </span>
         </div>
       </Col>
