@@ -4,7 +4,7 @@ import { useState } from "react";
 
 function FilterAllBtn() {
   const [isHovering, setIsHovering] = useState(false);
-  const color = "var(--graphite)";
+  const color = "var(--lightGraphite)";
 
   const dispatch = useDispatch();
 
@@ -33,7 +33,7 @@ function FilterAllBtn() {
       onMouseLeave={handleMouseLeave}
       onFocus={handlerOnFocus}
       style={{
-        color: isHovering ? color : "var(--lightGraphite)",
+        color: isHovering ? color : "var(--white)",
       }}
       onClick={handlerFilter}
     >
