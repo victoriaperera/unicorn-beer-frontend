@@ -18,11 +18,11 @@ function ProductFilter() {
   }, []);
 
   return (
-    <div className="d-flex mt-3 ">
+    <div className="d-flex flex-wrap mt-3 ">
       {products.map((product) => (
         <FilterBtn product={product} key={product.style.id}></FilterBtn>
       ))}
-      <FilterAllBtn></FilterAllBtn>
+      <FilterAllBtn />
     </div>
   );
 }

@@ -28,7 +28,7 @@ function FilterAllBtn() {
 
   return (
     <a
-      className="filter-btn h2 me-3"
+      className="d-flex filter-btn h2 me-3"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onFocus={handlerOnFocus}
