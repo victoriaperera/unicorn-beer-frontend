@@ -29,7 +29,7 @@ function AddToCartBtn({ product }) {
           color: isHovering ? color : "white",
         }}
       >
-        Buy Now
+        Add To Cart
       </button>
     </>
   );
