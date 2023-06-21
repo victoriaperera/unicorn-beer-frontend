@@ -5,7 +5,7 @@ const cartSlice = createSlice({
   initialState: { products: [], totalAmount: 0 },
   reducers: {
     setProducts: (state, action) => {
-      state.products = action.payload.products; //TODO: ver de borrar o usar
+      state.products = action.payload.products;
     },
 
     setTotal: (state, action) => {
@@ -13,21 +13,19 @@ const cartSlice = createSlice({
     },
 
     addToCart: (state, action) => {
-      const itemInCart = state.products.find((item) => item.product.id === action.payload.id);
-      itemInCart
-        ? itemInCart.productQuantity++
-        : state.products.push({ product: action.payload, productQuantity: 1 });
+      const itemInCart = state.products.find((item) => item._id === action.payload.id);
+      itemInCart ? itemInCart.quantity++ : state.products.push({ ...action.payload, quantity: 1 });
     },
     incrementQuantity: (state, action) => {
-      const item = state.products.find((item) => item.product.id === action.payload);
-      item.productQuantity++;
+      const item = state.products.find((item) => item._id === action.payload);
+      item.quantity++;
     },
     decrementQuantity: (state, action) => {
-      const item = state.products.find((item) => item.product.id === action.payload);
-      item.productQuantity === 1 ? (item.productQuantity = 1) : item.productQuantity--;
+      const item = state.products.find((item) => item._id === action.payload);
+      item.quantity === 1 ? (item.quantity = 1) : item.quantity--;
     },
     removeItem: (state, action) => {
-      const removeItem = state.products.filter((item) => item.product.id !== action.payload);
+      const removeItem = state.products.filter((item) => item._id !== action.payload);
       state.products = removeItem;
     },
     clearCart: (state) => {

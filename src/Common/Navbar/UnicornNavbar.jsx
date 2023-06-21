@@ -25,7 +25,7 @@ function UnicornNavbar() {
     let total = 0;
     if (Array.isArray(cart)) {
       cart.map((item) => {
-        total += item.productQuantity;
+        total += item.quantity;
       });
       return total;
     }

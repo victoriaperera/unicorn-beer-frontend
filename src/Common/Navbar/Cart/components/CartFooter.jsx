@@ -14,7 +14,7 @@ function CartFooter({ handleClose }) {
     let total = 0;
     if (Array.isArray(cart)) {
       cart.map((product) => {
-        total += product.product.price * product.productQuantity;
+        total += product.price * product.quantity;
       });
       dispatch(setTotal({ totalAmount: total.toFixed(2) }));
       return total.toFixed(2);
