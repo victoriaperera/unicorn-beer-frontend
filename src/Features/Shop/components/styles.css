@@ -84,18 +84,18 @@
 
 .form-control::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: var(--lightGraphite);
+  color: var(--white);
   opacity: 1; /* Firefox */
 }
 
 .form-control:-ms-input-placeholder {
   /* Internet Explorer 10-11 */
-  color: var(--lightGraphite);
+  color: var(--white);
 }
 
 .form-control::-ms-input-placeholder {
   /* Microsoft Edge */
-  color: var(--lightGraphite);
+  color: var(--white);
 }
 
 .filter-btn {

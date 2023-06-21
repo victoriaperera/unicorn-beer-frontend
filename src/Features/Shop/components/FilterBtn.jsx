@@ -32,7 +32,7 @@ function FilterBtn({ product }) {
       key={product.style.id}
       onMouseEnter={handleMouseEnter}
       style={{
-        color: isHovering ? color : "var(--lightGraphite)",
+        color: isHovering ? color : "var(--white)",
       }}
       onClick={handlerFilter}
       onMouseOut={handlerOnMouseOut}

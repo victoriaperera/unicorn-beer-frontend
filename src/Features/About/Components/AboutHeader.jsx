@@ -28,12 +28,12 @@ function AboutHeader() {
       textRef.current,
       {
         opacity: 0,
-        y: 20,
+        x: -20,
       },
       {
         duration: 1,
         opacity: 1,
-        y: 0,
+        x: 0,
         ease: "power2.out",
         delay: 1,
       },
