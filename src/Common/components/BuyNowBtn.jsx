@@ -1,10 +1,10 @@
 import "./styles.css";
-import { addToCart } from "../Navbar/Cart/cartSlice";
 import { useSetColor } from "../../hook/useSetColor";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
+import React from "react";
 
-function AddToCartBtn({ product }) {
+function BuyNowBtn({ product }) {
   const dispatch = useDispatch();
   const color = useSetColor(product);
   const [isHovering, setIsHovering] = useState(false);
@@ -35,4 +35,4 @@ function AddToCartBtn({ product }) {
   );
 }
 
-export default AddToCartBtn;
+export default BuyNowBtn;

@@ -18,11 +18,11 @@ function CartProduct({ product }) {
         <img src={main} alt={`${product.name} img`} className="cart-img" />
       </div>
       <div className="w-75">
-        <div className="mt-2 d-flex justify-content-between">
+        <div className="d-flex justify-content-between mt-1">
           <span>{product.name}</span>
           <span className="ms-2">${product.price.toFixed(2)}</span>
         </div>
-        <div className="mt-2 d-flex justify-content-between">
+        <div className="d-flex justify-content-between mt-1">
           <div className="d-flex">
             <i
               className="bi bi-dash-circle"
@@ -38,6 +38,10 @@ function CartProduct({ product }) {
               onClick={() => dispatch(incrementQuantity(product.id))}
             ></i>
           </div>
+          <i className="bi bi-trash3" onClick={() => dispatch(removeItem(product.id))}></i>
+        </div>
+        <div className="d-flex justify-content-between mt-1">
+          <span>Sub-total</span>
           <span className="ms-2 fw-bold">${(product.price * product.quantity).toFixed(2)}</span>
         </div>
       </div>

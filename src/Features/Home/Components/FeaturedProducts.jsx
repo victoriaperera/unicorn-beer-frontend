@@ -1,9 +1,11 @@
-import { Row, Col } from "react-bootstrap";
-import AddToCartBtn from "../../../Common/components/AddToCartBtn";
+import BuyNowBtn from "../../../Common/components/BuyNowBtn";
 import { useSetColor } from "../../../hook/useSetColor";
 import { useCheckImg } from "../../../hook/useCheckImg";
-import { gsap } from "gsap";
+
+import { Row, Col } from "react-bootstrap";
 import { useRef, useEffect } from "react";
+
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -72,7 +74,7 @@ function FeaturedProducts({ product, afterColor }) {
             <p>VOL.</p>
             <h4 className="fw-bolder fs-1">{product.style.abv}%</h4>
             <p>AMBER</p>
-            <AddToCartBtn product={product}></AddToCartBtn>
+            <BuyNowBtn product={product}></BuyNowBtn>
           </Col>
           <div className="divider-bottom p-0">
             <svg
