@@ -20,6 +20,7 @@ function AddToCartBtn({ product }) {
   return (
     <>
       <button
+        type="button"
         className="rounded-pill addtocart-btn mt-2  "
         onClick={() => dispatch(addToCart(product))}
         onMouseEnter={handleMouseEnter}
@@ -28,8 +29,9 @@ function AddToCartBtn({ product }) {
           backgroundColor: isHovering ? "white" : "transparent",
           color: isHovering ? color : "white",
         }}
+        aria-label="Add To Cart Button"
       >
-        Buy Now
+        Add To Cart
       </button>
     </>
   );
