@@ -1,11 +1,9 @@
 import BuyNowBtn from "../../../Common/components/BuyNowBtn";
 import { useSetColor } from "../../../hook/useSetColor";
 import { useCheckImg } from "../../../hook/useCheckImg";
-
 import { Row, Col } from "react-bootstrap";
 import { useRef, useEffect } from "react";
-
-import { gsap } from "gsap";
+import { gsap, Expo } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 
