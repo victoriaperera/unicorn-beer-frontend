@@ -18,7 +18,7 @@ function Cart({ handleClose }) {
       <Offcanvas.Body className="cart-body">
         <div className="scrollable">
           {cart.length > 0 &&
-            cart.map((product) => <CartProduct product={product} key={product.id} />)}
+            cart.map((product) => <CartProduct product={product} key={product.product.id} />)}
         </div>
         <CartFooter />
       </Offcanvas.Body>
