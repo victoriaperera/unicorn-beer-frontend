@@ -1,6 +1,6 @@
 .addtocart-btn {
-  color: white;
-  border: white 1px solid;
+  color: var(--white);
+  border: var(--white) 1px solid;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 1rem;

@@ -31,7 +31,7 @@ function Board() {
 
   return (
     <>
-      <div className="col-5 text-center background-graphite pt-4 text-white ">
+      <div className="text-center background-graphite pt-4 text-white ">
         <div className="background border-2 shadow p-1 w-100 mt-3">
           <div className="card-body">
             <img src="/src/assets/img/grafica3.png" alt="grafica" className="grafica" />
