@@ -1,8 +1,9 @@
 {
-  "name": "vite-project",
+  "name": "unicorn-beer",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "author": { "name": "Esteban Castañeira, Ivanna Sugliano, Lorena Rincon, Nicolas Martinez, Victoria Perera"},
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
