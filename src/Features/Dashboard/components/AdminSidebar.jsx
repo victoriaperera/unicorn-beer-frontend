@@ -29,7 +29,7 @@ function AdminSidebar({ onSidebarClick }) {
         </li>
         <li className="nav-item">
           <button
-            className={`nav-link ${activeButton === "dashboard" ? "active-dashboard" : ""}`}
+            className={`nav-link active ${activeButton === "dashboard" ? "active-dashboard" : ""}`}
             onClick={() => handleNavigation("dashboard")}
           >
             <i className="bi bi-columns-gap me-3"></i>Dashboard
@@ -37,7 +37,7 @@ function AdminSidebar({ onSidebarClick }) {
         </li>
         <li className="nav-item">
           <button
-            className={`nav-link ${activeButton === "products" ? "active-products" : ""}`}
+            className={`nav-link active ${activeButton === "products" ? "active-products" : ""}`}
             onClick={() => handleNavigation("products")}
           >
             <i className="bi bi-tags-fill me-3"></i>Products
@@ -45,7 +45,9 @@ function AdminSidebar({ onSidebarClick }) {
         </li>
         <li className="nav-item">
           <button
-            className={`nav-link ${activeButton === "categories" ? "active-categories" : ""}`}
+            className={`nav-link active ${
+              activeButton === "categories" ? "active-categories" : ""
+            }`}
             onClick={() => handleNavigation("categories")}
           >
             <i className="bi bi-boxes me-3"></i>Categories
@@ -53,7 +55,7 @@ function AdminSidebar({ onSidebarClick }) {
         </li>
         <li className="nav-item">
           <button
-            className={`nav-link ${activeButton === "orders" ? "active-orders" : ""}`}
+            className={`nav-link active ${activeButton === "orders" ? "active-orders" : ""}`}
             onClick={() => handleNavigation("orders")}
           >
             <i className="bi bi-cart-fill me-3"></i>Orders
@@ -61,7 +63,7 @@ function AdminSidebar({ onSidebarClick }) {
         </li>
         <li className="nav-item">
           <button
-            className={`nav-link ${activeButton === "customers" ? "active-customers" : ""}`}
+            className={`nav-link active ${activeButton === "customers" ? "active-customers" : ""}`}
             onClick={() => handleNavigation("customers")}
           >
             <i className="bi bi-people-fill me-3"></i>Customers
