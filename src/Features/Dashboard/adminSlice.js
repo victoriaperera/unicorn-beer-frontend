@@ -17,8 +17,17 @@ const adminSlice = createSlice({
     setData: (state, action) => {
       state.data = action.payload;
     },
+    deleteProduct: (state, action) => {
+
+    },
+    editProduct: (state, action) => {
+
+    },
+    createProduct: (state, action) => {
+
+    }
   },
 });
 
-export const { setAdminToken, clearAdminToken, setData } = adminSlice.actions;
+export const { setAdminToken, clearAdminToken, setData, deleteProduct, editProduct, createProduct } = adminSlice.actions;
 export default adminSlice.reducer;
