@@ -31,8 +31,16 @@ function Products() {
                 <td>USD {product.price}</td>
                 <td>{product.stock}</td>
                 <td className="d-flex justify-content-around"> 
-                  <button className="btn rounded-pill btn-primary">Edit</button>
-                  <button className="btn rounded-pill btn-danger">Delete</button>
+                  <button className="btn rounded-pill btn-primary"
+                  type="submit"
+                  >
+                  Edit
+                  </button>
+                  <button className="btn rounded-pill btn-danger"
+                  type="submit"
+                  >
+                  Delete
+                  </button>
                 </td>
               </tr>  
              )}
