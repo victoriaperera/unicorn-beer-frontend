@@ -14,6 +14,7 @@ import Checkout from "./Features/Checkout/Checkout";
 import Admin from "./Features/Dashboard/Admin";
 import SignUp from "./Features/Auth/Singup";
 import Err404 from "./Features/err404/err404";
+import Products from "./Features/Dashboard/components/Products";
 
 function App() {
   const { pathname: currentPage } = useLocation();
@@ -34,6 +35,7 @@ function App() {
         <Route path="/products/:id" element={<Product />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/admin/products" element={<Products />} />
         <Route path="*" element={<Err404 />} />
       </Routes>
       {!pagesWONavbars.includes(currentPage) && <Footer />}
