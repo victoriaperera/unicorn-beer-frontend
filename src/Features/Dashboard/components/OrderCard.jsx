@@ -1,7 +1,27 @@
-import "../styles.css";
-import React from "react";
+import { setData } from "../adminSlice";
+import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
+import React, { useEffect } from "react";
 
 function OrderCard() {
+  const dispatch = useDispatch();
+  const orderList = useSelector((state) => state.admin.data);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/orders");
+        const data = response.data;
+        dispatch(setData(response.data));
+        console.log(response.data);
+      } catch (error) {
+        console.log("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <>
       <table className="table table-hover align-middle text-center">
@@ -28,46 +48,22 @@ function OrderCard() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark Walberg</td>
-            <td>APA bottle</td>
-            <td>$$</td>
-            <td>Paypal</td>
-            <td>Paid</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Dakota Johnson</td>
-            <td>IPA bottle</td>
-            <td>$$</td>
-            <td>Visa</td>
-            <td>Delivered</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Amy Adams</td>
-            <td>Blond Keg</td>
-            <td>$$</td>
-            <td>Paypal</td>
-            <td>Paid</td>
-          </tr>
-          <tr>
-            <th scope="row">4</th>
-            <td>Mark Walberg</td>
-            <td>APA bottle</td>
-            <td>$$</td>
-            <td>Paypal</td>
-            <td>Shipped</td>
-          </tr>
-          <tr>
-            <th scope="row">5</th>
-            <td>Amy Adams</td>
-            <td>Blond Keg</td>
-            <td>$$</td>
-            <td>OCA te sirve</td>
-            <td>Paid</td>
-          </tr>
+          {orderList && orderList.length > 0 ? (
+            orderList.map((order) => (
+              <tr key={order.id}>
+                <th scope="row">{order.id}</th>
+                {/* <td>{order.user.firstname}</td> */}
+                {/* <td>{order.products}</td> */}
+                <td>{order.totalAmount}</td>
+                <td>{order.paymentMethod}</td>
+                <td>{order.status}</td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan="6">No orders to display</td>
+            </tr>
+          )}
         </tbody>
       </table>
     </>
