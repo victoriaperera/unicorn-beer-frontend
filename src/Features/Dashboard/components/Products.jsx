@@ -1,20 +1,17 @@
-import { useEffect } from "react";
-import "../styles.css";
-import axios from "axios";
-import { useState } from "react";
 import { useSelector } from "react-redux";
-import "./styles.css"
+import { Table } from "react-bootstrap";
+
+import "./styles.css";
 
 function Products() {
   
   const products = useSelector( (state) => state.admin.productList)
 
-
-  return products && (
+  return  (
     <div className="products-bg">
       <h2 className="text-white mb-3">Products</h2>
       <div>
-        <table className="table table-hover align-middle text-center">
+        <Table responsive="sm" className="table table-hover align-middle text-center">
           <thead  className="table-header">
             <tr>
               <th className="products-table-heading" scope="col">Id</th>
@@ -33,11 +30,14 @@ function Products() {
                 <td>{product.style.name}</td>
                 <td>USD {product.price}</td>
                 <td>{product.stock}</td>
-                <td> 📝  ❌</td>
+                <td className="d-flex justify-content-around"> 
+                  <button className="btn rounded-pill btn-primary">Edit</button>
+                  <button className="btn rounded-pill btn-danger">Delete</button>
+                </td>
               </tr>  
              )}
             </tbody>
-        </table>
+        </Table>
       </div>
     </div>
   );
