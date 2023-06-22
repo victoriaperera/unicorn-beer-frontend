@@ -3,7 +3,7 @@ import React from "react";
 
 function Orders() {
   return (
-    <div>
+    <div className="orders-bg">
       <div></div>
     </div>
   );

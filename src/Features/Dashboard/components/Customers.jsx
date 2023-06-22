@@ -3,7 +3,7 @@ import React from "react";
 
 function Customers() {
   return (
-    <div>
+    <div className="customers-bg">
       <div></div>
     </div>
   );

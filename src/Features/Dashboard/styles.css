@@ -4,7 +4,7 @@
   left: 0;
   width: 200px;
   height: 100vh;
-  background-color: var(--graphite);
+  background-color: var(--lightGraphite);
   color: var(--white);
   font-size: 1.2rem;
   overflow-x: hidden;
@@ -90,7 +90,7 @@
   overflow: hidden;
 }
 
-.orders-bg {
+.customers-bg {
   height: 100vh;
   margin-left: 200px;
   padding: 20px;
@@ -99,6 +99,18 @@
 }
 
 .card {
+  color: var(--graphite);
   background-color: rgba(255, 255, 255, 0.9); /* Color de fondo con opacidad */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombreado */
+}
+
+.card-header {
+  color: var(--graphite);
+  font-weight: bold;
+}
+
+.categories-list {
+  list-style-type: none;
+  column-count: 3;
+  column-gap: 20px;
 }

@@ -3,7 +3,7 @@ import React from "react";
 
 function Products() {
   return (
-    <div>
+    <div className="products-bg">
       <div></div>
     </div>
   );
