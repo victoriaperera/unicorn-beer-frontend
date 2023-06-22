@@ -1,1 +1,9 @@
 /**** PRODUCT ****/
+
+.products-bg {
+    height: 100vh;
+    margin-left: 200px;
+    padding: 20px;
+    background-color: var(--lightOrange);
+    overflow: hidden;
+  }

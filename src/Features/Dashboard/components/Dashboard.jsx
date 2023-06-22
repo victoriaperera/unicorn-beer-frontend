@@ -11,7 +11,7 @@ function Dashboard() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const productResponse = await axios.get("http://localhost:3000/products");
+        const productResponse = await axios.get(`${import.meta.env.VITE_BACK_URL}/products`);
         const productListData = productResponse.data;
         dispatch(setProductList(productListData));
       } catch (error) {

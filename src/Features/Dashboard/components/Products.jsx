@@ -8,37 +8,38 @@ function Products() {
   const [products, setProducts] = useState();
 
   useEffect( ()=>{
-    try{
-      async function getProducts() {
+    const getProducts = async () => {
+      try{
         const response = await axios({
           method: "GET",
-          url: `${import.meta.env.VITE_BACK_URL}/products`
+          url: `${import.meta.env.VITE_BACK_URL}/products`,
           // headers: {
           //   Authorization: `Bearer ${user.token}`,
           // },
         })
         setProducts(response.data)
+      }catch(err){
+        console.log("Error fetching data:", err)
       }
-      getProducts();
-    }catch(err){
-      console.log(err)
-    }
+    };
+    
+    getProducts();
   },[])
+
   return products && (
     <div className="products-bg">
       <h2 className="text-white mb-3">Products</h2>
       <div>
         
-        <table>
-          <thead>
+        <table className="table table-hover align-middle text-center">
+          <thead  className="table-header">
             <tr>
-              <th scope="col">Id</th>
-              <th scope="col">Name</th>
-              <th scope="col">Style</th>
-              <th scope="col">Price</th>
-              <th scope="col">Featured</th>
-              <th scope="col">Stock</th>
-              <th scope="col">Accions</th>
+              <th className="table-heading" scope="col">Id</th>
+              <th className="table-heading" scope="col">Name</th>
+              <th className="table-heading" scope="col">Style</th>
+              <th className="table-heading" scope="col">Price</th>
+              <th className="table-heading" scope="col">Stock</th>
+              <th className="table-heading" scope="col">Accions</th>
              </tr>
            </thead>
             <tbody>
@@ -49,9 +50,8 @@ function Products() {
                 <td>{product.name}</td>
                 <td>{product.style.name}</td>
                 <td>{product.price}</td>
-                <td>{product.featured}</td>
                 <td>{product.stock}</td>
-                <td>❌ 📝 </td>
+                <td> 📝  ❌</td>
               </tr>
                
              )}
