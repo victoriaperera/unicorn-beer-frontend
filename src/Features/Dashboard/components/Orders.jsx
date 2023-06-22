@@ -7,12 +7,24 @@ function Orders() {
       <table className="table table-hover align-middle text-center">
         <thead className="table-header">
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">User</th>
-            <th scope="col">Products</th>
-            <th scope="col">Total amount</th>
-            <th scope="col">Payment method</th>
-            <th scope="col">Status</th>
+            <th scope="col" className="table-heading">
+              #
+            </th>
+            <th scope="col" className="table-heading">
+              User
+            </th>
+            <th scope="col" className="table-heading">
+              Products
+            </th>
+            <th scope="col" className="table-heading">
+              Total amount
+            </th>
+            <th scope="col" className="table-heading">
+              Payment method
+            </th>
+            <th scope="col" className="table-heading">
+              Status
+            </th>
           </tr>
         </thead>
         <tbody>

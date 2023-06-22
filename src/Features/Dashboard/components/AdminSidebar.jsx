@@ -12,8 +12,11 @@ function AdminSidebar({ onSidebarClick }) {
   return (
     <div className="sidebar scrollable">
       <div className="sidebar-header">
-        <img src="/src/assets/icons/Unicorn-beer-icon-3.svg" alt="Logo" className="sidebar-logo" />
-        <h2 className="m-0 h3">Unicorn Beer</h2>
+        <img
+          src="/src/assets/icons/Unicorn-beer-white-logo-iso.svg"
+          alt="Logo"
+          className="sidebar-logo"
+        />
       </div>
       <ul className="nav flex-column">
         <li className="text-center mb-4">

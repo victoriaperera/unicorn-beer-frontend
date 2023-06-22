@@ -7,7 +7,7 @@ function ProductCard({ product }) {
   const dispatch = useDispatch();
 
   const [counter, setCounter] = useState(1);
-  
+
   const containerVolume =
     product.container === "keg"
       ? (product.container.volume * 1000 * 0.033814).toFixed(2)
@@ -37,19 +37,18 @@ function ProductCard({ product }) {
         <div className="d-flex align-items-center">
           <i
             className="bi bi-dash-circle"
-            onClick={() => {counter > 1 && setCounter(counter-1) }}
+            onClick={() => {
+              counter > 1 && setCounter(counter - 1);
+            }}
           ></i>
           <span className="px-2 fw-bold">{counter}</span>
-          <i
-            className="bi bi-plus-circle"
-            onClick={() => setCounter(counter+1) }
-          ></i>
+          <i className="bi bi-plus-circle" onClick={() => setCounter(counter + 1)}></i>
         </div>
         <div className="addToCartBtn-product d-flex justify-content-end">
           <AddToCartBtn product={product} counter={counter} />
         </div>
       </div>
-      <div className="d-flex align-items-center border-top pt-2">
+      <div className="d-flex align-items-center pt-2">
         <i className="bi bi-truck fs-6 text-white me-2"></i>
         <span className="m-0">Delivery available.</span>
       </div>
