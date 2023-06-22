@@ -5,6 +5,7 @@ import React, { useEffect } from "react";
 function Customers() {
   return (
     <div className="customers-bg">
+      <h2 className="text-white mb-3">Customers</h2>
       <CustomerCard />
     </div>
   );

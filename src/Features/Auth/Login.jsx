@@ -59,7 +59,7 @@ function Login() {
         </div>
         <Form onSubmit={handleSubmit}>
           <Row className="mb-3 flex-column">
-            <Form.Group as={Col} className="my-2">
+            <Form.Group as={Col} className="my-2 col-md-8">
               <Form.Label>Email</Form.Label>
               <InputGroup hasValidation>
                 <Form.Control
@@ -73,7 +73,7 @@ function Login() {
                 </Form.Control.Feedback>
               </InputGroup>
             </Form.Group>
-            <Form.Group as={Col} className="my-2">
+            <Form.Group as={Col} className="my-2 col-md-8">
               <Form.Label>Password</Form.Label>
               <Form.Control
                 type="password"
@@ -82,23 +82,25 @@ function Login() {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </Form.Group>
-          </Row>
-          <Row className="justify-content-end">
-            <Button
-              type="submit"
-              variant="outline-light"
-              size="lg"
-              className="rounded-pill w-25 me-3 mt-5"
-            >
-              Log in
-            </Button>
-            <small className="d-block">
-              Don't you have an account?{" "}
-              <Link className="authLink" to="/signup">
-                Create an Account
-              </Link>
-            </small>
-            {alertToggle && <Alert variant="danger">{alertText}</Alert>}
+            <Col className="d-flex justify-content-end col-md-8">
+              <Button
+                type="submit"
+                variant="outline-light"
+                size="lg"
+                className="rounded-pill mt-5 col-12 col-sm-5 col-lg-3 mb-4"
+              >
+                Log in
+              </Button>
+            </Col>
+            <Col>
+              <small className="d-block">
+                Don't you have an account?{" "}
+                <Link className="authLink" to="/signup">
+                  Create an Account
+                </Link>
+              </small>
+              {alertToggle && <Alert variant="danger">{alertText}</Alert>}
+            </Col>
           </Row>
         </Form>
       </Container>

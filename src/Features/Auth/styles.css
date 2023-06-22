@@ -19,8 +19,8 @@
   justify-content: center;
 }
 .uniIcon {
-    width: 4vh;
-    margin: 0 10px 0 0 
+  width: 4vh;
+  margin: 0 10px 0 0;
 }
 .authLink {
   color: var(--orange);
