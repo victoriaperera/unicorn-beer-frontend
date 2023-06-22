@@ -1,19 +1,16 @@
 import { setData } from "../adminSlice";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 function OrderCard() {
-  const dispatch = useDispatch();
-  const orderList = useSelector((state) => state.admin.data);
+  const [orderList, setOrderList] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get("http://localhost:3000/orders");
-        const data = response.data;
-        dispatch(setData(response.data));
-        console.log(response.data);
+        setOrderList(response.data);
       } catch (error) {
         console.log("Error fetching data:", error);
       }
@@ -52,8 +49,10 @@ function OrderCard() {
             orderList.map((order) => (
               <tr key={order.id}>
                 <th scope="row">{order.id}</th>
-                {/* <td>{order.user.firstname}</td> */}
-                {/* <td>{order.products}</td> */}
+                <td>
+                  {order.user.firstname} {order.user.lastname}
+                </td>
+                <td>{order.totalQuantity}</td>
                 <td>{order.totalAmount}</td>
                 <td>{order.paymentMethod}</td>
                 <td>{order.status}</td>
