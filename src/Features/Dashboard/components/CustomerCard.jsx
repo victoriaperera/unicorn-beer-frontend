@@ -27,7 +27,7 @@ function CustomerCard() {
 
   return (
     <>
-      <div className="card text-center mb-3">
+      <div className="text-white mb-3">
         <h2>Total customers: {userCount}</h2>
       </div>
 
