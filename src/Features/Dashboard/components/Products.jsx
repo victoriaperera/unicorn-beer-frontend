@@ -1,12 +1,18 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Table } from "react-bootstrap";
-
+import { deleteProduct, editProduct, createProduct } from "../adminSlice";
 import "./styles.css";
 
 function Products() {
+  const token = useSelector((state)=> state.token)
+  const products = useSelector((state)=> state.admin.data)
+  const dispathc = useDispatch();
+  console.log(products)
+ 
   
-  const products = useSelector( (state) => state.admin.productList)
+  const handleDelete = async (product)=>{
 
+  }
   return  (
     <div className="products-bg">
       <h2 className="text-white mb-3">Products</h2>
