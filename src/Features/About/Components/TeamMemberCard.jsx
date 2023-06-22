@@ -1,4 +1,5 @@
 import "./styles.css";
+import { Col } from "react-bootstrap";
 import { gsap } from "gsap";
 import { useRef, useEffect, useState } from "react";
 import { ScrollTrigger } from "gsap/all";
@@ -60,7 +61,7 @@ function TeamMemberCard({ admin }) {
 
   return (
     <>
-      <div className="col mb-5" ref={circleOne}>
+      <Col className="mb-4" ref={circleOne}>
         <img
           src="/src/assets/icons/user-1.png"
           alt="User Avatar"
@@ -88,8 +89,8 @@ function TeamMemberCard({ admin }) {
             />
           </a>
         </div>
-      </div>
-      <div className="col mb-5" ref={circleTwo}>
+      </Col>
+      <Col className="mb-4" ref={circleTwo}>
         <img
           src="/src/assets/icons/user-2.png"
           alt="User Avatar"
@@ -117,8 +118,8 @@ function TeamMemberCard({ admin }) {
             />
           </a>
         </div>
-      </div>
-      <div className="col mb-5" ref={circleThree}>
+      </Col>
+      <Col className="mb-4" ref={circleThree}>
         <img
           src="/src/assets/icons/user-3.png"
           alt="User Avatar"
@@ -146,8 +147,8 @@ function TeamMemberCard({ admin }) {
             />
           </a>
         </div>
-      </div>
-      <div className="col mb-5" ref={circleFour}>
+      </Col>
+      <Col className="mb-4 " ref={circleFour}>
         <img
           src="/src/assets/icons/user-4.png"
           alt="User Avatar"
@@ -175,8 +176,8 @@ function TeamMemberCard({ admin }) {
             />
           </a>
         </div>
-      </div>
-      <div className="col mb-5" ref={circleFive}>
+      </Col>
+      <Col className="mb-4 " ref={circleFive}>
         <img
           src="/src/assets/icons/user-5.png"
           alt="User Avatar"
@@ -204,7 +205,7 @@ function TeamMemberCard({ admin }) {
             />
           </a>
         </div>
-      </div>
+      </Col>
     </>
   );
 }

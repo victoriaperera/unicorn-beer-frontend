@@ -259,12 +259,15 @@ function About() {
             <h3>ADMIN DASHBOARD</h3>
           </Col>
         </Row>
-        <Row>
-          <Col className="col-12 about-section about-section-team" ref={sectionTeam}>
-            <h3>OUR TEAM</h3>
-            <div className="row my-5">
+        <Row
+          className="about-section about-section-team p-0 justify-content-center align-items-center "
+          ref={sectionTeam}
+        >
+          <Col className="avatar-container py-5 ">
+            <h3 className="mb-4">OUR TEAM</h3>
+            <Row className="circle-avatar">
               <TeamMemberCard />
-            </div>
+            </Row>
           </Col>
         </Row>
       </Container>

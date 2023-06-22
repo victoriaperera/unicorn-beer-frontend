@@ -109,7 +109,7 @@
   width: auto;
 }
 
-@media (max-width: 499px) {
+@media (max-width: 503px) {
   .small {
     display: block;
     width: 365px;
@@ -131,5 +131,8 @@
 @media (min-width: 1024px) {
   .large {
     display: block;
+  }
+  .about-section-team {
+    height: 100vh;
   }
 }
