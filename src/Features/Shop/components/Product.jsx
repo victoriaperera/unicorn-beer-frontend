@@ -52,7 +52,7 @@ function Product({ product }) {
             <h5>{product.name}</h5>
             <p className="fw-semibold mb-2">$ {product.price.toFixed(2)}</p>
             <span className="addToCartBtn-shop">
-              <AddToCartBtn product={product} />
+              <AddToCartBtn product={product} counter={1} />
             </span>
           </div>
         </div>
