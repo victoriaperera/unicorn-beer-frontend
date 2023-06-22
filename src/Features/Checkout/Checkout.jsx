@@ -8,6 +8,7 @@ import Select from "react-select";
 import axios from "axios";
 import { clearCart } from "../../Common/Navbar/Cart/cartSlice";
 import { Alert } from "react-bootstrap";
+import { capitalizeFirstLetter } from "../../hook/capitalizeFirstLetter";
 
 function Checkout() {
   const user = useSelector((state) => state.user);
@@ -148,7 +149,7 @@ function Checkout() {
                       <div className="col-6 me-auto d-flex flex-column justify-content-center">
                         <p className="m-0 fw-bold">{item.style.name}</p>
                         <p className="m-0">
-                          {item.container.name} ${item.price}
+                          {capitalizeFirstLetter(item.container.name)} ${item.price}
                         </p>
                       </div>
                       <Badge bg="primary" pill>
