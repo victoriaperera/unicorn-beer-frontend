@@ -4,8 +4,8 @@ import React from "react";
 function Orders() {
   return (
     <div className="orders-bg">
-      <table class="table table-hover align-middle text-center">
-        <thead>
+      <table className="table table-hover align-middle text-center">
+        <thead className="table-header">
           <tr>
             <th scope="col">#</th>
             <th scope="col">User</th>
