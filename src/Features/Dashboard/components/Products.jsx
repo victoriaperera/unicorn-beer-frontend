@@ -7,11 +7,14 @@ function Products() {
   const token = useSelector((state)=> state.token)
   const products = useSelector((state)=> state.admin.products)
   const dispathc = useDispatch();
-  console.log(products)
- 
   
-  const handleDelete = async (product)=>{
-
+  const handleDelete = async (productId)=>{
+    try{
+      
+      dispathc(deleteProduct(productId));
+    }catch(err){
+      console.log(err);
+    }
   }
   return  (
     <div className="products-bg">
@@ -49,6 +52,7 @@ function Products() {
                   </button>
                   <button className="btn rounded-pill btn-danger"
                   type="submit"
+                  onClick={()=>handleDelete(product.id)}
                   >
                   Delete
                   </button>
