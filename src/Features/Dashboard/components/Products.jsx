@@ -15,7 +15,12 @@ function Products() {
   }
   return  (
     <div className="products-bg">
-      <h2 className="text-white mb-3">Products</h2>
+      <div className="d-flex justify-content-between align-content-center mb-3">
+        <h2 className="text-white m-0">Products</h2>
+        <button className="btn rounded-pill btn-success"
+        >Create
+        </button>
+      </div>   
       <div>
         <Table responsive="sm" className="table table-hover align-middle text-center">
           <thead  className="table-header">

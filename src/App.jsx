@@ -37,7 +37,6 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin" element={<Admin />} />
-        <Route path="/admin/products" element={<Products />}/>
         <Route path="*" element={<Err404 />} />
       </Routes>
       {!pagesWONavbars.includes(currentPage) && <Footer />}
