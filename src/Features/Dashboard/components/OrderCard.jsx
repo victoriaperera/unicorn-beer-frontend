@@ -25,7 +25,7 @@ function OrderCard() {
         <thead className="table-header">
           <tr>
             <th scope="col" className="table-heading">
-              #
+              Order Id
             </th>
             <th scope="col" className="table-heading">
               User
