@@ -8,10 +8,10 @@ const adminSlice = createSlice({
   },
   reducers: {
     setAdminToken(state, action) {
-      state.admin = action.payload;
+      state.token = action.payload;
     },
     clearAdminToken: (state) => {
-      state.admin = null;
+      state.token = null;
       state.data = [];
     },
     setData: (state, action) => {

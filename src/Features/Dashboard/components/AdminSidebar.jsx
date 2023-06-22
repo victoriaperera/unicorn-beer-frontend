@@ -73,7 +73,7 @@ function AdminSidebar({ onSidebarClick }) {
       <hr />
       <ul className="nav flex-column mt-auto">
         <li className="nav-item">
-          <button className="nav-link">
+          <button className="nav-link d-flex">
             <i className="bi bi-box-arrow-right me-3"></i>
             <Logout></Logout>
           </button>
