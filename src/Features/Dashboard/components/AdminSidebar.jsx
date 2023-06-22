@@ -10,7 +10,7 @@ function AdminSidebar({ onSidebarClick }) {
   };
 
   return (
-    <div className="sidebar">
+    <div className="sidebar scrollable">
       <div className="sidebar-header">
         <img src="/src/assets/icons/Unicorn-beer-icon-3.svg" alt="Logo" className="sidebar-logo" />
         <h2 className="m-0 h3">Unicorn Beer</h2>
@@ -18,7 +18,7 @@ function AdminSidebar({ onSidebarClick }) {
       <ul className="nav flex-column">
         <li className="text-center mb-4">
           <img
-            src="https://i.pinimg.com/564x/9c/35/40/9c35407ec812c293ba7bd3a7bd1967d1.jpg"
+            src="./src/assets/img/mock-user-pic.png"
             alt="Admin photo"
             className="img-fluid rounded-circle p-0 w-50"
           />
@@ -64,6 +64,7 @@ function AdminSidebar({ onSidebarClick }) {
           </button>
         </li>
       </ul>
+      <hr />
       <ul className="nav flex-column mt-auto">
         <li className="nav-item">
           <button className="nav-link">
