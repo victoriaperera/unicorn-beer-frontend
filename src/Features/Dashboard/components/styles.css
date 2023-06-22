@@ -7,3 +7,7 @@
     background-color: var(--lightOrange);
     overflow: hidden;
   }
+  .products-table-heading {
+    background-color: var(--orange) !important;
+    color: var(--white) !important;
+  }
