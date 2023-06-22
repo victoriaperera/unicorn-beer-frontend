@@ -5,7 +5,7 @@ import "./styles.css";
 
 function Products() {
   const token = useSelector((state)=> state.token)
-  const products = useSelector((state)=> state.admin.data)
+  const products = useSelector((state)=> state.admin.products)
   const dispathc = useDispatch();
   console.log(products)
  
