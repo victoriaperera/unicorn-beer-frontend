@@ -132,23 +132,25 @@ function SignUp() {
                 onChange={(e) => setShippingAddress(e.target.value)}
               />
             </Form.Group>
-          </Row>
-          <Row className="justify-content-end">
-            <Button
-              type="submit"
-              variant="outline-light"
-              size="lg"
-              className="rounded-pill w-25 me-3 mt-5"
-            >
-              Create an Account
-            </Button>
-            <small className="d-block">
-              Already have an account?{" "}
-              <Link className="authLink" to="/login">
-                Log in
-              </Link>
-            </small>
-            {alertToggle && <Alert variant="danger">{alertText}</Alert>}
+            <Col className="d-flex justify-content-end col-12">
+              <Button
+                type="submit"
+                variant="outline-light"
+                size="lg"
+                className="rounded-pill mt-5 col-12 col-sm-5 col-lg-3 mb-4"
+              >
+                Create an Account
+              </Button>
+            </Col>
+            <Col className="col-12">
+              <small className="d-block">
+                Already have an account?{" "}
+                <Link className="authLink" to="/login">
+                  Log in
+                </Link>
+              </small>
+              {alertToggle && <Alert variant="danger">{alertText}</Alert>}
+            </Col>
           </Row>
         </Form>
       </Container>
