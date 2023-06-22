@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { clearToken } from "../userSlice";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavDropdown } from "react-bootstrap";
 
 function Logout() {
   const navigate = useNavigate();
@@ -23,7 +22,7 @@ function Logout() {
     navigate("/");
   };
 
-  return <NavDropdown.Item onClick={handlerLogout}>Log out</NavDropdown.Item>;
+  return <div onClick={handlerLogout}>Log out</div>;
 }
 
 export default Logout;

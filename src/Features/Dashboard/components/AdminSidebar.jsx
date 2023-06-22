@@ -1,3 +1,4 @@
+import Logout from "../../Auth/components/Logout";
 import "../styles.css";
 import React, { useState } from "react";
 
@@ -71,7 +72,8 @@ function AdminSidebar({ onSidebarClick }) {
       <ul className="nav flex-column mt-auto">
         <li className="nav-item">
           <button className="nav-link">
-            <i className="bi bi-box-arrow-right me-3"></i>Logout
+            <i className="bi bi-box-arrow-right me-3"></i>
+            <Logout></Logout>
           </button>
         </li>
       </ul>

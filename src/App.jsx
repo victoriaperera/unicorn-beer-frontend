@@ -14,6 +14,7 @@ import Checkout from "./Features/Checkout/Checkout";
 import Admin from "./Features/Dashboard/Admin";
 import SignUp from "./Features/Auth/Singup";
 import Err404 from "./Features/err404/err404";
+import AdminLogin from "./Features/Auth/adminLogin";
 
 function App() {
   const { pathname: currentPage } = useLocation();
@@ -33,6 +34,7 @@ function App() {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/products/:id" element={<Product />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="*" element={<Err404 />} />
       </Routes>

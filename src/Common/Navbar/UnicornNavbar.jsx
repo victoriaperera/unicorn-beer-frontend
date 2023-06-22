@@ -94,9 +94,15 @@ function UnicornNavbar() {
 
                   {!user && <NavDropdown.Item href="/signup">Create an Account</NavDropdown.Item>}
 
+                  {!user && <NavDropdown.Item href="/admin/login">Admins</NavDropdown.Item>}
+
                   {user && <NavDropdown.Item href="#">My account</NavDropdown.Item>}
 
-                  {user && <Logout></Logout>}
+                  {user && (
+                    <NavDropdown.Item href="#">
+                      <Logout></Logout>
+                    </NavDropdown.Item>
+                  )}
                 </NavDropdown>
                 <div className="mx-2 mt-2">
                   <i className="cartIcon bi bi-cart-fill fs-5 text-white" onClick={handleShow}>

@@ -7,6 +7,12 @@ const adminSlice = createSlice({
     usersList: [],
   },
   reducers: {
+    setAdminToken(state, action) {
+      return action.payload;
+    },
+    clearAdminToken: (state) => {
+      return null;
+    },
     setProductList: (state, action) => {
       state.productList = action.payload;
     },
@@ -16,5 +22,5 @@ const adminSlice = createSlice({
   },
 });
 
-export const { setProductList, setUserList } = adminSlice.actions;
+export const { setAdminToken, clearAdminToken, setProductList, setUserList } = adminSlice.actions;
 export default adminSlice.reducer;
