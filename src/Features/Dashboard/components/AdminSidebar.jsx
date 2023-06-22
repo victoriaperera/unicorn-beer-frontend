@@ -1,14 +1,12 @@
 import "../styles.css";
-import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 
-function AdminSidebar() {
-  const navigate = useNavigate();
-  const [activeButton, setActiveButton] = useState("");
+function AdminSidebar({ onSidebarClick }) {
+  const [activeButton, setActiveButton] = useState("dashboard");
 
-  const handleNavigation = (path) => {
-    navigate(path);
-    setActiveButton(path);
+  const handleNavigation = (component) => {
+    onSidebarClick(component);
+    setActiveButton(component);
   };
 
   return (
@@ -27,31 +25,48 @@ function AdminSidebar() {
         </li>
         <li className="nav-item">
           <button
-            className={`nav-link ${activeButton === "/admin" ? "active" : ""}`}
-            onClick={() => handleNavigation("/admin")}
+            className={`nav-link ${activeButton === "dashboard" ? "active-dashboard" : ""}`}
+            onClick={() => handleNavigation("dashboard")}
           >
-            <i class="bi bi-clipboard-data me-3"></i>Dashboard
+            <i className="bi bi-columns-gap me-3"></i>Dashboard
           </button>
         </li>
         <li className="nav-item">
-          <button className="nav-link" onClick={() => handleNavigation("/admin/orders")}>
+          <button
+            className={`nav-link ${activeButton === "products" ? "active-products" : ""}`}
+            onClick={() => handleNavigation("products")}
+          >
+            <i className="bi bi-tags-fill me-3"></i>Products
+          </button>
+        </li>
+        <li className="nav-item">
+          <button
+            className={`nav-link ${activeButton === "categories" ? "active-categories" : ""}`}
+            onClick={() => handleNavigation("categories")}
+          >
+            <i className="bi bi-boxes me-3"></i>Categories
+          </button>
+        </li>
+        <li className="nav-item">
+          <button
+            className={`nav-link ${activeButton === "orders" ? "active-orders" : ""}`}
+            onClick={() => handleNavigation("orders")}
+          >
             <i className="bi bi-cart-fill me-3"></i>Orders
           </button>
         </li>
         <li className="nav-item">
-          <button className="nav-link" onClick={() => handleNavigation("/admin/products")}>
-            <i className="bi bi-box-seam me-3"></i>Products
-          </button>
-        </li>
-        <li className="nav-item">
-          <button className="nav-link" onClick={() => handleNavigation("/admin/customers")}>
+          <button
+            className={`nav-link ${activeButton === "customers" ? "active-customers" : ""}`}
+            onClick={() => handleNavigation("customers")}
+          >
             <i className="bi bi-people-fill me-3"></i>Customers
           </button>
         </li>
       </ul>
       <ul className="nav flex-column mt-auto">
         <li className="nav-item">
-          <button className="nav-link" onClick={() => handleNavigation("/admin/logout")}>
+          <button className="nav-link">
             <i className="bi bi-box-arrow-right me-3"></i>Logout
           </button>
         </li>

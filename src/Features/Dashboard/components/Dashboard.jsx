@@ -28,33 +28,33 @@ function Dashboard() {
   }, []);
 
   return (
-    <div class="col-lg-10">
-      <div class="row">
-        <div class="col-xl-3 col-md-6">
-          <div class="card bg-secondary text-white mb-4">
-            <div class="card-body">Total Sales</div>
+    <div className="dashboard-bg">
+      <div className="row">
+        <div className="col-12 col-md-6">
+          <div className="card mb-4">
+            <div className="card-body">Total Sales</div>
           </div>
         </div>
-        <div class="col-xl-3 col-md-6">
-          <div class="card bg-secondary text-white mb-4">
-            <div class="card-body">Total Orders</div>
+        <div className="col-12 col-md-6">
+          <div className="card mb-4">
+            <div className="card-body">Total Orders</div>
           </div>
         </div>
-        <div class="col-xl-6 col-md-12">
-          <div class="card bg-secondary text-white mb-4">
-            <div class="card-body">Activity or some chart</div>
+        <div className="col-12">
+          <div className="card mb-4">
+            <div className="card-body">Activity or some chart</div>
           </div>
         </div>
       </div>
-      <div class="card mb-4">
-        <div class="card-header">Order List</div>
-        <div class="card-body">Date - user - xxx</div>
+      <div className="card mb-4">
+        <div className="card-header">Order List</div>
+        <div className="card-body">Date - user - xxx</div>
       </div>
-      <div class="row">
-        <div class="col-xl-6">
-          <div class="card mb-4">
-            <div class="card-header">Product List</div>
-            <div class="card-body">Pilsener bottle ...</div>
+      <div className="row">
+        <div className="col-lg-6">
+          <div className="card mb-4">
+            <div className="card-header">Product List</div>
+            <div className="card-body">Pilsener bottle ...</div>
           </div>
         </div>
       </div>

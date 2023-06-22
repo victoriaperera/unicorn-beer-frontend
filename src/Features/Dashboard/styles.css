@@ -24,14 +24,81 @@
   width: 1.5rem;
 }
 
-.active {
-  width: 100%;
-  background-color: var(--violet);
+.nav-item {
+  padding-bottom: 1.5rem;
 }
 
-.board-content {
+.active-dashboard {
+  width: 100%;
+  background-color: var(--lightRed);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.active-products {
+  width: 100%;
+  background-color: var(--lightOrange);
+  text-shadow: 1px 1px 2px black;
+}
+
+.active-categories {
+  width: 100%;
+  background-color: var(--lightGreen);
+  text-shadow: 1px 1px 2px black;
+}
+
+.active-orders {
+  width: 100%;
+  background-color: var(--lightBlue);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.active-customers {
+  width: 100%;
+  background-color: var(--lightViolet);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.dashboard-bg {
   height: 100vh;
-  margin-left: 250px;
+  margin-left: 200px;
   padding: 20px;
+  background-color: var(--lightRed);
   overflow: hidden;
+}
+
+.products-bg {
+  height: 100vh;
+  margin-left: 200px;
+  padding: 20px;
+  background-color: var(--lightOrange);
+  overflow: hidden;
+}
+
+.categories-bg {
+  height: 100vh;
+  margin-left: 200px;
+  padding: 20px;
+  background-color: var(--lightGreen);
+  overflow: hidden;
+}
+
+.orders-bg {
+  height: 100vh;
+  margin-left: 200px;
+  padding: 20px;
+  background-color: var(--lightBlue);
+  overflow: hidden;
+}
+
+.orders-bg {
+  height: 100vh;
+  margin-left: 200px;
+  padding: 20px;
+  background-color: var(--lightViolet);
+  overflow: hidden;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.9); /* Color de fondo con opacidad */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombreado */
 }
