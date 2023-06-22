@@ -15,7 +15,10 @@ const adminSlice = createSlice({
     },
     clearAdminToken: (state) => {
       state.token = null;
-      state.data = [];
+      state.orders = [];
+      state.products = [];
+      state.users = [];
+      state.styles = [];
     },
     setOrders: (state, action) => {
       state.orders = action.payload;
