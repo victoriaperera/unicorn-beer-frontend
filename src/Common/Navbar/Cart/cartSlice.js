@@ -2,23 +2,28 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const cartSlice = createSlice({
   name: "cart",
-  initialState: { products: [], totalAmount: 0 },
+  initialState: { products: [], totalAmount: 0, totalQuantity: 0 },
   reducers: {
     setProducts: (state, action) => {
       state.products = action.payload.products;
     },
-
-    setTotal: (state, action) => {
+    setTotalAmount: (state, action) => {
       state.totalAmount = action.payload.totalAmount;
     },
-
+    setTotalQuantity: (state, action) => {
+      state.totalQuantity = action.payload.totalQuantity;
+    },
     addToCart: (state, action) => {
-      const {product, counter} = action.payload
-      
+      const { product, counter } = action.payload;
+
       const itemInCart = state.products.find((item) => item._id === product.id);
-      counter === 1 ? 
-      itemInCart ? itemInCart.quantity++ : state.products.push({ ...product, quantity: 1 })
-      : itemInCart ? itemInCart.quantity += counter : state.products.push({ ...product, quantity: counter })
+      counter === 1
+        ? itemInCart
+          ? itemInCart.quantity++
+          : state.products.push({ ...product, quantity: 1 })
+        : itemInCart
+        ? (itemInCart.quantity += counter)
+        : state.products.push({ ...product, quantity: counter });
     },
     incrementQuantity: (state, action) => {
       const item = state.products.find((item) => item._id === action.payload);
@@ -47,7 +52,8 @@ export const {
   removeItem,
   clearCart,
   setProducts,
-  setTotal,
+  setTotalAmount,
+  setTotalQuantity,
 } = actions;
 
 export default reducer;

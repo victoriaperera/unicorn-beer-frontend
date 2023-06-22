@@ -10,27 +10,28 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Logout from "../../Features/Auth/components/Logout";
 import { clearFilter } from "../../Features/Shop/shopSlice";
+import { setTotalQuantity } from "./Cart/cartSlice";
 
 function UnicornNavbar() {
   const [show, setShow] = useState(false);
   const [navbarBlur, setNavbarBlur] = useState("");
   const user = useSelector((state) => state.user);
   const cart = useSelector((state) => state.cart.products);
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const dispatch = useDispatch();
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const getTotalQuantity = () => {
+  useEffect(() => {
     let total = 0;
     if (Array.isArray(cart)) {
       cart.map((item) => {
         total += item.quantity;
       });
-      return total;
+      dispatch(setTotalQuantity({ totalQuantity: total }));
     }
-    return total;
-  };
+  }, [cart]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -99,7 +100,7 @@ function UnicornNavbar() {
                 </NavDropdown>
                 <div className="mx-2 mt-2">
                   <i className="cartIcon bi bi-cart-fill fs-5 text-white" onClick={handleShow}>
-                    <sup className="superscript">({getTotalQuantity() || 0})</sup>
+                    <sup className="superscript">({totalQuantity})</sup>
                   </i>
                   <Offcanvas show={show} onHide={handleClose} placement="end">
                     <Cart show={show} handleClose={handleClose} />
