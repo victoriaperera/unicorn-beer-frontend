@@ -27,6 +27,8 @@ function Dashboard() {
     fetchData();
   }, []);
 
+  const userCount = usersList ? usersList.length : 0;
+
   return (
     <div className="dashboard-bg">
       <div className="row">
@@ -54,7 +56,17 @@ function Dashboard() {
         <div className="col-lg-6">
           <div className="card mb-4">
             <div className="card-header">Product List</div>
-            <div className="card-body">Pilsener bottle ...</div>
+            <div className="card-body">
+              {productList && productList.length > 0 ? (
+                <ul>
+                  {productList.map((product) => (
+                    <li key={product.id}>{product.name}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p>No products available.</p>
+              )}
+            </div>
           </div>
         </div>
       </div>
