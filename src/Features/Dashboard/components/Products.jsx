@@ -2,16 +2,24 @@ import { useSelector, useDispatch } from "react-redux";
 import { Table } from "react-bootstrap";
 import { deleteProduct, editProduct, createProduct } from "../adminSlice";
 import "./styles.css";
+import axios from "axios";
 
 function Products() {
   const token = useSelector((state)=> state.token)
   const products = useSelector((state)=> state.admin.products)
-  const dispathc = useDispatch();
+  const dispatch = useDispatch();
   
   const handleDelete = async (productId)=>{
     try{
-      
-      dispathc(deleteProduct(productId));
+      const response = await axios({
+        method: "DELETE",
+        url: `${import.meta.env.VITE_BACK_URL}/product`,
+        headers:{
+          Authorization: `Bearer ${token}`
+        },
+        data: productId,
+      })
+      dispatch(deleteProduct(productId));
     }catch(err){
       console.log(err);
     }
