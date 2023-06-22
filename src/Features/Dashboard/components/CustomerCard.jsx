@@ -40,7 +40,9 @@ function Customers() {
           {usersList && usersList.length > 0 ? (
             usersList.map((user) => (
               <tr key={user.id}>
-                <td>{user.firstname}</td>
+                <td>
+                  {user.firstname} {user.lastname}
+                </td>
                 <td>{user.email}</td>
                 <td>{user.phone}</td>
                 <td>{user.address}</td>
