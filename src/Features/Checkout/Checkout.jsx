@@ -19,17 +19,14 @@ function Checkout() {
 
   const [alertText, setAlertText] = useState("");
   const [alertToggle, setAlertToggle] = useState(null);
-
   const [show, setShow] = useState(false);
+
   const paymentOptions = [
     { value: "Visa", label: "Visa", image: "src/assets/icons/icons8-tarjeta-visa-48.png" },
-    {
-      value: "Mastercard",
-      label: "Master Card",
-      image: "src/assets/icons/icons8-mastercard-48.png",
-    },
+    { value: "Mastercard", label: "Master Card", image: "src/assets/icons/icons8-mastercard-48.png"},
     { value: "Paypal", label: "PayPal", image: "src/assets/icons/icons8-paypal-48.png" },
   ];
+
   const customStylesPM = {
     option: (provided, state) => ({
       ...provided,
@@ -38,6 +35,7 @@ function Checkout() {
       paddingLeft: "50px",
     }),
   };
+  
   const deliveryOptions = [];
 
   var today = new Date();
@@ -51,8 +49,10 @@ function Checkout() {
         { month: "long" },
       )} ${date.getDate()}, ${date.getFullYear()}`,
     });
+    
     today = date;
   }
+
   const customStylesDD = {
     option: (provided) => ({
       ...provided,
@@ -67,29 +67,30 @@ function Checkout() {
       setAlertToggle(true);
     } else {
       try {
-        if(cart.products.length > 0){
-        const response = await axios({
-          method: "POST",
-          url: `${import.meta.env.VITE_BACK_URL}/orders`,
-          headers: {
-            Authorization: `Bearer ${user.token}`,
-          },
-          data: {
-            products: cart.products,
-            paymentMethod,
-            totalAmount: cart.totalAmount,
-            status: "paid",
-            shippingDate: new Date(
-              deliveryDate.getFullYear(),
-              deliveryDate.getMonth(),
-              deliveryDate.getDate() - 1,
-            ),
-            deliveryDate,
-          },
-        });
-        setAlertToggle(false);
-        dispatch(clearCart());
-        setShow(true);
+        if (cart.products.length > 0) {
+          const response = await axios({
+            method: "POST",
+            url: `${import.meta.env.VITE_BACK_URL}/orders`,
+            headers: {
+              Authorization: `Bearer ${user.token}`,
+            },
+            data: {
+              products: cart.products,
+              paymentMethod,
+              totalAmount: cart.totalAmount,
+              totalQuantity: cart.totalQuantity,
+              status: "paid",
+              shippingDate: new Date(
+                deliveryDate.getFullYear(),
+                deliveryDate.getMonth(),
+                deliveryDate.getDate() - 1,
+              ),
+              deliveryDate,
+            },
+          });
+          setAlertToggle(false);
+          dispatch(clearCart());
+          setShow(true);
         }
       } catch (err) {
         console.log(err);
@@ -173,23 +174,28 @@ function Checkout() {
               )}
             </ListGroup>
             <Form.Group as={Col} md="6" className="my-2">
-              <Form.Label><i className="bi bi-credit-card-fill me-2"></i> Select Payment Method</Form.Label>
-                <Select
-                  name="paymentMethod"
-                  options={paymentOptions}
-                  styles={customStylesPM}
-                  onChange={(e) => setPaymentMet(e.value)}
-                  required
-                />
+              <Form.Label>
+                <i className="bi bi-credit-card-fill me-2"></i> Select Payment Method
+              </Form.Label>
+              <Select
+                name="paymentMethod"
+                options={paymentOptions}
+                styles={customStylesPM}
+                onChange={(e) => setPaymentMet(e.value)}
+                required
+              />
             </Form.Group>
             <Form.Group as={Col} md="6" className="my-2">
-              <Form.Label> <i className="bi bi-truck fs-6 text-white me-2"></i> Select Delivery Date</Form.Label>                    
-                <Select
-                 name="deliveryDate"
-                 options={deliveryOptions}
-                 onChange={(e)=> setDeliveryDate(e.value)}
-                 styles={customStylesDD}
-                />  
+              <Form.Label>
+                {" "}
+                <i className="bi bi-truck fs-6 text-white me-2"></i> Select Delivery Date
+              </Form.Label>
+              <Select
+                name="deliveryDate"
+                options={deliveryOptions}
+                onChange={(e) => setDeliveryDate(e.value)}
+                styles={customStylesDD}
+              />
             </Form.Group>
             <Col md="12" className="my-2 d-flex justify-content-end align-items-end">
               <p className="m-0 me-2 fs-3 fw-bold text-orange">TOTAL: </p>

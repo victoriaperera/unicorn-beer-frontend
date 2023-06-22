@@ -1,20 +1,18 @@
-import "../styles.css";
-import { setUserList } from "../adminSlice";
+import { setData } from "../adminSlice";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import React, { useEffect } from "react";
 
-function CustomerCard() {
-  const usersList = useSelector((state) => state.admin.usersList);
+function Customers() {
   const dispatch = useDispatch();
+  const usersList = useSelector((state) => state.admin.data);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const userResponse = await axios.get("http://localhost:3000/users");
-        console.log(userResponse);
-        const usersListData = userResponse.data;
-        dispatch(setUserList(usersListData));
+        const response = await axios.get("http://localhost:3000/users");
+        const data = response.data;
+        dispatch(setData(data));
       } catch (error) {
         console.log("Error fetching data:", error);
       }
@@ -64,4 +62,4 @@ function CustomerCard() {
   );
 }
 
-export default CustomerCard;
+export default Customers;
