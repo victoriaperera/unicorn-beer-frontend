@@ -4,7 +4,10 @@ const adminSlice = createSlice({
   name: "admin",
   initialState: {
     token: null,
-    data: [],
+    orders: [],
+    products: [],
+    users: [],
+    styles: [],
   },
   reducers: {
     setAdminToken(state, action) {
@@ -14,20 +17,33 @@ const adminSlice = createSlice({
       state.token = null;
       state.data = [];
     },
-    setData: (state, action) => {
-      state.data = action.payload;
+    setOrders: (state, action) => {
+      state.orders = action.payload;
     },
-    deleteProduct: (state, action) => {
-
+    setProducts: (state, action) => {
+      state.products = action.payload;
     },
-    editProduct: (state, action) => {
-
+    setUsers: (state, action) => {
+      state.users = action.payload;
     },
-    createProduct: (state, action) => {
-
-    }
+    setStyles: (state, action) => {
+      state.styles = action.payload;
+    },
+    deleteProduct: (state, action) => {},
+    editProduct: (state, action) => {},
+    createProduct: (state, action) => {},
   },
 });
 
-export const { setAdminToken, clearAdminToken, setData, deleteProduct, editProduct, createProduct } = adminSlice.actions;
+export const {
+  setAdminToken,
+  clearAdminToken,
+  setOrders,
+  setProducts,
+  setUsers,
+  setStyles,
+  deleteProduct,
+  editProduct,
+  createProduct,
+} = adminSlice.actions;
 export default adminSlice.reducer;

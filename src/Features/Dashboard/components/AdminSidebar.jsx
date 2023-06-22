@@ -1,6 +1,6 @@
 import Logout from "../../Auth/components/Logout";
 import "../styles.css";
-import React, { useState } from "react";
+import { useState } from "react";
 
 function AdminSidebar({ onSidebarClick }) {
   const [activeButton, setActiveButton] = useState("dashboard");

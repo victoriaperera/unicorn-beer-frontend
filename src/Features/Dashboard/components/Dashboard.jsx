@@ -1,26 +1,9 @@
 import "../styles.css";
-import { setData } from "../adminSlice";
-import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
-import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
+
 
 function Dashboard() {
-  const data = useSelector((state) => state.admin.data);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get("http://localhost:3000/products");
-        const data = response.data;
-        dispatch(setData(response.data));
-      } catch (error) {
-        console.log("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
+  const products = useSelector((state) => state.admin.products);
 
   return (
     <div className="dashboard-bg">
@@ -46,9 +29,9 @@ function Dashboard() {
           <div className="card mb-4">
             <div className="card-header">Categories</div>
             <div className="card-body">
-              {data && data.length > 0 ? (
+              {products && products.length > 0 ? (
                 <ul className="categories-list">
-                  {data.map((product) => (
+                  {products.map((product) => (
                     <li key={product.id}>{product.name}</li>
                   ))}
                 </ul>

@@ -1,27 +1,9 @@
-import { setData } from "../adminSlice";
-import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
-import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 function Customers() {
-  const dispatch = useDispatch();
-  const usersList = useSelector((state) => state.admin.data);
+  const users = useSelector((state) => state.admin.users);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get("http://localhost:3000/users");
-        const data = response.data;
-        dispatch(setData(data));
-      } catch (error) {
-        console.log("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  const userCount = usersList ? usersList.length : 0;
+  const userCount = users ? users.length : 0;
 
   return (
     <>
@@ -37,8 +19,8 @@ function Customers() {
           </tr>
         </thead>
         <tbody>
-          {usersList && usersList.length > 0 ? (
-            usersList.map((user) => (
+          {users && users.length > 0 ? (
+            users.map((user) => (
               <tr key={user.id}>
                 <td>
                   {user.firstname} {user.lastname}

@@ -45,7 +45,7 @@ function Login() {
 
   return (
     <div className="graphiteBackground">
-      <Container className="authContainer py-5">
+      <Container className="container authContainer  py-5">
         <div className="d-flex flex-column justify-content-start align-items-start">
           <div className="d-flex align-items-center my-3">
             <img

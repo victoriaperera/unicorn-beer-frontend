@@ -44,7 +44,7 @@
   height: 40px;
   width: 40px;
   border-bottom-right-radius: 50%;
-  background: transparent;
+  background: "transparent";
   box-shadow: var(--lightRed) 20px 5px 2.6px;
 }
 .active-dashboard::after {
@@ -186,8 +186,6 @@
   background-color: var(--lightRed);
   overflow: hidden;
 }
-
-
 
 .categories-bg {
   height: 100vh;
