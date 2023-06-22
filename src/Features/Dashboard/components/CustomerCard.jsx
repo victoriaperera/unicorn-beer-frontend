@@ -34,24 +34,26 @@ function CustomerCard() {
       <table className="table table-hover align-middle text-center">
         <thead>
           <tr>
-            <th scope="col">Id</th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
             <th scope="col">Phone</th>
             <th scope="col">Address</th>
             <th scope="col">Shipping Address</th>
+            <th scope="col">Delete account</th>
           </tr>
         </thead>
         <tbody>
           {usersList && usersList.length > 0 ? (
             usersList.map((user) => (
               <tr key={user.id}>
-                <td>{user.id}</td>
                 <td>{user.firstname}</td>
                 <td>{user.email}</td>
                 <td>{user.phone}</td>
                 <td>{user.address}</td>
                 <td>{user.shippingAddress}</td>
+                <td>
+                  <button className="btn rounded-pill btn-danger">Delete</button>
+                </td>
               </tr>
             ))
           ) : (
