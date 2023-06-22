@@ -3,7 +3,7 @@ import { Button, Col, Container, Form, Row, InputGroup } from "react-bootstrap";
 import { useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
-
+import { Alert } from "react-bootstrap";
 function Contact() {
   const user = useSelector((state) => state.user);
 
@@ -13,22 +13,30 @@ function Contact() {
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
 
+  const [alertText, setAlertText] = useState("");
+  const [alertToggle, setAlertToggle] = useState(null);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await axios({
-        method: "POST",
-        url: `${import.meta.env.VITE_BACK_URL}/auth/contact `, // TODO: probablemente como una opción de mejora
-        data: {
-          firstname,
-          lastname,
-          email,
-          phone,
-          message,
-        },
-      });
-    } catch (err) {
-      console.log(err);
+    if(!firstname || !lastname || !email || !phone || !message){
+      setAlertToggle(true);
+      setAlertText("Fill in all the fields, please")
+    } else {
+      try {
+        const response = await axios({
+          method: "POST",
+          url: `${import.meta.env.VITE_BACK_URL}/auth/contact `, // TODO: probablemente como una opción de mejora
+          data: {
+            firstname,
+            lastname,
+            email,
+            phone,
+            message,
+          },
+        });
+      } catch (err) {
+        console.log(err);
+      }
     }
   };
   return (
@@ -112,6 +120,11 @@ function Contact() {
               </Button>
             </Row>
           </Form>
+          {alertToggle && (
+              <Alert className="mt-5" variant="danger">
+                {alertText}
+              </Alert>
+            )}
         </Container>
       </div>
     </>

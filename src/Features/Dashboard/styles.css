@@ -10,6 +10,7 @@
   overflow-x: hidden;
   padding-top: 20px;
   z-index: 1;
+  box-shadow: inset -10px 0 10px -10px rgba(0, 0, 0, 0.5);
 }
 
 .sidebar-header {
@@ -20,12 +21,8 @@
   margin-bottom: 2rem;
 }
 
-.sidebar-logo {
-  width: 1.5rem;
-}
-
 .nav-item {
-  padding-bottom: 1.5rem;
+  padding-bottom: 1rem;
 }
 
 .active-dashboard {
@@ -113,4 +110,9 @@
   list-style-type: none;
   column-count: 3;
   column-gap: 20px;
+}
+
+.table-heading {
+  background-color: var(--blue) !important;
+  color: var(--white) !important;
 }

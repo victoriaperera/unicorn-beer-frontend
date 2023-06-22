@@ -1,10 +1,11 @@
 import "../styles.css";
-import React from "react";
+import CustomerCard from "./CustomerCard";
+import React, { useEffect } from "react";
 
 function Customers() {
   return (
     <div className="customers-bg">
-      <div></div>
+      <CustomerCard />
     </div>
   );
 }
