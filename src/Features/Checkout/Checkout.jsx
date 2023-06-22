@@ -19,17 +19,14 @@ function Checkout() {
 
   const [alertText, setAlertText] = useState("");
   const [alertToggle, setAlertToggle] = useState(null);
-
   const [show, setShow] = useState(false);
+
   const paymentOptions = [
     { value: "Visa", label: "Visa", image: "src/assets/icons/icons8-tarjeta-visa-48.png" },
-    {
-      value: "Mastercard",
-      label: "Master Card",
-      image: "src/assets/icons/icons8-mastercard-48.png",
-    },
+    { value: "Mastercard", label: "Master Card", image: "src/assets/icons/icons8-mastercard-48.png"},
     { value: "Paypal", label: "PayPal", image: "src/assets/icons/icons8-paypal-48.png" },
   ];
+
   const customStylesPM = {
     option: (provided, state) => ({
       ...provided,
@@ -38,6 +35,7 @@ function Checkout() {
       paddingLeft: "50px",
     }),
   };
+  
   const deliveryOptions = [];
 
   var today = new Date();
@@ -51,8 +49,10 @@ function Checkout() {
         { month: "long" },
       )} ${date.getDate()}, ${date.getFullYear()}`,
     });
+    
     today = date;
   }
+
   const customStylesDD = {
     option: (provided) => ({
       ...provided,
