@@ -1,3 +1,7 @@
+span {
+  color: var(--white);
+}
+
 .sidebar {
   position: fixed;
   top: 0;

@@ -27,10 +27,6 @@ function CustomerCard() {
 
   return (
     <>
-      <div className="text-white mb-3">
-        <h2>Total customers: {userCount}</h2>
-      </div>
-
       <table className="table table-hover align-middle text-center">
         <thead>
           <tr>
@@ -63,6 +59,7 @@ function CustomerCard() {
           )}
         </tbody>
       </table>
+      <span>Total customers: {userCount}</span>
     </>
   );
 }
