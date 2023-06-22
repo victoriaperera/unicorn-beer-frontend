@@ -1,48 +1,55 @@
-import { useEffect } from "react";
-import "../styles.css";
-import axios from "axios";
-import { useState } from "react";
+import { useSelector } from "react-redux";
+import { Table } from "react-bootstrap";
+
+import "./styles.css";
 
 function Products() {
-  const [products, setProducts] = useState([]);
+  
+  const products = useSelector( (state) => state.admin.productList)
 
-  useEffect( ()=>{
-    try{
-      async function getProducts() {
-        const response = await axios({
-          method: "GET",
-          url: `${import.meta.env.VITE_BACK_URL}/products`
-          // headers: {
-          //   Authorization: `Bearer ${user.token}`,
-          // },
-        })
-        setProducts(...response.data)
-      }
-      getProducts();
-    }catch(err){
-      console.log(err)
-    }
-  },[])
-
-  return (
+  return  (
     <div className="products-bg">
       <h2 className="text-white mb-3">Products</h2>
       <div>
-        <table>
-          <thead>
+        <Table responsive="sm" className="table table-hover align-middle text-center">
+          <thead  className="table-header">
             <tr>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              
-            </tr>
-          </tbody>
-        </table>
+              <th className="products-table-heading" scope="col">Id</th>
+              <th className="products-table-heading" scope="col">Name</th>
+              <th className="products-table-heading" scope="col">Style</th>
+              <th className="products-table-heading" scope="col">Price</th>
+              <th className="products-table-heading" scope="col">Stock</th>
+              <th className="products-table-heading" scope="col">Accions</th>
+             </tr>
+           </thead>
+            <tbody>
+              {products.map( (product) =>
+               <tr key={product.id}>
+                <td >...{product.id.slice(20)}</td>
+                <td>{product.name}</td>
+                <td>{product.style.name}</td>
+                <td>USD {product.price}</td>
+                <td>{product.stock}</td>
+                <td className="d-flex justify-content-around"> 
+                  <button className="btn rounded-pill btn-primary"
+                  type="submit"
+                  >
+                  Edit
+                  </button>
+                  <button className="btn rounded-pill btn-danger"
+                  type="submit"
+                  >
+                  Delete
+                  </button>
+                </td>
+              </tr>  
+             )}
+            </tbody>
+        </Table>
       </div>
     </div>
   );
+  
 }
 
 export default Products;

@@ -1,0 +1,13 @@
+/**** PRODUCT ****/
+
+.products-bg {
+    min-height: 100vh;
+    margin-left: 200px;
+    padding: 20px;
+    background-color: var(--lightOrange);
+    overflow: hidden;
+  }
+  .products-table-heading {
+    background-color: var(--orange) !important;
+    color: var(--white) !important;
+  }
