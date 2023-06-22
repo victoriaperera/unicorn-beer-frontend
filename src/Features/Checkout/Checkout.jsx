@@ -66,6 +66,7 @@ function Checkout() {
       setAlertToggle(true);
     } else {
       try {
+        if(cart.products.length > 0){
         const response = await axios({
           method: "POST",
           url: `${import.meta.env.VITE_BACK_URL}/orders`,
@@ -88,6 +89,7 @@ function Checkout() {
         setAlertToggle(false);
         dispatch(clearCart());
         setShow(true);
+        }
       } catch (err) {
         console.log(err);
       }
