@@ -1,8 +1,27 @@
-.contactContainer {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-.contactIcon {
+/* .contactIcon {
   width: 4vh;
+} */
+
+.container-contact {
+  margin-top: 105px;
+}
+
+.card-contact {
+  width: 60vw;
+  background-color: var(--white);
+  color: var(--graphite);
+  border-radius: 10px;
+}
+
+.card-row {
+  display: flex;
+}
+
+.card-contact-us {
+  background-color: var(--yellow);
+  color: var(--white);
+}
+
+.contact-us {
+  background-color: var(--graphite);
 }

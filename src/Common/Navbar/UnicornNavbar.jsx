@@ -1,16 +1,16 @@
 import "./styles.css";
+import Cart from "./Cart/Cart";
+import Logout from "../../Features/Auth/components/Logout";
 import Container from "react-bootstrap/Container";
+import { clearFilter } from "../../Features/Shop/shopSlice";
+import { setTotalQuantity } from "./Cart/cartSlice";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import Cart from "./Cart/Cart";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import Logout from "../../Features/Auth/components/Logout";
-import { clearFilter } from "../../Features/Shop/shopSlice";
-import { setTotalQuantity } from "./Cart/cartSlice";
 
 function UnicornNavbar() {
   const [show, setShow] = useState(false);
@@ -49,13 +49,17 @@ function UnicornNavbar() {
     };
   }, []);
 
+  const handleLinkClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <>
       <Navbar collapseOnSelect expand="lg" fixed="top" className={`custom-navbar ${navbarBlur}`}>
         <Container fluid className="collapsed-nav">
           <Navbar.Toggle aria-controls="responsive-navbar-nav" className="nav-toggler-btn" />
           <Navbar.Brand>
-            <Nav.Link as={Link} to={"/"}>
+            <Nav.Link as={Link} to={"/"} onClick={handleLinkClick}>
               <img
                 src="/src/assets/icons/Unicorn-beer-white-logo-iso.svg"
                 alt="Unicorn Logo"
@@ -66,12 +70,12 @@ function UnicornNavbar() {
           <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
             <Nav className="ms-auto">
               <div className="mx-2 mt-1">
-                <Nav.Link as={Link} to={"/about"} className="nav-link">
+                <Nav.Link as={Link} to={"/about"} className="nav-link" onClick={handleLinkClick}>
                   ABOUT OUR PROJECT
                 </Nav.Link>
               </div>
               <div className="mx-2 mt-1">
-                <Nav.Link as={Link} to={"/#our-beer-section"} className="nav-link">
+                <Nav.Link href="/#our-beer-section" className="nav-link">
                   OUR BEER
                 </Nav.Link>
               </div>
@@ -80,7 +84,10 @@ function UnicornNavbar() {
                   as={Link}
                   to={"/shop"}
                   className="nav-link"
-                  onClick={() => dispatch(clearFilter())}
+                  onClick={() => {
+                    dispatch(clearFilter());
+                    handleLinkClick();
+                  }}
                 >
                   SHOP
                 </Nav.Link>

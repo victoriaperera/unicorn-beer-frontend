@@ -5,17 +5,16 @@ import { useSelector, useDispatch } from "react-redux";
 import { createProduct, updateProduct } from "../adminSlice";
 import axios from "axios";
 
+
 function ProductModalCU({show, close, product, action}){
   const token = useSelector((state)=> state.admin.token.token);
   const styles = useSelector((state)=> state.admin.styles);
-
+  
   const dispatch = useDispatch();
-
-  const [style, setStyle] = useState("");
-  const [container, setContainer] = useState("");
-  const [price, setPrice] = useState("");
-  const [stock, setStock] = useState("");
-  const [photo, setPhoto] = useState("");
+  const [style, setStyle] = product ? useState(product.style.name) : useState("");
+  const [container, setContainer] = product ? useState(product.container) : useState("");
+  const [price, setPrice] = product ? useState(product.price) : useState("");
+  const [stock, setStock] = product ? useState(product.stock) : useState("");
 
   const productName = (style, container)=>{
     if(container === "can") {
@@ -28,40 +27,66 @@ function ProductModalCU({show, close, product, action}){
       return `${style} ${container} 1.32 Gal`
     }
   }
+
   const handleSubmit = async (e)=>{
     e.preventDefault();
-    try{
-      const response = await axios({
-        method: "POST",
-        url: `${import.meta.env.VITE_BACK_URL}/products`,
-        // headers: {
-        //   Authorization: `Bearer ${token}`,
-        // },
-        data:{
-          style: style,
-          container: container,
-          price: price,
-          stock: stock,
-          name: productName(container, style),
-          photos: photo
-        }
-      })
-      console.log(response.data)
-      //dispatch(createProduct(response.data))
-    }catch(err){
-      console.log(err);
+    if(action === "create"){
+      try{
+        const response = await axios({
+          method: "POST",
+          url: `${import.meta.env.VITE_BACK_URL}/products`,
+          // headers: {
+          //   Authorization: `Bearer ${token}`,
+          // },
+          data:{
+            style: style,
+            container: container,
+            price: price,
+            stock: stock,
+            name: productName(style, container),
+          }
+        })
+        dispatch(createProduct(response.data)); // TODO hacerlo con la misma info que se envía a la DB
+        close();
+        setStyle("")
+        setContainer("")
+        setPrice("")
+        setStock("")
+      }catch(err){
+        console.log(err);
+      }
     }
+    if(action === "edit"){
+      try{
+        const response = await axios({
+          method: "PATCH",
+          url: `${import.meta.env.VITE_BACK_URL}/products`,
+           // headers: {
+          //   Authorization: `Bearer ${token}`,
+          // },
+          data:{
+            productId: product.id,
+            stock: stock
+          }
+        })
+        dispatch(updateProduct({productId: product.id, stock: stock}))
+        close();
+        setStyle("")
+        setContainer("")
+        setPrice("")
+        setStock("")
+      }catch(err){
+        console.log(err)
+      }
+    }
+    
   }
 
-  return (
+return (
             <Modal
               show={show} 
               onHide={()=> {
                 close();
-                setStyle("")
-                setContainer("")
-                setPrice("")
-                setStock("")
               }
             }
               size="xl"
@@ -70,7 +95,7 @@ function ProductModalCU({show, close, product, action}){
             >
               <Modal.Header closeButton className="mb-4" style={{borderBottom : "none"}}>
                 <Modal.Title className="position-relative" id="contained-modal-title-vcenter">
-                  <h3 className="mb-4">{action} Product</h3>
+                  <h3 className="mb-4">{action} Product </h3>
                 </Modal.Title>
               </Modal.Header>
               <Modal.Body>
@@ -83,15 +108,16 @@ function ProductModalCU({show, close, product, action}){
                         <Form.Select name="container" id="container"
                         onChange={(e) =>  setStyle(e.target.value)}
                         >
-                          <option>Select a style</option>
-                          {styles.map((style) =>
+                          {action !== "edit" ? styles.map((style) =>
                           <option 
                           key={style.id}
                           value={style.name}
                           >
                           {style.name}
                           </option>
-                          )}
+                          ):
+                          <option>{product.style.name}</option>
+                          }
                         </Form.Select>
                       </Form.Group>
                     <Form.Group as={Col}>
@@ -99,22 +125,43 @@ function ProductModalCU({show, close, product, action}){
                         <Form.Select name="container" id="container"
                         onChange={(e) =>  setContainer(e.target.value)}
                         >
-                          <option>Select a container size</option>
+                          
+                          {action !== "edit" ?
+                          <> 
+                          <option>Select a container</option>
                           <option value="bottle">Botlle</option>
                           <option value="can">Can</option>
                           <option value="keg">Keg</option>
+                          </>
+                          :
+                          <option>product.container.name</option>
+                        }
                         </Form.Select>
                       </Form.Group>
                     <Form.Group as={Col}>
                     <Form.Label>Price</Form.Label>
                       <InputGroup>
-                        <InputGroup.Text>$</InputGroup.Text>
-                          <Form.Control
-                            type="number"
-                            name="price"
-                            onChange={(e) => setPrice(e.target.value)}
-                          />
-                      </InputGroup>
+                       {action !== "edit" ?
+                       <>
+                       <InputGroup.Text>US$</InputGroup.Text>
+                       <Form.Control
+                         type="number"
+                         name="price"
+                         onChange={(e) => setPrice(e.target.value)}
+                       />
+                       </>
+                    :
+                    <>
+                   <InputGroup.Text>US$</InputGroup.Text>
+                       <Form.Control
+                         type="number"
+                         name="price"
+                         readOnly
+                         value={product.price}
+                       />
+                   </>
+                   }
+                   </InputGroup> 
                     </Form.Group>
                     <Form.Group as={Col}>
                     <Form.Label>Stock</Form.Label>
@@ -122,14 +169,6 @@ function ProductModalCU({show, close, product, action}){
                         type="number"
                         name="stock"
                         onChange={(e) => setStock(e.target.value)}
-                      />
-                    </Form.Group>
-                    <Form.Group controlId="formFileMultiple" className="mb-3">
-                      <Form.Label>Photo</Form.Label>
-                      <Form.Control 
-                      type="file" 
-                      multiple
-                      onChange={(e)=> setPhoto(e.target.value)}
                       />
                     </Form.Group>
                   </Row>
@@ -141,7 +180,7 @@ function ProductModalCU({show, close, product, action}){
                 </Form>  
               </Modal.Body>
             </Modal>
-          ); 
+          );
 }
 
 export default ProductModalCU;

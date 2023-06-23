@@ -39,7 +39,7 @@ function Dashboard({ containers, handleSidebarClick }) {
   return (
     <div className="dashboard-bg scrollable">
       <div className="row">
-        <div className="col-12 col-md-4">
+        <div className="col-6 col-md-3">
           <div className="card mb-4 dashboard-totals">
             <div className="card-header">Sales</div>
             <div className="card-body fs-3">
@@ -47,7 +47,7 @@ function Dashboard({ containers, handleSidebarClick }) {
             </div>
           </div>
         </div>
-        <div className="col-12 col-md-4">
+        <div className="col-6 col-md-3">
           <div className="card mb-4 dashboard-totals">
             <div className="card-header">Average Purchase Value</div>
             <div className="card-body fs-3">
@@ -55,7 +55,7 @@ function Dashboard({ containers, handleSidebarClick }) {
             </div>
           </div>
         </div>
-        <div className="col-12 col-md-4">
+        <div className="col-6 col-md-3">
           <div className="card mb-4 dashboard-totals">
             <div className="card-header">Bestselling Products</div>
             <div className="card-body fs-3">
@@ -63,14 +63,7 @@ function Dashboard({ containers, handleSidebarClick }) {
             </div>
           </div>
         </div>
-        <div className="col-12 col-md-4">
-          <div className="card mb-4 dashboard-line-chart">
-            <div className="card-body text-center p-0">
-              <LineChart />
-            </div>
-          </div>
-        </div>
-        <div className="col-12 col-md-4">
+        <div className="col-6 col-md-3">
           <div className="card mb-4">
             <div className="card-header">Categories</div>
             <div className="card-body">
@@ -86,28 +79,17 @@ function Dashboard({ containers, handleSidebarClick }) {
             </div>
           </div>
         </div>
-        <div className="col-12 col-md-4">
-          <div className="card mb-4">
-            <div className="card-header">Available Containers</div>
-            <div className="card-body">
-              {dashboardContainers && dashboardContainers.length > 0 ? (
-                <ul className="containers-list">
-                  {dashboardContainers.map((container) => (
-                    <li key={container._id}>{container.name}</li>
-                  ))}
-                </ul>
-              ) : (
-                <p>No containers available for display.</p>
-              )}
+        <div className="col-12 col-md-6">
+          <div className="card mb-4 dashboard-line-chart">
+            <div className="card-body text-center p-0">
+              <LineChart />
             </div>
           </div>
         </div>
-      </div>
-      <div className="row">
-        <div className="col-12">
+        <div className="col-12 col-md-6">
           <div className="card mb-4 dashboard-orders">
             <div className="card-header">
-              Latest Orders{" "}
+              Fulfilled Orders{" "}
               <i
                 className="bi bi-arrow-right-circle-fill"
                 onClick={() => handleSidebarClick("orders")}
@@ -124,7 +106,7 @@ function Dashboard({ containers, handleSidebarClick }) {
                 </thead>
                 <tbody>
                   {orders && orders.length > 0 ? (
-                    orders.slice(0, 2).map((order) => (
+                    orders.slice(0, 7).map((order) => (
                       <tr key={order.id}>
                         <th scope="row">{order.id}</th>
                         <td>US$ {order.totalAmount}</td>

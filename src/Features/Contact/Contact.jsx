@@ -1,10 +1,10 @@
 import "./styles.css";
+import OutOfScopeModal from "../../Common/components/OutOfScopeModal";
 import { Button, Col, Container, Form, Row, InputGroup } from "react-bootstrap";
 import { useState } from "react";
-import axios from "axios";
 import { useSelector } from "react-redux";
 import { Alert } from "react-bootstrap";
-import Header from "../../Common/components/Header";
+import axios from "axios";
 
 function Contact() {
   const pageTitle = "Contact Us";
@@ -44,91 +44,101 @@ function Contact() {
   };
   return (
     <>
-      <div className="graphite-background p-5">
-        <Container className="contactContainer my-5 py-5 container">
-          <div className="d-flex align-items-end">
-            <img
-              src="src/assets/icons/Unicorn-beer-icon-3.svg"
-              alt="unicron icon"
-              className="contactIcon me-3"
-            />
-            <h2 className="m-0">Leave Us a message</h2>
+      <OutOfScopeModal />
+      <div className="graphite-background d-flex justify-content-center" style={{ height: "79vh" }}>
+        <div className="container-contact">
+          <div className="card-contact">
+            <div className="row card-row">
+              <div className="col-12 col-md-4 p-4 rounded-start card-contact-us">
+                <h3 className="mb-5">Leave Us a message</h3>
+                <img
+                  src="src/assets/icons/Unicorn-beer-white-logo.svg"
+                  alt="unicron icon"
+                  className="contactIcon"
+                />
+              </div>
+              <div className="col-12 col-md-8 p-4">
+                <Form method="POST" onSubmit={handleSubmit}>
+                  <div className="row">
+                    <Form.Group className="col-6 my-2">
+                      <Form.Label>First name</Form.Label>
+                      <Form.Control
+                        value={user ? `${user.firstname}` : ""}
+                        required
+                        type="text"
+                        placeholder="First name"
+                        onChange={(e) => setFirstname(e.target.value)}
+                      />
+                    </Form.Group>
+                    <Form.Group className="col-6 my-2">
+                      <Form.Label>Last name</Form.Label>
+                      <Form.Control
+                        value={user ? `${user.lastname}` : ""}
+                        required
+                        type="text"
+                        placeholder="Last name"
+                        onChange={(e) => setLastname(e.target.value)}
+                      />
+                    </Form.Group>
+                  </div>
+
+                  <div className="row">
+                    <Form.Group className="col-6 my-2">
+                      <Form.Label>Email</Form.Label>
+                      <InputGroup hasValidation>
+                        <Form.Control
+                          value={user ? `${user.email}` : ""}
+                          type="email"
+                          placeholder="Email"
+                          required
+                          onChange={(e) => setEmail(e.target.value)}
+                        />
+                        <Form.Control.Feedback type="invalid">
+                          Please put a contact e-mail.
+                        </Form.Control.Feedback>
+                      </InputGroup>
+                    </Form.Group>
+                    <Form.Group className="col-6 my-2">
+                      <Form.Label>Phone</Form.Label>
+                      <Form.Control
+                        value={user ? `${user.phone}` : ""}
+                        type="number"
+                        placeholder="Phone"
+                        onChange={(e) => setPhone(e.target.value)}
+                      />
+                    </Form.Group>
+                  </div>
+
+                  <Form.Group className="my-2">
+                    <Form.Label>Message</Form.Label>
+                    <Form.Control
+                      required
+                      as="textarea"
+                      style={{ height: "100px" }}
+                      onChange={(e) => setMessage(e.target.value)}
+                    />
+                  </Form.Group>
+                </Form>
+
+                <div className="row justify-content-end">
+                  <Button
+                    type="submit"
+                    variant="outline-dark"
+                    size="md"
+                    className="rounded-pill w-25 me-3 mt-4"
+                  >
+                    Send
+                  </Button>
+                </div>
+                {alertToggle && (
+                  <Alert className="mt-5" variant="danger">
+                    {alertText}
+                  </Alert>
+                )}
+              </div>
+            </div>
           </div>
-          <Form method="POST" onSubmit={handleSubmit}>
-            <Row className="mb-3">
-              <Form.Group as={Col} md="6" className="my-2">
-                <Form.Label>First name</Form.Label>
-                <Form.Control
-                  value={user ? `${user.firstname}` : ""}
-                  required
-                  type="text"
-                  placeholder="First name"
-                  onChange={(e) => setFirstname(e.target.value)}
-                />
-              </Form.Group>
-              <Form.Group as={Col} md="6" className="my-2">
-                <Form.Label>Last name</Form.Label>
-                <Form.Control
-                  value={user ? `${user.lastname}` : ""}
-                  required
-                  type="text"
-                  placeholder="Last name"
-                  onChange={(e) => setLastname(e.target.value)}
-                />
-              </Form.Group>
-              <Form.Group as={Col} md="6" className="my-2">
-                <Form.Label>Email</Form.Label>
-                <InputGroup hasValidation>
-                  <Form.Control
-                    value={user ? `${user.email}` : ""}
-                    type="email"
-                    placeholder="Email"
-                    required
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                  <Form.Control.Feedback type="invalid">
-                    Please put a contact e-mail.
-                  </Form.Control.Feedback>
-                </InputGroup>
-              </Form.Group>
-              <Form.Group as={Col} md="6" className="my-2">
-                <Form.Label>Phone</Form.Label>
-                <Form.Control
-                  value={user ? `${user.phone}` : ""}
-                  type="number"
-                  placeholder="Phone"
-                  onChange={(e) => setPhone(e.target.value)}
-                />
-              </Form.Group>
-            </Row>
-            <Row className="mb-3">
-              <Form.Group as={Col} className="my-2">
-                <Form.Label>Message</Form.Label>
-                <Form.Control
-                  required
-                  as="textarea"
-                  style={{ height: "200px" }}
-                  onChange={(e) => setMessage(e.target.value)}
-                />
-              </Form.Group>
-            </Row>
-            <Row className="justify-content-end">
-              <Button
-                type="submit"
-                variant="outline-light"
-                size="lg"
-                className="rounded-pill w-25 me-3 mt-4"
-              >
-                Send
-              </Button>
-            </Row>
-          </Form>
-          {alertToggle && (
-            <Alert className="mt-5" variant="danger">
-              {alertText}
-            </Alert>
-          )}
-        </Container>
+        </div>
       </div>
     </>
   );
