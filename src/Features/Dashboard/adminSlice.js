@@ -33,11 +33,14 @@ const adminSlice = createSlice({
     setStyles: (state, action) => {
       state.styles = action.payload;
     },
-    createProduct: (state, action) => {},
+    createProduct: (state, action) => {
+      console.log(action.payload);
+      //state.products = [...state.products, action.payload]
+    },
     deleteProduct: (state, action) => {
       state.products = state.products.filter((product) => product.id !== action.payload);
     },
-    editProduct: (state, action) => {},
+    updateProduct: (state, action) => {},
   },
 });
 
@@ -50,6 +53,6 @@ export const {
   setStyles,
   createProduct,
   deleteProduct,
-  editProduct,
+  updateProduct,
 } = adminSlice.actions;
 export default adminSlice.reducer;
