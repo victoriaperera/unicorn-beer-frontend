@@ -34,7 +34,7 @@ const adminSlice = createSlice({
       state.styles = action.payload;
     },
     createProduct: (state, action) => {
-      console.log(action.payload);
+      console.log(action.payload)
       //state.products = [...state.products, action.payload]
     },
     deleteProduct: (state, action) => {

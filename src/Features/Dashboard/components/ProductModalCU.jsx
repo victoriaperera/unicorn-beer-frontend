@@ -1,7 +1,7 @@
 import "./styles.css";
 import { Button, Col, Form, InputGroup, Modal, Row,  } from "react-bootstrap";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { createProduct, updateProduct } from "../adminSlice";
 import axios from "axios";
 
@@ -9,12 +9,15 @@ function ProductModalCU({show, close, product, action}){
   const token = useSelector((state)=> state.admin.token.token);
   const styles = useSelector((state)=> state.admin.styles);
 
+  const dispatch = useDispatch();
+
   const [style, setStyle] = useState("");
   const [container, setContainer] = useState("");
   const [price, setPrice] = useState("");
   const [stock, setStock] = useState("");
+  const [photo, setPhoto] = useState("");
 
-  const productName = (container, style)=>{
+  const productName = (style, container)=>{
     if(container === "can") {
       return `${style} ${container} 0.09 Oz`
     }
@@ -25,24 +28,26 @@ function ProductModalCU({show, close, product, action}){
       return `${style} ${container} 1.32 Gal`
     }
   }
-  const handleSubmit = async ()=>{
+  const handleSubmit = async (e)=>{
     e.preventDefault();
     try{
-      const response = axios({
+      const response = await axios({
         method: "POST",
         url: `${import.meta.env.VITE_BACK_URL}/products`,
         // headers: {
         //   Authorization: `Bearer ${token}`,
         // },
         data:{
-          style,
-          container,
-          price,
-          stock,
-          name: productName(container, style)
+          style: style,
+          container: container,
+          price: price,
+          stock: stock,
+          name: productName(container, style),
+          photos: photo
         }
       })
-
+      console.log(response.data)
+      //dispatch(createProduct(response.data))
     }catch(err){
       console.log(err);
     }
@@ -70,7 +75,7 @@ function ProductModalCU({show, close, product, action}){
               </Modal.Header>
               <Modal.Body>
               <Form
-              onSubmit={handleSubmit}
+              onSubmit={(e)=> handleSubmit(e)}
               >
                 <Row className="mb-3">
                   <Form.Group as={Col}>
@@ -119,12 +124,22 @@ function ProductModalCU({show, close, product, action}){
                         onChange={(e) => setStock(e.target.value)}
                       />
                     </Form.Group>
+                    <Form.Group controlId="formFileMultiple" className="mb-3">
+                      <Form.Label>Photo</Form.Label>
+                      <Form.Control 
+                      type="file" 
+                      multiple
+                      onChange={(e)=> setPhoto(e.target.value)}
+                      />
+                    </Form.Group>
                   </Row>
+                  <Row className="mb-3">
+                   <Col className="d-flex justify-content-end">
+                    <Button className="w-25" type="submit">Make it happen</Button>
+                   </Col>
+                  </Row>      
                 </Form>  
               </Modal.Body>
-              <Modal.Footer>
-                <Button onClick={close}>Make it happen</Button>
-              </Modal.Footer>
             </Modal>
           ); 
 }
