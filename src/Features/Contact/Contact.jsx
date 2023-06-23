@@ -18,9 +18,9 @@ function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if(!firstname || !lastname || !email || !phone || !message){
+    if (!firstname || !lastname || !email || !phone || !message) {
       setAlertToggle(true);
-      setAlertText("Fill in all the fields, please")
+      setAlertText("Fill in all the fields, please");
     } else {
       try {
         const response = await axios({
@@ -41,7 +41,7 @@ function Contact() {
   };
   return (
     <>
-      <div className="graphiteBackground p-5">
+      <div className="graphite-background p-5">
         <Container className="contactContainer my-5 py-5 container">
           <div className="d-flex align-items-end">
             <img
@@ -121,10 +121,10 @@ function Contact() {
             </Row>
           </Form>
           {alertToggle && (
-              <Alert className="mt-5" variant="danger">
-                {alertText}
-              </Alert>
-            )}
+            <Alert className="mt-5" variant="danger">
+              {alertText}
+            </Alert>
+          )}
         </Container>
       </div>
     </>

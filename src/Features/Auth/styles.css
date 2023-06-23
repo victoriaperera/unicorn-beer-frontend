@@ -1,16 +1,16 @@
-.authContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.uniIcon {
+.uni-icon {
   width: 4vh;
   margin: 0 10px 0 0;
 }
-.authLink {
-  color: var(--orange);
+.auth-link {
   text-decoration: none;
-  border: var(--white) 1px;
 }
 
+.login-card {
+  background-color: var(--white);
+  color: var(--graphite);
+}
 
+.aside-bgc {
+  background-color: var(--red);
+}

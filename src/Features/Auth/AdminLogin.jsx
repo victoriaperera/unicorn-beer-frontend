@@ -1,12 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Alert } from "react-bootstrap";
+import { Alert, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { Button, Col, Container, Form, Row, InputGroup } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import "./styles.css";
 import { setAdminToken } from "../Dashboard/adminSlice";
+import { useRandomColor } from "../../hook/useRandomColor";
 function AdminLogin() {
   const [admin, setAdmin] = useState();
   const [email, setEmail] = useState();
@@ -15,6 +15,7 @@ function AdminLogin() {
   const [alertToggle, setAlertToggle] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const color = useRandomColor();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -43,66 +44,58 @@ function AdminLogin() {
   }, [admin]);
 
   return (
-    <div className="graphiteBackground">
-      <Container className="authContainer py-5">
-        <div className="d-flex flex-column justify-content-start align-items-start">
-          <div className="d-flex align-items-center my-3">
-            <img
-              src="src/assets/icons/Unicorn-beer-icon-3.svg"
-              alt="unicron icon"
-              className="uniIcon"
-            />
-            <h1 className="m-0">Login</h1>
-          </div>
-          <small>Our Damn Tasty Beer is Just a Click Away</small>
-        </div>
-        <Form onSubmit={handleSubmit}>
-          <Row className="mb-3 flex-column">
-            <Form.Group as={Col} className="my-2 col-md-8">
-              <Form.Label>Email</Form.Label>
-              <InputGroup hasValidation>
-                <Form.Control
-                  type="email"
-                  placeholder="Email"
-                  required
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-                <Form.Control.Feedback type="invalid">
-                  Please put a contact e-mail.
-                </Form.Control.Feedback>
-              </InputGroup>
-            </Form.Group>
-            <Form.Group as={Col} className="my-2 col-md-8">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Password"
-                required
-                onChange={(e) => setPassword(e.target.value)}
+    <div className="graphite-background d-flex justify-content-center " style={{ height: "80vh" }}>
+      <div className="container p-5 m-5">
+        <div className="login-card">
+          <div className="row p-0 m-0">
+            <div
+              className="col-8 d-none d-md-flex flex-wrap align-items-center justify-content-center p-5"
+              style={{ backgroundColor: color }}
+            >
+              <img
+                src="../src/assets/icons/Unicorn-beer-white-logo.svg"
+                alt="Unicorn Logo"
+                className="header-logo w-sm-50 w-75 h-75"
               />
-            </Form.Group>
-            <Col className="d-flex justify-content-end col-md-8">
-              <Button
-                type="submit"
-                variant="outline-light"
-                size="lg"
-                className="rounded-pill mt-5 col-12 col-sm-5 col-lg-3 mb-4"
-              >
-                Log in
-              </Button>
-            </Col>
-            <Col>
-              <small className="d-block">
-                Don't you have an account?{" "}
-                <Link className="authLink" to="/signup">
-                  Create an Account
-                </Link>
-              </small>
-              {alertToggle && <Alert variant="danger">{alertText}</Alert>}
-            </Col>
-          </Row>
-        </Form>
-      </Container>
+            </div>
+            <div className="col-4 d-flex align-items-center justify-content-center text-black py-5 px-3">
+              <form onSubmit={handleSubmit} method="post">
+                <h1>Login</h1>
+                <small>Our Damn Tasty Beer is Just a Click Away</small>
+                <div className="form my-3">
+                  <input
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                    }}
+                    type="text"
+                    className="form-control mb-3"
+                    id="userName"
+                    name="username"
+                    placeholder="Username or email"
+                  />
+
+                  <input
+                    onChange={(e) => {
+                      setPassword(e.target.value);
+                    }}
+                    type="password"
+                    className="form-control"
+                    id="floatingPassword"
+                    placeholder="Password"
+                    name="password"
+                  />
+                </div>
+                <div className="d-grid my-3">
+                  <Button type="submit" variant="outline-dark" size="md" className="rounded-pill">
+                    Log in
+                  </Button>
+                </div>
+                <div>{alertToggle && <Alert variant="danger">{alertText}</Alert>}</div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

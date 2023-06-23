@@ -64,7 +64,7 @@ sup {
   min-height: 80vh;
 }
 
-.graphiteBackground {
+.graphite-background {
   background-color: var(--lightGraphite);
   color: var(--white);
 }

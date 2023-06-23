@@ -23,7 +23,11 @@ function Checkout() {
 
   const paymentOptions = [
     { value: "Visa", label: "Visa", image: "src/assets/icons/icons8-tarjeta-visa-48.png" },
-    { value: "Mastercard", label: "Master Card", image: "src/assets/icons/icons8-mastercard-48.png"},
+    {
+      value: "Mastercard",
+      label: "Master Card",
+      image: "src/assets/icons/icons8-mastercard-48.png",
+    },
     { value: "Paypal", label: "PayPal", image: "src/assets/icons/icons8-paypal-48.png" },
   ];
 
@@ -35,7 +39,7 @@ function Checkout() {
       paddingLeft: "50px",
     }),
   };
-  
+
   const deliveryOptions = [];
 
   var today = new Date();
@@ -49,7 +53,7 @@ function Checkout() {
         { month: "long" },
       )} ${date.getDate()}, ${date.getFullYear()}`,
     });
-    
+
     today = date;
   }
 
@@ -99,7 +103,7 @@ function Checkout() {
   };
 
   return (
-    <div className="graphiteBackground py-5">
+    <div className="graphite-background py-5">
       <OrderModal show={show} />
       <Container className="container checkOutContainer py-5">
         <div className="d-flex flex-column justify-content-start align-items-start">
