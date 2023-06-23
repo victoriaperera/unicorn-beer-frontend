@@ -9,13 +9,15 @@ import { useState } from "react";
 function Products() {
 
   const products = useSelector((state) => state.admin.products);
+  
+  const [product, setProduct] = useState("");
 
   const [showCU, setShowCU] = useState(false);
-  const [showD, setShowD] = useState(false);
-  const [product, setProduct] = useState();
   const handleShowCU = () => setShowCU(true);
   const handleCloseCU = () => setShowCU(false);
-  const handleShowD = () => setShowD(false);
+
+  const [showD, setShowD] = useState(false);
+  const handleShowD = () => setShowD(true);
   const handleCloseD = () => setShowD(false);
 
 
