@@ -1,5 +1,5 @@
 import "./styles.css";
-import ContactModal from "./components/ContactModal";
+import OutOfScopeModal from "../../Common/components/OutOfScopeModal";
 import { Button, Col, Container, Form, Row, InputGroup } from "react-bootstrap";
 import { useState } from "react";
 import { useSelector } from "react-redux";
@@ -44,7 +44,7 @@ function Contact() {
   };
   return (
     <>
-      <ContactModal />
+      <OutOfScopeModal />
       <div className="graphite-background d-flex justify-content-center" style={{ height: "79vh" }}>
         <div className="container-contact">
           <div className="card-contact">

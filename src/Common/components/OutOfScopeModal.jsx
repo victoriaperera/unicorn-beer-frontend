@@ -2,7 +2,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import React, { useState } from "react";
 
-function ContactModal() {
+function OutOfScopeModal() {
   const [smShow, setSmShow] = useState(true);
 
   return (
@@ -22,4 +22,4 @@ function ContactModal() {
   );
 }
 
-export default ContactModal;
+export default OutOfScopeModal;
