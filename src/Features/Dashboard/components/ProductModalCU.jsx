@@ -9,7 +9,7 @@ import { capitalizeFirstLetter } from "../../../hook/capitalizeFirstLetter";
 function ProductModalCU({show, close, product, action}){
   const token = useSelector((state)=> state.admin.token.token);
   const styles = useSelector((state)=> state.admin.styles);
-
+  
   const dispatch = useDispatch();
   const [style, setStyle] = product ? useState(product.style) : useState("");
   const [container, setContainer] = product ? useState(product.container) : useState("");
@@ -101,7 +101,7 @@ return (
                         <Form.Select name="container" id="container"
                         onChange={(e) =>  setStyle(e.target.value)}
                         >
-                          {!product ? styles.map((style) =>
+                          {action === "create" ? styles.map((style) =>
                           <option 
                           key={style.id}
                           value={style.name}
@@ -118,9 +118,10 @@ return (
                         <Form.Select name="container" id="container"
                         onChange={(e) =>  setContainer(e.target.value)}
                         >
-                          <option>Select a container size</option>
-                          {!product ?
+                          
+                          {action === "create" ?
                           <> 
+                          <option>Select a container</option>
                           <option value="bottle">Botlle</option>
                           <option value="can">Can</option>
                           <option value="keg">Keg</option>
@@ -133,7 +134,7 @@ return (
                     <Form.Group as={Col}>
                     <Form.Label>Price</Form.Label>
                       <InputGroup>
-                       {!product ?
+                       {action === "create" ?
                        <>
                        <InputGroup.Text>US$</InputGroup.Text>
                        <Form.Control
