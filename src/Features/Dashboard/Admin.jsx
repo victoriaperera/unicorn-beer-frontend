@@ -15,9 +15,9 @@ function Admin() {
   const [containers, setContainers] = useState();
   const dispatch = useDispatch();
 
-  function handleSidebarClick(component) {
+  const handleSidebarClick = (component) => {
     setSelectedComponent(component);
-  }
+  };
 
   useEffect(() => {
     const getOrders = async () => {
@@ -62,7 +62,7 @@ function Admin() {
   function renderComponent() {
     switch (selectedComponent) {
       case "dashboard":
-        return <Dashboard containers={containers} />;
+        return <Dashboard containers={containers} handleSidebarClick={handleSidebarClick} />;
       case "products":
         return <Products />;
       case "categories":

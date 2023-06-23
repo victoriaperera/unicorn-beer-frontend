@@ -1,10 +1,10 @@
 import "./styles.css";
 import ApexCharts from "apexcharts";
 import LineChart from "./LineChart";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import React, { useState, useEffect } from "react";
 
-function Dashboard({ containers }) {
+function Dashboard({ containers, handleSidebarClick }) {
   const products = useSelector((state) => state.admin.products);
   const categories = useSelector((state) => state.admin.styles);
 
@@ -61,7 +61,7 @@ function Dashboard({ containers }) {
         </div>
         <div className="col-12 col-md-4">
           <div className="card mb-4 dashboard-line-chart">
-            <div className="card-body text-center">
+            <div className="card-body text-center p-0">
               <LineChart />
             </div>
           </div>
@@ -102,7 +102,13 @@ function Dashboard({ containers }) {
       <div className="row">
         <div className="col-12">
           <div className="card mb-4 dashboard-orders">
-            <div className="card-header">Latest Orders</div>
+            <div className="card-header">
+              Latest Orders{" "}
+              <i
+                className="bi bi-arrow-right-circle-fill"
+                onClick={() => handleSidebarClick("orders")}
+              ></i>
+            </div>
             <div className="card-body">
               <table className="table table-sm text-center">
                 <thead>
