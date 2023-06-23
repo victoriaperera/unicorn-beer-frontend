@@ -1,13 +1,144 @@
-/**** PRODUCT ****/
+/* sets maximum width for the first column in every table */
+.table th:first-child,
+.table td:first-child {
+  width: 1.5%;
+  white-space: nowrap;
+  text-align: center !important;
+}
+
+.delete-icon {
+  color: var(--red) !important;
+}
+
+.edit-icon {
+  color: var(--blue) !important;
+}
+
+/**** DASHBOARD ****/
+
+.dashboard-bg {
+  height: 100vh;
+  margin-left: 200px;
+  padding: 20px;
+  background-color: var(--lightRed);
+  overflow: hidden;
+}
+
+.card {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transform: rotateX(10deg);
+  perspective: 800px;
+}
+
+.card-header {
+  /* background-color: var(--white); */
+  color: var(--graphite);
+  font-weight: bold;
+}
+
+.categories-list {
+  list-style-type: none;
+  column-count: 3;
+  column-gap: 20px;
+}
+
+.dashboard-totals {
+  height: 150px;
+  background-color: var(--white);
+  color: var(--graphite);
+  text-align: center;
+  font-weight: bold;
+}
+
+.dashboard-orders {
+  overflow-y: hidden;
+}
+
+/**** PRODUCTS ****/
 
 .products-bg {
-    min-height: 100vh;
-    margin-left: 200px;
-    padding: 20px;
-    background-color: var(--lightOrange);
-    overflow: hidden;
-  }
-  .products-table-heading {
-    background-color: var(--orange) !important;
-    color: var(--white) !important;
-  }
+  min-height: 100vh;
+  margin-left: 200px;
+  padding: 20px;
+  background-color: var(--lightOrange);
+  overflow: scroll;
+}
+.products-table-heading {
+  background-color: var(--orange) !important;
+  color: var(--white) !important;
+}
+
+/**** CATEGORIES ****/
+
+.categories-bg {
+  height: 100vh;
+  margin-left: 200px;
+  padding: 20px;
+  background-color: var(--lightGreen);
+  overflow: scroll;
+}
+
+.category-description-overflow {
+  max-width: 15rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/**** ORDERS ****/
+
+.orders-bg {
+  height: 100vh;
+  margin-left: 200px;
+  padding: 20px;
+  background-color: var(--lightBlue);
+  overflow: scroll;
+}
+
+.orders-table-heading {
+  background-color: var(--blue) !important;
+  color: var(--white) !important;
+}
+
+/** font color for each order-status**/
+
+.status-confirmed {
+  color: var(--orange) !important;
+  font-weight: bold;
+}
+
+.status-paid {
+  color: var(--blue) !important;
+  font-weight: bold;
+}
+
+.status-shipped {
+  color: var(--green) !important;
+  font-weight: bold;
+}
+
+.status-delivered {
+  color: var(--graphite) !important;
+  font-weight: bold;
+}
+
+.status-cancelled {
+  color: var(--red) !important;
+  font-weight: bold;
+}
+
+/**** CUSTOMERS ****/
+
+.customers-bg {
+  height: 100vh;
+  margin-left: 200px;
+  padding: 20px;
+  background-color: var(--lightViolet);
+  overflow: scroll;
+  scroll-behavior: inherit;
+}
+
+.customers-table-heading {
+  background-color: var(--violet) !important;
+  color: var(--white) !important;
+}

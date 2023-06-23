@@ -1,3 +1,4 @@
+import "./styles.css";
 import { useSelector } from "react-redux";
 
 function Customers() {
@@ -7,15 +8,24 @@ function Customers() {
 
   return (
     <>
-      <table className="table table-hover align-middle text-center">
-        <thead>
+      <table className="table table-hover text-center align-middle">
+        <thead className="align-middle">
           <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Phone</th>
-            <th scope="col">Address</th>
-            <th scope="col">Shipping Address</th>
-            <th scope="col">Delete account</th>
+            <th scope="col" className="customers-table-heading">
+              Name
+            </th>
+            <th scope="col" className="customers-table-heading">
+              Email
+            </th>
+            <th scope="col" className="customers-table-heading">
+              Phone
+            </th>
+            <th scope="col" className="customers-table-heading">
+              Address
+            </th>
+            <th scope="col" className="customers-table-heading">
+              Actions
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -28,9 +38,8 @@ function Customers() {
                 <td>{user.email}</td>
                 <td>{user.phone}</td>
                 <td>{user.address}</td>
-                <td>{user.shippingAddress}</td>
                 <td>
-                  <button className="btn rounded-pill btn-danger">Delete</button>
+                  <i className="bi bi-trash3-fill fs-5 delete-icon"></i>
                 </td>
               </tr>
             ))

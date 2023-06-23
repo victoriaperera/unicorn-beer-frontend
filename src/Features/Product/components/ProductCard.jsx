@@ -30,7 +30,7 @@ function ProductCard({ product }) {
         </div>
         <div className="w-100 d-flex justify-content-between pb-2">
           <span>Price</span>
-          <span className="fw-bold">$ {product.price.toFixed(2)}</span>
+          <span className="fw-bold">US$ {product.price.toFixed(2)}</span>
         </div>
       </div>
       <div className="w-100 d-flex justify-content-between border-top pt-2">

@@ -1,5 +1,5 @@
-import Logout from "../../Auth/components/Logout";
 import "../styles.css";
+import Logout from "../../Auth/components/Logout";
 import { useState } from "react";
 
 function AdminSidebar({ onSidebarClick }) {

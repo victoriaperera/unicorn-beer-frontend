@@ -237,19 +237,19 @@ function About() {
             <img
               src="src/assets/img/product-design-sm.png"
               alt="Product design"
-              class="product-design small"
+              className="product-design small"
               fluid
             />
             <img
               src="src/assets/img/product-design-md.png"
               alt="Product design"
-              class="product-design medium"
+              className="product-design medium"
               fluid
             />
             <img
               src="src/assets/img/product-design-lg.png"
               alt="Product design"
-              class="product-design large"
+              className="product-design large"
               fluid
             />
           </Col>
