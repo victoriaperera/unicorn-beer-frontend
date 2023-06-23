@@ -24,25 +24,29 @@ const adminSlice = createSlice({
     setOrders: (state, action) => {
       state.orders = action.payload;
     },
-    setProducts: (state, action) => {
-      state.products = action.payload;
-    },
-    createProduct: (state, action) => {},
-    deleteProduct: (state, action) => {
-      state.products = state.products.filter((product) => product.id !== action.payload);
-    },
-    editProduct: (state, action) => {},
     setUsers: (state, action) => {
       state.users = action.payload;
     },
+    setProducts: (state, action) => {
+      state.products = action.payload;
+    },
+    createProduct: (state, action) => {
+      console.log(action.payload);
+      //state.products = [...state.products, action.payload]
+    },
+    updateProduct: (state, action) => {},
+    deleteProduct: (state, action) => {
+      state.products = state.products.filter((product) => product.id !== action.payload);
+    },
+
     setStyles: (state, action) => {
       state.styles = action.payload;
     },
     createStyle: (state, action) => {},
+    updateStyle: (state, action) => {},
     deleteStyle: (state, action) => {
       state.styles = state.styles.filter((style) => style.id !== action.payload);
     },
-    editStyle: (state, action) => {},
   },
 });
 
@@ -50,13 +54,14 @@ export const {
   setAdminToken,
   clearAdminToken,
   setOrders,
-  setProducts,
   setUsers,
+  setProducts,
+  createProduct,
+  updateProduct,
+  deleteProduct,
   setStyles,
   createStyle,
+  updateStyle,
   deleteStyle,
-  createProduct,
-  deleteProduct,
-  editProduct,
 } = adminSlice.actions;
 export default adminSlice.reducer;

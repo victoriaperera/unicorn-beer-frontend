@@ -28,6 +28,11 @@
 .about-section-team {
   color: var(--white);
   background-color: var(--lightGraphite);
+  position: relative;
+}
+
+.team-card {
+  position: absolute;
 }
 
 @keyframes moveUp {
@@ -134,5 +139,11 @@
   }
   .about-section-team {
     height: 100vh;
+  }
+}
+
+@media (max-width: 826px) {
+  .about-nav-container {
+    display: none;
   }
 }
