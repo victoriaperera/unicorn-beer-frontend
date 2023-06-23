@@ -7,7 +7,10 @@ function Categories() {
 
   return (
     <div className="categories-bg scrollable">
-      <h2 className="text-white mb-3">Categories</h2>
+      <div className="d-flex justify-content-between align-content-center pb-3 me-3">
+        <h2 className="text-white pt-2">Categories</h2>
+        <i className="bi bi-plus-circle fs-2 create-icon"></i>
+      </div>
       <table className="table table-hover text-center align-middle">
         <thead className="align-middle">
           <tr>

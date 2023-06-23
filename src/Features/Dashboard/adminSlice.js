@@ -48,7 +48,6 @@ export const {
   setProducts,
   setUsers,
   setStyles,
-  setContainers,
   createProduct,
   deleteProduct,
   editProduct,
