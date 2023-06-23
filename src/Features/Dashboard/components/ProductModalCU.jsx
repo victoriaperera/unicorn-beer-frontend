@@ -11,7 +11,7 @@ function ProductModalCU({show, close, product, action}){
   const styles = useSelector((state)=> state.admin.styles);
   
   const dispatch = useDispatch();
-  const [style, setStyle] = product ? useState(product.style) : useState("");
+  const [style, setStyle] = product ? useState(product.style.name) : useState("");
   const [container, setContainer] = product ? useState(product.container) : useState("");
   const [price, setPrice] = product ? useState(product.price) : useState("");
   const [stock, setStock] = product ? useState(product.stock) : useState("");
@@ -29,7 +29,7 @@ function ProductModalCU({show, close, product, action}){
   }
   const handleSubmit = async (e)=>{
     e.preventDefault();
-    if(action === "create"){
+    if(action !== "edit"){
       try{
         const response = await axios({
           method: "POST",
@@ -101,7 +101,7 @@ return (
                         <Form.Select name="container" id="container"
                         onChange={(e) =>  setStyle(e.target.value)}
                         >
-                          {action === "create" ? styles.map((style) =>
+                          {action !== "edit" ? styles.map((style) =>
                           <option 
                           key={style.id}
                           value={style.name}
@@ -119,7 +119,7 @@ return (
                         onChange={(e) =>  setContainer(e.target.value)}
                         >
                           
-                          {action === "create" ?
+                          {action !== "edit" ?
                           <> 
                           <option>Select a container</option>
                           <option value="bottle">Botlle</option>
@@ -134,7 +134,7 @@ return (
                     <Form.Group as={Col}>
                     <Form.Label>Price</Form.Label>
                       <InputGroup>
-                       {action === "create" ?
+                       {action !== "edit" ?
                        <>
                        <InputGroup.Text>US$</InputGroup.Text>
                        <Form.Control
