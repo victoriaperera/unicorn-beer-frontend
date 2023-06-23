@@ -4,7 +4,10 @@ import { useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { Alert } from "react-bootstrap";
+import Header from "../../Common/components/Header";
+
 function Contact() {
+  const pageTitle = "Contact Us";
   const user = useSelector((state) => state.user);
 
   const [firstname, setFirstname] = useState("");
@@ -18,9 +21,9 @@ function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if(!firstname || !lastname || !email || !phone || !message){
+    if (!firstname || !lastname || !email || !phone || !message) {
       setAlertToggle(true);
-      setAlertText("Fill in all the fields, please")
+      setAlertText("Fill in all the fields, please");
     } else {
       try {
         const response = await axios({
@@ -41,6 +44,7 @@ function Contact() {
   };
   return (
     <>
+      <Header title={pageTitle} />
       <div className="graphiteBackground p-5">
         <Container className="contactContainer my-5 py-5 container">
           <div className="d-flex align-items-end">
@@ -121,10 +125,10 @@ function Contact() {
             </Row>
           </Form>
           {alertToggle && (
-              <Alert className="mt-5" variant="danger">
-                {alertText}
-              </Alert>
-            )}
+            <Alert className="mt-5" variant="danger">
+              {alertText}
+            </Alert>
+          )}
         </Container>
       </div>
     </>

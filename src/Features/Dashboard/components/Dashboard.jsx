@@ -1,12 +1,12 @@
 import "./styles.css";
-import ApexCharts from "apexcharts";
 import LineChart from "./LineChart";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import React, { useState, useEffect } from "react";
 
 function Dashboard({ containers, handleSidebarClick }) {
   const products = useSelector((state) => state.admin.products);
   const categories = useSelector((state) => state.admin.styles);
+  const [dashboardContainers, setDashboardContainers] = useState(containers);
 
   const orders = useSelector((state) => state.admin.orders);
   const customers = useSelector((state) => state.admin.users);
@@ -32,8 +32,12 @@ function Dashboard({ containers, handleSidebarClick }) {
     calculateAveragePurchaseValue();
   }, [orders]);
 
+  useEffect(() => {
+    setDashboardContainers(containers);
+  }, [containers]);
+
   return (
-    <div className="dashboard-bg">
+    <div className="dashboard-bg scrollable">
       <div className="row">
         <div className="col-12 col-md-4">
           <div className="card mb-4 dashboard-totals">
@@ -86,9 +90,9 @@ function Dashboard({ containers, handleSidebarClick }) {
           <div className="card mb-4">
             <div className="card-header">Available Containers</div>
             <div className="card-body">
-              {containers && containers.length > 0 ? (
+              {dashboardContainers && dashboardContainers.length > 0 ? (
                 <ul className="containers-list">
-                  {containers.map((container) => (
+                  {dashboardContainers.map((container) => (
                     <li key={container._id}>{container.name}</li>
                   ))}
                 </ul>
@@ -120,7 +124,7 @@ function Dashboard({ containers, handleSidebarClick }) {
                 </thead>
                 <tbody>
                   {orders && orders.length > 0 ? (
-                    orders.map((order) => (
+                    orders.slice(0, 2).map((order) => (
                       <tr key={order.id}>
                         <th scope="row">{order.id}</th>
                         <td>US$ {order.totalAmount}</td>
