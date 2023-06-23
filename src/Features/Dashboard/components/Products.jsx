@@ -1,41 +1,34 @@
 import "./styles.css";
-import ProductModal from "./ProductModal";
-import { deleteProduct, editProduct, createProduct } from "../adminSlice";
-import { useSelector, useDispatch } from "react-redux";
+import ProductModalCU from "./ProductModalCU";
+import ProductModalDelete from "./ProductModalDelete";
+import { useSelector } from "react-redux";
 import { Table } from "react-bootstrap";
 import { useState } from "react";
-import axios from "axios";
+
 
 function Products() {
-  const token = useSelector((state) => state.token);
+
   const products = useSelector((state) => state.admin.products);
-  const dispatch = useDispatch();
+  
+  const [product, setProduct] = useState("");
 
-  const [show, setShow] = useState(false);
-  const handleShow = () => setShow(true);
-  const handleClose = () => setShow(false);
+  const [showCU, setShowCU] = useState(false);
+  const handleShowCU = () => setShowCU(true);
+  const handleCloseCU = () => setShowCU(false);
 
-  const handleDelete = async (productId) => {
-    try {
-      const response = await axios({
-        method: "DELETE",
-        url: `${import.meta.env.VITE_BACK_URL}/products`,
-        // headers:{
-        //   Authorization: `Bearer ${token}`
-        // },
-        data: { productId },
-      });
-      dispatch(deleteProduct(productId));
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  const [showD, setShowD] = useState(false);
+  const handleShowD = () => setShowD(true);
+  const handleCloseD = () => setShowD(false);
+
+
   return (
     <div className="products-bg scrollable">
-      <ProductModal show={show} close={handleClose} />
+      <ProductModalCU show={showCU} close={handleCloseCU} product={product} />
+      <ProductModalDelete show={showD} close={handleCloseD} product={product} />
       <div className="d-flex justify-content-between align-content-center mb-3">
         <h2 className="text-white m-0">Products</h2>
-        <button className="btn rounded-pill btn-success" onClick={() => setShow(true)}>
+        <button className="btn rounded-pill btn-success" 
+        onClick={handleShowCU}>
           Create
         </button>
       </div>
@@ -75,13 +68,21 @@ function Products() {
                   <i
                     className="bi bi-pencil-square fs-5 edit-icon"
                     type="submit"
-                    onClick={handleShow}
+                    onClick={() =>{
+                      handleShowCU();
+                      setProduct(product);
+                    }}
                   ></i>
+                  {/* {ends edit button} */}
                   <i
                     className="bi bi-trash3-fill fs-5 delete-icon"
                     type="submit"
-                    onClick={() => handleDelete(product.id)}
+                    onClick={() =>{
+                      handleShowD();
+                      setProduct(product);
+                    }}
                   ></i>
+                  {/* { ends delete button} */}
                 </td>
               </tr>
             ))}

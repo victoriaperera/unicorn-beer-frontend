@@ -19,6 +19,7 @@ const adminSlice = createSlice({
       state.products = [];
       state.users = [];
       state.styles = [];
+      state.containers = [];
     },
     setOrders: (state, action) => {
       state.orders = action.payload;
@@ -34,7 +35,7 @@ const adminSlice = createSlice({
     },
     createProduct: (state, action) => {},
     deleteProduct: (state, action) => {
-      state.products = state.products.filter(product => product.id !== action.payload);
+      state.products = state.products.filter((product) => product.id !== action.payload);
     },
     editProduct: (state, action) => {},
   },
@@ -47,6 +48,7 @@ export const {
   setProducts,
   setUsers,
   setStyles,
+  setContainers,
   createProduct,
   deleteProduct,
   editProduct,

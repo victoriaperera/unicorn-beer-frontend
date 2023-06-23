@@ -11,19 +11,19 @@ function Categories() {
       <table className="table table-hover text-center align-middle">
         <thead className="align-middle">
           <tr>
-            <th scope="col" className="orders-table-heading">
+            <th scope="col" className="categories-table-heading">
               Style Id
             </th>
-            <th scope="col" className="orders-table-heading">
+            <th scope="col" className="categories-table-heading">
               Style name
             </th>
-            <th scope="col" className="orders-table-heading">
+            <th scope="col" className="categories-table-heading">
               Style description
             </th>
-            <th scope="col" className="orders-table-heading">
+            <th scope="col" className="categories-table-heading">
               ABV
             </th>
-            <th scope="col" className="orders-table-heading">
+            <th scope="col" className="categories-table-heading">
               Actions
             </th>
           </tr>

@@ -50,7 +50,7 @@ function Customers() {
           )}
         </tbody>
       </table>
-      <span>Total customers: {userCount}</span>
+      <span className="text-white">Total customers: {userCount}</span>
     </>
   );
 }

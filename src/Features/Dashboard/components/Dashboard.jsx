@@ -1,13 +1,13 @@
 import "./styles.css";
 import ApexCharts from "apexcharts";
 import LineChart from "./LineChart";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import React, { useState, useEffect } from "react";
 
-function Dashboard() {
+function Dashboard({ containers, handleSidebarClick }) {
   const products = useSelector((state) => state.admin.products);
   const categories = useSelector((state) => state.admin.styles);
-  const containers = useSelector((state) => state.admin.containers);
+
   const orders = useSelector((state) => state.admin.orders);
   const customers = useSelector((state) => state.admin.users);
 
@@ -19,7 +19,6 @@ function Dashboard() {
 
   useEffect(() => {
     const calculateAveragePurchaseValue = () => {
-      const totalOrders = orders.length;
       const totalSales = orders.reduce((total, order) => total + order.totalAmount, 0);
 
       if (totalOrders > 0) {
@@ -62,7 +61,7 @@ function Dashboard() {
         </div>
         <div className="col-12 col-md-4">
           <div className="card mb-4 dashboard-line-chart">
-            <div className="card-body text-center">
+            <div className="card-body text-center p-0">
               <LineChart />
             </div>
           </div>
@@ -90,7 +89,7 @@ function Dashboard() {
               {containers && containers.length > 0 ? (
                 <ul className="containers-list">
                   {containers.map((container) => (
-                    <li key={container.id}>{container.name}</li>
+                    <li key={container._id}>{container.name}</li>
                   ))}
                 </ul>
               ) : (
@@ -103,7 +102,13 @@ function Dashboard() {
       <div className="row">
         <div className="col-12">
           <div className="card mb-4 dashboard-orders">
-            <div className="card-header">Latest Orders</div>
+            <div className="card-header">
+              Latest Orders{" "}
+              <i
+                className="bi bi-arrow-right-circle-fill"
+                onClick={() => handleSidebarClick("orders")}
+              ></i>
+            </div>
             <div className="card-body">
               <table className="table table-sm text-center">
                 <thead>
