@@ -87,6 +87,11 @@
   white-space: nowrap;
 }
 
+.categories-table-heading {
+  background-color: var(--green) !important;
+  color: var(--white) !important;
+}
+
 /**** ORDERS ****/
 
 .orders-bg {
