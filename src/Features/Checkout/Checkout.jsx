@@ -103,7 +103,7 @@ function Checkout() {
   };
 
   return (
-    <div className="graphite-background py-5">
+    <div className="graphite-background d-flex justify-content-center align-items-center py-5">
       <OrderModal show={show} />
       <Container className="container checkOutContainer py-5">
         <div className="d-flex flex-column justify-content-start align-items-start">
@@ -113,7 +113,7 @@ function Checkout() {
               alt="unicron icon"
               className="uniIcon"
             />
-            <h1 className="m-0">Check Out</h1>
+            <h1 className="m-0 ms-3">Check Out</h1>
           </div>
           <small>Our Damn Tasty Beer is Just a Click Away</small>
         </div>

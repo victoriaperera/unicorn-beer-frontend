@@ -45,7 +45,8 @@ function ProductModalCU({show, close, product, action}){
             name: productName(style, container),
           }
         })
-        dispatch(createProduct(response.data))
+        dispatch(createProduct(response.data));
+        close();
       }catch(err){
         console.log(err);
       }
@@ -64,6 +65,7 @@ function ProductModalCU({show, close, product, action}){
           }
         })
         dispatch(updateProduct({productId: product.id, stock: stock}))
+        close();
       }catch(err){
         console.log(err)
       }
