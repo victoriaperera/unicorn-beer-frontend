@@ -38,7 +38,7 @@
 
 .categories-list {
   list-style-type: none;
-  column-count: 3;
+  column-count: 2;
   column-gap: 20px;
 }
 
@@ -53,6 +53,8 @@
 .dashboard-orders {
   overflow-y: hidden;
 }
+
+/** charts **/
 
 /**** PRODUCTS ****/
 
