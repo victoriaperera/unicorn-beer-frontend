@@ -4,10 +4,10 @@ import LineChart from "./LineChart";
 import { useSelector } from "react-redux";
 import React, { useState, useEffect } from "react";
 
-function Dashboard() {
+function Dashboard({ containers }) {
   const products = useSelector((state) => state.admin.products);
   const categories = useSelector((state) => state.admin.styles);
-  const containers = useSelector((state) => state.admin.containers);
+
   const orders = useSelector((state) => state.admin.orders);
   const customers = useSelector((state) => state.admin.users);
 
@@ -19,7 +19,6 @@ function Dashboard() {
 
   useEffect(() => {
     const calculateAveragePurchaseValue = () => {
-      const totalOrders = orders.length;
       const totalSales = orders.reduce((total, order) => total + order.totalAmount, 0);
 
       if (totalOrders > 0) {
@@ -90,7 +89,7 @@ function Dashboard() {
               {containers && containers.length > 0 ? (
                 <ul className="containers-list">
                   {containers.map((container) => (
-                    <li key={container.id}>{container.name}</li>
+                    <li key={container._id}>{container.name}</li>
                   ))}
                 </ul>
               ) : (

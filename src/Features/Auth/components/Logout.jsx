@@ -24,7 +24,7 @@ function Logout() {
       const res = await axios.get(`${import.meta.env.VITE_BACK_URL}/auth/logout`);
       setResponse(res);
       dispatch(clearAdminToken());
-      console.log("estoy deslogeando el admin");
+
       navigate("/");
     }
   };

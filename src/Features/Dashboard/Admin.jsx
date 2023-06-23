@@ -12,6 +12,7 @@ import { setOrders, setProducts, setStyles, setUsers } from "./adminSlice";
 
 function Admin() {
   const [selectedComponent, setSelectedComponent] = useState("dashboard");
+  const [containers, setContainers] = useState();
   const dispatch = useDispatch();
 
   function handleSidebarClick(component) {
@@ -50,6 +51,7 @@ function Admin() {
       try {
         const response = await axios.get(`${import.meta.env.VITE_BACK_URL}/users`);
         dispatch(setUsers(response.data));
+        setContainers(response.data.containers);
       } catch (error) {
         console.log("Error fetching data:", error);
       }
@@ -60,7 +62,7 @@ function Admin() {
   function renderComponent() {
     switch (selectedComponent) {
       case "dashboard":
-        return <Dashboard />;
+        return <Dashboard containers={containers} />;
       case "products":
         return <Products />;
       case "categories":
