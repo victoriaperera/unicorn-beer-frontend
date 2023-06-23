@@ -20,7 +20,7 @@ input[type="number"] {
     rgba(253, 238, 29, 0.5821353912353515) 38%,
     rgba(252, 176, 69, 1) 100%
   );
-  z-index: 99999;
+  z-index: 1050;
 }
 
 .oops {
@@ -39,7 +39,7 @@ input[type="number"] {
 .modal-content {
   border: none;
   background-color: var(--lightGrey);
-  opacity: 0.85;
+  opacity: 1;
 }
 .enterBtnActive {
   color: var(--darkRed);

@@ -4,7 +4,7 @@ import ProductModalDelete from "./ProductModalDelete";
 import { useSelector } from "react-redux";
 import { Table } from "react-bootstrap";
 import { useState } from "react";
-
+import { capitalizeFirstLetter } from "../../../hook/capitalizeFirstLetter";
 
 function Products() {
 
@@ -13,6 +13,7 @@ function Products() {
   const [product, setProduct] = useState("");
 
   const [showCU, setShowCU] = useState(false);
+  const [action, setAction] = useState("");
   const handleShowCU = () => setShowCU(true);
   const handleCloseCU = () => setShowCU(false);
 
@@ -23,17 +24,21 @@ function Products() {
 
   return (
     <div className="products-bg scrollable">
-      <ProductModalCU show={showCU} close={handleCloseCU} product={product} />
+      <ProductModalCU show={showCU} close={handleCloseCU} product={product} action={action}/>
       <ProductModalDelete show={showD} close={handleCloseD} product={product} />
       <div className="d-flex justify-content-between align-content-center mb-3">
         <h2 className="text-white m-0">Products</h2>
         <button className="btn rounded-pill btn-success" 
-        onClick={handleShowCU}>
+        onClick={()=>{
+          handleShowCU();
+          setAction("create")
+        }
+        }>
           Create
         </button>
       </div>
       <div>
-        <Table responsive="sm" className="table table-hover align-middle text-center">
+        <Table className="table table-hover align-middle text-center">
           <thead className="table-header">
             <tr>
               <th className="products-table-heading" scope="col">
@@ -44,6 +49,9 @@ function Products() {
               </th>
               <th className="products-table-heading" scope="col">
                 Style
+              </th>
+              <th className="products-table-heading" scope="col">
+                Container
               </th>
               <th className="products-table-heading" scope="col">
                 Price
@@ -62,6 +70,7 @@ function Products() {
                 <td>...{product.id.slice(20)}</td>
                 <td>{product.name}</td>
                 <td>{product.style.name}</td>
+                <td>{capitalizeFirstLetter(product.container.name)}</td>
                 <td>US$ {product.price}</td>
                 <td>{product.stock}</td>
                 <td className="d-flex justify-content-around">
@@ -71,6 +80,7 @@ function Products() {
                     onClick={() =>{
                       handleShowCU();
                       setProduct(product);
+                      setAction("edit")
                     }}
                   ></i>
                   {/* {ends edit button} */}

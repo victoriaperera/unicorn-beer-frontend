@@ -4,7 +4,10 @@ import { useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { Alert } from "react-bootstrap";
+import Header from "../../Common/components/Header";
+
 function Contact() {
+  const pageTitle = "Contact Us";
   const user = useSelector((state) => state.user);
 
   const [firstname, setFirstname] = useState("");
