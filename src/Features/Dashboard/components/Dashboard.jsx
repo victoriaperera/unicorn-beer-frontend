@@ -54,9 +54,10 @@ function Dashboard() {
         </div>
         <div className="col-12 col-md-4">
           <div className="card mb-4 dashboard-totals">
-            <div className="card-header">Active customers</div>
+            <div className="card-header">Bestselling Products</div>
             <div className="card-body fs-3">
-              <span>{totalCustomers}</span>
+              <span>IPA Can</span>
+              <span>Pilsener Bottle</span>
             </div>
           </div>
         </div>
