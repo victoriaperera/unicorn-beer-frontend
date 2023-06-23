@@ -11,7 +11,6 @@ function Products() {
   const products = useSelector((state) => state.admin.products);
   
   const [product, setProduct] = useState("");
-
   const [showCU, setShowCU] = useState(false);
   const [action, setAction] = useState("");
   const handleShowCU = () => setShowCU(true);
@@ -28,14 +27,16 @@ function Products() {
       <ProductModalDelete show={showD} close={handleCloseD} product={product} />
       <div className="d-flex justify-content-between align-content-center mb-3">
         <h2 className="text-white m-0">Products</h2>
-        <button className="btn rounded-pill btn-success" 
+        <i className="bi bi-plus-circle fs-2 create-icon" 
+        type="submit"
         onClick={()=>{
           handleShowCU();
           setAction("create")
         }
-        }>
-          Create
-        </button>
+        }
+        >
+        </i>
+         {/* {ends create button} */}
       </div>
       <div>
         <Table className="table table-hover align-middle text-center">
@@ -66,6 +67,7 @@ function Products() {
           </thead>
           <tbody>
             {products.map((product) => (
+              
               <tr key={product.id}>
                 <td>...{product.id.slice(20)}</td>
                 <td>{product.name}</td>
@@ -78,8 +80,8 @@ function Products() {
                     className="bi bi-pencil-square fs-5 edit-icon"
                     type="submit"
                     onClick={() =>{
+                      setProduct(product)
                       handleShowCU();
-                      setProduct(product);
                       setAction("edit")
                     }}
                   ></i>

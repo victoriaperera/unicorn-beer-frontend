@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import "./styles.css";
 import { Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
