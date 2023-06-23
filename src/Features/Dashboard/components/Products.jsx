@@ -11,7 +11,6 @@ function Products() {
   const products = useSelector((state) => state.admin.products);
   
   const [product, setProduct] = useState("");
-
   const [showCU, setShowCU] = useState(false);
   const [action, setAction] = useState("");
   const handleShowCU = () => setShowCU(true);
