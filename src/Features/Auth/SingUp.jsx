@@ -1,159 +1,187 @@
 import axios from "axios";
 import { useState } from "react";
-import { Button, Col, Container, Form, Row, InputGroup } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { Alert } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { setToken } from "./userSlice";
+import { useRandomColor } from "../../hook/useRandomColor";
 
 function SignUp() {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
   const [shippingAddress, setShippingAddress] = useState("");
   const [alertText, setAlertText] = useState("");
   const [alertToggle, setAlertToggle] = useState(false);
-
+  const color = useRandomColor();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await axios({
-        method: "POST",
-        url: `${import.meta.env.VITE_BACK_URL}/auth/signup`,
-        data: {
-          firstname,
-          lastname,
-          email,
-          password,
-          phone,
-          address,
-          shippingAddress,
-        },
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      dispatch(setToken(response.data));
-      navigate("/shop");
-    } catch (err) {
-      console.error(err.response);
+    if (password === confirmPassword) {
+      try {
+        const response = await axios({
+          method: "POST",
+          url: `${import.meta.env.VITE_BACK_URL}/auth/signup`,
+          data: {
+            firstname,
+            lastname,
+            email,
+            password,
+            phone,
+            address,
+            shippingAddress,
+          },
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        dispatch(setToken(response.data));
+        navigate("/shop");
+      } catch (err) {
+        console.error(err.response);
+        setAlertToggle(true);
+        setAlertText(err.response.data.message);
+      }
+    } else {
       setAlertToggle(true);
-      setAlertText(err.response.data.message);
+      setAlertText("Passwords doesn't match, try again!");
     }
   };
   return (
-    <div className="graphite-background">
-      <Container className="authContainer py-5">
-        <div className="d-flex flex-column justify-content-start align-items-start">
-          <div className="d-flex align-items-center my-3">
-            <img
-              src="src/assets/icons/Unicorn-beer-icon-3.svg"
-              alt="unicron icon"
-              className="uniIcon"
-            />
-            <h1 className="m-0">Create an Account</h1>
+    <div className="graphite-background d-flex justify-content-center " style={{ height: "80vh" }}>
+      <div className="container p-5 m-5">
+        <div className=" login-card p-0">
+          <div className="row p-0 m-0">
+            <div
+              className="col-8 d-none d-md-flex flex-wrap align-items-center justify-content-center p-5"
+              style={{ backgroundColor: color }}
+            >
+              <img
+                src="../src/assets/icons/Unicorn-beer-white-logo.svg"
+                alt="Unicorn Logo"
+                className="header-logo w-sm-50 w-75 h-75"
+              />
+            </div>
+            <div className="col-md-4  d-flex align-items-center justify-content-center text-black py-5 px-3">
+              <form onSubmit={handleSubmit} method="post">
+                <h1>Login</h1>
+                <small>Our Damn Tasty Beer is Just a Click Away</small>
+                <div className="form my-3">
+                  <input
+                    onInput={(e) => {
+                      setFirstname(e.target.value);
+                    }}
+                    type="text"
+                    className="form-control mb-3"
+                    id="firstname"
+                    name="firstname"
+                    placeholder="Firstname"
+                    required
+                  ></input>
+                  <input
+                    onInput={(e) => {
+                      setLastname(e.target.value);
+                    }}
+                    type="text"
+                    className="form-control mb-3"
+                    id="lastname"
+                    name="lastname"
+                    placeholder="Lastname"
+                    required
+                  ></input>
+                  <input
+                    onInput={(e) => {
+                      setEmail(e.target.value);
+                    }}
+                    type="text"
+                    className="form-control mb-3"
+                    id="userName"
+                    name="username"
+                    placeholder="Email"
+                    required
+                  ></input>
+                  <input
+                    onInput={(e) => {
+                      setPhone(e.target.value);
+                    }}
+                    type="text"
+                    className="form-control mb-3"
+                    id="phone"
+                    name="phone"
+                    placeholder="Phone"
+                    required
+                  ></input>
+                  <input
+                    onInput={(e) => {
+                      setAddress(e.target.value);
+                    }}
+                    type="text"
+                    className="form-control mb-3"
+                    id="address"
+                    name="address"
+                    placeholder="Address"
+                    required
+                  ></input>
+                  <input
+                    onInput={(e) => {
+                      setShippingAddress(e.target.value);
+                    }}
+                    type="text"
+                    className="form-control mb-3"
+                    id="shipping address"
+                    name="shipping address"
+                    placeholder="Shipping address"
+                    required
+                  ></input>
+                  <input
+                    onInput={(e) => {
+                      setPassword(e.target.value);
+                    }}
+                    type="password"
+                    className="form-control mb-3"
+                    id="floatingPassword"
+                    placeholder="Password"
+                    name="password"
+                    required
+                  ></input>
+                  <input
+                    onInput={(e) => {
+                      setConfirmPassword(e.target.value);
+                    }}
+                    type="password"
+                    className="form-control mb-3"
+                    id="floatingConfirmPassword"
+                    placeholder="Confirm password"
+                    name="confirmPassword"
+                    required
+                  ></input>
+                </div>
+                <div className="d-grid my-3">
+                  <Button type="submit" variant="outline-dark" size="md" className="rounded-pill">
+                    Log in
+                  </Button>
+                </div>
+                <div>
+                  <small className="d-block">
+                    Back to{" "}
+                    <Link className="auth-link" to="/login" style={{ color: color }}>
+                      LOGIN
+                    </Link>
+                  </small>
+                  {alertToggle && <Alert variant="danger">{alertText}</Alert>}
+                </div>
+              </form>
+            </div>
           </div>
-
-          <small>Our Damn Tasty Beer is Just a Click Away</small>
         </div>
-        <Form onSubmit={handleSubmit}>
-          <Row className="mb-3">
-            <Form.Group as={Col} md="4" className="my-2">
-              <Form.Label>First name</Form.Label>
-              <Form.Control
-                required
-                type="text"
-                placeholder="First name"
-                onChange={(e) => setFirstname(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group as={Col} md="4" className="my-2">
-              <Form.Label>Last name</Form.Label>
-              <Form.Control
-                required
-                type="text"
-                placeholder="Last name"
-                onChange={(e) => setLastname(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group as={Col} md="4" className="my-2">
-              <Form.Label>Email</Form.Label>
-              <InputGroup hasValidation>
-                <Form.Control
-                  type="email"
-                  placeholder="Email"
-                  required
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-                <Form.Control.Feedback type="invalid">
-                  Please put a contact e-mail.
-                </Form.Control.Feedback>
-              </InputGroup>
-            </Form.Group>
-            <Form.Group as={Col} md="4" className="my-2">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Password"
-                required
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group as={Col} md="4" className="my-2">
-              <Form.Label>Phone Number</Form.Label>
-              <Form.Control
-                type="number"
-                placeholder="Phone"
-                required
-                onChange={(e) => setPhone(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group as={Col} md="4" className="my-2">
-              <Form.Label>Address</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Home Address"
-                required
-                onChange={(e) => setAddress(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group as={Col} md="4" className="my-2">
-              <Form.Label>Shipping Address</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Shipping Address"
-                required
-                onChange={(e) => setShippingAddress(e.target.value)}
-              />
-            </Form.Group>
-            <Col className="d-flex justify-content-end col-12">
-              <Button
-                type="submit"
-                variant="outline-light"
-                size="lg"
-                className="rounded-pill mt-5 col-12 col-sm-5 col-lg-3 mb-4"
-              >
-                Create an Account
-              </Button>
-            </Col>
-            <Col className="col-12">
-              <small className="d-block">
-                Already have an account?{" "}
-                <Link className="authLink" to="/login">
-                  Log in
-                </Link>
-              </small>
-              {alertToggle && <Alert variant="danger">{alertText}</Alert>}
-            </Col>
-          </Row>
-        </Form>
-      </Container>
+      </div>
     </div>
   );
 }

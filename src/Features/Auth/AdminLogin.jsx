@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import "./styles.css";
 import { setAdminToken } from "../Dashboard/adminSlice";
 import { useRandomColor } from "../../hook/useRandomColor";
+
 function AdminLogin() {
   const [admin, setAdmin] = useState();
   const [email, setEmail] = useState();
@@ -58,13 +59,13 @@ function AdminLogin() {
                 className="header-logo w-sm-50 w-75 h-75"
               />
             </div>
-            <div className="col-4 d-flex align-items-center justify-content-center text-black py-5 px-3">
+            <div className="col-md-4 d-flex align-items-center justify-content-center text-black py-5 px-3">
               <form onSubmit={handleSubmit} method="post">
                 <h1>Login</h1>
                 <small>Our Damn Tasty Beer is Just a Click Away</small>
                 <div className="form my-3">
                   <input
-                    onChange={(e) => {
+                    onInput={(e) => {
                       setEmail(e.target.value);
                     }}
                     type="text"
@@ -75,7 +76,7 @@ function AdminLogin() {
                   />
 
                   <input
-                    onChange={(e) => {
+                    onInput={(e) => {
                       setPassword(e.target.value);
                     }}
                     type="password"

@@ -66,7 +66,7 @@ function Login() {
                 <small>Our Damn Tasty Beer is Just a Click Away</small>
                 <div className="form my-3">
                   <input
-                    onChange={(e) => {
+                    onInput={(e) => {
                       setEmail(e.target.value);
                     }}
                     type="text"
@@ -77,7 +77,7 @@ function Login() {
                   />
 
                   <input
-                    onChange={(e) => {
+                    onInput={(e) => {
                       setPassword(e.target.value);
                     }}
                     type="password"
