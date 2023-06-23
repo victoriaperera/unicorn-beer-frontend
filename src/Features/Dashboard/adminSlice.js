@@ -27,17 +27,22 @@ const adminSlice = createSlice({
     setProducts: (state, action) => {
       state.products = action.payload;
     },
+    createProduct: (state, action) => {},
+    deleteProduct: (state, action) => {
+      state.products = state.products.filter((product) => product.id !== action.payload);
+    },
+    editProduct: (state, action) => {},
     setUsers: (state, action) => {
       state.users = action.payload;
     },
     setStyles: (state, action) => {
       state.styles = action.payload;
     },
-    createProduct: (state, action) => {},
-    deleteProduct: (state, action) => {
-      state.products = state.products.filter((product) => product.id !== action.payload);
+    createStyle: (state, action) => {},
+    deleteStyle: (state, action) => {
+      state.styles = state.styles.filter((style) => style.id !== action.payload);
     },
-    editProduct: (state, action) => {},
+    editStyle: (state, action) => {},
   },
 });
 
@@ -48,6 +53,8 @@ export const {
   setProducts,
   setUsers,
   setStyles,
+  createStyle,
+  deleteStyle,
   createProduct,
   deleteProduct,
   editProduct,

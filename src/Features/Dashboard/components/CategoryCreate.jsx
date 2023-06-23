@@ -2,50 +2,51 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { Button, Modal } from "react-bootstrap";
-import { deleteProduct } from "../adminSlice";
-function ProductModalDelete({ show, close, product }) {
+import { createStyle } from "../adminSlice";
+
+function CategoryCreate({ show, close, style }) {
   const token = useSelector((state) => state.token);
   const dispatch = useDispatch();
 
-  const handleDelete = async (productId) => {
+  const handleCreate = async (styleId) => {
     try {
       const response = await axios({
-        method: "DELETE",
-        url: `${import.meta.env.VITE_BACK_URL}/products`,
+        method: "POST",
+        url: `${import.meta.env.VITE_BACK_URL}/styles`,
         // headers:{
         //   Authorization: `Bearer ${token}`
         // },
-        data: { productId },
+        data: { styleId },
       });
-      dispatch(deleteProduct(productId));
+      dispatch(createStyle(styleId));
     } catch (err) {
       console.log(err);
     }
   };
+
   return (
     <Modal show={show} onHide={close} size="md" aria-labelledby="contained-modal-title-vcenter">
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          <p className="text-center">Do you want to DELETE this product?</p>
+          <p className="text-center">Create Category</p>
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h3 className="text-center">{product.name}</h3>
+        <h3 className="text-center">LOS CAMPOS DE CREATE VAN ACÁ</h3>
       </Modal.Body>
       <Modal.Footer className="justify-content-center">
         <Button
           onClick={() => {
-            handleDelete(product.id);
+            handleCreate(style.id);
             close();
           }}
-          variant="danger"
+          variant="success"
         >
-          Delete
+          Create
         </Button>
-        <Button onClick={close}>Close</Button>
       </Modal.Footer>
     </Modal>
   );
 }
 
-export default ProductModalDelete;
+export default CategoryCreate;
