@@ -4,7 +4,7 @@ import ProductModalDelete from "./ProductModalDelete";
 import { useSelector } from "react-redux";
 import { Table } from "react-bootstrap";
 import { useState } from "react";
-import { capitalizeFirstLetter } from "../../../hook/capitalizeFirstLetter";
+
 
 function Products() {
 
@@ -36,7 +36,7 @@ function Products() {
         }
         >
         </i>
-         {/* {ends create button} */}
+         {/* {ends edit button} */}
       </div>
       <div>
         <Table className="table table-hover align-middle text-center">
@@ -72,7 +72,7 @@ function Products() {
                 <td>...{product.id.slice(20)}</td>
                 <td>{product.name}</td>
                 <td>{product.style.name}</td>
-                <td>{capitalizeFirstLetter(product.container.name)}</td>
+                <td>{product.container.name}</td>
                 <td>US$ {product.price}</td>
                 <td>{product.stock}</td>
                 <td className="d-flex justify-content-around">

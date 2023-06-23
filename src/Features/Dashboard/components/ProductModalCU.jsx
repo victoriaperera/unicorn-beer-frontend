@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { createProduct, updateProduct } from "../adminSlice";
 import axios from "axios";
-import { capitalizeFirstLetter } from "../../../hook/capitalizeFirstLetter";
+
 
 function ProductModalCU({show, close, product, action}){
   const token = useSelector((state)=> state.admin.token.token);
@@ -27,9 +27,10 @@ function ProductModalCU({show, close, product, action}){
       return `${style} ${container} 1.32 Gal`
     }
   }
+
   const handleSubmit = async (e)=>{
     e.preventDefault();
-    if(action !== "edit"){
+    if(action === "create"){
       try{
         const response = await axios({
           method: "POST",
@@ -45,8 +46,12 @@ function ProductModalCU({show, close, product, action}){
             name: productName(style, container),
           }
         })
-        dispatch(createProduct(response.data));
+        dispatch(createProduct(response.data)); // TODO hacerlo con la misma info que se envía a la DB
         close();
+        setStyle("")
+        setContainer("")
+        setPrice("")
+        setStock("")
       }catch(err){
         console.log(err);
       }
@@ -66,6 +71,10 @@ function ProductModalCU({show, close, product, action}){
         })
         dispatch(updateProduct({productId: product.id, stock: stock}))
         close();
+        setStyle("")
+        setContainer("")
+        setPrice("")
+        setStock("")
       }catch(err){
         console.log(err)
       }
@@ -78,10 +87,6 @@ return (
               show={show} 
               onHide={()=> {
                 close();
-                setStyle("")
-                setContainer("")
-                setPrice("")
-                setStock("")
               }
             }
               size="xl"
@@ -129,7 +134,7 @@ return (
                           <option value="keg">Keg</option>
                           </>
                           :
-                          <option>{capitalizeFirstLetter(product.container.name)}</option>
+                          <option>product.container.name</option>
                         }
                         </Form.Select>
                       </Form.Group>

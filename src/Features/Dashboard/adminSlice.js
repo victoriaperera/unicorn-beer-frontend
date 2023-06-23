@@ -31,8 +31,7 @@ const adminSlice = createSlice({
       state.products = action.payload;
     },
     createProduct: (state, action) => {
-      console.log(action.payload)
-      //state.products = [...state.products, action.payload]
+      state.products.push(action.payload)
     },
     updateProduct: (state, action) => {
       console.log(action.payload)
