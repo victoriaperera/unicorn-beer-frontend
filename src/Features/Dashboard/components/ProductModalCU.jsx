@@ -2,12 +2,13 @@ import "./styles.css";
 import { Button, Col, Form, InputGroup, Modal, Row,  } from "react-bootstrap";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { createProduct, updateProduct } from "../adminSlice";
 import axios from "axios";
 
 function ProductModalCU({show, close, product, action}){
   const token = useSelector((state)=> state.admin.token.token);
   const styles = useSelector((state)=> state.admin.styles);
-  console.log(styles);
+
   const [style, setStyle] = useState("");
   const [container, setContainer] = useState("");
   const [price, setPrice] = useState("");
