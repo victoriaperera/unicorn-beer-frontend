@@ -21,7 +21,7 @@ function Admin() {
   useEffect(() => {
     const getOrders = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/orders");
+        const response = await axios.get(`${import.meta.env.VITE_BACK_URL}/orders`);
         dispatch(setOrders(response.data));
       } catch (error) {
         console.log("Error fetching data:", error);
@@ -30,7 +30,7 @@ function Admin() {
     getOrders();
     const getProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/products");
+        const response = await axios.get(`${import.meta.env.VITE_BACK_URL}/products`);
         dispatch(setProducts(response.data));
       } catch (error) {
         console.log("Error fetching data:", error);
@@ -39,7 +39,7 @@ function Admin() {
     getProducts();
     const getStyles = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/styles");
+        const response = await axios.get(`${import.meta.env.VITE_BACK_URL}/styles`);
         dispatch(setStyles(response.data));
       } catch (error) {
         console.log("Error fetching data:", error);
@@ -48,7 +48,7 @@ function Admin() {
     getStyles();
     const getUsers = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/users");
+        const response = await axios.get(`${import.meta.env.VITE_BACK_URL}/users`);
         dispatch(setUsers(response.data));
       } catch (error) {
         console.log("Error fetching data:", error);
