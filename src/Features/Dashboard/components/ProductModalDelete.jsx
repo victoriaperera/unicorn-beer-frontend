@@ -1,11 +1,13 @@
 import axios from "axios";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { Button, Modal } from "react-bootstrap";
-import { deleteProduct, editProduct, createProduct } from "../adminSlice";
-function ProductModalDelete({show, close}){
+import { deleteProduct } from "../adminSlice";
+function ProductModalDelete({show, close, product}){
+    
     const token = useSelector((state) => state.token);
     const dispatch = useDispatch();
-    
+
     const handleDelete = async (productId) => {
         try {
           const response = await axios({
@@ -25,25 +27,28 @@ function ProductModalDelete({show, close}){
         <Modal
           show={show} 
           onHide={close}
-          size="lg"
+          size="md"
           aria-labelledby="contained-modal-title-vcenter"
           centered
         >
           <Modal.Header closeButton>
             <Modal.Title id="contained-modal-title-vcenter">
-              DELETE
+              <h3 className="text-center">Are you sure that you want to DELETE this product?</h3>
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <h4>Centered Modal</h4>
-            <p>
-              Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-              dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-              consectetur ac, vestibulum at eros.
-            </p>
+            <h4 className="text-center">{product.name}</h4>
           </Modal.Body>
-          <Modal.Footer>
-            <Button onClick={close}>Make it happen</Button>
+          <Modal.Footer className="justify-content-center">
+           
+                <Button 
+                onClick={()=> {
+                    handleDelete(product.id);
+                    close();
+                }
+                } variant="danger">Delete</Button>
+                <Button onClick={close}>Close</Button>
+        
           </Modal.Footer>
         </Modal>
       );
