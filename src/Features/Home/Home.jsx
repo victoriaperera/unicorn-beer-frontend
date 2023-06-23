@@ -10,9 +10,11 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import SplitType from "split-type";
 import BackToTopBtn from "../../Common/components/BackToTopBtn";
+import Header from "../../Common/components/Header";
 gsap.registerPlugin(ScrollTrigger);
 
 function Home() {
+  const pageTitle = "Our amazing beer";
   const products = useSelector((state) => state.product);
   const dispatch = useDispatch();
 
@@ -39,6 +41,7 @@ function Home() {
   return (
     <>
       <div>
+        <Header title={pageTitle} />
         <HomeHeader />
         <Container fluid className="text-center">
           <section id="our-beer-section">

@@ -6,15 +6,18 @@ import { useRef, useEffect } from "react";
 import { ScrollTrigger } from "gsap/all";
 import { Col, Container, Row } from "react-bootstrap";
 import BackToTopBtn from "../../Common/components/BackToTopBtn";
+import Header from "../../Common/components/Header";
 gsap.registerPlugin(ScrollTrigger);
 
 function About() {
+  const pageTitle = "About this project";
   const sectionTech = useRef(null);
   const sectionMer = useRef(null);
   const sectionDesign = useRef(null);
   const sectionAdmin = useRef(null);
   const sectionTeam = useRef(null);
   const sectionAbout = useRef(null);
+
   const scrollToSection = (ref) => {
     ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
   };
@@ -42,6 +45,7 @@ function About() {
 
   return (
     <>
+      <Header title={pageTitle} />
       <div className="about-nav-container me-3">
         <nav className="about-nav">
           <button
@@ -265,7 +269,7 @@ function About() {
         >
           <Col className="avatar-container py-5 ">
             <h3 className="mb-4">OUR TEAM</h3>
-            <Row className="circle-avatar">
+            <Row className="circle-avatar ">
               <TeamMemberCard />
             </Row>
           </Col>

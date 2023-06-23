@@ -18,9 +18,8 @@ function TeamMemberCard({ admin }) {
   const handleExpand = (event) => {
     gsap.to(event.target, {
       duration: 0.8,
-      width: 250,
-      height: 250,
-      ease: "power3.out",
+      scale: 1.3,
+      ease: "power2.out",
     });
     setState(true);
   };
@@ -28,9 +27,8 @@ function TeamMemberCard({ admin }) {
   const handleShrink = (event) => {
     gsap.to(event.target, {
       duration: 0.8,
-      width: 200,
-      height: 200,
-      ease: "power3.out",
+      scale: 1,
+      ease: "power2.out",
     });
     setState(false);
   };
@@ -78,6 +76,8 @@ function TeamMemberCard({ admin }) {
               alt="linkedin icon"
               typeof="png/image"
               className="team-member-icon me-2"
+              onMouseEnter={handleExpand}
+              onMouseLeave={handleShrink}
             />
           </a>
           <a href="#">
@@ -86,6 +86,8 @@ function TeamMemberCard({ admin }) {
               alt="github icon"
               typeof="png/image"
               className="team-member-icon"
+              onMouseEnter={handleExpand}
+              onMouseLeave={handleShrink}
             />
           </a>
         </div>
@@ -107,6 +109,8 @@ function TeamMemberCard({ admin }) {
               alt="linkedin icon"
               typeof="png/image"
               className="team-member-icon me-2"
+              onMouseEnter={handleExpand}
+              onMouseLeave={handleShrink}
             />
           </a>
           <a href="#">
@@ -115,6 +119,8 @@ function TeamMemberCard({ admin }) {
               alt="github icon"
               typeof="png/image"
               className="team-member-icon"
+              onMouseEnter={handleExpand}
+              onMouseLeave={handleShrink}
             />
           </a>
         </div>
@@ -136,6 +142,8 @@ function TeamMemberCard({ admin }) {
               alt="linkedin icon"
               typeof="png/image"
               className="team-member-icon me-2"
+              onMouseEnter={handleExpand}
+              onMouseLeave={handleShrink}
             />
           </a>
           <a href="#">
@@ -144,6 +152,8 @@ function TeamMemberCard({ admin }) {
               alt="github icon"
               typeof="png/image"
               className="team-member-icon"
+              onMouseEnter={handleExpand}
+              onMouseLeave={handleShrink}
             />
           </a>
         </div>
@@ -165,6 +175,8 @@ function TeamMemberCard({ admin }) {
               alt="linkedin icon"
               typeof="png/image"
               className="team-member-icon me-2"
+              onMouseEnter={handleExpand}
+              onMouseLeave={handleShrink}
             />
           </a>
           <a href="#">
@@ -173,6 +185,8 @@ function TeamMemberCard({ admin }) {
               alt="github icon"
               typeof="png/image"
               className="team-member-icon"
+              onMouseEnter={handleExpand}
+              onMouseLeave={handleShrink}
             />
           </a>
         </div>
@@ -194,6 +208,8 @@ function TeamMemberCard({ admin }) {
               alt="linkedin icon"
               typeof="png/image"
               className="team-member-icon me-2"
+              onMouseEnter={handleExpand}
+              onMouseLeave={handleShrink}
             />
           </a>
           <a href="#">
@@ -202,6 +218,8 @@ function TeamMemberCard({ admin }) {
               alt="github icon"
               typeof="png/image"
               className="team-member-icon"
+              onMouseEnter={handleExpand}
+              onMouseLeave={handleShrink}
             />
           </a>
         </div>
