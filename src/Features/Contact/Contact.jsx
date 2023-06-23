@@ -45,7 +45,10 @@ function Contact() {
   return (
     <>
       <OutOfScopeModal />
-      <div className="graphite-background d-flex justify-content-center" style={{ height: "79vh" }}>
+      <div
+        className="graphite-background d-flex justify-content-center"
+        style={{ height: "100vh" }}
+      >
         <div className="container-contact">
           <div className="card-contact">
             <div className="row card-row">
