@@ -2,7 +2,7 @@ import "./styles.css";
 import { Modal, Button } from "react-bootstrap";
 import { useState } from "react";
 
-function ProductModal({show, close}){
+function ProductModalCU({show, close}){
     
     
 
@@ -35,4 +35,4 @@ function ProductModal({show, close}){
     
 }
 
-export default ProductModal;
+export default ProductModalCU;
