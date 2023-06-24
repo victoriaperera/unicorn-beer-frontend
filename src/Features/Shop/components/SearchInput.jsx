@@ -16,9 +16,9 @@ function SearchInput() {
       <Form.Control
         type="search"
         placeholder="Search products..."
-        className="rounded-pill border-white custom-width"
+        className="rounded-pill custom-width"
         aria-label="Search"
-        onChange={(e) => handlerInput(e)}
+        onInput={(e) => handlerInput(e)}
       />
     </Form>
   );

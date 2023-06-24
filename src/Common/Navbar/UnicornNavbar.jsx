@@ -4,6 +4,9 @@ import Cart from "./Cart/Cart";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { setTotalQuantity } from "./Cart/cartSlice";
+import { clearFilter } from "../../Features/Shop/shopSlice";
+import Logout from "../../Features/Auth/components/Logout";
 
 function UnicornNavbar() {
   const [show, setShow] = useState(false);
@@ -124,7 +127,7 @@ function UnicornNavbar() {
 
                 {user && (
                   <NavDropdown.Item eventKey={"4.5"} as={Link} to="#">
-                    <Logout></Logout>
+                   <Logout></Logout>
                   </NavDropdown.Item>
                 )}
               </NavDropdown>

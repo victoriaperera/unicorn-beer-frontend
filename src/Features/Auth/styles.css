@@ -14,3 +14,19 @@
 .aside-bgc {
   background-color: var(--red);
 }
+
+.form-control-auth::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--graphite);
+  opacity: 1; /* Firefox */
+}
+
+.form-control-auth:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: var(--graphite);
+}
+
+.form-control-auth::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: var(--graphite);
+}

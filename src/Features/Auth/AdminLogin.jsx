@@ -1,10 +1,9 @@
+import "./styles.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Alert, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-
-import "./styles.css";
 import { setAdminToken } from "../Dashboard/adminSlice";
 import { useRandomColor } from "../../hook/useRandomColor";
 
@@ -69,7 +68,7 @@ function AdminLogin() {
                       setEmail(e.target.value);
                     }}
                     type="text"
-                    className="form-control mb-3"
+                    className="form-control form-control-auth mb-3"
                     id="userName"
                     name="username"
                     placeholder="Username or email"
@@ -80,7 +79,7 @@ function AdminLogin() {
                       setPassword(e.target.value);
                     }}
                     type="password"
-                    className="form-control"
+                    className="form-control form-control-auth"
                     id="floatingPassword"
                     placeholder="Password"
                     name="password"

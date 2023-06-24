@@ -1,12 +1,11 @@
+import "./styles.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Alert } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { setToken } from "./userSlice";
-import { Button, Col, Container, Form, Row, InputGroup } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-
-import "./styles.css";
 import { useRandomColor } from "../../hook/useRandomColor";
 
 function Login() {
@@ -70,7 +69,7 @@ function Login() {
                       setEmail(e.target.value);
                     }}
                     type="text"
-                    className="form-control mb-3"
+                    className="form-control form-control-auth mb-3"
                     id="userName"
                     name="username"
                     placeholder="Username or email"
@@ -81,7 +80,7 @@ function Login() {
                       setPassword(e.target.value);
                     }}
                     type="password"
-                    className="form-control"
+                    className="form-control form-control-auth mb-3"
                     id="floatingPassword"
                     placeholder="Password"
                     name="password"

@@ -79,7 +79,7 @@ function SignUp() {
                       setFirstname(e.target.value);
                     }}
                     type="text"
-                    className="form-control mb-3"
+                    className="form-control form-control-auth mb-3"
                     id="firstname"
                     name="firstname"
                     placeholder="Firstname"
@@ -90,7 +90,7 @@ function SignUp() {
                       setLastname(e.target.value);
                     }}
                     type="text"
-                    className="form-control mb-3"
+                    className="form-control form-control-auth mb-3"
                     id="lastname"
                     name="lastname"
                     placeholder="Lastname"
@@ -101,7 +101,7 @@ function SignUp() {
                       setEmail(e.target.value);
                     }}
                     type="text"
-                    className="form-control mb-3"
+                    className="form-control form-control-auth mb-3"
                     id="userName"
                     name="username"
                     placeholder="Email"
@@ -112,7 +112,7 @@ function SignUp() {
                       setPhone(e.target.value);
                     }}
                     type="text"
-                    className="form-control mb-3"
+                    className="form-control form-control-auth mb-3"
                     id="phone"
                     name="phone"
                     placeholder="Phone"
@@ -123,7 +123,7 @@ function SignUp() {
                       setAddress(e.target.value);
                     }}
                     type="text"
-                    className="form-control mb-3"
+                    className="form-control form-control-auth mb-3"
                     id="address"
                     name="address"
                     placeholder="Address"
@@ -134,7 +134,7 @@ function SignUp() {
                       setShippingAddress(e.target.value);
                     }}
                     type="text"
-                    className="form-control mb-3"
+                    className="form-control form-control-auth mb-3"
                     id="shipping address"
                     name="shipping address"
                     placeholder="Shipping address"
@@ -145,7 +145,7 @@ function SignUp() {
                       setPassword(e.target.value);
                     }}
                     type="password"
-                    className="form-control mb-3"
+                    className="form-control form-control-auth mb-3"
                     id="floatingPassword"
                     placeholder="Password"
                     name="password"
@@ -156,7 +156,7 @@ function SignUp() {
                       setConfirmPassword(e.target.value);
                     }}
                     type="password"
-                    className="form-control mb-3"
+                    className="form-control form-control-auth mb-3"
                     id="floatingConfirmPassword"
                     placeholder="Confirm password"
                     name="confirmPassword"

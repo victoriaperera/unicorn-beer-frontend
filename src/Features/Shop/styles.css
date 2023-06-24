@@ -48,11 +48,7 @@
   margin-top: 20px;
 }
 
-.content-header form .form-control {
-  color: var(--lightGraphite);
-  background-color: transparent;
-  border-color: var(--lightGraphite);
-}
+
 
 @media (min-width: 592px) {
   .custom-width {

@@ -102,3 +102,13 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+.content-header form .form-control {
+  color: var(--white);
+  background-color: transparent;
+}
+.content-header form .form-control:focus {
+  color: var(--white);
+  background-color: transparent;
+  border-color: var(--lightGraphite);
+}
