@@ -5,7 +5,7 @@ import SearchInput from "./SearchInput";
 import { gsap } from "gsap";
 import { useRef, useEffect } from "react";
 
-function ShopHeader() {
+function ShopHeader({ productRef }) {
   const titleRef = useRef(null);
   const textRef = useRef(null);
 
@@ -53,8 +53,8 @@ function ShopHeader() {
               </p>
             </div>
             <div className="mt-auto">
-              <SearchInput />
-              <ProductFilter />
+              <SearchInput productRef={productRef} />
+              <ProductFilter productRef={productRef} />
             </div>
           </Col>
         </Row>

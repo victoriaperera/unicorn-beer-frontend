@@ -2,11 +2,11 @@ import "./styles.css";
 import Product from "./Product";
 import axios from "axios";
 import { Row } from "react-bootstrap";
-import { useEffect } from "react";
+import { useEffect, forwardRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setProductList } from "../shopSlice";
 
-function ProductList() {
+const ProductList = forwardRef(function ProductList(props, ref) {
   const filter = useSelector((state) => state.shop.filter);
   const dispatch = useDispatch();
   const products = useSelector((state) => {
@@ -32,12 +32,12 @@ function ProductList() {
 
   return (
     <>
-      <Row>
+      <Row ref={ref}>
         {products.length > 0 &&
           products.map((product) => <Product product={product} key={product.id}></Product>)}
       </Row>
     </>
   );
-}
+});
 
 export default ProductList;

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import FilterBtn from "./FilterBtn";
 import FilterAllBtn from "./FilterAllBtn";
 
-function ProductFilter() {
+function ProductFilter({ productRef }) {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ function ProductFilter() {
   return (
     <div className="d-flex flex-wrap mt-3 ">
       {products.map((product) => (
-        <FilterBtn product={product} key={product.style.id}></FilterBtn>
+        <FilterBtn product={product} key={product.style.id} productRef={productRef}></FilterBtn>
       ))}
       <FilterAllBtn />
     </div>

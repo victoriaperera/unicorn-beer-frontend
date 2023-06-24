@@ -3,7 +3,7 @@ import { useSetColor } from "../../../hook/useSetColor";
 import { useDispatch } from "react-redux";
 import { clearFilter, setFilter } from "../shopSlice";
 
-function FilterBtn({ product }) {
+function FilterBtn({ product, productRef }) {
   const [isHovering, setIsHovering] = useState(false);
   let color = useSetColor(product);
   const dispatch = useDispatch();
@@ -12,11 +12,8 @@ function FilterBtn({ product }) {
     setIsHovering(true);
   };
 
-  const handlerOnFocus = () => {
-    setIsHovering(true);
-  };
-
   const handlerFilter = () => {
+    productRef.current.scrollIntoView({ behavior: "smooth" });
     dispatch(clearFilter());
     dispatch(setFilter({ filter: product.style.name }));
     setIsHovering(true);
