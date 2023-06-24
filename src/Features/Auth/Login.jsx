@@ -2,7 +2,7 @@ import "./styles.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Alert } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setToken } from "./userSlice";
 import { Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
@@ -17,6 +17,7 @@ function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const color = useRandomColor();
+  const checkOut = useSelector((state) => state.shop.fromCheckOut);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -40,7 +41,7 @@ function Login() {
 
   useEffect(() => {
     if (user) {
-      navigate("/shop");
+      checkOut ? navigate("/checkout") : navigate("/shop");
     }
   }, [user]);
 

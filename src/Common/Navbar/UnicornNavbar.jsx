@@ -3,7 +3,7 @@ import Cart from "./Cart/Cart";
 import Logout from "../../Features/Auth/components/Logout";
 import OutOfScopeModal from "../components/OutOfScopeModal";
 import { setTotalQuantity } from "./Cart/cartSlice";
-import { clearFilter } from "../../Features/Shop/shopSlice";
+import { clearFilter, fromCheckOut } from "../../Features/Shop/shopSlice";
 import { Container, Nav, Navbar, NavDropdown, Offcanvas } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -17,11 +17,10 @@ function UnicornNavbar() {
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const dispatch = useDispatch();
 
-  const handleClose = () => setShow(!show);
-
-  const [sidebar, setSidebar] = useState(false);
-
-  const showSidebar = () => setSidebar(!sidebar);
+  const handleClose = () => {
+    setShow(!show);
+    dispatch(fromCheckOut());
+  };
 
   useEffect(() => {
     let total = 0;
