@@ -65,8 +65,8 @@ textarea {
 }
 
 .container {
-  min-height: 80vh; 
-   /* si lo dejamos min height, eso hace que al menos ocupe ese tamaño, 
+  min-height: 80vh;
+  /* si lo dejamos min height, eso hace que al menos ocupe ese tamaño, 
    en caso de requerir más va a ir a tomar más.  
    Dicho de otro modo si no lo necesita queda en 80, si lo necesita toma más altura y así no pasa por encima de otros elementos.
    Si notan que la clase es muy requerida por muchos elementos en muchas vistas y "rompe las bolas", evaluemos crear una nueva clase
