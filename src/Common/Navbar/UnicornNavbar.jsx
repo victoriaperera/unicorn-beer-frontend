@@ -127,7 +127,7 @@ function UnicornNavbar() {
 
                 {user && (
                   <NavDropdown.Item eventKey={"4.5"} as={Link} to="#">
-                   <Logout></Logout>
+                    <Logout></Logout>
                   </NavDropdown.Item>
                 )}
               </NavDropdown>

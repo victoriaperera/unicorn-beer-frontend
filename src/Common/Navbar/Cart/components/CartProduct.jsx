@@ -24,14 +24,14 @@ function CartProduct({ product }) {
         </div>
         <div className="d-flex justify-content-between mt-1">
           <div className="d-flex">
-            <i
-              className="bi bi-dash-circle"
-              onClick={() =>
-                product.quantity === 1
-                  ? dispatch(removeItem(product.id))
-                  : dispatch(decrementQuantity(product.id))
-              }
-            ></i>
+            {product.quantity === 1 ? (
+              <i className="bi bi-trash3" onClick={() => dispatch(removeItem(product.id))}></i>
+            ) : (
+              <i
+                className="bi bi-dash-circle"
+                onClick={() => dispatch(decrementQuantity(product.id))}
+              ></i>
+            )}
             <span className="px-2 fw-bold">{product.quantity}</span>
             <i
               className="bi bi-plus-circle"
