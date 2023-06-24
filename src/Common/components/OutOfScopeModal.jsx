@@ -7,14 +7,9 @@ function OutOfScopeModal() {
 
   return (
     <>
-      <Modal
-        size="sm"
-        show={smShow}
-        onHide={() => setSmShow(false)}
-        aria-labelledby="example-modal-sizes-title-sm"
-      >
+      <Modal size="sm" show={smShow} onHide={() => setSmShow(false)} aria-labelledby="modal-title">
         <Modal.Header closeButton>
-          <Modal.Title id="example-modal-sizes-title-sm">Information</Modal.Title>
+          <Modal.Title id="modal-title">Information</Modal.Title>
         </Modal.Header>
         <Modal.Body>This feature is not within the project's scope.</Modal.Body>
       </Modal>

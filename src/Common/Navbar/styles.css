@@ -38,8 +38,3 @@
 .superscript {
   user-select: none;
 }
-
-.active-navlink {
-  color: var(--orange) !important;
-  border-radius: 0px !important;
-}

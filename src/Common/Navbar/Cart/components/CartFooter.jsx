@@ -24,7 +24,7 @@ function CartFooter({ handleClose }) {
     <div className="border-top cart-footer">
       <div className="d-flex justify-content-between px-2">
         <p className="fw-bold">Order total</p>
-        <p className="fw-bold">${totalAmount}</p>
+        <p className="fw-bold">US$ {totalAmount}</p>
       </div>
       <div className="d-flex justify-content-between px-2">
         <p className="fw-bold">Shipping</p>

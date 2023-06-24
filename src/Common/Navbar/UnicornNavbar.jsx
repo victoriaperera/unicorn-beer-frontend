@@ -1,12 +1,13 @@
 import "./styles.css";
-import { Container, Nav, Navbar, NavDropdown, Offcanvas } from "react-bootstrap";
 import Cart from "./Cart/Cart";
+import Logout from "../../Features/Auth/components/Logout";
+import OutOfScopeModal from "../components/OutOfScopeModal";
+import { setTotalQuantity } from "./Cart/cartSlice";
+import { clearFilter } from "../../Features/Shop/shopSlice";
+import { Container, Nav, Navbar, NavDropdown, Offcanvas } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { setTotalQuantity } from "./Cart/cartSlice";
-import { clearFilter } from "../../Features/Shop/shopSlice";
-import Logout from "../../Features/Auth/components/Logout";
 
 function UnicornNavbar() {
   const [show, setShow] = useState(false);
@@ -50,6 +51,11 @@ function UnicornNavbar() {
 
   const handleLinkClick = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const [showOutOfScopeModal, setShowOutOfScopeModal] = useState(false);
+  const handleMyAccountClick = () => {
+    setShowOutOfScopeModal(true);
   };
 
   return (
@@ -118,9 +124,13 @@ function UnicornNavbar() {
                     Admins
                   </NavDropdown.Item>
                 )}
-
                 {user && (
-                  <NavDropdown.Item eventkey={"4.4"} as={Link} to="#">
+                  <NavDropdown.Item
+                    eventKey={"4.4"}
+                    as={Link}
+                    to="#"
+                    onClick={handleMyAccountClick}
+                  >
                     My account
                   </NavDropdown.Item>
                 )}
@@ -148,6 +158,7 @@ function UnicornNavbar() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      {showOutOfScopeModal && <OutOfScopeModal onClose={() => setShowOutOfScopeModal(false)} />}
     </>
   );
 }
