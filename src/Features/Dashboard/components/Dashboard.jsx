@@ -1,4 +1,5 @@
 import "./styles.css";
+import format from "date-fns/format";
 import LineChart from "./LineChart";
 import { useSelector } from "react-redux";
 import React, { useState, useEffect } from "react";
@@ -99,7 +100,8 @@ function Dashboard({ containers, handleSidebarClick }) {
               <table className="table table-sm text-center">
                 <thead>
                   <tr>
-                    <th scope="col">Id</th>
+                    <th scope="col">Nº</th>
+                    <th scope="col">Date</th>
                     <th scope="col">Amount</th>
                     <th scope="col">Status</th>
                   </tr>
@@ -109,6 +111,7 @@ function Dashboard({ containers, handleSidebarClick }) {
                     orders.slice(0, 7).map((order) => (
                       <tr key={order.id}>
                         <th scope="row">{order.id}</th>
+                        <th scope="row">{format(new Date(order.createdAt), "dd-MMMM-yyyy")}</th>
                         <td>US$ {order.totalAmount}</td>
                         <td className="text-capitalize">{order.status}</td>
                       </tr>

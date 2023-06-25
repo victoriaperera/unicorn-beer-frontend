@@ -1,4 +1,5 @@
 import "./styles.css";
+import format from "date-fns/format";
 import { useSelector } from "react-redux";
 import React, { useState } from "react";
 
@@ -28,10 +29,13 @@ function OrderCard() {
         <thead className="align-middle">
           <tr>
             <th scope="col" className="orders-table-heading">
-              Order Id
+              Order Nº
             </th>
             <th scope="col" className="orders-table-heading">
               User
+            </th>
+            <th scope="col" className="orders-table-heading">
+              Date
             </th>
             <th scope="col" className="orders-table-heading">
               Products
@@ -52,6 +56,7 @@ function OrderCard() {
             orders.map((order) => (
               <tr key={order.id}>
                 <th scope="row">{order.id}</th>
+                <th scope="row">{format(new Date(order.createdAt), "dd-MMMM-yyyy")}</th>
                 <td>
                   {order.user.firstname} {order.user.lastname}
                 </td>
