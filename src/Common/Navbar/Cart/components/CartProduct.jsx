@@ -21,7 +21,7 @@ function CartProduct({ product }) {
         <div className="d-flex justify-content-between pt-1">
           <span>{product.name}</span>
           {product.quantity === 1 ? (
-            <span className="ms-2">${product.price.toFixed(2)}</span>
+            <span className="ms-2">US${product.price.toFixed(2)}</span>
           ) : (
             <span className="ms-2">
               <small>Unit price: </small>US$ {product.price.toFixed(2)}

@@ -36,7 +36,8 @@ function CartFooter({ handleClose }) {
         onClick={handleClose}
         aria-label="Check Out Button"
       >
-        Checkout
+        <i class="bi bi-lock-fill me-2"></i>
+        <span>Checkout</span>
       </Link>
     </div>
   );
