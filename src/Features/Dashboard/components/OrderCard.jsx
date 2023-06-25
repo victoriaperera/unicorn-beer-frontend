@@ -32,10 +32,10 @@ function OrderCard() {
               Order Nº
             </th>
             <th scope="col" className="orders-table-heading">
-              User
+              Date
             </th>
             <th scope="col" className="orders-table-heading">
-              Date
+              User
             </th>
             <th scope="col" className="orders-table-heading">
               Products
