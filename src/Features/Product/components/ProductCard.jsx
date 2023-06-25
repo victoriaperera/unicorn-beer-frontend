@@ -34,16 +34,24 @@ function ProductCard({ product }) {
         </div>
       </div>
       <div className="w-100 d-flex justify-content-between border-top pt-2">
-        <div className="d-flex align-items-center">
-          <i
-            className="bi bi-dash-circle"
-            onClick={() => {
-              counter > 1 && setCounter(counter - 1);
-            }}
-          ></i>
-          <span className="px-2 fw-bold">{counter}</span>
-          <i className="bi bi-plus-circle" onClick={() => setCounter(counter + 1)}></i>
+        <div>
+          <div className="d-flex align-items-center me-3">
+            <i
+              className="bi bi-dash-circle"
+              onClick={() => {
+                counter > 1 && setCounter(counter - 1);
+              }}
+            ></i>
+            <span className="px-2 fw-bold">{counter}</span>
+            <i className="bi bi-plus-circle" onClick={() => setCounter(counter + 1)}></i>
+          </div>
+          {counter > 1 && (
+            <div className="">
+              <small>US$ {(product.price * counter).toFixed(2)}</small>
+            </div>
+          )}
         </div>
+
         <div className="addToCartBtn-product d-flex justify-content-end">
           <AddToCartBtn product={product} counter={counter} />
         </div>
