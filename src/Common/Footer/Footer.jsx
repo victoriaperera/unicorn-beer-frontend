@@ -10,7 +10,7 @@ function Footer() {
   const location = useLocation();
 
   return (
-    <footer className="footer d-flex justify-content-between align-items-center product-divider ">
+    <footer className="footer d-flex justify-content-between align-items-center product-divider fixed-bottom ">
       <div className="divider-top p-0">
         <svg
           data-name="Layer 1"

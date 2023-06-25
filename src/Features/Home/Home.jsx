@@ -11,6 +11,7 @@ import { ScrollTrigger } from "gsap/all";
 import SplitType from "split-type";
 import BackToTopBtn from "../../Common/components/BackToTopBtn";
 import Header from "../../Common/components/Header";
+
 gsap.registerPlugin(ScrollTrigger);
 
 function Home() {

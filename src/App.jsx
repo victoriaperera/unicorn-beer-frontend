@@ -15,7 +15,6 @@ import Admin from "./Features/Dashboard/Admin";
 import SignUp from "./Features/Auth/Singup";
 import Err404 from "./Features/err404/err404";
 import AdminLogin from "./Features/Auth/adminLogin";
-import Products from "./Features/Dashboard/components/Products";
 
 function App() {
   const { pathname: currentPage } = useLocation();

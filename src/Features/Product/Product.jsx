@@ -5,7 +5,6 @@ import { useParams } from "react-router";
 import { useSelector } from "react-redux";
 import { useSetColor } from "../../hook/useSetColor";
 
-
 function Product() {
   const params = useParams();
   const products = useSelector((state) => state.shop.products);
@@ -14,14 +13,19 @@ function Product() {
   const bgColor = useSetColor(product);
 
   return (
-    <div style={{ backgroundColor: bgColor }}>
-      <div className="container d-flex justify-content-center align-items-center product-view-bg" style={{ backgroundColor: bgColor }}>
-        <div className="row">
-          <ProductCarousel product={product} />
-          <ProductCard product={product} />
+    <>
+      <div style={{ backgroundColor: bgColor }}>
+        <div
+          className="container d-flex justify-content-center align-items-center product-view-bg"
+          style={{ backgroundColor: bgColor }}
+        >
+          <div className="row">
+            <ProductCarousel product={product} />
+            <ProductCard product={product} />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/all";
 import { Col, Container, Row } from "react-bootstrap";
 import BackToTopBtn from "../../Common/components/BackToTopBtn";
 import Header from "../../Common/components/Header";
+
 gsap.registerPlugin(ScrollTrigger);
 
 function About() {
