@@ -85,18 +85,14 @@ function About() {
           ref={sectionTech}
         >
           <Col xs={12} md={8} className="align-self-end mb-4">
-            <h3 className="mb-5">TECHNOLOGIES & TOOLS USED</h3>
+            <h3 className="mb-5">TECHNOLOGIES & TOOLS</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, fuga! Distinctio
-              necessitatibus quidem sed consequatur praesentium explicabo modi odio earum,
-              voluptatum deleniti corporis doloribus molestiae sunt vitae veritatis eveniet
-              obcaecati! Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, fuga!
-              Distinctio necessitatibus quidem sed consequatur praesentium explicabo modi odio
-              earum, voluptatum deleniti corporis doloribus molestiae sunt vitae veritatis eveniet
-              obcaecati! Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, fuga!
-              Distinctio necessitatibus quidem sed consequatur praesentium explicabo modi odio
-              earum, voluptatum deleniti corporis doloribus molestiae sunt vitae veritatis eveniet
-              obcaecati!
+              Throughout the coding bootcamp, we delved into a wide range of technologies
+              encompassing both backend and front end development. We also gained hands-on
+              experience with databases and leveraged practical tools to optimize our workflow.
+            </p>
+            <p>
+              For this project, we handpicked the following set of tools to boost our productivity.
             </p>
           </Col>
           <Col
