@@ -1,13 +1,21 @@
 import "./styles.css";
+import CustomerDelete from "./CustomerDelete";
 import { useSelector } from "react-redux";
+import { setUsers } from "../adminSlice";
+import React, { useState } from "react";
 
 function Customers() {
   const users = useSelector((state) => state.admin.users);
-
+  const [user, setUser] = useState("");
   const userCount = users ? users.length : 0;
+
+  const [showDelete, setShowDelete] = useState(false);
+  const handleShowDelete = () => setShowDelete(true);
+  const handleCloseDelete = () => setShowDelete(false);
 
   return (
     <>
+      <CustomerDelete show={showDelete} close={handleCloseDelete} user={user} />
       <table className="table table-hover text-center align-middle">
         <thead className="align-middle">
           <tr>
@@ -39,7 +47,14 @@ function Customers() {
                 <td>{user.phone}</td>
                 <td>{user.address}</td>
                 <td>
-                  <i className="bi bi-trash3-fill fs-5 delete-icon"></i>
+                  <i
+                    className="bi bi-trash3-fill fs-5 delete-icon"
+                    type="submit"
+                    onClick={() => {
+                      handleShowDelete();
+                      setUser(user);
+                    }}
+                  ></i>
                 </td>
               </tr>
             ))

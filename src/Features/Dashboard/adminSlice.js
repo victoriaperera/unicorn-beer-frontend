@@ -27,19 +27,21 @@ const adminSlice = createSlice({
     setUsers: (state, action) => {
       state.users = action.payload;
     },
+    deleteUser: (state, action) => {
+      state.users = state.users.filter((user) => user.id !== user.payload);
+    },
     setProducts: (state, action) => {
       state.products = action.payload;
     },
     createProduct: (state, action) => {
-      state.products.push(action.payload)
+      state.products.push(action.payload);
     },
     updateProduct: (state, action) => {
-      console.log(action.payload)
+      console.log(action.payload);
     },
     deleteProduct: (state, action) => {
       state.products = state.products.filter((product) => product.id !== action.payload);
     },
-
     setStyles: (state, action) => {
       state.styles = action.payload;
     },
@@ -56,6 +58,7 @@ export const {
   clearAdminToken,
   setOrders,
   setUsers,
+  deleteUser,
   setProducts,
   createProduct,
   updateProduct,
