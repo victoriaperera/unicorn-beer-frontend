@@ -2,12 +2,14 @@ import "./styles.css";
 import Product from "./Product";
 import axios from "axios";
 import { Row } from "react-bootstrap";
-import { useEffect, forwardRef } from "react";
+import { useEffect, forwardRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setProductList } from "../shopSlice";
+import Loader from "../../../Common/components/Loader";
 
 const ProductList = forwardRef(function ProductList(props, ref) {
   const filter = useSelector((state) => state.shop.filter);
+  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const products = useSelector((state) => {
     const all = state.shop.products;
@@ -24,11 +26,17 @@ const ProductList = forwardRef(function ProductList(props, ref) {
 
   useEffect(() => {
     const getProducts = async () => {
+      setLoading(true);
       const res = await axios.get(`${import.meta.env.VITE_BACK_URL}/products`);
       dispatch(setProductList({ products: res.data }));
+      setLoading(false);
     };
     getProducts();
   }, []);
+
+  if (loading) {
+    return <Loader></Loader>;
+  }
 
   return (
     <>
