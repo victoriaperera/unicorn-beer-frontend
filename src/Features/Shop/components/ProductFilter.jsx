@@ -22,7 +22,7 @@ function ProductFilter({ productRef }) {
       {products.map((product) => (
         <FilterBtn product={product} key={product.style.id} productRef={productRef}></FilterBtn>
       ))}
-      <FilterAllBtn />
+      <FilterAllBtn productRef={productRef} />
     </div>
   );
 }

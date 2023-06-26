@@ -25,7 +25,7 @@ function BackToTopBtn() {
       {backToTop && (
         <a>
           <img
-            className="goTop"
+            className="go-top"
             src="src/assets/icons/arrow-up-circle.svg"
             alt="Back to top"
             onClick={scrollUp}
