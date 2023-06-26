@@ -12,10 +12,10 @@ function AdminLogin() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [alertText, setAlertText] = useState("");
+  const [color, setColor] = useState("");
   const [alertToggle, setAlertToggle] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const color = useRandomColor();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -38,6 +38,7 @@ function AdminLogin() {
   };
 
   useEffect(() => {
+    setColor(useRandomColor())
     if (admin) {
       navigate("/admin");
     }

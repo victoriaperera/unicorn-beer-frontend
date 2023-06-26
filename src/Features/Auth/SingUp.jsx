@@ -18,10 +18,16 @@ function SignUp() {
   const [shippingAddress, setShippingAddress] = useState("");
   const [alertText, setAlertText] = useState("");
   const [alertToggle, setAlertToggle] = useState(false);
-  const color = useRandomColor();
+
+  const [color, setColor] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  
+  useEffect(() => {
+    setColor(useRandomColor())
+   
+  }, []);
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (password === confirmPassword) {
