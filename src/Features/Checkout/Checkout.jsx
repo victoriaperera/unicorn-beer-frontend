@@ -203,7 +203,7 @@ function Checkout() {
           </div>
           <div className="main-checkout aside-checkout">
             <div className="row">
-              <div className="col-12 col-md-6">
+              <div className="col-12 col-md-6 mb-3">
                 <h3>Order details</h3>
                 <ListGroup as="ul" className="">
                   {cart.products.length > 0 ? (
