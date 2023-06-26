@@ -180,7 +180,7 @@ function Checkout() {
                 readOnly
               />
             </div>
-            <h4>Payment</h4>
+            <h3>Payment</h3>
           </main>
           <aside className="col-12 col-md-4 aside-checkout">
             <h3>Order details</h3>
@@ -190,15 +190,15 @@ function Checkout() {
                   <CheckoutProducts product={product} key={product.id} />
                 ))}
             </form>
-            <div className="d-flex justify-content-between pt-2 border-top checkout-order-details">
+            <div className="d-flex justify-content-between pt-2 border-top">
               <span>Order Value</span>
               <span>US$ {cart.totalAmount}</span>
             </div>
-            <div className="d-flex justify-content-between py-1 checkout-order-details">
+            <div className="d-flex justify-content-between py-1">
               <span>Shipping</span>
               <span>Free</span>
             </div>
-            <div className="d-flex justify-content-between py-2 border-top checkout-order-details">
+            <div className="d-flex justify-content-between py-2 border-top">
               <span>Total</span>
               <span>US$ {cart.totalAmount}</span>
             </div>

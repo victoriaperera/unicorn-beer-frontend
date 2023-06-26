@@ -19,7 +19,7 @@ function CheckoutProducts({ product }) {
         />
       </div>
       <div className="w-75 ps-2">
-        <div className="d-flex flex-column checkout-order-details">
+        <div className="d-flex flex-column checkout-product-details">
           <span>{product.name}</span>
           <span>
             Quantity: {product.quantity} x US$ {product.price}
