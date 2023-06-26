@@ -4,6 +4,7 @@ import { Button, Col, Container, Form, Row, InputGroup } from "react-bootstrap";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Alert } from "react-bootstrap";
+import Header from "../../Common/components/Header";
 import axios from "axios";
 
 function Contact() {
@@ -44,6 +45,7 @@ function Contact() {
   };
   return (
     <>
+      <Header title={pageTitle} />
       <OutOfScopeModal />
       <div
         className="graphite-background d-flex justify-content-center"

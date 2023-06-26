@@ -1,5 +1,5 @@
 import "./styles.css";
-import CheckoutProducts from "./components/CheckoutProducts";
+import CheckoutProduct from "./components/CheckoutProducts";
 import OrderModal from "./components/OrderModal";
 import { Alert, Badge, Button, Container, Col, ListGroup, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -187,22 +187,24 @@ function Checkout() {
             <form method="post" onSubmit={handleSubmit}>
               {cart.products.length > 0 &&
                 cart.products.map((product) => (
-                  <CheckoutProducts product={product} key={product.id} />
+                  <CheckoutProduct product={product} key={product.id} />
                 ))}
             </form>
-            <div className="d-flex justify-content-between pt-2 border-top">
-              <span>Order Value</span>
-              <span>US$ {cart.totalAmount}</span>
+            <div className="px-3">
+              <div className="d-flex justify-content-between pt-2 border-top">
+                <span>Order Value</span>
+                <span>US$ {cart.totalAmount}</span>
+              </div>
+              <div className="d-flex justify-content-between py-1">
+                <span>Shipping</span>
+                <span>Free</span>
+              </div>
+              <div className="d-flex justify-content-between py-2 border-top">
+                <span>Total</span>
+                <span>US$ {cart.totalAmount}</span>
+              </div>
+              <button className="btn bg-black text-white rounded-pill w-100">Confirm Order</button>
             </div>
-            <div className="d-flex justify-content-between py-1">
-              <span>Shipping</span>
-              <span>Free</span>
-            </div>
-            <div className="d-flex justify-content-between py-2 border-top">
-              <span>Total</span>
-              <span>US$ {cart.totalAmount}</span>
-            </div>
-            <button className="btn btn-dark rounded-pill w-100">Complete Purchase</button>
           </aside>
         </div>
       </div>
