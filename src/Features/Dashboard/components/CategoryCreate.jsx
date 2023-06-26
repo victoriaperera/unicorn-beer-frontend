@@ -27,7 +27,8 @@ function CategoryCreate({ show, close, style }) {
   
   }
   
-  const handleCreate = async () => { 
+  const handleCreate = async (e) => {
+    e.preventDefault();
     try {
       const response = await axios({
         method: "POST",
@@ -88,24 +89,27 @@ function CategoryCreate({ show, close, style }) {
             onChange={(e)=> setPhotos(e.target.value)}
             />
           </Form.Group>
-          <Form.Group className="d-flex align-items-end justify-content-center" as={Col} sm="6">
-            <Form.Label className="me-2">Containers</Form.Label>
+          <Form.Group className="d-flex align-items-center justify-content-center" as={Col} sm="6">
+            <Form.Label className="m-0 me-2">Containers</Form.Label>
             <Form.Check
             label="Can"
             name="can"
             type="checkbox"
+            className="me-2"
             onChange={(e)=> handleCheckbox(e.target.name) } 
           />
           <Form.Check          
             label="Bottle"
             name="bottle"
             type="checkbox"
+            className="me-2"
             onChange={(e)=> handleCheckbox(e.target.name) } 
           />
           <Form.Check         
             label="Keg"
             name="keg"
             type="checkbox"
+            className="me-2"
             onChange={(e)=> handleCheckbox(e.target.name) } 
           />
           </Form.Group>
