@@ -14,9 +14,9 @@ function Login() {
   const [password, setPassword] = useState();
   const [alertText, setAlertText] = useState("");
   const [alertToggle, setAlertToggle] = useState(false);
+  const [color, setColor] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const color = useRandomColor();
   const checkOut = useSelector((state) => state.shop.fromCheckOut);
 
   const handleSubmit = async (e) => {
@@ -40,6 +40,7 @@ function Login() {
   };
 
   useEffect(() => {
+    setColor(useRandomColor());
     if (user) {
       checkOut ? navigate("/checkout") : navigate("/shop");
     }
