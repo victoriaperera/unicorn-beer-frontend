@@ -4,21 +4,26 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { createProduct, updateProduct } from "../adminSlice";
 import axios from "axios";
-
+import { Link } from "react-router-dom";
+import CategoryCreate from "./CategoryCreate";
 
 function ProductModalCU({show, close, product, action}){
   const token = useSelector((state)=> state.admin.token.token);
   const styles = useSelector((state)=> state.admin.styles);
   
   const dispatch = useDispatch();
+
   const [style, setStyle] = product ? useState(product.style.name) : useState("");
   const [container, setContainer] = product ? useState(product.container) : useState("");
   const [price, setPrice] = product ? useState(product.price) : useState("");
   const [stock, setStock] = product ? useState(product.stock) : useState("");
-
   const resetStates = ()=>{
    return setStyle(""),setContainer(""),setPrice(""),setStock("");
   }
+
+  const [showCateg, setShowCateg] = useState(false);
+  const handleShowCateg = ()=> setShowCateg(true);
+  const handleCloseCateg = () => setShowCateg(false)
 
   const productName = (style, container)=>{
     if(container === "can") {
@@ -36,21 +41,21 @@ function ProductModalCU({show, close, product, action}){
     e.preventDefault();
     if(action === "create"){
       try{
-        const response = await axios({
-          method: "POST",
-          url: `${import.meta.env.VITE_BACK_URL}/products`,
-          // headers: {
-          //   Authorization: `Bearer ${token}`,
-          // },
-          data:{
-            style: style,
-            container: container,
-            price: price,
-            stock: stock,
-            name: productName(style, container),
-          }
-        })
-        dispatch(createProduct(response.data)); // TODO hacerlo con la misma info que se envía a la DB
+        // const response = await axios({
+        //   method: "POST",
+        //   url: `${import.meta.env.VITE_BACK_URL}/products`,
+        //   headers: {
+        //     Authorization: `Bearer ${token}`,
+        //   },
+        //   data:{
+        //     style: style,
+        //     container: container,
+        //     price: price,
+        //     stock: stock,
+        //     name: productName(style, container),
+        //   }
+        // })
+        dispatch(createProduct()); // TODO hacerlo con la misma info que se envía a la DB
         close();
         resetStates();
       }catch(err){
@@ -138,6 +143,8 @@ return (
                         }
                         </Form.Select>
                       </Form.Group>
+                      {action !== "edit" && <p className="my-2">Would you like to create a brand new <Link onClick={handleShowCateg}>Style?</Link></p>}
+                      <CategoryCreate show={showCateg} close={handleCloseCateg}/>
                     <Form.Group as={Col}>
                     <Form.Label>Price</Form.Label>
                       <InputGroup>
@@ -163,7 +170,7 @@ return (
                    }
                    </InputGroup> 
                     </Form.Group>
-                    <Form.Group as={Col}>
+                    <Form.Group >
                     <Form.Label>Stock</Form.Label>
                       <Form.Control
                         type="number"

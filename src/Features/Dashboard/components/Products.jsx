@@ -27,7 +27,7 @@ function Products() {
       <ProductModalCU show={showCU} close={handleCloseCU} product={product} action={action}/>
       <ProductModalDelete show={showD} close={handleCloseD} product={product} />
       <div className="d-flex justify-content-between align-content-center mb-3">
-        <h2 className="text-white m-0">Products</h2>
+        <h2 className="text-white mb-3">Products</h2>
         <i className="bi bi-plus-circle fs-2 create-icon" 
         type="submit"
         onClick={()=>{
