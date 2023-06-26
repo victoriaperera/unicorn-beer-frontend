@@ -12,13 +12,23 @@
   background-color: var(--white);
   color: var(--graphite);
   padding: 15px;
+  margin-bottom: 1rem;
 }
 
-.aside-checkout {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: var(--white);
-  color: var(--graphite);
-  padding: 15px;
+.edit-info-icon {
+  color: var(--lightGraphite);
+  margin-left: 1rem;
+}
+
+.checkout-img {
+  height: 4rem;
+}
+
+.checkout-product-details {
+  font-size: 0.9rem;
+}
+
+.text-orange {
+  color: var(--orange);
+  font-size: 0.9rem;
 }

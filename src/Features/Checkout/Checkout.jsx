@@ -1,13 +1,13 @@
 import "./styles.css";
-import CheckoutProduct from "./components/CheckoutProducts";
 import OrderModal from "./components/OrderModal";
-import { Alert, Badge, Button, Container, Col, ListGroup, Form, Row } from "react-bootstrap";
+import { Badge, Button, Container, Col, ListGroup, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import Select from "react-select";
 import axios from "axios";
 import { clearCart } from "../../Common/Navbar/Cart/cartSlice";
+import { Alert } from "react-bootstrap";
 import { capitalizeFirstLetter } from "../../hook/capitalizeFirstLetter";
 
 function Checkout() {
@@ -106,7 +106,7 @@ function Checkout() {
     <div className="graphite-background d-flex justify-content-center align-items-center py-5">
       <OrderModal show={show} />
       <div className="container checkout-container">
-        <div className="d-flex justify-content-center align-items-center mb-5">
+        <div className="d-flex justify-content-center align-items-center my-5">
           <img
             src="src/assets/icons/Unicorn-beer-icon-3.svg"
             alt="unicorn icon"
@@ -114,98 +114,147 @@ function Checkout() {
           />
           <h2 className="m-0">Check Out</h2>
         </div>
-        <div className="row d-flex justify-content-evenly">
-          <main className="col-12 col-md-7 main-checkout">
-            <h3>Ship to</h3>
-            <div className="row mb-3">
-              <div className="col">
-                <input
-                  type="text"
-                  className="form-control form-control-sm"
-                  value={user.firstname}
-                  readOnly
-                />
+        <div className="main-checkout">
+          <h3 className="pb-2">Ship to</h3>
+          <div className="mb-4">
+            <span className="fw-bold">
+              {user.firstname} {user.lastname}
+            </span>
+          </div>
+          <div className="row">
+            <div className="col-12 col-md-6">
+              <div className="d-flex">
+                <h4>Shipping information </h4>
+                <i class="bi bi-pencil-square edit-info-icon"></i>
               </div>
-              <div className="col">
-                <input
-                  type="text"
-                  className="form-control form-control-sm"
-                  value={user.lastname}
-                  readOnly
-                />
+
+              <div className="d-flex flex-column mb-3">
+                <span>
+                  <small>Shipping address:</small>
+                </span>
+                <span className="fw-bold">{user.shippingAddress}</span>
+              </div>
+              <div className="d-flex flex-column mb-3">
+                <span>
+                  <small>Phone:</small>
+                </span>
+                <span className="fw-bold">{user.phone}</span>
               </div>
             </div>
-            <div className="mb-3">
-              <label htmlFor="" className="form-label">
-                <small>Shipping address:</small>
-              </label>
-              <input
-                type="text"
-                className="form-control form-control-sm"
-                value={user.shippingAddress}
-                readOnly
-              />
+            <div className="col-12 col-md-6">
+              <div className="d-flex">
+                <h4>Shipping information </h4>
+                <i class="bi bi-pencil-square edit-info-icon"></i>
+              </div>
+              <div className="d-flex flex-column mb-3">
+                <span>
+                  <small>Address:</small>
+                </span>
+                <span className="fw-bold">{user.address}</span>
+              </div>
+              <div className="d-flex flex-column mb-3">
+                <span>
+                  <small>Phone:</small>
+                </span>
+                <span className="fw-bold">{user.phone}</span>
+              </div>
             </div>
-            <div className="mb-4">
-              <label htmlFor="" className="form-label">
-                <small>Phone:</small>
-              </label>
-              <input
-                type="text"
-                className="form-control form-control-sm"
-                value={user.phone}
-                readOnly
-              />
-            </div>
-            <h4>Billing information</h4>
-            <div className="mb-3">
-              <label htmlFor="" className="form-label">
-                <small>Address:</small>
-              </label>
-              <input
-                type="text"
-                className="form-control form-control-sm"
-                value={user.address}
-                readOnly
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="" className="form-label">
-                <small>Phone:</small>
-              </label>
-              <input
-                type="text"
-                className="form-control form-control-sm"
-                value={user.phone}
-                readOnly
-              />
-            </div>
+          </div>
+        </div>
+        <div className="main-checkout">
+          <Form method="POST" onSubmit={handleSubmit}>
             <h3>Payment</h3>
-          </main>
-          <aside className="col-12 col-md-4 aside-checkout">
-            <h3>Order details</h3>
-            <form method="post" onSubmit={handleSubmit}>
-              {cart.products.length > 0 &&
-                cart.products.map((product) => (
-                  <CheckoutProduct product={product} key={product.id} />
-                ))}
-            </form>
-            <div className="px-3">
-              <div className="d-flex justify-content-between pt-2 border-top">
-                <span>Order Value</span>
-                <span>US$ {cart.totalAmount}</span>
-              </div>
-              <div className="d-flex justify-content-between py-1">
-                <span>Shipping</span>
-                <span>Free</span>
-              </div>
-              <div className="d-flex justify-content-between py-2 border-top">
-                <span>Total</span>
-                <span>US$ {cart.totalAmount}</span>
-              </div>
-              <button className="btn bg-black text-white rounded-pill w-100">Confirm Order</button>
+            <Form.Group as={Col} md="6" className="my-2">
+              <Form.Label>
+                <i className="bi bi-credit-card-fill me-2"></i> Select Payment Method
+              </Form.Label>
+              <Select
+                name="paymentMethod"
+                options={paymentOptions}
+                styles={customStylesPM}
+                onChange={(e) => setPaymentMet(e.value)}
+                required
+              />
+            </Form.Group>
+            <Form.Group as={Col} md="6" className="my-2">
+              <Form.Label>
+                <i className="bi bi-truck fs-6 text-black me-2"></i> Select Delivery Date
+              </Form.Label>
+              <Select
+                name="deliveryDate"
+                options={deliveryOptions}
+                onChange={(e) => setDeliveryDate(e.value)}
+                styles={customStylesDD}
+              />
+            </Form.Group>
+
+            <div className="row mb-3">
+              <h3>Order details</h3>
+              <ListGroup as="ul" className="px-2">
+                {cart.products.length > 0 ? (
+                  cart.products.map((item) => {
+                    const photo = item.style.photos.filter(
+                      (photo) => photo.includes("Main") && photo.includes(`${item.container.name}`),
+                    );
+                    return (
+                      <ListGroup.Item
+                        key={item.id}
+                        as="li"
+                        className="d-flex flex-row align-items-center"
+                      >
+                        <div className="w-50 me-2 text-center">
+                          <img
+                            src={`${import.meta.env.VITE_BACK_URL}/img/${photo}`}
+                            alt={`${item.style.name} ${item.container.name}`}
+                            className="checkout-img"
+                          />
+                        </div>
+                        <div className="w-50 ps-2">
+                          <span className="m-0 fw-bold">{item.name}</span>
+                          <div className="d-flex flex-column checkout-product-details">
+                            <span>
+                              <span className="fw-bold text-orange">{item.quantity}</span> x US${" "}
+                              {item.price}
+                            </span>
+                          </div>
+                        </div>
+                      </ListGroup.Item>
+                    );
+                  })
+                ) : (
+                  <ListGroup.Item
+                    as="li"
+                    className="d-flex justify-content-between align-items-start"
+                  >
+                    <div className="ms-2 me-auto">
+                      <p className="m-0 text-body-secondary">Your cart it's emtpy :(</p>
+                    </div>
+                    <Badge bg="danger" pill>
+                      0
+                    </Badge>
+                  </ListGroup.Item>
+                )}
+              </ListGroup>
+
+              <Col md="12" className="my-2 d-flex justify-content-end align-items-end">
+                <p className="m-0 me-2 fs-3 fw-bold text-orange">Total: </p>
+                <p className="m-0 fs-3 fw-bold">US$ {cart.totalAmount}</p>
+              </Col>
             </div>
-          </aside>
+            <Row className="">
+              <Button type="submit" variant="warning" className="rounded-pill w-25 mt-5">
+                Confirm Order
+              </Button>
+              <span className="text-center">
+                <small>Our Damn Tasty Beer is Just a Click Away!</small>
+              </span>
+              {alertToggle && (
+                <Alert className="mt-5" variant="danger">
+                  {alertText}
+                </Alert>
+              )}
+            </Row>
+          </Form>
         </div>
       </div>
     </div>
