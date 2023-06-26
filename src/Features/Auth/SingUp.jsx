@@ -64,7 +64,7 @@ function SignUp() {
   return (
     <>
       <Header title={pageTitle} />
-      <div className="parent_container">
+      <div className="parent_container" style={{ height: "100vh" }}>
         <div className="d-flex justify-content-center align-items-center">
           <div id="signup-row" className="row mx-0">
             <div
