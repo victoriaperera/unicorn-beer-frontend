@@ -14,50 +14,48 @@ function ProductModalCU({show, close, product, action}){
   const dispatch = useDispatch();
 
   const [style, setStyle] = product ? useState(product.style.name) : useState("");
-  const [container, setContainer] = product ? useState(product.container) : useState("");
-  const [price, setPrice] = product ? useState(product.price) : useState("");
+  const [containers, setContainers] = useState([]);
+  const [container, setContainer] = product ? useState(product.container) : useState(null);
   const [stock, setStock] = product ? useState(product.stock) : useState("");
+
+  const handleSelectStyle = (e)=>{
+      setStyle(e);  
+      for(const style of styles){ 
+        style._id === e ? setContainers(style.containers) : "";
+      }    
+  }
+
   const resetStates = ()=>{
-   return setStyle(""),setContainer(""),setPrice(""),setStock("");
+   return setStyle(""),setContainer([]),setPrice(""),setStock("");
   }
 
   const [showCateg, setShowCateg] = useState(false);
   const handleShowCateg = ()=> setShowCateg(true);
   const handleCloseCateg = () => setShowCateg(false)
 
-  const productName = (style, container)=>{
-    if(container === "can") {
-      return `${style} ${container} 0.09 Oz`
-    }
-    if(container === "bottle") {
-      return `${style} ${container} 0.13 Oz`
-    }
-    if(container === "keg") {
-      return `${style} ${container} 1.32 Gal`
-    }
-  }
+ 
 
   const handleSubmit = async (e)=>{
     e.preventDefault();
     if(action === "create"){
       try{
-        // const response = await axios({
-        //   method: "POST",
-        //   url: `${import.meta.env.VITE_BACK_URL}/products`,
-        //   headers: {
-        //     Authorization: `Bearer ${token}`,
-        //   },
-        //   data:{
-        //     style: style,
-        //     container: container,
-        //     price: price,
-        //     stock: stock,
-        //     name: productName(style, container),
-        //   }
-        // })
-        dispatch(createProduct()); // TODO hacerlo con la misma info que se envía a la DB
+        const response = await axios({
+          method: "POST",
+          url: `${import.meta.env.VITE_BACK_URL}/products`,
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          data:{
+            style: style,
+            featured : false, 
+            container: container,
+            stock: stock,
+          }
+        })
+        //dispatch(createProduct()); // TODO hacerlo con la misma info que se envía a la DB
+        console.log(response.data)
         close();
-        resetStates();
+       // resetStates();
       }catch(err){
         console.log(err);
       }
@@ -110,13 +108,13 @@ return (
                 <Row className="mb-3">
                   <Form.Group as={Col}>
                       <Form.Label>Style</Form.Label>
-                        <Form.Select name="container" id="container"
-                        onChange={(e) =>  setStyle(e.target.value)}
+                        <Form.Select name="style" id="style"
+                        onChange={(e) =>  handleSelectStyle(e.target.value)}
                         >
                           {action !== "edit" ? styles.map((style) =>
                           <option 
                           key={style.id}
-                          value={style.name}
+                          value={style.id}
                           >
                           {style.name}
                           </option>
@@ -125,18 +123,19 @@ return (
                           }
                         </Form.Select>
                       </Form.Group>
+                      {/* // TODO featured */}
                     <Form.Group as={Col}>
                       <Form.Label>Container</Form.Label>
                         <Form.Select name="container" id="container"
-                        onChange={(e) =>  setContainer(e.target.value)}
-                        >
-                          
+                        onChange={(e)=> setContainer(e.target.value )}
+                        >                       
                           {action !== "edit" ?
-                          <> 
+                          <>
                           <option>Select a container</option>
-                          <option value="bottle">Botlle</option>
-                          <option value="can">Can</option>
-                          <option value="keg">Keg</option>
+                         {containers.map( container =>
+                          <option key={container._id} value={container._id}>{container.name}</option>    
+                         )
+                         }
                           </>
                           :
                           <option>{product.container.name}</option>

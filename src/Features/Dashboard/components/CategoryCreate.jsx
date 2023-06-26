@@ -9,35 +9,35 @@ function CategoryCreate({ show, close, style }) {
   
   const token = useSelector((state) => state.token);
   const dispatch = useDispatch();
-
+  
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [photos, setPhotos] = useState([]);
   const [abv, setABV] = useState(null);
-  const [containers, setContainer] = useState([])
-  const [price, setPrice] = useState(0)
-  const handleCheckbox = (value)=> {
-    
+  const [containers, setContainer] = useState([]);
+  const [price, setPrice] = useState(0);
+  
+  const handleCheckbox = (value)=> { 
     if( !containers.includes(value) ) {
       containers.push(value)
     } else {
       const result = containers.filter( item => item !== value);
       setContainer(result)
     }
-  
   }
   
   const handleCreate = async (e) => {
     e.preventDefault();
+    const formData = new FormData(e.target);
     try {
       const response = await axios({
         method: "POST",
         url: `${import.meta.env.VITE_BACK_URL}/styles`,
-        headers:{
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "multipart/form-data",
-        },
         data: formData,
+        headers:{
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${token}`,
+        },
       });
       console.log(response.data)
       //dispatch(createStyle(response.data));
@@ -54,7 +54,7 @@ function CategoryCreate({ show, close, style }) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Form onSubmit={handleCreate}>
+        <Form onSubmit={handleCreate} id="myForm">
           <Row>
           <Form.Group className="mb-2" as={Col} sm="6">
             <Form.Label>Name</Form.Label>
@@ -76,7 +76,7 @@ function CategoryCreate({ show, close, style }) {
             <Form.Label>Description</Form.Label>
             <Form.Control as="textarea"
             type="text"
-            name="name"
+            name="description"
             onChange={(e)=> setDescription(e.target.value)}
             />
           </Form.Group>
@@ -85,7 +85,7 @@ function CategoryCreate({ show, close, style }) {
             <Form.Control 
             type="file"
             multiple
-            name="name"
+            name="photos"
             onChange={(e)=> setPhotos(e.target.value)}
             />
           </Form.Group>
