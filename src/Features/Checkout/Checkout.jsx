@@ -128,13 +128,13 @@ function Checkout() {
                 <i class="bi bi-pencil-square edit-info-icon"></i>
               </div>
 
-              <div className="d-flex flex-column mb-3">
+              <div className="d-flex flex-column mb-3 read-only">
                 <span>
                   <small>Shipping address:</small>
                 </span>
                 <span className="fw-bold">{user.shippingAddress}</span>
               </div>
-              <div className="d-flex flex-column mb-3">
+              <div className="d-flex flex-column mb-3 read-only">
                 <span>
                   <small>Phone:</small>
                 </span>
@@ -143,16 +143,16 @@ function Checkout() {
             </div>
             <div className="col-12 col-md-6">
               <div className="d-flex">
-                <h4>Shipping information </h4>
+                <h4>Billing Information </h4>
                 <i class="bi bi-pencil-square edit-info-icon"></i>
               </div>
-              <div className="d-flex flex-column mb-3">
+              <div className="d-flex flex-column mb-3 read-only">
                 <span>
                   <small>Address:</small>
                 </span>
                 <span className="fw-bold">{user.address}</span>
               </div>
-              <div className="d-flex flex-column mb-3">
+              <div className="d-flex flex-column mb-3 read-only">
                 <span>
                   <small>Phone:</small>
                 </span>

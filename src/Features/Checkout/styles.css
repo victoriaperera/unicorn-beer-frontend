@@ -20,6 +20,10 @@
   margin-left: 1rem;
 }
 
+.read-only {
+  user-select: none;
+}
+
 .checkout-img {
   height: 4rem;
 }
