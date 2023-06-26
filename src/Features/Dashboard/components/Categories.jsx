@@ -22,7 +22,7 @@ function Categories() {
       <CategoryDelete show={showDelete} close={handleCloseDelete} style={style} />
       <CategoryCreate show={showCreate} close={handleCloseCreate} style={style} />
       <div className="d-flex justify-content-between align-content-center pb-3 me-3">
-        <h2 className="text-white pt-2">Categories</h2>
+        <h2 className="text-white mb-3">Categories</h2>
         <i
           className="bi bi-plus-circle fs-2 create-icon"
           type="submit"
