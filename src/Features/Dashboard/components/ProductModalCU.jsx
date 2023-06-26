@@ -62,16 +62,15 @@ function ProductModalCU({show, close, product, action}){
         const response = await axios({
           method: "PATCH",
           url: `${import.meta.env.VITE_BACK_URL}/products`,
-           // headers: {
-          //   Authorization: `Bearer ${token}`,
-          // },
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
           data:{
             productId: product.id,
             price: price,
             stock: stock
           }
         })
-        console.log(response);
         dispatch(updateProduct({productId: product.id, price: price, stock: stock}))
         close();
         resetStates();
