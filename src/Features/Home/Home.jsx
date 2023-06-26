@@ -3,7 +3,7 @@ import HomeHeader from "./HomeHeader";
 import axios from "axios";
 import FeaturedProducts from "./Components/FeaturedProducts";
 import { Container, Row, Col } from "react-bootstrap";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setProductList } from "../../redux/productSlice";
 import { gsap } from "gsap";
@@ -11,6 +11,7 @@ import { ScrollTrigger } from "gsap/all";
 import SplitType from "split-type";
 import BackToTopBtn from "../../Common/components/BackToTopBtn";
 import Header from "../../Common/components/Header";
+import Loader from "../../Common/components/Loader";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,9 +19,11 @@ function Home() {
   const pageTitle = "Our amazing beer";
   const products = useSelector((state) => state.product);
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const getProducts = async () => {
+      setLoading(true);
       const res = await axios.get(`${import.meta.env.VITE_BACK_URL}/products`);
 
       const aux = res.data.filter((p) => p.container.name === "bottle");
@@ -35,9 +38,14 @@ function Home() {
           trigger: ".char",
         },
       });
+      setLoading(false);
     };
     getProducts();
   }, []);
+
+  if (loading) {
+    return <Loader></Loader>;
+  }
 
   return (
     <>

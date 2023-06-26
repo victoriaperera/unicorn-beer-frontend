@@ -44,7 +44,7 @@ function Dashboard({ containers, handleSidebarClick }) {
           <div className="card mb-4 dashboard-totals">
             <div className="card-header">Sales</div>
             <div className="card-body fs-3">
-              <span>US$ {totalSales}</span>
+              <span>US$ {totalSales.toFixed(2)}</span>
             </div>
           </div>
         </div>

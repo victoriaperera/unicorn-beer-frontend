@@ -9,19 +9,55 @@
   font-family: "Roboto" !important;
 }
 
-.goTop {
+.go-top {
   position: fixed;
   bottom: 120px;
   right: 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  z-index: 10;
+  z-index: 99999;
   width: 50px;
   height: 50px;
 
   &:hover {
     transform: scale(1.1);
     cursor: pointer;
+  }
+}
+
+/* LOADER */
+
+.loading-screen {
+  height: 100vh;
+}
+
+.loader-logo {
+  width: 150px !important;
+}
+
+.mask {
+  -webkit-mask-image: url("/src/assets/icons/unicorn-beer-icon-3.svg");
+  mask-image: url("/src/assets/icons/unicorn-beer-icon-3.svg");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.slide-in-top {
+  animation: animloader 7s ease infinite;
+}
+
+@keyframes animloader {
+  0% {
+    -webkit-transform: translateY(350px);
+    opacity: 0.5;
+  }
+  50% {
+    -webkit-transform: translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(350px);
+    opacity: 0.5;
   }
 }
