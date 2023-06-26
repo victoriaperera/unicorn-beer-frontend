@@ -1,9 +1,10 @@
-import "./styles.css";
-import format from "date-fns/format";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import React, { useState } from "react";
-import { setOrders, updateOrderStatus } from "../adminSlice";
 import axios from "axios";
+import format from "date-fns/format";
+
+import { updateOrderStatus } from "../adminSlice";
+import "./styles.css";
 
 function OrderCard() {
   const orders = useSelector((state) => state.admin.orders);
