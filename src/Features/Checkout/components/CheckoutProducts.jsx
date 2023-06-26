@@ -21,10 +21,10 @@ function CheckoutProducts({ product }) {
       <div className="w-75 ps-2">
         <div className="d-flex flex-column checkout-order-details">
           <span>{product.name}</span>
-          <span>Quantity: {product.quantity}</span>
-          {product.quantity > 1 && (
-            <span>Subtotal: US$ {(product.price * product.quantity).toFixed(2)}</span>
-          )}
+          <span>
+            Quantity: {product.quantity} x US$ {product.price}
+          </span>
+          <span>Subtotal: US$ {(product.price * product.quantity).toFixed(2)}</span>
         </div>
       </div>
     </div>
