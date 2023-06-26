@@ -4,33 +4,36 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { createProduct, updateProduct } from "../adminSlice";
 import axios from "axios";
-
+import { Link } from "react-router-dom";
+import CategoryCreate from "./CategoryCreate";
 
 function ProductModalCU({show, close, product, action}){
   const token = useSelector((state)=> state.admin.token.token);
   const styles = useSelector((state)=> state.admin.styles);
   
   const dispatch = useDispatch();
+
   const [style, setStyle] = product ? useState(product.style.name) : useState("");
-  const [container, setContainer] = product ? useState(product.container) : useState("");
-  const [price, setPrice] = product ? useState(product.price) : useState("");
+  const [containers, setContainers] = useState([]);
+  const [container, setContainer] = product ? useState(product.container) : useState(null);
   const [stock, setStock] = product ? useState(product.stock) : useState("");
 
-  const resetStates = ()=>{
-   return setStyle(""),setContainer(""),setPrice(""),setStock("");
+  const handleSelectStyle = (e)=>{
+      setStyle(e);  
+      for(const style of styles){ 
+        style._id === e ? setContainers(style.containers) : "";
+      }    
   }
 
-  const productName = (style, container)=>{
-    if(container === "can") {
-      return `${style} ${container} 0.09 Oz`
-    }
-    if(container === "bottle") {
-      return `${style} ${container} 0.13 Oz`
-    }
-    if(container === "keg") {
-      return `${style} ${container} 1.32 Gal`
-    }
+  const resetStates = ()=>{
+   return setStyle(""),setContainer([]),setPrice(""),setStock("");
   }
+
+  const [showCateg, setShowCateg] = useState(false);
+  const handleShowCateg = ()=> setShowCateg(true);
+  const handleCloseCateg = () => setShowCateg(false)
+
+ 
 
   const handleSubmit = async (e)=>{
     e.preventDefault();
@@ -39,20 +42,20 @@ function ProductModalCU({show, close, product, action}){
         const response = await axios({
           method: "POST",
           url: `${import.meta.env.VITE_BACK_URL}/products`,
-          // headers: {
-          //   Authorization: `Bearer ${token}`,
-          // },
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
           data:{
             style: style,
+            featured : false, 
             container: container,
-            price: price,
             stock: stock,
-            name: productName(style, container),
           }
         })
-        dispatch(createProduct(response.data)); // TODO hacerlo con la misma info que se envía a la DB
+        //dispatch(createProduct()); // TODO hacerlo con la misma info que se envía a la DB
+        console.log(response.data)
         close();
-        resetStates();
+       // resetStates();
       }catch(err){
         console.log(err);
       }
@@ -105,13 +108,13 @@ return (
                 <Row className="mb-3">
                   <Form.Group as={Col}>
                       <Form.Label>Style</Form.Label>
-                        <Form.Select name="container" id="container"
-                        onChange={(e) =>  setStyle(e.target.value)}
+                        <Form.Select name="style" id="style"
+                        onChange={(e) =>  handleSelectStyle(e.target.value)}
                         >
                           {action !== "edit" ? styles.map((style) =>
                           <option 
                           key={style.id}
-                          value={style.name}
+                          value={style.id}
                           >
                           {style.name}
                           </option>
@@ -120,24 +123,27 @@ return (
                           }
                         </Form.Select>
                       </Form.Group>
+                      {/* // TODO featured */}
                     <Form.Group as={Col}>
                       <Form.Label>Container</Form.Label>
                         <Form.Select name="container" id="container"
-                        onChange={(e) =>  setContainer(e.target.value)}
-                        >
-                          
+                        onChange={(e)=> setContainer(e.target.value )}
+                        >                       
                           {action !== "edit" ?
-                          <> 
+                          <>
                           <option>Select a container</option>
-                          <option value="bottle">Botlle</option>
-                          <option value="can">Can</option>
-                          <option value="keg">Keg</option>
+                         {containers.map( container =>
+                          <option key={container._id} value={container._id}>{container.name}</option>    
+                         )
+                         }
                           </>
                           :
                           <option>{product.container.name}</option>
                         }
                         </Form.Select>
                       </Form.Group>
+                      {action !== "edit" && <p className="my-2">Would you like to create a brand new <Link onClick={handleShowCateg}>Style?</Link></p>}
+                      <CategoryCreate show={showCateg} close={handleCloseCateg}/>
                     <Form.Group as={Col}>
                     <Form.Label>Price</Form.Label>
                       <InputGroup>
@@ -163,7 +169,7 @@ return (
                    }
                    </InputGroup> 
                     </Form.Group>
-                    <Form.Group as={Col}>
+                    <Form.Group >
                     <Form.Label>Stock</Form.Label>
                       <Form.Control
                         type="number"

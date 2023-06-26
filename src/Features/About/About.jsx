@@ -84,8 +84,8 @@ function About() {
           className="about-section about-section-one p-0 justify-content-center align-items-center "
           ref={sectionTech}
         >
-          <Col xs={12} md={8} className="align-self-end mb-4">
-            <h3 className="mb-5">TECHNOLOGIES & TOOLS</h3>
+          <Col xs={12} md={8} className="align-self-end mb-2">
+            <h3 className="mb-3">TECHNOLOGIES & TOOLS</h3>
             <p>
               Throughout the coding bootcamp, we delved into a wide range of technologies
               encompassing both backend and front end development. We also gained hands-on
@@ -214,12 +214,37 @@ function About() {
             </div>
           </Col>
         </Row>
-        <Row className="align-items-center justify-content-center ">
-          <Col className="col-12 about-section about-section-two" ref={sectionMer}>
-            <h3>PROJECT ORGANIZATION - MER</h3>
-            <div className="py-5">
-              <img src="src/assets/img/Proyecto-final-MER.png" alt="" className="mer-img" />
-            </div>
+        <Row
+          className="about-section about-section-two p-0 justify-content-center align-items-center"
+          ref={sectionMer}
+        >
+          <Col xs={12} md={8} className="align-self-end mb-2 mt-5">
+            <h3 className="mb-4">PROJECT ORGANIZATION - MER</h3>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti iure perspiciatis
+              ducimus porro cupiditate. Nobis, nulla repudiandae dolores ex ducimus recusandae quos
+              mollitia sit soluta similique quod magnam. Dolor, voluptates!
+            </p>
+          </Col>
+          <Col className="d-flex image-container align-self-start justify-content-center p-0 mb-5 mx-4">
+            <img
+              src="src/assets/img/MER-small.png"
+              alt="MER"
+              className="product-design small"
+              fluid
+            />
+            <img
+              src="src/assets/img/MER-medium.png"
+              alt="MER"
+              className="product-design medium"
+              fluid
+            />
+            <img
+              src="src/assets/img/MER-large.png"
+              alt="MER"
+              className="product-design large"
+              fluid
+            />
           </Col>
         </Row>
         <Row

@@ -6,8 +6,10 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setAdminToken } from "../Dashboard/adminSlice";
 import { useRandomColor } from "../../hook/useRandomColor";
+import Header from "../../Common/components/Header";
 
 function AdminLogin() {
+  const pageTitle = "Login / Admin";
   const [admin, setAdmin] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -38,19 +40,20 @@ function AdminLogin() {
   };
 
   useEffect(() => {
-    setColor(useRandomColor())
+    setColor(useRandomColor());
     if (admin) {
       navigate("/admin");
     }
   }, [admin]);
 
   return (
-    <div className="graphite-background d-flex justify-content-center " style={{ height: "80vh" }}>
-      <div className="container p-5 m-5">
-        <div className="login-card">
-          <div className="row p-0 m-0">
+    <>
+      <Header title={pageTitle} />
+      <div className="parent_container" style={{ height: "90vh" }}>
+        <div className="d-flex justify-content-center align-items-center">
+          <div id="admin-row" className="row mx-4">
             <div
-              className="col-8 d-none d-md-flex flex-wrap align-items-center justify-content-center p-5"
+              className="col-md-7 d-none d-md-flex flex-wrap align-items-center justify-content-center p-4 rounded-start "
               style={{ backgroundColor: color }}
             >
               <img
@@ -59,7 +62,7 @@ function AdminLogin() {
                 className="header-logo w-sm-50 w-75 h-75"
               />
             </div>
-            <div className="col-md-4 d-flex align-items-center justify-content-center text-black py-5 px-3">
+            <div className="d-flex col-12 col-md-5 text-black py-5 px-5 bg-white align-items-center justify-content-center rounded-end form-border">
               <form onSubmit={handleSubmit} method="post">
                 <h1>Login</h1>
                 <small>Our Damn Tasty Beer is Just a Click Away</small>
@@ -97,7 +100,7 @@ function AdminLogin() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

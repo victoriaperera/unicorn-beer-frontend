@@ -36,3 +36,14 @@
   color: var(--orange);
   font-size: 0.9rem;
 }
+
+.btn-cofirm-order {
+  background-color: var(--orange);
+  color: var(--white);
+  font-weight: bold;
+}
+
+.btn-cofirm-order:hover {
+  background-color: var(--graphite);
+  color: var(--orange);
+}
