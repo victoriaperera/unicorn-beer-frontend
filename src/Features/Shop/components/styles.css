@@ -114,11 +114,19 @@
 }
 
 /* SEARCH INPUT */
+.search-container {
+  position: absolute;
+  bottom: 0;
+  padding-top: 25px;
+  z-index: 100;
+}
+.search-filter {
+  position: absolute;
+  bottom: 0;
+  padding-top: 200px;
+}
 
 .centering {
-  position: absolute;
-  left: 0;
-  top: 80vh;
   background: transparent;
 }
 

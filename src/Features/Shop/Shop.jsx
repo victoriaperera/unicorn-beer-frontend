@@ -4,19 +4,16 @@ import ProductList from "./components/ProductList";
 import ShopHeader from "./components/ShopHeader";
 import BackToTopBtn from "../../Common/components/BackToTopBtn";
 import Header from "../../Common/components/Header";
-import { useRef } from "react";
-import SearchInput from "./components/SearchInput";
 
 function Shop() {
   const pageTitle = "Our Shop";
-  const productRef = useRef(null);
 
   return (
     <>
       <Header title={pageTitle} />
-      <ShopHeader productRef={productRef} />
+      <ShopHeader />
       <Container fluid>
-        <ProductList ref={productRef} />
+        <ProductList />
         <BackToTopBtn />
       </Container>
     </>

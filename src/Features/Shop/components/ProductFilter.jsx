@@ -1,11 +1,12 @@
 import "./styles.css";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { forwardRef, useEffect, useRef, useState } from "react";
 import FilterBtn from "./FilterBtn";
 import FilterAllBtn from "./FilterAllBtn";
 
-function ProductFilter({ productRef }) {
+const ProductFilter = forwardRef(function ProductFilter(props, ref) {
   const [products, setProducts] = useState([]);
+  const filterRef = useRef(null)
 
   useEffect(() => {
     const getProducts = async () => {
@@ -18,13 +19,13 @@ function ProductFilter({ productRef }) {
   }, []);
 
   return (
-    <div className="d-flex flex-wrap mt-3 ">
+    <div className="d-flex flex-wrap mt-3 search-filter" ref={filterRef}>
       {products.map((product) => (
-        <FilterBtn product={product} key={product.style.id} productRef={productRef}></FilterBtn>
+        <FilterBtn product={product} key={product.style.id} filterRef={filterRef}></FilterBtn>
       ))}
-      <FilterAllBtn productRef={productRef} />
+      <FilterAllBtn filterRef={filterRef} />
     </div>
   );
-}
+});
 
 export default ProductFilter;

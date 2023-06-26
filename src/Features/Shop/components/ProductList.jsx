@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setProductList } from "../shopSlice";
 import Loader from "../../../Common/components/Loader";
 
-const ProductList = forwardRef(function ProductList(props, ref) {
+function ProductList() {
   const filter = useSelector((state) => state.shop.filter);
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
@@ -40,12 +40,12 @@ const ProductList = forwardRef(function ProductList(props, ref) {
 
   return (
     <>
-      <Row ref={ref}>
+      <Row>
         {products.length > 0 &&
           products.map((product) => <Product product={product} key={product.id}></Product>)}
       </Row>
     </>
   );
-});
+}
 
 export default ProductList;
