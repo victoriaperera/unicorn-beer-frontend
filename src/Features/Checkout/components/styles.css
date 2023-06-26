@@ -22,3 +22,11 @@
   );
   z-index: 1050;
 }
+
+.checkout-img {
+  height: 4rem;
+}
+
+.checkout-order-details {
+  font-size: 0.9rem;
+}

@@ -180,24 +180,29 @@ function Checkout() {
                 readOnly
               />
             </div>
+            <h4>Payment</h4>
           </main>
           <aside className="col-12 col-md-4 aside-checkout">
             <h3>Order details</h3>
             <form method="post" onSubmit={handleSubmit}>
-              <CheckoutProducts />
+              {cart.products.length > 0 &&
+                cart.products.map((product) => (
+                  <CheckoutProducts product={product} key={product.id} />
+                ))}
             </form>
-            <div className="d-flex justify-content-between border-top checkout-order-details">
+            <div className="d-flex justify-content-between pt-2 border-top checkout-order-details">
               <span>Order Value</span>
-              <span>$$</span>
+              <span>US$ {cart.totalAmount}</span>
             </div>
-            <div className="d-flex justify-content-between checkout-order-details">
+            <div className="d-flex justify-content-between py-1 checkout-order-details">
               <span>Shipping</span>
               <span>Free</span>
             </div>
-            <div className="d-flex justify-content-between border-top checkout-order-details">
+            <div className="d-flex justify-content-between py-2 border-top checkout-order-details">
               <span>Total</span>
-              <span>$$</span>
+              <span>US$ {cart.totalAmount}</span>
             </div>
+            <button className="btn btn-dark rounded-pill w-100">Complete Purchase</button>
           </aside>
         </div>
       </div>
