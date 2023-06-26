@@ -20,13 +20,7 @@ function CartProduct({ product }) {
       <div className="w-75 ps-2">
         <div className="d-flex justify-content-between pt-1">
           <span>{product.name}</span>
-          {product.quantity === 1 ? (
-            <span className="ms-2">US${product.price.toFixed(2)}</span>
-          ) : (
-            <span className="ms-2">
-              <small>Unit price: </small>US$ {product.price.toFixed(2)}
-            </span>
-          )}
+          <i className="bi bi-trash3" onClick={() => dispatch(removeItem(product.id))}></i>
         </div>
         <div className="d-flex justify-content-between pt-1">
           <div className="d-flex">
@@ -44,7 +38,14 @@ function CartProduct({ product }) {
               onClick={() => dispatch(incrementQuantity(product.id))}
             ></i>
           </div>
-          <i className="bi bi-trash3" onClick={() => dispatch(removeItem(product.id))}></i>
+
+          {product.quantity === 1 ? (
+            <span className="ms-2">US${product.price.toFixed(2)}</span>
+          ) : (
+            <span className="ms-2">
+              <small>Unit price: </small>US$ {product.price.toFixed(2)}
+            </span>
+          )}
         </div>
         <div className="d-flex justify-content-between pt-2">
           <span className="fw-bold">Sub-total</span>
