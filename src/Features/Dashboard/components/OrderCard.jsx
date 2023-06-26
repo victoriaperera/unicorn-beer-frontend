@@ -1,10 +1,14 @@
 import "./styles.css";
 import format from "date-fns/format";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import React, { useState } from "react";
+import { setOrders, updateOrderStatus } from "../adminSlice";
+import axios from "axios";
 
 function OrderCard() {
   const orders = useSelector((state) => state.admin.orders);
+  const token = useSelector((state) => state.admin.token);
+  const dispatch = useDispatch();
 
   const statusColor = (status) => {
     switch (status) {
@@ -20,6 +24,25 @@ function OrderCard() {
         return "status-cancelled";
       default:
         return "";
+    }
+  };
+
+  const handleStatusChange = async (e, orderId) => {
+    try {
+      const response = await axios({
+        method: "PATCH",
+        url: `${import.meta.env.VITE_BACK_URL}/orders/${orderId}`,
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        data: {
+          orderId: orderId,
+          status: e,
+        },
+      });
+      dispatch(updateOrderStatus(response.data)); // TODO hacerlo con la misma info que se envía a la DB
+    } catch (err) {
+      console.log(err);
     }
   };
 
@@ -63,7 +86,18 @@ function OrderCard() {
                 <td>{order.totalQuantity}</td>
                 <td>US$ {order.totalAmount}</td>
                 <td>{order.paymentMethod}</td>
-                <td className={`text-capitalize ${statusColor(order.status)}`}>{order.status}</td>
+                <td className={`text-capitalize ${statusColor(order.status)}`}>
+                  <select
+                    className="form-select"
+                    value={order.status}
+                    onChange={(e) => handleStatusChange(e.target.value, order.id)}
+                  >
+                    <option value="paid">Paid</option>
+                    <option value="not_paid">Not Paid</option>
+                    <option value="shipped">Shipped</option>
+                    <option value="delivered">Delivered</option>
+                  </select>
+                </td>
               </tr>
             ))
           ) : (

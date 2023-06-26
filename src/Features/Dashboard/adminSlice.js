@@ -1,3 +1,4 @@
+// adminSlice.js
 import { createSlice } from "@reduxjs/toolkit";
 
 const adminSlice = createSlice({
@@ -50,6 +51,15 @@ const adminSlice = createSlice({
     deleteStyle: (state, action) => {
       state.styles = state.styles.filter((style) => style.id !== action.payload);
     },
+    updateOrderStatus: (state, action) => {
+      const newOrder = action.payload;
+      const order = state.orders.find((order) => order.id === newOrder.id);
+      if (order) {
+        order.status = newOrder.status;
+        const orderIndex = state.orders.indexOf(order);
+        state.orders[orderIndex] = order;
+      }
+    },
   },
 });
 
@@ -67,5 +77,6 @@ export const {
   createStyle,
   updateStyle,
   deleteStyle,
+  updateOrderStatus,
 } = adminSlice.actions;
 export default adminSlice.reducer;
