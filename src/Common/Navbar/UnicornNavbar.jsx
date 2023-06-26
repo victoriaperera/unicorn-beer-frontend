@@ -80,12 +80,12 @@ function UnicornNavbar() {
           <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
             <Nav className="ms-auto">
               <div className="mx-2 mt-1">
-                <Nav.Link as={Link} to={"/about"} eventkey={"1"}>
+                <Nav.Link as={Link} to={"/about"} eventKey={"1"}>
                   ABOUT THIS PROJECT
                 </Nav.Link>
               </div>
               <div className="mx-2 mt-1">
-                <Nav.Link as={Link} to={"/#our-beer-section"} eventkey={"2"}>
+                <Nav.Link as={Link} to={"/#our-beer-section"} eventKey={"2"}>
                   OUR BEER
                 </Nav.Link>
               </div>
@@ -95,7 +95,7 @@ function UnicornNavbar() {
                   to={"/shop"}
                   className="nav-link"
                   onClick={() => dispatch(clearFilter())}
-                  eventkey={"3"}
+                  eventKey={"3"}
                 >
                   SHOP
                 </Nav.Link>
@@ -103,23 +103,23 @@ function UnicornNavbar() {
               <NavDropdown
                 title={<i className="bi bi-person-fill fs-5 text-white"></i>}
                 className="mx-2"
-                eventkey={"4"}
+                eventKey={"4"}
                 menuVariant="secondary"
               >
                 {!user && (
-                  <NavDropdown.Item eventkey={"4.1"} as={Link} to="/login" id="dropdown-items">
+                  <NavDropdown.Item eventKey={"4.1"} as={Link} to="/login" id="dropdown-items">
                     Log in
                   </NavDropdown.Item>
                 )}
 
                 {!user && (
-                  <NavDropdown.Item eventkey={"4.2"} as={Link} to="/signup">
+                  <NavDropdown.Item eventKey={"4.2"} as={Link} to="/signup">
                     Create an Account
                   </NavDropdown.Item>
                 )}
 
                 {!user && (
-                  <NavDropdown.Item eventkey={"4.3"} as={Link} to="/admin/login">
+                  <NavDropdown.Item eventKey={"4.3"} as={Link} to="/admin/login">
                     Admins
                   </NavDropdown.Item>
                 )}
@@ -135,7 +135,7 @@ function UnicornNavbar() {
                 )}
 
                 {user && (
-                  <NavDropdown.Item eventkey={"4.5"} as={Link} to="#">
+                  <NavDropdown.Item eventKey={"4.5"} as={Link} to="#">
                     <Logout></Logout>
                   </NavDropdown.Item>
                 )}
@@ -149,7 +149,7 @@ function UnicornNavbar() {
                 </Offcanvas>
               </div>
               <div className="mx-2 mt-1">
-                <Nav.Link as={Link} to={"/contact"} className="nav-link" eventkey={"5"}>
+                <Nav.Link as={Link} to={"/contact"} className="nav-link" eventKey={"5"}>
                   CONTACT
                 </Nav.Link>
               </div>
