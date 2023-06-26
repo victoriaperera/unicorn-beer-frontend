@@ -1,10 +1,11 @@
 import "./styles.css";
 import OutOfScopeModal from "../../Common/components/OutOfScopeModal";
-import { Button, Col, Container, Form, Row, InputGroup } from "react-bootstrap";
-import { useState } from "react";
+import { Button, Form, InputGroup, Alert } from "react-bootstrap";
+import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { Alert } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Header from "../../Common/components/Header";
+import { useRandomColor } from "../../hook/useRandomColor";
 import axios from "axios";
 
 function Contact() {
@@ -19,6 +20,11 @@ function Contact() {
 
   const [alertText, setAlertText] = useState("");
   const [alertToggle, setAlertToggle] = useState(null);
+  const [color, setColor] = useState("");
+
+  useEffect(() => {
+    setColor(useRandomColor());
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -47,74 +53,75 @@ function Contact() {
     <>
       <Header title={pageTitle} />
       <OutOfScopeModal />
-      <div
-        className="graphite-background d-flex justify-content-center"
-        style={{ height: "100vh" }}
-      >
-        <div className="container-contact">
-          <div className="card-contact">
-            <div className="row card-row">
-              <div className="col-12 col-md-4 p-4 rounded-start card-contact-us">
-                <h3 className="mb-5">Leave Us a message</h3>
-                <img
-                  src="src/assets/icons/Unicorn-beer-white-logo.svg"
-                  alt="unicron icon"
-                  className="contactIcon"
-                />
-              </div>
-              <div className="col-12 col-md-8 p-4">
-                <Form method="POST" onSubmit={handleSubmit}>
-                  <div className="row">
-                    <Form.Group className="col-6 my-2">
-                      <Form.Label>First name</Form.Label>
-                      <Form.Control
-                        value={user ? `${user.firstname}` : ""}
-                        required
-                        type="text"
-                        placeholder="First name"
-                        onChange={(e) => setFirstname(e.target.value)}
-                      />
-                    </Form.Group>
-                    <Form.Group className="col-6 my-2">
-                      <Form.Label>Last name</Form.Label>
-                      <Form.Control
-                        value={user ? `${user.lastname}` : ""}
-                        required
-                        type="text"
-                        placeholder="Last name"
-                        onChange={(e) => setLastname(e.target.value)}
-                      />
-                    </Form.Group>
-                  </div>
+      <div className="parent_container">
+        <div className="d-flex justify-content-center align-items-center container-contact">
+          <div className="row d-flex justify-content-center mx-4">
+            <div
+              className="col-md-7 d-none d-md-flex flex-wrap align-items-center justify-content-center p-4 rounded-start"
+              style={{ backgroundColor: color }}
+            >
+              <img
+                src="../src/assets/icons/Unicorn-beer-white-logo.svg"
+                alt="Unicorn Logo"
+                className="header-logo w-sm-75 w-75 h-75"
+              />
+            </div>
+            <div className="col-10 col-md-5 d-flex text-black py-4 px-4 bg-white rounded-end form-border">
+              <Form method="POST" onSubmit={handleSubmit}>
+                <h1>Leave us a message</h1>
+                <div className="row my-2">
+                  <Form.Group className="col-6 ">
+                    <Form.Label>First name</Form.Label>
+                    <Form.Control
+                      value={user ? `${user.firstname}` : ""}
+                      required
+                      type="text"
+                      placeholder="First name"
+                      onChange={(e) => setFirstname(e.target.value)}
+                    />
+                  </Form.Group>
 
-                  <div className="row">
-                    <Form.Group className="col-6 my-2">
-                      <Form.Label>Email</Form.Label>
-                      <InputGroup hasValidation>
-                        <Form.Control
-                          value={user ? `${user.email}` : ""}
-                          type="email"
-                          placeholder="Email"
-                          required
-                          onChange={(e) => setEmail(e.target.value)}
-                        />
-                        <Form.Control.Feedback type="invalid">
-                          Please put a contact e-mail.
-                        </Form.Control.Feedback>
-                      </InputGroup>
-                    </Form.Group>
-                    <Form.Group className="col-6 my-2">
-                      <Form.Label>Phone</Form.Label>
-                      <Form.Control
-                        value={user ? `${user.phone}` : ""}
-                        type="number"
-                        placeholder="Phone"
-                        onChange={(e) => setPhone(e.target.value)}
-                      />
-                    </Form.Group>
-                  </div>
+                  <Form.Group className="col-6">
+                    <Form.Label>Last name</Form.Label>
+                    <Form.Control
+                      value={user ? `${user.lastname}` : ""}
+                      required
+                      type="text"
+                      placeholder="Last name"
+                      onChange={(e) => setLastname(e.target.value)}
+                    />
+                  </Form.Group>
+                </div>
 
-                  <Form.Group className="my-2">
+                <div className="row my-2">
+                  <Form.Group className="col-6">
+                    <Form.Label>Email</Form.Label>
+                    <InputGroup hasValidation>
+                      <Form.Control
+                        value={user ? `${user.email}` : ""}
+                        type="email"
+                        placeholder="Email"
+                        required
+                        onChange={(e) => setEmail(e.target.value)}
+                      />
+                      <Form.Control.Feedback type="invalid">
+                        Please put a contact e-mail.
+                      </Form.Control.Feedback>
+                    </InputGroup>
+                  </Form.Group>
+                  <Form.Group className="col-6 ">
+                    <Form.Label>Phone</Form.Label>
+                    <Form.Control
+                      value={user ? `${user.phone}` : ""}
+                      type="number"
+                      placeholder="Phone"
+                      onChange={(e) => setPhone(e.target.value)}
+                    />
+                  </Form.Group>
+                </div>
+
+                <div className="row mt-3">
+                  <Form.Group>
                     <Form.Label>Message</Form.Label>
                     <Form.Control
                       required
@@ -123,24 +130,27 @@ function Contact() {
                       onChange={(e) => setMessage(e.target.value)}
                     />
                   </Form.Group>
-                </Form>
-
-                <div className="row justify-content-end">
+                </div>
+                <div className="row justify-content-end m-0">
                   <Button
                     type="submit"
                     variant="outline-dark"
                     size="md"
-                    className="rounded-pill w-25 me-3 mt-4"
+                    className="rounded-pill mt-3"
                   >
                     Send
                   </Button>
                 </div>
-                {alertToggle && (
-                  <Alert className="mt-5" variant="danger">
-                    {alertText}
-                  </Alert>
-                )}
-              </div>
+                <div>
+                  <small className="d-block mt-3">
+                    Back to{" "}
+                    <Link className="auth-link" to="/" style={{ color: color }}>
+                      HOME
+                    </Link>
+                  </small>
+                  {alertToggle && <Alert variant="danger">{alertText}</Alert>}
+                </div>
+              </Form>
             </div>
           </div>
         </div>
