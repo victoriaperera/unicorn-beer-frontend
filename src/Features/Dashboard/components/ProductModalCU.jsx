@@ -59,18 +59,18 @@ function ProductModalCU({show, close, product, action}){
     }
     if(action === "edit"){
       try{
-        const response = await axios({
-          method: "PATCH",
-          url: `${import.meta.env.VITE_BACK_URL}/products`,
-           // headers: {
-          //   Authorization: `Bearer ${token}`,
-          // },
-          data:{
-            productId: product.id,
-            price: price,
-            stock: stock
-          }
-        })
+        // const response = await axios({
+        //   method: "PATCH",
+        //   url: `${import.meta.env.VITE_BACK_URL}/products`,
+        //    // headers: {
+        //   //   Authorization: `Bearer ${token}`,
+        //   // },
+        //   data:{
+        //     productId: product.id,
+        //     price: price,
+        //     stock: stock
+        //   }
+        // })
         dispatch(updateProduct({productId: product.id, price: price, stock: stock}))
         close();
         resetStates();
