@@ -16,15 +16,11 @@ function SearchInput({ productRef }) {
 
   return (
     <Form onClick={handlerOnClick} className="scroll-margin">
-      <Form.Control
-        type="search"
-        placeholder="Search products..."
-        className="rounded-pill custom-width"
-        aria-label="Search"
-        onInput={(e) => {
-          handlerInput(e);
-        }}
-      />
+      <span className="centering">
+        <span className="box">
+          <input className="search" placeholder=" " spellCheck="false" onInput={handlerInput} />
+        </span>
+      </span>
     </Form>
   );
 }

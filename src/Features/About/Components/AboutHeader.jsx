@@ -57,12 +57,12 @@ function AboutHeader() {
               </p>
               <p>
                 This final project aims to showcase the application of the diverse technologies
-                learned throughout the Bootcamp. Unicorn Beer was developed over a period of three
-                weeks by a team of five students, totaling approximately 700 hours of work.
+                learned throughout the Bootcamp.
               </p>
               <p>
-                Unicorn beer is a fully functional app designed to be user-friendly and easy to
-                navigate.
+                Unicorn Beer was developed over a period of three weeks by a team of five students,
+                totaling approximately 700 hours of work. It is a fully functional app designed to
+                be user-friendly and easy to navigate.
               </p>
             </div>
           </Col>

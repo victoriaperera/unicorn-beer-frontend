@@ -5,6 +5,7 @@ import ShopHeader from "./components/ShopHeader";
 import BackToTopBtn from "../../Common/components/BackToTopBtn";
 import Header from "../../Common/components/Header";
 import { useRef } from "react";
+import SearchInput from "./components/SearchInput";
 
 function Shop() {
   const pageTitle = "Our Shop";

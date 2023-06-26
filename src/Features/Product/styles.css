@@ -23,6 +23,6 @@
   }
 }
 
-/* .addToCartBtn-product {
-  background-color: var(--graphite);
-} */
+.return-to-shop {
+  cursor: pointer;
+}

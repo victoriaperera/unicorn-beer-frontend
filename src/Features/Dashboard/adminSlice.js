@@ -38,7 +38,11 @@ const adminSlice = createSlice({
       state.products.push(action.payload);
     },
     updateProduct: (state, action) => {
-      console.log(action.payload);
+     state.products = state.products.map((product)=> 
+          product.id === action.payload.productId ? 
+         {...product, price : action.payload.price, stock : action.payload.stock }
+         : product
+      )
     },
     deleteProduct: (state, action) => {
       state.products = state.products.filter((product) => product.id !== action.payload);

@@ -1,7 +1,7 @@
 .checkout-container {
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
 }
 
 .checkout-logo-icon {
@@ -12,26 +12,27 @@
   background-color: var(--white);
   color: var(--graphite);
   padding: 15px;
+  margin-bottom: 1rem;
 }
 
-.aside-checkout {
-  position: sticky;
-  background-color: var(--white);
-  color: var(--graphite);
-  padding: 15px;
+.edit-info-icon {
+  color: var(--lightGraphite);
+  margin-left: 1rem;
+}
+
+.read-only {
+  user-select: none;
+}
+
+.checkout-img {
+  height: 4rem;
+}
+
+.checkout-product-details {
+  font-size: 0.9rem;
 }
 
 .text-orange {
   color: var(--orange);
-  font-size: 1.4rem;
-  font-family: "Bebas Neue", sans-serif !important;
+  font-size: 0.9rem;
 }
-
-/* .w-20 {
-  width: 20%;
-}
-
-.w-35 {
-  width: 35%;
-}
- */
