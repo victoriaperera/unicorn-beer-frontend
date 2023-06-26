@@ -11,10 +11,11 @@ function Products() {
   const products = useSelector((state) => state.admin.products);
   
   const [product, setProduct] = useState("");
-  const [showCU, setShowCU] = useState(false);
   const [action, setAction] = useState("");
+
+  const [showCU, setShowCU] = useState(false);
   const handleShowCU = () => setShowCU(true);
-  const handleCloseCU = () => setShowCU(false);
+  const handleCloseCU = () => {setShowCU(false)};
 
   const [showD, setShowD] = useState(false);
   const handleShowD = () => setShowD(true);

@@ -16,6 +16,10 @@ function ProductModalCU({show, close, product, action}){
   const [price, setPrice] = product ? useState(product.price) : useState("");
   const [stock, setStock] = product ? useState(product.stock) : useState("");
 
+  const resetStates = ()=>{
+   return setStyle(""),setContainer(""),setPrice(""),setStock("");
+  }
+
   const productName = (style, container)=>{
     if(container === "can") {
       return `${style} ${container} 0.09 Oz`
@@ -48,10 +52,7 @@ function ProductModalCU({show, close, product, action}){
         })
         dispatch(createProduct(response.data)); // TODO hacerlo con la misma info que se envía a la DB
         close();
-        setStyle("")
-        setContainer("")
-        setPrice("")
-        setStock("")
+        resetStates();
       }catch(err){
         console.log(err);
       }
@@ -66,15 +67,13 @@ function ProductModalCU({show, close, product, action}){
           // },
           data:{
             productId: product.id,
+            price: price,
             stock: stock
           }
         })
-        dispatch(updateProduct({productId: product.id, stock: stock}))
+        dispatch(updateProduct({productId: product.id, price: price, stock: stock}))
         close();
-        setStyle("")
-        setContainer("")
-        setPrice("")
-        setStock("")
+        resetStates();
       }catch(err){
         console.log(err)
       }
@@ -87,6 +86,7 @@ return (
               show={show} 
               onHide={()=> {
                 close();
+                resetStates();
               }
             }
               size="xl"
@@ -134,7 +134,7 @@ return (
                           <option value="keg">Keg</option>
                           </>
                           :
-                          <option>product.container.name</option>
+                          <option>{product.container.name}</option>
                         }
                         </Form.Select>
                       </Form.Group>
@@ -156,8 +156,8 @@ return (
                        <Form.Control
                          type="number"
                          name="price"
-                         readOnly
-                         value={product.price}
+                         value={price}
+                         onChange={(e) => setPrice(e.target.value)}
                        />
                    </>
                    }
