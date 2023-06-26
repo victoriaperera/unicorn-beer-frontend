@@ -1,7 +1,7 @@
 .checkout-container {
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
 }
 
 .checkout-logo-icon {
@@ -15,23 +15,10 @@
 }
 
 .aside-checkout {
-  position: sticky;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: var(--white);
   color: var(--graphite);
   padding: 15px;
 }
-
-.text-orange {
-  color: var(--orange);
-  font-size: 1.4rem;
-  font-family: "Bebas Neue", sans-serif !important;
-}
-
-/* .w-20 {
-  width: 20%;
-}
-
-.w-35 {
-  width: 35%;
-}
- */
