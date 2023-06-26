@@ -1,18 +1,44 @@
-.checkOutContainer {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+.checkout-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
+
+.checkout-logo-icon {
+  width: 2rem;
+}
+
+.main-checkout {
+  background-color: var(--white);
+  color: var(--graphite);
+  padding: 15px;
+}
+
+.aside-checkout {
+  position: sticky;
+  background-color: var(--white);
+  color: var(--graphite);
+  padding: 15px;
+}
+
 .text-orange {
-    color: var(--orange);
-    font-size: 1.4rem;
-    font-family: "Bebas Neue", sans-serif !important;
+  color: var(--orange);
+  font-size: 1.4rem;
+  font-family: "Bebas Neue", sans-serif !important;
 }
 
 .w-20 {
-    width: 20%;
+  width: 20%;
 }
 
 .w-35 {
-    width: 35%;
+  width: 35%;
+}
+
+.checkout-img {
+  height: 4rem;
+}
+
+.checkout-order-details {
+  font-size: 0.9rem;
 }
