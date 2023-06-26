@@ -121,7 +121,7 @@ function Checkout() {
           <h2 className="m-0">Check Out</h2>
         </div>
         <div className="main-checkout">
-          <h3 className="pb-2">Deliver to</h3>
+          <h3 className="pb-2">Ship to</h3>
           <div className="mb-4">
             <span className="fw-bold">
               {user.firstname} {user.lastname}
@@ -167,11 +167,11 @@ function Checkout() {
             </div>
           </div>
         </div>
-        <div className="main-checkout">
-          <Form method="POST" onSubmit={handleSubmit}>
+        <Form method="POST" onSubmit={handleSubmit}>
+          <div className="main-checkout">
             <div className="row d-flex justify-content-between">
+              <h3>Payment & Delivery</h3>
               <div className="col-12 col-md-6">
-                <h3>Payment</h3>
                 <Form.Group className="my-2">
                   <Form.Label>
                     <i className="bi bi-credit-card-fill me-2"></i> Select Payment Method
@@ -185,6 +185,8 @@ function Checkout() {
                   />
                 </Form.Group>
                 {showCardForm && <CardForm user={user} />}
+              </div>
+              <div className="col-12 col-md-6">
                 <Form.Group className="my-2">
                   <Form.Label>
                     <i className="bi bi-truck fs-6 text-black me-2"></i> Select Delivery Date
@@ -197,7 +199,11 @@ function Checkout() {
                   />
                 </Form.Group>
               </div>
-              <div className="col-12 col-md-5">
+            </div>
+          </div>
+          <div className="main-checkout aside-checkout">
+            <div className="row">
+              <div className="col-12 col-md-6">
                 <h3>Order details</h3>
                 <ListGroup as="ul" className="">
                   {cart.products.length > 0 ? (
@@ -246,24 +252,41 @@ function Checkout() {
                   )}
                 </ListGroup>
               </div>
+              <div className="col-12 col-md-6 d-flex flex-column justify-content-center mt-3 px-5">
+                <div className="d-flex flex-column px-3">
+                  <div className="d-flex justify-content-between mb-3">
+                    <span>Total items in cart:</span>
+                    <span>{cart.totalQuantity}</span>
+                  </div>
+                  <div className="d-flex justify-content-between fw-bold mb-1">
+                    <span>Sub-total:</span>
+                    <span>US$ {cart.totalAmount}</span>
+                  </div>
+                  <div className="d-flex justify-content-between fw-bold mb-1">
+                    <span>Shipping:</span>
+                    <span>Free!</span>
+                  </div>
+                  <div className="d-flex justify-content-between fw-bold mb-1">
+                    <span className="">Payment Total:</span>
+                    <span>US$ {cart.totalAmount}</span>
+                  </div>
+                </div>
+
+                <button type="submit" className="btn btn-cofirm-order rounded-pill w-100 my-3">
+                  Confirm Order
+                </button>
+                <span className="text-center">
+                  <small>Our Damn Tasty Beer is Just a Click Away!</small>
+                </span>
+                {alertToggle && (
+                  <Alert className="mt-5" variant="danger">
+                    {alertText}
+                  </Alert>
+                )}
+              </div>
             </div>
-            <div className="my-3 d-flex flex-column">
-              <p className="m-0 me-2 fs-4 text-orange">Payment total: </p>
-              <p className="m-0 fs-4 fw-bold">US$ {cart.totalAmount}</p>
-              <Button type="submit" variant="warning" className="rounded-pill w-25 my-3">
-                Confirm Order
-              </Button>
-              <span className="">
-                <small>Our Damn Tasty Beer is Just a Click Away!</small>
-              </span>
-              {alertToggle && (
-                <Alert className="mt-5" variant="danger">
-                  {alertText}
-                </Alert>
-              )}
-            </div>
-          </Form>
-        </div>
+          </div>
+        </Form>
       </div>
     </div>
   );
