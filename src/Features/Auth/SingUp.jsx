@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { Alert } from "react-bootstrap";
@@ -27,7 +27,7 @@ function SignUp() {
     setColor(useRandomColor())
    
   }, []);
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (password === confirmPassword) {
