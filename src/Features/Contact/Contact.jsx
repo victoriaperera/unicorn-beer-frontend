@@ -55,7 +55,7 @@ function Contact() {
       <OutOfScopeModal />
       <div className="parent_container">
         <div className="d-flex justify-content-center align-items-center container-contact">
-          <div className="row d-flex justify-content-center ">
+          <div className="row d-flex justify-content-center mx-4">
             <div
               className="col-md-7 d-none d-md-flex flex-wrap align-items-center justify-content-center p-4 rounded-start"
               style={{ backgroundColor: color }}

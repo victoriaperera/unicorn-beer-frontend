@@ -42,7 +42,9 @@
   align-items: center;
 }
 
-#signup-row {
+#signup-row,
+#login-row,
+#admin-row {
   margin-top: 100px;
   margin-bottom: 50px;
 }

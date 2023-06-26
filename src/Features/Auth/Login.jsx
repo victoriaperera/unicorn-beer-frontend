@@ -53,7 +53,7 @@ function Login() {
       <Header title={pageTitle} />
       <div className="parent_container" style={{ height: "90vh" }}>
         <div className="d-flex justify-content-center align-items-center">
-          <div id="signup-row" className="row mx-0">
+          <div id="login-row" className="row mx-0">
             <div
               className="col-md-7 d-none d-md-flex flex-wrap align-items-center justify-content-center p-4 rounded-start "
               style={{ backgroundColor: color }}
