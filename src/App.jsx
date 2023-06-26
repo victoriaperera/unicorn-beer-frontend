@@ -19,10 +19,11 @@ import AdminLogin from "./Features/Auth/adminLogin";
 function App() {
   const { pathname: currentPage } = useLocation();
   const pagesWONavbars = ["/admin"];
+  const RenderVerify = !currentPage.includes("/admin");
 
   return (
     <>
-      <Verify />
+      {RenderVerify && <Verify />}
       {!pagesWONavbars.includes(currentPage) && <UnicornNavbar />}
       <Routes>
         <Route path="/" element={<Home />} />
