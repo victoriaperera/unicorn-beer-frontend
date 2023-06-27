@@ -67,7 +67,7 @@ function OrderCard() {
               Date
             </th>
             <th scope="col" className="orders-table-heading">
-              User
+              Customer
             </th>
             <th scope="col" className="orders-table-heading">
               Products
