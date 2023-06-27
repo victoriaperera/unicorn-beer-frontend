@@ -15,7 +15,6 @@ function Contact() {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
 
   const [alertText, setAlertText] = useState("");
@@ -28,7 +27,7 @@ function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!firstname || !lastname || !email || !phone || !message) {
+    if (!firstname || !lastname || !email || !message) {
       setAlertToggle(true);
       setAlertText("Fill in all the fields, please");
     } else {
@@ -40,7 +39,6 @@ function Contact() {
             firstname,
             lastname,
             email,
-            phone,
             message,
           },
         });
@@ -94,7 +92,7 @@ function Contact() {
                 </div>
 
                 <div className="row my-2">
-                  <Form.Group className="col-6">
+                  <Form.Group className="col-12">
                     <Form.Label>Email</Form.Label>
                     <InputGroup hasValidation>
                       <Form.Control
@@ -108,15 +106,6 @@ function Contact() {
                         Please put a contact e-mail.
                       </Form.Control.Feedback>
                     </InputGroup>
-                  </Form.Group>
-                  <Form.Group className="col-6 ">
-                    <Form.Label>Phone</Form.Label>
-                    <Form.Control
-                      value={user ? `${user.phone}` : ""}
-                      type="number"
-                      placeholder="Phone"
-                      onChange={(e) => setPhone(e.target.value)}
-                    />
                   </Form.Group>
                 </div>
 

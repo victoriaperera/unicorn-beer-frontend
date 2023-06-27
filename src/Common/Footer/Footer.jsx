@@ -3,6 +3,7 @@ import "./styles.css";
 import { NavLink, Nav } from "react-bootstrap";
 import { useSetColor } from "../../hook/useSetColor";
 import { useLocation } from "react-router";
+import { Link } from "react-router-dom";
 
 function Footer() {
   const lastProduct = useSelector((state) => state.product);
@@ -35,17 +36,20 @@ function Footer() {
         <small className="text-white fw-lighter">{`© ${new Date().getFullYear()} Unicorn Beer Craft Beer & Co.`}</small>
       </div>
       <Nav className="footerLinkContainer">
-        <Nav.Link href="/about" className="footerLink">
+        <Nav.Link as={Link} to="/about" className="footerLink">
           ABOUT OUR PROJECT
         </Nav.Link>
-        <Nav.Link href="/#our-beer-section" className="footerLink">
+        <Nav.Link as={Link} to="/#our-beer-section" className="footerLink">
           OUR BEER
         </Nav.Link>
-        <Nav.Link href="/shop" className="footerLink">
+        <Nav.Link as={Link} to="/shop" className="footerLink">
           SHOP
         </Nav.Link>
-        <Nav.Link href="/contact" className="footerLink">
+        <Nav.Link as={Link} to="/contact" className="footerLink">
           CONTACT
+        </Nav.Link>
+        <Nav.Link as={Link} to="/admin/login" className="footerLink">
+          ADMIN
         </Nav.Link>
       </Nav>
       <div>
