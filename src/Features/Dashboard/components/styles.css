@@ -15,7 +15,10 @@
 }
 
 .create-icon {
-  color: green !important;
+  color: var(--green) !important;
+}
+.check-icon {
+  color: var(--green) !important;
 }
 
 /**** DASHBOARD ****/
