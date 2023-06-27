@@ -3,6 +3,7 @@ import React from "react";
 import { useCheckImg } from "../../../../hook/useCheckImg";
 import { useDispatch } from "react-redux";
 import { incrementQuantity, decrementQuantity, removeItem } from "../cartSlice";
+import { setToggleToastRemove } from "../../../../Features/Shop/shopSlice";
 
 function CartProduct({ product }) {
   const dispatch = useDispatch();
@@ -20,12 +21,24 @@ function CartProduct({ product }) {
       <div className="w-75 ps-2">
         <div className="d-flex justify-content-between pt-1">
           <span>{product.name}</span>
-          <i className="bi bi-trash3" onClick={() => dispatch(removeItem(product.id))}></i>
+          <i
+            className="bi bi-trash3"
+            onClick={() => {
+              dispatch(removeItem(product.id));
+              dispatch(setToggleToastRemove());
+            }}
+          ></i>
         </div>
         <div className="d-flex justify-content-between pt-1">
           <div className="d-flex">
             {product.quantity === 1 ? (
-              <i className="bi bi-trash3" onClick={() => dispatch(removeItem(product.id))}></i>
+              <i
+                className="bi bi-trash3"
+                onClick={() => {
+                  dispatch(removeItem(product.id));
+                  dispatch(setToggleToastRemove());
+                }}
+              ></i>
             ) : (
               <i
                 className="bi bi-dash-circle"

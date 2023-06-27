@@ -20,28 +20,35 @@ function About() {
   const sectionAbout = useRef(null);
 
   const scrollToSection = (ref) => {
-    ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    ref.current.scrollIntoView({ behavior: "smooth", block: "center" });
   };
 
-  const logoRef = useRef(null);
+  const animationRef1 = useRef(null);
+  const animationRef2 = useRef(null);
+  const animationRef3 = useRef(null);
+  const animationRef4 = useRef(null);
 
   useEffect(() => {
-    gsap.fromTo(
-      logoRef.current,
-      {
-        opacity: 0,
-        y: 40,
-      },
-      {
-        duration: 2,
-        opacity: 1,
-        y: 0,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: logoRef.current,
+    const refs = [animationRef1, animationRef2, animationRef3, animationRef4];
+
+    refs.forEach((ref) => {
+      gsap.fromTo(
+        ref.current,
+        {
+          opacity: 0,
+          y: 40,
         },
-      },
-    );
+        {
+          duration: 2,
+          opacity: 1,
+          y: 0,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ref.current,
+          },
+        },
+      );
+    });
   }, []);
 
   return (
@@ -79,211 +86,246 @@ function About() {
       <div ref={sectionAbout}>
         <AboutHeader />
       </div>
-      <Container fluid className="text-center ">
+      <Container fluid className="text-center">
         <Row
           className="about-section about-section-one p-0 justify-content-center align-items-center "
           ref={sectionTech}
         >
-          <Col xs={12} md={5} className="align-self-end mb-2">
-            <h3 className="mb-3">TECHNOLOGIES & TOOLS</h3>
-            <p>
-              Throughout the coding bootcamp, we delved into a wide range of technologies
-              encompassing both backend and front end development. We also gained hands-on
-              experience with databases and leveraged practical tools to optimize our workflow.
-            </p>
-            <p>
-              For this project, we handpicked the following set of tools to boost our productivity.
-            </p>
-          </Col>
-          <Col
-            xs={12}
-            sm={10}
-            md={8}
-            className="d-flex justify-content-center align-self-start flex-wrap gap-2 w-100 m-0"
-            ref={logoRef}
-          >
-            <div className="iconTech d-flex">
-              <i>
-                <img
-                  src="src/assets/icons/bootstrap_logo.png"
-                  alt="bootrapp icon"
-                  typeof="png/image"
-                  className="tech-icon"
-                />
-              </i>
-              <small>Bootsrapp</small>
-            </div>
-            <div className="iconTech">
-              <i>
-                <img
-                  src="src/assets/icons/css_logo.png"
-                  alt="css4 icon"
-                  typeof="png/image"
-                  className="tech-icon"
-                />
-              </i>
-              <small>CSS3</small>
-            </div>
-            <div className="iconTech">
-              <i>
-                <img
-                  src="src/assets/icons/figma_logo.png"
-                  alt="figma icon"
-                  typeof="png/image"
-                  className="tech-icon"
-                />
-              </i>
-              <small>Figma</small>
-            </div>
-            <div className="iconTech">
-              <i>
-                <img
-                  src="src/assets/icons/github_logo.png"
-                  alt="github icon"
-                  typeof="png/image"
-                  className="tech-icon"
-                />
-              </i>
-              <small>Github</small>
-            </div>
-            <div className="iconTech">
-              <i>
-                <img
-                  src="src/assets/icons/javascript_logo.png"
-                  alt="javascript icon"
-                  typeof="png/image"
-                  className="tech-icon"
-                />
-              </i>
-              <small>JavaScript</small>
-            </div>
-            <div className="iconTech">
-              <i>
-                <img
-                  src="src/assets/icons/mongodb_logo.png"
-                  alt="mongodb icon"
-                  typeof="png/image"
-                  className="tech-icon"
-                />
-              </i>
-              <small>MongoDB</small>
-            </div>
-            <div className="iconTech">
-              <i>
-                <img
-                  src="src/assets/icons/nodejs_logo.png"
-                  alt="node icon"
-                  typeof="png/image"
-                  className="tech-icon"
-                />
-              </i>
-              <small>NodeJS</small>
-            </div>
-            <div className="iconTech">
-              <i>
-                <img
-                  src="src/assets/icons/react_logo.png"
-                  alt="react icon"
-                  typeof="png/image"
-                  className="tech-icon"
-                />
-              </i>
-              <small>React</small>
-            </div>
-            <div className="iconTech">
-              <i>
-                <img
-                  src="src/assets/icons/redux_logo.png"
-                  alt="redux icon"
-                  typeof="png/image"
-                  className="tech-icon"
-                />
-              </i>
-              <small>Redux</small>
-            </div>
-            <div className="iconTech">
-              <i>
-                <img
-                  src="src/assets/icons/greensock_logo.png"
-                  alt="greensock icon"
-                  typeof="png/image"
-                  className="tech-icon"
-                />
-              </i>
-              <small>Green Sock</small>
-            </div>
-          </Col>
+          <div className="animation-container" ref={animationRef1}>
+            <Col xs={12} md={8} lg={6} className="align-self-center mb-2">
+              <h3 className="mb-3">TECHNOLOGIES & TOOLS</h3>
+              <p>
+                Throughout the coding bootcamp, we delved into a wide range of technologies
+                encompassing both backend and front end development. We also gained hands-on
+                experience with databases and leveraged practical tools to optimize our workflow.
+              </p>
+              <p>
+                For this project, we handpicked the following set of tools to boost our
+                productivity.
+              </p>
+            </Col>
+            <Col
+              xs={12}
+              sm={10}
+              md={8}
+              className="d-flex justify-content-center align-self-center flex-wrap gap-2 w-100 m-0"
+            >
+              <div className="iconTech d-flex">
+                <i>
+                  <img
+                    src="src/assets/icons/bootstrap_logo.png"
+                    alt="bootrapp icon"
+                    typeof="png/image"
+                    className="tech-icon"
+                  />
+                </i>
+                <small>Bootsrapp</small>
+              </div>
+              <div className="iconTech">
+                <i>
+                  <img
+                    src="src/assets/icons/css_logo.png"
+                    alt="css4 icon"
+                    typeof="png/image"
+                    className="tech-icon"
+                  />
+                </i>
+                <small>CSS3</small>
+              </div>
+              <div className="iconTech">
+                <i>
+                  <img
+                    src="src/assets/icons/figma_logo.png"
+                    alt="figma icon"
+                    typeof="png/image"
+                    className="tech-icon"
+                  />
+                </i>
+                <small>Figma</small>
+              </div>
+              <div className="iconTech">
+                <i>
+                  <img
+                    src="src/assets/icons/github_logo.png"
+                    alt="github icon"
+                    typeof="png/image"
+                    className="tech-icon"
+                  />
+                </i>
+                <small>Github</small>
+              </div>
+              <div className="iconTech">
+                <i>
+                  <img
+                    src="src/assets/icons/javascript_logo.png"
+                    alt="javascript icon"
+                    typeof="png/image"
+                    className="tech-icon"
+                  />
+                </i>
+                <small>JavaScript</small>
+              </div>
+              <div className="iconTech">
+                <i>
+                  <img
+                    src="src/assets/icons/mongodb_logo.png"
+                    alt="mongodb icon"
+                    typeof="png/image"
+                    className="tech-icon"
+                  />
+                </i>
+                <small>MongoDB</small>
+              </div>
+              <div className="iconTech">
+                <i>
+                  <img
+                    src="src/assets/icons/nodejs_logo.png"
+                    alt="node icon"
+                    typeof="png/image"
+                    className="tech-icon"
+                  />
+                </i>
+                <small>NodeJS</small>
+              </div>
+              <div className="iconTech">
+                <i>
+                  <img
+                    src="src/assets/icons/react_logo.png"
+                    alt="react icon"
+                    typeof="png/image"
+                    className="tech-icon"
+                  />
+                </i>
+                <small>React</small>
+              </div>
+              <div className="iconTech">
+                <i>
+                  <img
+                    src="src/assets/icons/redux_logo.png"
+                    alt="redux icon"
+                    typeof="png/image"
+                    className="tech-icon"
+                  />
+                </i>
+                <small>Redux</small>
+              </div>
+              <div className="iconTech">
+                <i>
+                  <img
+                    src="src/assets/icons/greensock_logo.png"
+                    alt="greensock icon"
+                    typeof="png/image"
+                    className="tech-icon"
+                  />
+                </i>
+                <small>Green Sock</small>
+              </div>
+              <div className="iconTech">
+                <i>
+                  <img
+                    src="src/assets/icons/Trello.png"
+                    alt="Trello icon"
+                    typeof="png/image"
+                    className="tech-icon"
+                  />
+                </i>
+                <small>Trello</small>
+              </div>
+            </Col>
+          </div>
         </Row>
         <Row
           className="about-section about-section-two p-0 justify-content-center align-items-center"
           ref={sectionMer}
         >
-          <Col xs={12} md={5} className="align-self-end mb-2 mt-5">
-            <h3 className="mb-4">PROJECT ORGANIZATION - MER</h3>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti iure perspiciatis
-              ducimus porro cupiditate. Nobis, nulla repudiandae dolores ex ducimus recusandae quos
-              mollitia sit soluta similique quod magnam. Dolor, voluptates!
-            </p>
-          </Col>
-          <Col className="d-flex image-container align-self-start justify-content-center p-0 mb-5 mx-4 col-12">
-            <img
-              src="src/assets/img/MER-small.png"
-              alt="MER"
-              className="product-design small"
-              fluid
-            />
-            <img
-              src="src/assets/img/MER-medium.png"
-              alt="MER"
-              className="product-design medium"
-              fluid
-            />
-            <img
-              src="src/assets/img/MER-large.png"
-              alt="MER"
-              className="product-design large"
-              fluid
-            />
-          </Col>
+          <div className="animation-container" ref={animationRef2}>
+            <Col xs={12} md={8} lg={6} className="align-self-center mb-4">
+              <h3 className="mb-3">PROJECT ORGANIZATION - MER</h3>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti iure perspiciatis
+                ducimus porro cupiditate. Nobis, nulla repudiandae dolores ex ducimus recusandae
+                quos mollitia sit soluta similique quod magnam. Dolor, voluptates!
+              </p>
+            </Col>
+            <Col className="d-flex image-container align-self-center justify-content-center p-0 mb-5 mx-4 col-12">
+              <img
+                src="src/assets/img/MER-small.png"
+                alt="MER"
+                className="product-design small"
+                fluid
+              />
+              <img
+                src="src/assets/img/MER-medium.png"
+                alt="MER"
+                className="product-design medium"
+                fluid
+              />
+              <img
+                src="src/assets/img/MER-large.png"
+                alt="MER"
+                className="product-design large"
+                fluid
+              />
+            </Col>
+          </div>
         </Row>
         <Row
           className="about-section about-section-three p-0 justify-content-center align-items-center "
           ref={sectionDesign}
         >
-          <Col xs={12} md={5} className="align-self-end mb-4">
-            <h3 className="mb-5">PRODUCT DESIGN</h3>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti iure perspiciatis
-              ducimus porro cupiditate. Nobis, nulla repudiandae dolores ex ducimus recusandae quos
-              mollitia sit soluta similique quod magnam. Dolor, voluptates!
-            </p>
-          </Col>
-          <Col className="d-flex image-container align-self-start justify-content-center p-0 col-12">
-            <img
-              src="src/assets/img/product-design-sm.png"
-              alt="Product design"
-              className="product-design small"
-              fluid
-            />
-            <img
-              src="src/assets/img/product-design-md.png"
-              alt="Product design"
-              className="product-design medium"
-              fluid
-            />
-            <img
-              src="src/assets/img/product-design-lg.png"
-              alt="Product design"
-              className="product-design large"
-              fluid
-            />
-          </Col>
+          <div className="animation-container" ref={animationRef3}>
+            <Col xs={12} md={8} lg={6} className="align-self-center mb-4">
+              <h3 className="mb-3">PRODUCT DESIGN</h3>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti iure perspiciatis
+                ducimus porro cupiditate. Nobis, nulla repudiandae dolores ex ducimus recusandae
+                quos mollitia sit soluta similique quod magnam. Dolor, voluptates!
+              </p>
+            </Col>
+            <Col className="d-flex image-container align-self-center justify-content-center p-0 col-12">
+              <img
+                src="src/assets/img/product-design-sm.png"
+                alt="Product design"
+                className="product-design small"
+                fluid
+              />
+              <img
+                src="src/assets/img/product-design-md.png"
+                alt="Product design"
+                className="product-design medium"
+                fluid
+              />
+              <img
+                src="src/assets/img/product-design-lg.png"
+                alt="Product design"
+                className="product-design large"
+                fluid
+              />
+            </Col>
+          </div>
         </Row>
-        <Row>
-          <Col className="col-12 about-section about-section-four p-2" ref={sectionAdmin}>
-            <h3>ADMIN DASHBOARD</h3>
-          </Col>
+        <Row
+          className="about-section about-section-four p-0 justify-content-center align-items-center "
+          ref={sectionAdmin}
+        >
+          <div className="animation-container" ref={animationRef4}>
+            <Col xs={12} md={8} lg={6} className="align-self-center mb-4">
+              <h3 className="mb-3">ADMIN DASHBOARD</h3>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti iure perspiciatis
+                ducimus porro cupiditate. Nobis, nulla repudiandae dolores ex ducimus recusandae
+                quos mollitia sit soluta similique quod magnam. Dolor, voluptates!
+              </p>
+            </Col>
+            <Col className="d-flex image-container align-self-center justify-content-center p-0 col-12">
+              <img
+                src="src/assets/img/Admin_dashboard.png"
+                alt="Admin dashboard"
+                className="dashboard-img"
+                fluid
+              />
+            </Col>
+          </div>
         </Row>
         <Row
           className="about-section about-section-team p-0 justify-content-center align-items-center "

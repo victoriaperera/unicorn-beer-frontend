@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import format from "date-fns/format";
+import OrderModal from "./OrderModal";
 
 import { updateOrderStatus } from "../adminSlice";
 import "./styles.css";
@@ -10,6 +11,12 @@ function OrderCard() {
   const orders = useSelector((state) => state.admin.orders);
   const token = useSelector((state) => state.admin.token);
   const dispatch = useDispatch();
+
+  const [show, setShow] = useState(false);
+  const handleShow = () => { setShow(true)}
+  const handleClose = () => { setShow(false)}
+
+  const [order, setOrder] = useState("");
 
   const statusColor = (status) => {
     switch (status) {
@@ -49,6 +56,7 @@ function OrderCard() {
 
   return (
     <>
+    <OrderModal order={order} show={show} close={handleClose}/>
       <table className="table table-hover text-center align-middle">
         <thead className="align-middle">
           <tr>
@@ -59,7 +67,7 @@ function OrderCard() {
               Date
             </th>
             <th scope="col" className="orders-table-heading">
-              User
+              Customer
             </th>
             <th scope="col" className="orders-table-heading">
               Products
@@ -72,6 +80,9 @@ function OrderCard() {
             </th>
             <th scope="col" className="orders-table-heading">
               Status
+            </th>
+            <th scope="col" className="orders-table-heading">
+              Order Details
             </th>
           </tr>
         </thead>
@@ -110,11 +121,20 @@ function OrderCard() {
                     </option>
                   </select>
                 </td>
+                <td>
+                  <i className="bi bi-bullseye show-icon"
+                  onClick={()=>{
+                    setOrder(order);
+                    handleShow();
+                  }}
+                  >
+                  </i>
+                </td>
               </tr>
             ))
           ) : (
             <tr>
-              <td colSpan="6">Thera are no orders to display.</td>
+              <td colSpan="6">There are no orders to display.</td>
             </tr>
           )}
         </tbody>
