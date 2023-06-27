@@ -108,7 +108,6 @@ function FeaturedProducts({ product, afterColor }) {
           <Col xs={12} sm={8} md={4} lg={3} xxl={3} className="py-3" ref={rightRef}>
             <p>VOL.</p>
             <h4 className="fw-bolder fs-1">{product.style.abv}%</h4>
-            <p>AMBER</p>
             <BuyNowBtn product={product}></BuyNowBtn>
           </Col>
           <div className="divider-bottom p-0">
