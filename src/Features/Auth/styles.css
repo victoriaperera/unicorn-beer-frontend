@@ -69,7 +69,21 @@
 
 /** USER ACCOUNT **/
 
-.account-container {
-  height: 100vh;
+.graphite-background-account {
+  background-color: var(--lightGraphite);
+  color: var(--white);
   padding-top: 100px;
+}
+
+.account-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-account {
+  background-color: var(--white);
+  color: var(--graphite);
+  padding: 15px;
+  margin-bottom: 1rem;
 }
