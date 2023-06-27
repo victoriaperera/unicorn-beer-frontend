@@ -252,31 +252,32 @@ function Checkout() {
                   )}
                 </ListGroup>
               </div>
-              <div className="col-12 col-md-6 d-flex flex-column justify-content-center mt-3 px-5">
-                <div className="d-flex flex-column px-3">
-                  <div className="d-flex justify-content-between mb-3">
+              <div className="col-12 col-md-6 d-flex flex-column mb-3">
+                <h3>Payment summary</h3>
+                <div className="d-flex flex-column px-3 pt-4">
+                  <div className="d-flex justify-content-between mb-3 text-orange">
                     <span>Total items in cart:</span>
                     <span>{cart.totalQuantity}</span>
                   </div>
-                  <div className="d-flex justify-content-between fw-bold mb-1">
+                  <div className="d-flex justify-content-between mb-1">
                     <span>Sub-total:</span>
                     <span>US$ {cart.totalAmount}</span>
                   </div>
-                  <div className="d-flex justify-content-between fw-bold mb-1">
+                  <div className="d-flex justify-content-between mb-1">
                     <span>Shipping:</span>
                     <span>Free!</span>
                   </div>
-                  <div className="d-flex justify-content-between fw-bold mb-1">
+                  <div className="d-flex justify-content-between fw-bold my-1">
                     <span className="">Payment Total:</span>
                     <span>US$ {cart.totalAmount}</span>
                   </div>
                 </div>
-
-                <button type="submit" className="btn btn-cofirm-order rounded-pill w-100 my-3">
+                <button type="submit" className="btn btn-cofirm-order rounded-pill w-75 my-3">
+                  <i className="bi bi-lock-fill me-2"></i>
                   Confirm Order
                 </button>
                 <span className="text-center">
-                  <small>Our Damn Tasty Beer is Just a Click Away!</small>
+                  <small>Our damn tasty beer is just a click away!</small>
                 </span>
                 {alertToggle && (
                   <Alert className="mt-5" variant="danger">
