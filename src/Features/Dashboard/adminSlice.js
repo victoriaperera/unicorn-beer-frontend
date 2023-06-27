@@ -32,7 +32,6 @@ const adminSlice = createSlice({
       state.toggleCreateProduct = action.payload;
     },
     setToggleDelete(state, action) {
-      console.log(action.payload);
       state.toggleDeleteProduct = action.payload;
     },
     setOrders: (state, action) => {
@@ -42,26 +41,24 @@ const adminSlice = createSlice({
       state.users = action.payload;
     },
     deleteUser: (state, action) => {
-      state.users = state.users.filter((user) => user.id !== user.payload);
+      const deletedUser = action.payload;
+      state.users = state.users.filter((user) => user.id !== deletedUser.id);
     },
     setProducts: (state, action) => {
       state.products = action.payload;
     },
     createProduct: (state, action) => {
       const newProduct = action.payload;
-      const product = state.products.find((product) => product.id === newProduct.id);
+      state.products.push(newProduct);
+    },
+    updateProduct: (state, action) => {
+      const updatedProduct = action.payload;
+      const product = state.products.find((product) => product.id === updatedProduct.id);
       if (product) {
-        product.status = newProduct.status;
+        product.status = updatedProduct.status;
         const productIndex = state.products.indexOf(product);
         state.products[productIndex] = product;
       }
-    },
-    updateProduct: (state, action) => {
-      state.products = state.products.map((product) =>
-        product.id === action.payload.productId
-          ? { ...product, price: action.payload.price, stock: action.payload.stock }
-          : product,
-      );
     },
     deleteProduct: (state, action) => {
       state.products = state.products.filter((product) => product.id !== action.payload);
@@ -69,8 +66,18 @@ const adminSlice = createSlice({
     setStyles: (state, action) => {
       state.styles = action.payload;
     },
-    createStyle: (state, action) => {},
-    updateStyle: (state, action) => {},
+    createStyle: (state, action) => {
+      state.styles.push(action.payload);
+    },
+    updateStyle: (state, action) => {
+      const updatedStyle = action.payload;
+      const style = state.styles.find((style) => style.id === updatedStyle.id);
+      if (style) {
+        style.status = updatedStyle.status;
+        const styleIndex = state.styles.indexOf(style);
+        state.styles[styleIndex] = style;
+      }
+    },
     deleteStyle: (state, action) => {
       state.styles = state.styles.filter((style) => style.id !== action.payload);
     },

@@ -30,10 +30,6 @@ function ProductModalCU({ product, action }) {
     return setStyle(""), setContainer([]), setStock("");
   };
 
-  // const [showCateg, setShowCateg] = useState(false);
-  // const handleShowCateg = () => setShowCateg(true);
-  // const handleCloseCateg = () => setShowCateg(false);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (action === "create") {

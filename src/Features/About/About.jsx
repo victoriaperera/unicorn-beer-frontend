@@ -84,7 +84,7 @@ function About() {
           className="about-section about-section-one p-0 justify-content-center align-items-center "
           ref={sectionTech}
         >
-          <Col xs={12} md={8} className="align-self-end mb-2">
+          <Col xs={12} md={5} className="align-self-end mb-2">
             <h3 className="mb-3">TECHNOLOGIES & TOOLS</h3>
             <p>
               Throughout the coding bootcamp, we delved into a wide range of technologies
@@ -218,7 +218,7 @@ function About() {
           className="about-section about-section-two p-0 justify-content-center align-items-center"
           ref={sectionMer}
         >
-          <Col xs={12} md={8} className="align-self-end mb-2 mt-5">
+          <Col xs={12} md={5} className="align-self-end mb-2 mt-5">
             <h3 className="mb-4">PROJECT ORGANIZATION - MER</h3>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti iure perspiciatis
@@ -226,7 +226,7 @@ function About() {
               mollitia sit soluta similique quod magnam. Dolor, voluptates!
             </p>
           </Col>
-          <Col className="d-flex image-container align-self-start justify-content-center p-0 mb-5 mx-4">
+          <Col className="d-flex image-container align-self-start justify-content-center p-0 mb-5 mx-4 col-12">
             <img
               src="src/assets/img/MER-small.png"
               alt="MER"
@@ -251,7 +251,7 @@ function About() {
           className="about-section about-section-three p-0 justify-content-center align-items-center "
           ref={sectionDesign}
         >
-          <Col xs={12} md={8} className="align-self-end mb-4">
+          <Col xs={12} md={5} className="align-self-end mb-4">
             <h3 className="mb-5">PRODUCT DESIGN</h3>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti iure perspiciatis
@@ -259,7 +259,7 @@ function About() {
               mollitia sit soluta similique quod magnam. Dolor, voluptates!
             </p>
           </Col>
-          <Col className="d-flex image-container align-self-start justify-content-center p-0">
+          <Col className="d-flex image-container align-self-start justify-content-center p-0 col-12">
             <img
               src="src/assets/img/product-design-sm.png"
               alt="Product design"
