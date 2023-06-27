@@ -32,7 +32,6 @@ const adminSlice = createSlice({
       state.toggleCreateProduct = action.payload;
     },
     setToggleDelete(state, action) {
-      console.log(action.payload);
       state.toggleDeleteProduct = action.payload;
     },
     setOrders: (state, action) => {
@@ -53,11 +52,13 @@ const adminSlice = createSlice({
       state.products.push(newProduct);
     },
     updateProduct: (state, action) => {
-      state.products = state.products.map((product) =>
-        product.id === action.payload.productId
-          ? { ...product, price: action.payload.price, stock: action.payload.stock }
-          : product,
-      );
+      const updatedProduct = action.payload;
+      const product = state.products.find((product) => product.id === updatedProduct.id);
+      if (product) {
+        product.status = updatedProduct.status;
+        const productIndex = state.products.indexOf(product);
+        state.products[productIndex] = product;
+      }
     },
     deleteProduct: (state, action) => {
       state.products = state.products.filter((product) => product.id !== action.payload);
