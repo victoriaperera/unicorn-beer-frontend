@@ -25,7 +25,7 @@ function Footer() {
           ></path>
         </svg>
       </div>
-      <div className="d-flex flex-column gap-3">
+      <div className="d-flex flex-column gap-3 mt-5">
         <NavLink href="/">
           <img
             src="/src/assets/icons/Unicorn-beer-white-logo-iso.svg"
@@ -53,7 +53,7 @@ function Footer() {
         </Nav.Link>
       </Nav>
       <div className="d-flex align-items-center justify-content-around">
-        <h5 className="text-white m-0">Social:</h5>
+        <h6 className="text-white m-0">Social:</h6>
         <div className="d-flex justify-content-between">
           <Nav.Link href="#" className="mx-2 footerLink text-white">
             <i className="bi bi-facebook fs-6 text-white"></i>
