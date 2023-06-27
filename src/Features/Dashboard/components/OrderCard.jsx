@@ -93,8 +93,9 @@ function OrderCard() {
                     value={order.status}
                     onChange={(e) => handleStatusChange(e.target.value, order.id)}
                   >
-                    <option value="paid">Paid</option>
                     <option value="not_paid">Not Paid</option>
+                    <option value="paid">Paid</option>
+                    <option value="confirmed">Confirmed</option>
                     <option value="shipped">Shipped</option>
                     <option value="delivered">Delivered</option>
                   </select>

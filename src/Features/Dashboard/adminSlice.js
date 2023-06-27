@@ -49,12 +49,7 @@ const adminSlice = createSlice({
     },
     createProduct: (state, action) => {
       const newProduct = action.payload;
-      const product = state.products.find((product) => product.id === newProduct.id);
-      if (product) {
-        product.status = newProduct.status;
-        const productIndex = state.products.indexOf(product);
-        state.products[productIndex] = product;
-      }
+      state.products.push(newProduct);
     },
     updateProduct: (state, action) => {
       state.products = state.products.map((product) =>
