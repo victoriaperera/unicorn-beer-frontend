@@ -61,8 +61,8 @@ function TeamMemberCard({ admin }) {
     <>
       <Col className="mb-4" ref={circleOne}>
         <img
-          src="/src/assets/icons/user-1.png"
-          alt="User Avatar"
+          src="/src/assets/img/members/Tebi-card.png"
+          alt="Esteban Castañeira"
           className="img-team-member"
           onMouseEnter={handleExpand}
           onMouseLeave={handleShrink}
