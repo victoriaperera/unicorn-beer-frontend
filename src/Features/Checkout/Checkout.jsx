@@ -34,18 +34,10 @@ function Checkout() {
   const formatOptionLabel = ( option ) => {
     return(
       <div>
-      <img src={option.image} alt={option.label} style={{ width: '20px', marginRight: '10px' }} />
+      <img src={option.image} alt={option.label} style={{ width: '33px', marginRight: '10px' }} />
       {option.label}
     </div>
     )
-  };
-  const customStylesPM = {
-    option: (provided, state) => ({
-      ...provided,
-      color: "black",
-      background: `url(${state.data.image}) no-repeat center left`,
-      paddingLeft: "50px",
-    }),
   };
 
   const deliveryOptions = [];
@@ -88,7 +80,7 @@ function Checkout() {
             },
             data: {
               products: cart.products,
-              paymentMethod,
+              paymentMethod: paymentMethod.label,
               totalAmount: cart.totalAmount,
               totalQuantity: cart.totalQuantity,
               status: "paid",
@@ -186,7 +178,6 @@ function Checkout() {
                     value={paymentMethod}
                     name="paymentMethod"
                     options={paymentOptions}
-                    styles={customStylesPM}
                     onChange={handlePaymentMethodChange}
                     formatOptionLabel={formatOptionLabel}
                     required
