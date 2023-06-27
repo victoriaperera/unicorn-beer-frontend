@@ -30,6 +30,7 @@ function Home() {
       dispatch(setProductList(aux));
       const myText = new SplitType(".beers-heading");
       gsap.to(".char", {
+        //TODO: ver a que elemento se le asigna esta clase
         y: 0,
         stagger: 0.05,
         delay: 0.2,

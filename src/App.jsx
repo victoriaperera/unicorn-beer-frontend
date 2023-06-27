@@ -1,4 +1,6 @@
 import "./App.css";
+import { Routes, Route, useLocation } from "react-router-dom";
+
 import Verify from "./Common/Navbar/Verify/Verify";
 import UnicornNavbar from "./Common/Navbar/UnicornNavbar";
 import Footer from "./Common/Footer/Footer";
@@ -6,8 +8,6 @@ import Home from "./Features/Home/Home";
 import About from "./Features/About/About";
 import Cart from "./Common/Navbar/Cart/Cart";
 import Shop from "./Features/Shop/Shop";
-import { Routes, Route, useLocation } from "react-router-dom";
-
 import Login from "./Features/Auth/Login";
 import SignUp from "./Features/Auth/Singup";
 import UserAccount from "./Features/Auth/UserAccount";

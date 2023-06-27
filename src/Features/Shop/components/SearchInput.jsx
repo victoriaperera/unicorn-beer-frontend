@@ -1,9 +1,11 @@
 import { Form } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { setFilter } from "../shopSlice";
+import { useRef } from "react";
 
-function SearchInput({ productRef }) {
+function SearchInput() {
   const dispatch = useDispatch();
+  const ref = useRef(null);
 
   const handlerInput = (e) => {
     e.preventDefault();
@@ -11,11 +13,11 @@ function SearchInput({ productRef }) {
   };
   const handlerOnClick = (e) => {
     e.preventDefault();
-    productRef.current.scrollIntoView({ behavior: "smooth" });
+    ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
-    <Form onClick={handlerOnClick} className="scroll-margin">
+    <Form onClick={handlerOnClick} className="search-container" ref={ref}>
       <span className="centering">
         <span className="box">
           <input className="search" placeholder=" " spellCheck="false" onInput={handlerInput} />

@@ -9,6 +9,9 @@ const adminSlice = createSlice({
     products: [],
     users: [],
     styles: [],
+    toggleCreateStyle: false,
+    toggleCreateProduct: false,
+    toggleDeleteProduct: false,
   },
   reducers: {
     setAdminToken(state, action) {
@@ -21,6 +24,16 @@ const adminSlice = createSlice({
       state.users = [];
       state.styles = [];
       state.containers = [];
+    },
+    setToggleStyle(state, action) {
+      state.toggleCreateStyle = action.payload;
+    },
+    setToggleProduct(state, action) {
+      state.toggleCreateProduct = action.payload;
+    },
+    setToggleDelete(state, action) {
+      console.log(action.payload);
+      state.toggleDeleteProduct = action.payload;
     },
     setOrders: (state, action) => {
       state.orders = action.payload;
@@ -35,14 +48,20 @@ const adminSlice = createSlice({
       state.products = action.payload;
     },
     createProduct: (state, action) => {
-      state.products.push(action.payload);
+      const newProduct = action.payload;
+      const product = state.products.find((product) => product.id === newProduct.id);
+      if (product) {
+        product.status = newProduct.status;
+        const productIndex = state.products.indexOf(product);
+        state.products[productIndex] = product;
+      }
     },
     updateProduct: (state, action) => {
-     state.products = state.products.map((product)=> 
-          product.id === action.payload.productId ? 
-         {...product, price : action.payload.price, stock : action.payload.stock }
-         : product
-      )
+      state.products = state.products.map((product) =>
+        product.id === action.payload.productId
+          ? { ...product, price: action.payload.price, stock: action.payload.stock }
+          : product,
+      );
     },
     deleteProduct: (state, action) => {
       state.products = state.products.filter((product) => product.id !== action.payload);
@@ -82,5 +101,8 @@ export const {
   updateStyle,
   deleteStyle,
   updateOrderStatus,
+  setToggleStyle,
+  setToggleProduct,
+  setToggleDelete,
 } = adminSlice.actions;
 export default adminSlice.reducer;
