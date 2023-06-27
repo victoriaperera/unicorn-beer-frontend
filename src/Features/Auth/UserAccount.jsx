@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import UserOrder from "./components/UserOrder";
 import OutOfScopeModal from "../../Common/components/OutOfScopeModal";
 import "./styles.css";
@@ -155,7 +156,9 @@ function UserAccount() {
           {orders && orders.length > 0 ? (
             orders.map((order) => <UserOrder key={order.id} order={order} />)
           ) : (
-            <span>There are no orders yet. Lets shop!</span>
+            <span className="fs-5">
+              There are no orders yet. <Link to={"/shop"}>Lets shop!</Link>
+            </span>
           )}
         </div>
         {showModal && <OutOfScopeModal onClose={() => setShowModal(false)} />}

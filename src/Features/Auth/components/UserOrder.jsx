@@ -16,8 +16,13 @@ function UserOrder({ order }) {
           </h5>
         </Accordion.Header>
         <Accordion.Body>
-          <div>
-            <span>Customer: {order.user.name} </span>
+          <div className="d-flex flex-column">
+            <span>
+              Customer: {order.user.firstname} {order.user.lastname}
+            </span>
+            <span>Shipping address: {order.user.shippingAddress}</span>
+            <span>Shipping date: </span>
+            <span>Delivery date: </span>
           </div>
           <span>Expected delivery date: {formatDate(order.deliveryDate)}</span>
           <div>
