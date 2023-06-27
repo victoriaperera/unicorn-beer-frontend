@@ -39,7 +39,7 @@ function About() {
           y: 40,
         },
         {
-          duration: 2,
+          duration: 3,
           opacity: 1,
           y: 0,
           ease: "power2.out",
