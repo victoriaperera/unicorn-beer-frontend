@@ -52,8 +52,8 @@ function Footer() {
           ADMIN
         </Nav.Link>
       </Nav>
-      <div>
-        <h5 className="text-white">Social:</h5>
+      <div className="d-flex align-items-center justify-content-around">
+        <h5 className="text-white m-0">Social:</h5>
         <div className="d-flex justify-content-between">
           <Nav.Link href="#" className="mx-2 footerLink text-white">
             <i className="bi bi-facebook fs-6 text-white"></i>
@@ -64,7 +64,7 @@ function Footer() {
           >
             <i className="bi bi-instagram fs-6 text-white"></i>
           </Nav.Link>
-          <Nav.Link href="#" className="mx-2 footerLink text-white">
+          <Nav.Link href="https://twitter.com/Unicorn_beer" className="mx-2 footerLink text-white">
             <i className="bi bi-twitter fs-6 text-white"></i>
           </Nav.Link>
         </div>
