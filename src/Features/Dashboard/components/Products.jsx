@@ -60,7 +60,7 @@ function Products() {
           <tbody>
             {products.map((product) => (
               <tr key={product.id}>
-                <td>...{product.id.slice(20)}</td>
+                <td>{product.id.slice(20)}</td>
                 <td>{product.name}</td>
                 <td>{product.style.name}</td>
                 <td>{product.container.name}</td>

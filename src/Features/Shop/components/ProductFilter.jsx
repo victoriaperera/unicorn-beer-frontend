@@ -11,7 +11,7 @@ const ProductFilter = forwardRef(function ProductFilter(props, ref) {
   useEffect(() => {
     const getStyles = async () => {
       const res = await axios.get(`${import.meta.env.VITE_BACK_URL}/styles`);
-      console.log(res.data);
+
       setStyles(res.data);
     };
     getStyles();

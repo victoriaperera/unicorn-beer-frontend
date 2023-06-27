@@ -5,7 +5,7 @@ import { Button, Modal } from "react-bootstrap";
 import { deleteUser } from "../adminSlice";
 
 function CustomerDelete({ show, close, user }) {
-  const token = useSelector((state) => state.token);
+  const token = useSelector((state) => state.admin.token);
   const dispatch = useDispatch();
 
   const handleDelete = async (userId) => {
@@ -13,12 +13,12 @@ function CustomerDelete({ show, close, user }) {
       const response = await axios({
         method: "DELETE",
         url: `${import.meta.env.VITE_BACK_URL}/users`,
-        // headers:{
-        //   Authorization: `Bearer ${token}`
-        // },
+        headers: {
+          Authorization: `Bearer ${token.token}`,
+        },
         data: { userId },
       });
-      dispatch(deleteStyle(userId));
+      dispatch(deleteUser(userId));
     } catch (err) {
       console.log(err);
     }

@@ -2,10 +2,11 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { Button, Modal } from "react-bootstrap";
-import { deleteStyle } from "../adminSlice";
+import { deleteStyle, setToggleDeleteStyle } from "../adminSlice";
 
-function CategoryDelete({ show, close, style }) {
-  const token = useSelector((state) => state.token);
+function CategoryDelete({ style }) {
+  const token = useSelector((state) => state.admin.token);
+  const toggleDelete = useSelector((state) => state.admin.toggleDeleteStyle);
   const dispatch = useDispatch();
 
   const handleDelete = async (styleId) => {
@@ -13,19 +14,25 @@ function CategoryDelete({ show, close, style }) {
       const response = await axios({
         method: "DELETE",
         url: `${import.meta.env.VITE_BACK_URL}/styles`,
-        // headers:{
-        //   Authorization: `Bearer ${token}`
-        // },
+        headers: {
+          Authorization: `Bearer ${token.token}`,
+        },
         data: { styleId },
       });
       dispatch(deleteStyle(styleId));
+      dispatch(setToggleDeleteStyle(false));
     } catch (err) {
       console.log(err);
     }
   };
 
   return (
-    <Modal show={show} onHide={close} size="md" aria-labelledby="contained-modal-title-vcenter">
+    <Modal
+      show={toggleDelete}
+      onHide={() => dispatch(setToggleDeleteStyle(false))}
+      size="md"
+      aria-labelledby="contained-modal-title-vcenter"
+    >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
           <p className="text-center">Do you want to DELETE this category?</p>
@@ -38,13 +45,12 @@ function CategoryDelete({ show, close, style }) {
         <Button
           onClick={() => {
             handleDelete(style.id);
-            close();
           }}
           variant="danger"
         >
           Delete
         </Button>
-        <Button onClick={close}>Close</Button>
+        <Button>Close</Button>
       </Modal.Footer>
     </Modal>
   );

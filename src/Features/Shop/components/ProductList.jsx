@@ -40,7 +40,7 @@ function ProductList() {
 
   return (
     <>
-      <Row>
+      <Row style={{ backgroundColor: "var(--graphite)" }}>
         {products.length > 0 &&
           products.map((product) => <Product product={product} key={product.id}></Product>)}
       </Row>
