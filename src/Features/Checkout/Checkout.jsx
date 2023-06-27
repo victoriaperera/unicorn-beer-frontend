@@ -28,11 +28,17 @@ function Checkout() {
     { value: "Paypal", label: "PayPal", image: "src/assets/icons/icons8-paypal-48.png" },
   ];
   const handlePaymentMethodChange = (selectedOption) => {
-    setPaymentMet(selectedOption.value);
+    setPaymentMet(selectedOption);
     setShowCardForm(true);
-    return selectedOption.value
   };
-
+  const formatOptionLabel = ( option ) => {
+    return(
+      <div>
+      <img src={option.image} alt={option.label} style={{ width: '20px', marginRight: '10px' }} />
+      {option.label}
+    </div>
+    )
+  };
   const customStylesPM = {
     option: (provided, state) => ({
       ...provided,
@@ -177,11 +183,12 @@ function Checkout() {
                     <i className="bi bi-credit-card-fill me-2"></i> Select Payment Method
                   </Form.Label>
                   <Select
+                    value={paymentMethod}
                     name="paymentMethod"
                     options={paymentOptions}
                     styles={customStylesPM}
-                    value={logo}
                     onChange={handlePaymentMethodChange}
+                    formatOptionLabel={formatOptionLabel}
                     required
                   />
                 </Form.Group>
