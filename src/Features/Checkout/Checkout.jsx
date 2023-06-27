@@ -24,13 +24,14 @@ function Checkout() {
 
   const paymentOptions = [
     { value: "Visa", label: "Visa", image: "src/assets/icons/icons8-tarjeta-visa-48.png" },
-    {
-      value: "Mastercard",
-      label: "Master Card",
-      image: "src/assets/icons/icons8-mastercard-48.png",
-    },
+    { value: "Mastercard", label: "Master Card", image: "src/assets/icons/icons8-mastercard-48.png"},
     { value: "Paypal", label: "PayPal", image: "src/assets/icons/icons8-paypal-48.png" },
   ];
+  const handlePaymentMethodChange = (selectedOption) => {
+    setPaymentMet(selectedOption.value);
+    setShowCardForm(true);
+    return selectedOption.value
+  };
 
   const customStylesPM = {
     option: (provided, state) => ({
@@ -101,11 +102,6 @@ function Checkout() {
         console.log(err);
       }
     }
-  };
-
-  const handlePaymentMethodChange = (selectedOption) => {
-    setPaymentMet(selectedOption.value);
-    setShowCardForm(true);
   };
 
   return (
@@ -184,6 +180,7 @@ function Checkout() {
                     name="paymentMethod"
                     options={paymentOptions}
                     styles={customStylesPM}
+                    value={logo}
                     onChange={handlePaymentMethodChange}
                     required
                   />
