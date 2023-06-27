@@ -61,8 +61,8 @@ function TeamMemberCard({ admin }) {
     <>
       <Col className="mb-4" ref={circleOne}>
         <img
-          src="/src/assets/icons/user-1.png"
-          alt="User Avatar"
+          src="/src/assets/img/members/Tebi-card.png"
+          alt="Esteban Castañeira"
           className="img-team-member"
           onMouseEnter={handleExpand}
           onMouseLeave={handleShrink}
@@ -94,13 +94,13 @@ function TeamMemberCard({ admin }) {
       </Col>
       <Col className="mb-4" ref={circleTwo}>
         <img
-          src="/src/assets/icons/user-2.png"
-          alt="User Avatar"
+          src="/src/assets/img/members/Noah-card.png"
+          alt="Noah Sugliano"
           className="img-team-member"
           onMouseEnter={handleExpand}
           onMouseLeave={handleShrink}
         />
-        <h4 className="mt-4">Ivanna Sugliano</h4>
+        <h4 className="mt-4">Noah Sugliano</h4>
         <p>Full Stack Developer Jr.</p>
         <div>
           <a href="#">
@@ -127,8 +127,8 @@ function TeamMemberCard({ admin }) {
       </Col>
       <Col className="mb-4" ref={circleThree}>
         <img
-          src="/src/assets/icons/user-3.png"
-          alt="User Avatar"
+          src="/src/assets/img/members/Lore-card.png"
+          alt="Lorena Rincon"
           className="img-team-member"
           onMouseEnter={handleExpand}
           onMouseLeave={handleShrink}

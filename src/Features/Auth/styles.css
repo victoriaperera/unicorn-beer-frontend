@@ -87,3 +87,7 @@
   padding: 15px;
   margin-bottom: 1rem;
 }
+
+.heading-orange {
+  color: var(--orange);
+}

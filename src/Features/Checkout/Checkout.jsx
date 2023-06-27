@@ -24,21 +24,20 @@ function Checkout() {
 
   const paymentOptions = [
     { value: "Visa", label: "Visa", image: "src/assets/icons/icons8-tarjeta-visa-48.png" },
-    {
-      value: "Mastercard",
-      label: "Master Card",
-      image: "src/assets/icons/icons8-mastercard-48.png",
-    },
+    { value: "Mastercard", label: "Master Card", image: "src/assets/icons/icons8-mastercard-48.png"},
     { value: "Paypal", label: "PayPal", image: "src/assets/icons/icons8-paypal-48.png" },
   ];
-
-  const customStylesPM = {
-    option: (provided, state) => ({
-      ...provided,
-      color: "black",
-      background: `url(${state.data.image}) no-repeat center left`,
-      paddingLeft: "50px",
-    }),
+  const handlePaymentMethodChange = (selectedOption) => {
+    setPaymentMet(selectedOption);
+    setShowCardForm(true);
+  };
+  const formatOptionLabel = ( option ) => {
+    return(
+      <div>
+      <img src={option.image} alt={option.label} style={{ width: '33px', marginRight: '10px' }} />
+      {option.label}
+    </div>
+    )
   };
 
   const deliveryOptions = [];
@@ -81,7 +80,7 @@ function Checkout() {
             },
             data: {
               products: cart.products,
-              paymentMethod,
+              paymentMethod: paymentMethod.label,
               totalAmount: cart.totalAmount,
               totalQuantity: cart.totalQuantity,
               status: "paid",
@@ -101,11 +100,6 @@ function Checkout() {
         console.log(err);
       }
     }
-  };
-
-  const handlePaymentMethodChange = (selectedOption) => {
-    setPaymentMet(selectedOption.value);
-    setShowCardForm(true);
   };
 
   return (
@@ -181,10 +175,11 @@ function Checkout() {
                     <i className="bi bi-credit-card-fill me-2"></i> Select Payment Method
                   </Form.Label>
                   <Select
+                    value={paymentMethod}
                     name="paymentMethod"
                     options={paymentOptions}
-                    styles={customStylesPM}
                     onChange={handlePaymentMethodChange}
+                    formatOptionLabel={formatOptionLabel}
                     required
                   />
                 </Form.Group>
