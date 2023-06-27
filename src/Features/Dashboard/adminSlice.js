@@ -10,6 +10,7 @@ const adminSlice = createSlice({
     users: [],
     styles: [],
     toggleCreateStyle: false,
+    toggleDeleteStyle: false,
     toggleCreateProduct: false,
     toggleDeleteProduct: false,
   },
@@ -23,10 +24,12 @@ const adminSlice = createSlice({
       state.products = [];
       state.users = [];
       state.styles = [];
-      state.containers = [];
     },
     setToggleStyle(state, action) {
       state.toggleCreateStyle = action.payload;
+    },
+    setToggleDeleteStyle(state, action) {
+      state.toggleDeleteStyle = action.payload;
     },
     setToggleProduct(state, action) {
       state.toggleCreateProduct = action.payload;
@@ -42,14 +45,18 @@ const adminSlice = createSlice({
     },
     deleteUser: (state, action) => {
       const deletedUser = action.payload;
-      state.users = state.users.filter((user) => user.id !== deletedUser.id);
+      state.users = state.users.filter((user) => user.id !== deletedUser);
     },
     setProducts: (state, action) => {
       state.products = action.payload;
     },
     createProduct: (state, action) => {
       const newProduct = action.payload;
+      console.log(action.payload);
       state.products.push(newProduct);
+    },
+    deleteProduct: (state, action) => {
+      state.products = state.products.filter((product) => product.id !== action.payload);
     },
     updateProduct: (state, action) => {
       const updatedProduct = action.payload;
@@ -59,9 +66,6 @@ const adminSlice = createSlice({
         const productIndex = state.products.indexOf(product);
         state.products[productIndex] = product;
       }
-    },
-    deleteProduct: (state, action) => {
-      state.products = state.products.filter((product) => product.id !== action.payload);
     },
     setStyles: (state, action) => {
       state.styles = action.payload;
@@ -111,5 +115,6 @@ export const {
   setToggleStyle,
   setToggleProduct,
   setToggleDelete,
+  setToggleDeleteStyle,
 } = adminSlice.actions;
 export default adminSlice.reducer;

@@ -42,15 +42,15 @@ function Product({ product }) {
         md={6}
         lg={4}
         className="d-flex flex-column justify-content-evenly text-center text-white product-card p-0"
-        style={{ background: bgColor }}
+        style={{ background: bgColor, filter: product.stock ? "sepia(0)" : "sepia(1)" }}
       >
         <div ref={imgRef}>
           <Link to={`/products/${product.slug}`}>
             <img src={main} alt={`${product.name} image`} className="product-img" />
           </Link>
           <div>
-            <h5>{product.name}</h5>
-            <p className="fw-semibold mb-2">$ {product.price.toFixed(2)}</p>
+            <h5 className="m-0 my-2">{product.name}</h5>
+            <p className="fw-semibold m-0">$ {product.price.toFixed(2)}</p>
             <span className="addToCartBtn-shop">
               {product.stock > 0 ? (
                 <AddToCartBtn product={product} counter={1} />
