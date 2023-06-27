@@ -25,7 +25,7 @@ function CartProduct({ product }) {
             className="bi bi-trash3"
             onClick={() => {
               dispatch(removeItem(product.id));
-              dispatch(setToggleToastRemove());
+              dispatch(setToggleToastRemove(product.name));
             }}
           ></i>
         </div>
@@ -36,7 +36,7 @@ function CartProduct({ product }) {
                 className="bi bi-trash3"
                 onClick={() => {
                   dispatch(removeItem(product.id));
-                  dispatch(setToggleToastRemove());
+                  dispatch(setToggleToastRemove(product.name));
                 }}
               ></i>
             ) : (
