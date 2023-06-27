@@ -112,10 +112,10 @@ function OrderCard() {
                   </select>
                 </td>
                 <td>
-                  <i class="bi bi-bullseye show-icon"
+                  <i className="bi bi-bullseye show-icon"
                   onClick={()=>{
-                    handleShow();
                     setOrder(order);
+                    handleShow();
                   }}
                   >
                   </i>
