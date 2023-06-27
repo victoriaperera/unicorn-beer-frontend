@@ -24,10 +24,14 @@ const shopSlice = createSlice({
       state.filter = "all";
     },
     setToggleToastAdd(state, action) {
-      toast.success("Product added to cart");
+      toast.success("Product added to cart", {
+        icon: "🛒",
+      });
     },
     setToggleToastRemove(state, action) {
-      toast.error("Product removed from cart");
+      toast.error("Product removed from cart", {
+        icon: "❌",
+      });
     },
   },
 });

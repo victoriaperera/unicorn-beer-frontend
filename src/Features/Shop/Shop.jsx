@@ -2,7 +2,7 @@ import "./styles.css";
 import { Container } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ProductList from "./components/ProductList";
 import ShopHeader from "./components/ShopHeader";
@@ -33,6 +33,7 @@ function Shop() {
           draggable
           pauseOnHover
           theme="dark"
+          transition={Bounce}
         />
       </Container>
     </>
