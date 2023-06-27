@@ -4,19 +4,15 @@ import ProductModalDelete from "./ProductModalDelete";
 import { useDispatch, useSelector } from "react-redux";
 import { Table } from "react-bootstrap";
 import { useState } from "react";
-import { setToggleDelete, setToggleProduct, setToggleStyle } from "../adminSlice";
+import { setToggleDelete, setToggleProduct } from "../adminSlice";
 import CategoryCreate from "./CategoryCreate";
 
 function Products() {
   const products = useSelector((state) => state.admin.products);
-  const toggleProduct = useSelector((state) => state.admin.toggleCreateProduct);
-  const toggleStyle = useSelector((state) => state.admin.toggleCreateStyle);
-  const toggleDelete = useSelector((state) => state.admin.toggleDeleteProduct);
   const [updateStock, setUpdateStock] = useState(false);
-  const dispatch = useDispatch();
-
   const [product, setProduct] = useState("");
   const [action, setAction] = useState("");
+  const dispatch = useDispatch();
 
   return (
     <div className="products-bg scrollable">

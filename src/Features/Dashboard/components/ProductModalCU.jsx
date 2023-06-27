@@ -5,7 +5,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { createProduct, setToggleProduct, setToggleStyle, updateProduct } from "../adminSlice";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import CategoryCreate from "./CategoryCreate";
 
 function ProductModalCU({ product, action }) {
   const token = useSelector((state) => state.admin.token.token);

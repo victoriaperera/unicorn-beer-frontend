@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Col, Button, Form, Modal, Row } from "react-bootstrap";
 import { createStyle, setToggleStyle } from "../adminSlice";
 
-function CategoryCreate({ show, close, style }) {
+function CategoryCreate() {
   const token = useSelector((state) => state.admin.token);
   const toggleStyle = useSelector((state) => state.admin.toggleCreateStyle);
   const dispatch = useDispatch();

@@ -3,9 +3,9 @@ import { useSetColor } from "../../../hook/useSetColor";
 import { useDispatch } from "react-redux";
 import { clearFilter, setFilter } from "../shopSlice";
 
-function FilterBtn({ product, filterRef }) {
+function FilterBtn({ style, filterRef }) {
   const [isHovering, setIsHovering] = useState(false);
-  let color = useSetColor(product);
+  let color = useSetColor({ style: style });
   const dispatch = useDispatch();
 
   const handleMouseEnter = () => {
@@ -15,7 +15,7 @@ function FilterBtn({ product, filterRef }) {
   const handlerFilter = () => {
     filterRef.current.scrollIntoView({ behavior: "smooth" });
     dispatch(clearFilter());
-    dispatch(setFilter({ filter: product.style.name }));
+    dispatch(setFilter({ filter: style.name }));
     setIsHovering(true);
   };
 
@@ -27,7 +27,7 @@ function FilterBtn({ product, filterRef }) {
     <div>
       <a
         className="filter-btn h2 me-3"
-        key={product.style.id}
+        key={style.id}
         onMouseEnter={handleMouseEnter}
         style={{
           color: isHovering ? color : "var(--white)",
@@ -35,7 +35,7 @@ function FilterBtn({ product, filterRef }) {
         onClick={handlerFilter}
         onMouseOut={handlerOnMouseOut}
       >
-        {product.style.name}
+        {style.name}
       </a>
     </div>
   );
