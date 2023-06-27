@@ -5,7 +5,9 @@
   white-space: nowrap;
   text-align: center !important;
 }
-
+.show-icon {
+  color: var(--blue) !important;
+}
 .delete-icon {
   color: var(--red) !important;
 }
