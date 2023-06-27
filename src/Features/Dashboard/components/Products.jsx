@@ -11,12 +11,11 @@ function Products() {
   const products = useSelector((state) => state.admin.products);
   const [updateStock, setUpdateStock] = useState(false);
   const [product, setProduct] = useState("");
-  const [action, setAction] = useState("");
   const dispatch = useDispatch();
 
   return (
     <div className="products-bg scrollable">
-      <ProductModalCU product={product} action={action} />
+      <ProductModalCU product={product} />
       <CategoryCreate />
       <ProductModalDelete product={product} />
       <div className="d-flex justify-content-between align-content-center mb-3">
@@ -25,7 +24,6 @@ function Products() {
           className="bi bi-plus-circle fs-2 create-icon"
           onClick={() => {
             dispatch(setToggleProduct(true));
-            setAction("create");
           }}
         ></i>
         {/* {ends edit button} */}
@@ -86,8 +84,6 @@ function Products() {
                         onClick={() => {
                           setUpdateStock(false);
                           setProduct(product);
-
-                          // setAction("edit");
                         }}
                       ></i>
                     ) : (
@@ -96,8 +92,6 @@ function Products() {
                         onClick={() => {
                           setUpdateStock(true);
                           setProduct(product);
-
-                          // setAction("edit");
                         }}
                       ></i>
                     )}
