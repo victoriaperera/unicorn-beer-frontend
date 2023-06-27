@@ -100,15 +100,25 @@ function OrderCard() {
                 <td>{order.paymentMethod}</td>
                 <td className={`text-capitalize ${statusColor(order.status)}`}>
                   <select
-                    className="form-select"
+                    className={`form-select ${statusColor(order.status)}`}
                     value={order.status}
                     onChange={(e) => handleStatusChange(e.target.value, order.id)}
                   >
-                    <option value="not_paid">Not Paid</option>
-                    <option value="paid">Paid</option>
-                    <option value="confirmed">Confirmed</option>
-                    <option value="shipped">Shipped</option>
-                    <option value="delivered">Delivered</option>
+                    <option className={statusColor("paid")} value="paid">
+                      Paid
+                    </option>
+                    <option className={statusColor("confirmed")} value="confirmed">
+                      Confirmed
+                    </option>
+                    <option className={statusColor("shipped")} value="shipped">
+                      Shipped
+                    </option>
+                    <option className={statusColor("delivered")} value="delivered">
+                      Delivered
+                    </option>
+                    <option className={statusColor("cancelled")} value="cancelled">
+                      Cancelled
+                    </option>
                   </select>
                 </td>
                 <td>
