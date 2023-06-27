@@ -64,8 +64,18 @@ const adminSlice = createSlice({
     setStyles: (state, action) => {
       state.styles = action.payload;
     },
-    createStyle: (state, action) => {},
-    updateStyle: (state, action) => {},
+    createStyle: (state, action) => {
+      state.styles.push(action.payload);
+    },
+    updateStyle: (state, action) => {
+      const updatedStyle = action.payload;
+      const style = state.styles.find((style) => style.id === updatedStyle.id);
+      if (style) {
+        style.status = updatedStyle.status;
+        const styleIndex = state.styles.indexOf(style);
+        state.styles[styleIndex] = style;
+      }
+    },
     deleteStyle: (state, action) => {
       state.styles = state.styles.filter((style) => style.id !== action.payload);
     },
