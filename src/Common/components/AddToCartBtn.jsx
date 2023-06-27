@@ -25,7 +25,7 @@ function AddToCartBtn({ product, counter }) {
         className="rounded-pill addtocart-btn my-2  "
         onClick={() => {
           dispatch(addToCart({ product, counter }));
-          dispatch(setToggleToastAdd());
+          dispatch(setToggleToastAdd(product.name));
         }}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
