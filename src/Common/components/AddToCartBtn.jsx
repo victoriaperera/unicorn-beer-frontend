@@ -22,7 +22,7 @@ function AddToCartBtn({ product, counter }) {
     <>
       <button
         type="button"
-        className="rounded-pill addtocart-btn mt-2  "
+        className="rounded-pill addtocart-btn my-2  "
         onClick={() => {
           dispatch(addToCart({ product, counter }));
           dispatch(setToggleToastAdd());
