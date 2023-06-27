@@ -4,12 +4,14 @@ import ProductModalDelete from "./ProductModalDelete";
 import { useDispatch, useSelector } from "react-redux";
 import { Table } from "react-bootstrap";
 import { useState } from "react";
-import { setToggleDelete, setToggleProduct } from "../adminSlice";
+import { setToggleDelete, setToggleProduct, updateProduct } from "../adminSlice";
 import CategoryCreate from "./CategoryCreate";
+import axios from "axios";
+import ProductsTableContent from "./ProductsTableContent";
 
 function Products() {
   const products = useSelector((state) => state.admin.products);
-  const [updateStock, setUpdateStock] = useState(false);
+
   const [product, setProduct] = useState("");
   const [action, setAction] = useState("");
   const dispatch = useDispatch();
@@ -28,7 +30,6 @@ function Products() {
             setAction("create");
           }}
         ></i>
-        {/* {ends edit button} */}
       </div>
       <div>
         <Table className="table table-hover align-middle text-center">
@@ -59,58 +60,7 @@ function Products() {
           </thead>
           <tbody>
             {products.map((product) => (
-              <tr key={product.id}>
-                <td>{product.id.slice(20)}</td>
-                <td>{product.name}</td>
-                <td>{product.style.name}</td>
-                <td>{product.container.name}</td>
-                <td>US$ {product.price}</td>
-                {updateStock ? (
-                  <td>
-                    <input
-                      type="text"
-                      className="form-control"
-                      value={product.stock}
-                      label={product.name}
-                    ></input>
-                  </td>
-                ) : (
-                  <td>{product.stock}</td>
-                )}
-
-                <td>
-                  <div className="d-flex justify-content-around">
-                    {updateStock ? (
-                      <i
-                        className="bi bi-check2-square fs-5 check-icon"
-                        onClick={() => {
-                          setUpdateStock(false);
-                          setProduct(product);
-
-                          // setAction("edit");
-                        }}
-                      ></i>
-                    ) : (
-                      <i
-                        className="bi bi-pencil-square fs-5 edit-icon"
-                        onClick={() => {
-                          setUpdateStock(true);
-                          setProduct(product);
-
-                          // setAction("edit");
-                        }}
-                      ></i>
-                    )}
-                    <i
-                      className="bi bi-trash3-fill fs-5 delete-icon"
-                      onClick={() => {
-                        dispatch(setToggleDelete(true));
-                        setProduct(product);
-                      }}
-                    ></i>
-                  </div>
-                </td>
-              </tr>
+              <ProductsTableContent product={product} key={product.id}></ProductsTableContent>
             ))}
           </tbody>
         </Table>

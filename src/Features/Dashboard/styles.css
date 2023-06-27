@@ -179,3 +179,9 @@
   background: transparent;
   box-shadow: var(--lightViolet) 20px -20px 2.6px;
 }
+
+/* TABLES INPUTS */
+
+td input {
+  height: 30.5px;
+}
