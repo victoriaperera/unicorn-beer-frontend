@@ -3,7 +3,7 @@ import React from "react";
 function UserAccount() {
   return (
     <div>
-      <div></div>
+      <div>MY ACCOUNT</div>
     </div>
   );
 }

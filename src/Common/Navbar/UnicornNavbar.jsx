@@ -1,7 +1,6 @@
 import "./styles.css";
 import Cart from "./Cart/Cart";
 import Logout from "../../Features/Auth/components/Logout";
-import OutOfScopeModal from "../components/OutOfScopeModal";
 import { setTotalQuantity } from "./Cart/cartSlice";
 import { clearFilter, fromCheckOut } from "../../Features/Shop/shopSlice";
 import { Container, Nav, Navbar, NavDropdown, Offcanvas } from "react-bootstrap";
@@ -50,11 +49,6 @@ function UnicornNavbar() {
 
   const handleLinkClick = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  const [showOutOfScopeModal, setShowOutOfScopeModal] = useState(false);
-  const handleMyAccountClick = () => {
-    setShowOutOfScopeModal(true);
   };
 
   return (
@@ -124,12 +118,7 @@ function UnicornNavbar() {
                   </NavDropdown.Item>
                 )}
                 {user && (
-                  <NavDropdown.Item
-                    eventKey={"4.4"}
-                    as={Link}
-                    to="#"
-                    onClick={handleMyAccountClick}
-                  >
+                  <NavDropdown.Item eventKey={"4.4"} as={Link} to="/account">
                     My account
                   </NavDropdown.Item>
                 )}
@@ -157,7 +146,6 @@ function UnicornNavbar() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      {showOutOfScopeModal && <OutOfScopeModal onClose={() => setShowOutOfScopeModal(false)} />}
     </>
   );
 }
