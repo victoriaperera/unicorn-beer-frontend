@@ -3,6 +3,7 @@ import { addToCart } from "../Navbar/Cart/cartSlice";
 import { useSetColor } from "../../hook/useSetColor";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
+import { setToggleToastAdd } from "../../Features/Shop/shopSlice";
 
 function AddToCartBtn({ product, counter }) {
   const dispatch = useDispatch();
@@ -22,7 +23,10 @@ function AddToCartBtn({ product, counter }) {
       <button
         type="button"
         className="rounded-pill addtocart-btn mt-2  "
-        onClick={() => dispatch(addToCart({product, counter}))}
+        onClick={() => {
+          dispatch(addToCart({ product, counter }));
+          dispatch(setToggleToastAdd());
+        }}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         style={{
