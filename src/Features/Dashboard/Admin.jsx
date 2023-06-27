@@ -6,15 +6,14 @@ import Categories from "./components/Categories";
 import Orders from "./components/Orders";
 import Customers from "./components/Customers";
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import axios from "axios";
-import { setOrders, setProducts, setStyles, setUsers, updateOrderStatus } from "./adminSlice";
+import { setOrders, setProducts, setStyles, setUsers } from "./adminSlice";
 
 function Admin() {
   const [selectedComponent, setSelectedComponent] = useState("dashboard");
   const [containers, setContainers] = useState([]);
   const dispatch = useDispatch();
-  const orders = useSelector((state) => state.admin.orders);
 
   const handleSidebarClick = (component) => {
     setSelectedComponent(component);
@@ -45,17 +44,6 @@ function Admin() {
     fetchData();
   }, []);
 
-  const updateOrderStatusAction = async (orderId, newStatus) => {
-    try {
-      const response = await axios.patch(`${import.meta.env.VITE_BACK_URL}/orders/${orderId}`, {
-        status: newStatus,
-      });
-      dispatch(updateOrderStatus(response.data));
-    } catch (error) {
-      console.log("Error updating order status:", error);
-    }
-  };
-
   function renderComponent() {
     switch (selectedComponent) {
       case "dashboard":
@@ -65,7 +53,7 @@ function Admin() {
       case "categories":
         return <Categories />;
       case "orders":
-        return <Orders orders={orders} updateOrderStatus={updateOrderStatusAction} />;
+        return <Orders />;
       case "customers":
         return <Customers />;
       default:

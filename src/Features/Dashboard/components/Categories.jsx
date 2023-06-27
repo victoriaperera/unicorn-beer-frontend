@@ -1,33 +1,25 @@
 import "./styles.css";
 import CategoryDelete from "./CategoryDelete";
 import CategoryCreate from "./CategoryCreate";
-import { useSelector } from "react-redux";
-import React, { useState } from "react";
-import { setStyles } from "../adminSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import { setToggleDeleteStyle, setToggleStyle } from "../adminSlice";
 
 function Categories() {
   const styles = useSelector((state) => state.admin.styles);
+  const dispatch = useDispatch();
   const [style, setStyle] = useState("");
-
-  const [showDelete, setShowDelete] = useState(false);
-  const handleShowDelete = () => setShowDelete(true);
-  const handleCloseDelete = () => setShowDelete(false);
-
-  const [showCreate, setShowCreate] = useState(false);
-  const handleShowCreate = () => setShowCreate(true);
-  const handleCloseCreate = () => setShowCreate(false);
 
   return (
     <div className="categories-bg scrollable">
-      <CategoryDelete show={showDelete} close={handleCloseDelete} style={style} />
-      <CategoryCreate show={showCreate} close={handleCloseCreate} style={style} />
+      <CategoryDelete style={style} />
+      <CategoryCreate style={style} />
       <div className="d-flex justify-content-between align-content-center pb-3 me-3">
         <h2 className="text-white mb-3">Categories</h2>
         <i
           className="bi bi-plus-circle fs-2 create-icon"
-          type="submit"
           onClick={() => {
-            handleShowCreate();
+            dispatch(setToggleStyle(true));
             setStyle(style);
           }}
         ></i>
@@ -64,9 +56,8 @@ function Categories() {
                   <i className="bi bi-pencil-square fs-5 edit-icon"></i>
                   <i
                     className="bi bi-trash3-fill fs-5 delete-icon"
-                    type="submit"
                     onClick={() => {
-                      handleShowDelete();
+                      dispatch(setToggleDeleteStyle(true));
                       setStyle(style);
                     }}
                   ></i>
