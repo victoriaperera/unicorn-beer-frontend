@@ -42,7 +42,7 @@ function Product({ product }) {
         md={6}
         lg={4}
         className="d-flex flex-column justify-content-evenly text-center text-white product-card p-0"
-        style={{ background: bgColor, filter: product.stock ? "grayscale(0)" : "grayscale(1)" }}
+        style={{ background: bgColor, filter: product.stock ? "sepia(0)" : "sepia(1)" }}
       >
         <div ref={imgRef}>
           <Link to={`/products/${product.slug}`}>
