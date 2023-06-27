@@ -2,8 +2,8 @@ import React from "react";
 
 function UserAccount() {
   return (
-    <div>
-      <div>MY ACCOUNT</div>
+    <div className="graphite-background account-container">
+      <div className="">MY ACCOUNT</div>
     </div>
   );
 }

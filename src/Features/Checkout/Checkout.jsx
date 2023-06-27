@@ -131,7 +131,9 @@ function Checkout() {
             <div className="col-12 col-md-6">
               <div className="d-flex">
                 <h4>Shipping information </h4>
-                <i className="bi bi-pencil-square edit-info-icon"></i>
+                <Link to="/account">
+                  <i className="bi bi-pencil-square edit-info-icon"></i>
+                </Link>
               </div>
 
               <div className="d-flex flex-column mb-3 read-only">
@@ -150,7 +152,9 @@ function Checkout() {
             <div className="col-12 col-md-6">
               <div className="d-flex">
                 <h4>Billing Information </h4>
-                <i className="bi bi-pencil-square edit-info-icon"></i>
+                <Link to="/account">
+                  <i className="bi bi-pencil-square edit-info-icon"></i>
+                </Link>
               </div>
               <div className="d-flex flex-column mb-3 read-only">
                 <span>
