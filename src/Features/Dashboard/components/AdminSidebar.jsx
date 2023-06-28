@@ -62,6 +62,11 @@ function AdminSidebar({ onSidebarClick }) {
           </button>
         </li>
         <li className="nav-item">
+          <button className={`nav-link active ${activeButton === "administrators" ? "active-administrators" : ""}`}>
+          <i class="bi bi-award"></i>Administrators
+          </button>
+        </li>
+        <li className="nav-item">
           <button
             className={`nav-link active ${activeButton === "customers" ? "active-customers" : ""}`}
             onClick={() => handleNavigation("customers")}

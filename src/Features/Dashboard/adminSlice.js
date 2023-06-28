@@ -9,6 +9,7 @@ const adminSlice = createSlice({
     products: [],
     users: [],
     styles: [],
+    admins: [],
     toggleCreateStyle: false,
     toggleDeleteStyle: false,
     toggleCreateProduct: false,
@@ -17,6 +18,9 @@ const adminSlice = createSlice({
   reducers: {
     setAdminToken(state, action) {
       state.token = action.payload;
+    },
+    setAdmins(state, action) {
+      state.admins = action.payload
     },
     clearAdminToken: (state) => {
       state.token = null;
@@ -92,6 +96,7 @@ const adminSlice = createSlice({
 
 export const {
   setAdminToken,
+  setAdmins,
   clearAdminToken,
   setOrders,
   setUsers,
