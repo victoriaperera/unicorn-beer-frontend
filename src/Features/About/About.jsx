@@ -283,7 +283,7 @@ function About() {
           <div className="animation-container" ref={animationRef3}>
             <Col xs={12} md={8} lg={6} className="align-self-center mb-4">
               <h3 className="mb-3">PRODUCT DESIGN</h3>
-              <p>
+              
                 <p>
                   Drawing inspiration from websites like Mastra and Heineken, we not only defined
                   our product's name, explored various beer styles, and curated a captivating color
@@ -291,7 +291,7 @@ function About() {
                   involved crafting a unique logo and designing eye-catching packaging to showcase
                   our commitment to excellence.
                 </p>
-              </p>
+              
             </Col>
             <Col className="d-flex image-container align-self-center justify-content-center p-0 col-12">
               <img
