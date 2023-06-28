@@ -17,6 +17,8 @@ import Contact from "./Features/Contact/Contact";
 import AdminLogin from "./Features/Auth/adminLogin";
 import Admin from "./Features/Dashboard/Admin";
 import Err404 from "./Features/err404/err404";
+import ForgotPassword from "./Features/Auth/ForgotPassword";
+import RequestPassChange from "./Features/Auth/RequestPassChange";
 
 function App() {
   const { pathname: currentPage } = useLocation();
@@ -41,6 +43,8 @@ function App() {
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="*" element={<Err404 />} />
+        <Route path="/reset-password" element={<RequestPassChange />} />
+        <Route path="/forgotpassword/:id" element={<ForgotPassword></ForgotPassword>}></Route>
       </Routes>
       {!pagesWONavbars.includes(currentPage) && <Footer />}
     </>

@@ -6,7 +6,7 @@ import { Col, Button, Form, Modal, Row } from "react-bootstrap";
 import { createStyle, setToggleProduct, setToggleStyle } from "../adminSlice";
 
 function CategoryCreate() {
-  const token = useSelector((state) => state.admin.token);
+  const admin = useSelector((state) => state.admin.token);
   const toggleStyle = useSelector((state) => state.admin.toggleCreateStyle);
   const dispatch = useDispatch();
 
@@ -36,7 +36,7 @@ function CategoryCreate() {
         data: formData,
         headers: {
           "Content-Type": "multipart/form-data",
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${admin.token}`,
         },
       });
       console.log(response.data);

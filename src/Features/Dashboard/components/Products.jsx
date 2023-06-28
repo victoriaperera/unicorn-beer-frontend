@@ -4,9 +4,8 @@ import ProductModalDelete from "./ProductModalDelete";
 import { useDispatch, useSelector } from "react-redux";
 import { Table } from "react-bootstrap";
 import { useState } from "react";
-import { setToggleDelete, setToggleProduct, updateProduct } from "../adminSlice";
+import { setToggleProduct } from "../adminSlice";
 import CategoryCreate from "./CategoryCreate";
-import axios from "axios";
 import ProductsTableContent from "./ProductsTableContent";
 
 function Products() {

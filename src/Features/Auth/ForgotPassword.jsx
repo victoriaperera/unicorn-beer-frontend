@@ -1,51 +1,47 @@
-import "./styles.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Alert } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router";
 import { setToken } from "./userSlice";
-import { Button } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
 import { useRandomColor } from "../../hook/useRandomColor";
 import Header from "../../Common/components/Header";
+import { Alert, Button } from "react-bootstrap";
 
-function Login() {
-  const pageTitle = "Login";
+function ForgotPassword() {
+  const pageTitle = "Reset password";
   const user = useSelector((state) => state.user);
-  const [email, setEmail] = useState();
+  const [confirmPassword, setConfirmPassword] = useState();
   const [password, setPassword] = useState();
   const [alertText, setAlertText] = useState("");
   const [alertToggle, setAlertToggle] = useState(false);
   const [color, setColor] = useState("");
-  const dispatch = useDispatch();
+  const params = useParams();
   const navigate = useNavigate();
-  const checkOut = useSelector((state) => state.shop.fromCheckOut);
+  const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await axios({
-        method: "POST",
-        url: `${import.meta.env.VITE_BACK_URL}/auth/token`,
-        data: { email: email, password: password },
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      dispatch(setToken(response.data));
-    } catch (err) {
-      console.error(err.response);
-      setAlertToggle(true);
-      setAlertText(err.response.data.message);
+
+    if (password === confirmPassword) {
+      try {
+        const response = await axios({
+          method: "PATCH",
+          url: `${import.meta.env.VITE_BACK_URL}/users/resetPassword/${params.id}`,
+          data: { password: password },
+        });
+        console.log(response.data);
+        dispatch(setToken(response.data));
+        navigate("/shop");
+      } catch (err) {
+        console.error(err.response);
+        setAlertToggle(true);
+        setAlertText(err.response.data.message);
+      }
     }
   };
 
-
   useEffect(() => {
     setColor(useRandomColor());
-    if (user) {
-      checkOut ? navigate("/checkout") : navigate("/shop");
-    }
   }, [user]);
 
   return (
@@ -71,17 +67,6 @@ function Login() {
                 <div className="form my-3">
                   <input
                     onInput={(e) => {
-                      setEmail(e.target.value);
-                    }}
-                    type="text"
-                    className="form-control form-control-auth mb-3"
-                    id="userName"
-                    name="username"
-                    placeholder="Username or email"
-                  />
-
-                  <input
-                    onInput={(e) => {
                       setPassword(e.target.value);
                     }}
                     type="password"
@@ -90,27 +75,23 @@ function Login() {
                     placeholder="Password"
                     name="password"
                   />
+                  <input
+                    onInput={(e) => {
+                      setConfirmPassword(e.target.value);
+                    }}
+                    type="password"
+                    className="form-control form-control-auth mb-3"
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    placeholder="Confirm Password"
+                  />
                 </div>
                 <div className="d-grid my-3">
                   <Button type="submit" variant="outline-dark" size="md" className="rounded-pill">
-                    Log in
+                    Change Password
                   </Button>
                 </div>
-                <div>
-                  <small className="d-block">
-                    Don't you have an account?{" "}
-                    <Link className="auth-link" to="/signup" style={{ color: color }}>
-                      Create an Account
-                    </Link>
-                  </small>
-                  <small className="d-block">
-                    Forgot your password?{" "}
-                    <Link className="auth-link" to="/reset-password" style={{ color: color }}>
-                      Reset password
-                    </Link>
-                  </small>
-                  {alertToggle && <Alert variant="danger">{alertText}</Alert>}
-                </div>
+                <div>{alertToggle && <Alert variant="danger">{alertText}</Alert>}</div>
               </form>
             </div>
           </div>
@@ -120,4 +101,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default ForgotPassword;
