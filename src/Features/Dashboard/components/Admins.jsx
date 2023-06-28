@@ -7,10 +7,10 @@ function Admins(){
     const admins = useSelector((state)=> state.admins )
     const [admin, setAdmin] = useState("");
     return(
-        <div className="categories-bg scrollable">
+        <div className="administrators-bg scrollable">
        
         <div className="d-flex justify-content-between align-content-center pb-3 me-3">
-          <h2 className="text-white mb-3">Categories</h2>
+          <h2 className="text-white mb-3">Adminisrators</h2>
           <i
             className="bi bi-plus-circle fs-2 create-icon"
             onClick={() => {
@@ -21,16 +21,16 @@ function Admins(){
         <table className="table table-hover text-center align-middle">
           <thead className="align-middle">
             <tr>
-              <th scope="col" className="categories-table-heading">
+              <th scope="col" className="administrators-table-heading">
                 Admin Id
               </th>
-              <th scope="col" className="categories-table-heading">
+              <th scope="col" className="administrators-table-heading">
                 Admin name
               </th>
-              <th scope="col" className="categories-table-heading">
+              <th scope="col" className="administrators-table-heading">
                 Admin email
               </th>
-              <th scope="col" className="categories-table-heading">
+              <th scope="col" className="administrators-table-heading">
                 Actions
               </th>
             </tr>

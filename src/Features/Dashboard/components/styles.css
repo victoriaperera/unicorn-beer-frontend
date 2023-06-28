@@ -146,6 +146,20 @@
 .orderDetail {
   font-weight: bold;
 }
+/**** ADMINISTRATORS ****/
+
+.administrators-bg {
+  height: 100vh;
+  margin-left: 200px;
+  padding: 20px;
+  background-color: var(--yellow);
+  overflow: scroll;
+}
+
+.administrators-table-heading {
+  background-color: var(--yellow) !important;
+  color: var(--white) !important;
+}
 /**** CUSTOMERS ****/
 
 .customers-bg {
