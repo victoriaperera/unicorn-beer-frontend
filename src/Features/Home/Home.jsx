@@ -28,17 +28,7 @@ function Home() {
 
       const aux = res.data.filter((p) => p.container.name === "bottle");
       dispatch(setProductList(aux));
-      const myText = new SplitType(".beers-heading");
-      gsap.to(".char", {
-        //TODO: ver a que elemento se le asigna esta clase
-        y: 0,
-        stagger: 0.05,
-        delay: 0.2,
-        duration: 0.1,
-        scrollTrigger: {
-          trigger: ".char",
-        },
-      });
+
       setLoading(false);
     };
     getProducts();

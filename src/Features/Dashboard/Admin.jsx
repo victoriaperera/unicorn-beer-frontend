@@ -5,10 +5,11 @@ import Products from "./components/Products";
 import Categories from "./components/Categories";
 import Orders from "./components/Orders";
 import Customers from "./components/Customers";
+import Admins from "./components/Admins";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import axios from "axios";
-import { setOrders, setProducts, setStyles, setUsers } from "./adminSlice";
+import { setOrders, setProducts, setStyles, setUsers, setAdmins } from "./adminSlice";
 
 function Admin() {
   const [selectedComponent, setSelectedComponent] = useState("dashboard");
@@ -22,12 +23,13 @@ function Admin() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [ordersResponse, productsResponse, stylesResponse, usersResponse] = await Promise.all(
+        const [ordersResponse, productsResponse, stylesResponse, usersResponse, adminsResponse] = await Promise.all(
           [
             axios.get(`${import.meta.env.VITE_BACK_URL}/orders`),
             axios.get(`${import.meta.env.VITE_BACK_URL}/products`),
             axios.get(`${import.meta.env.VITE_BACK_URL}/styles`),
             axios.get(`${import.meta.env.VITE_BACK_URL}/users`),
+            axios.get(`${import.meta.env.VITE_BACK_URL}/admin`)
           ],
         );
 
@@ -35,6 +37,7 @@ function Admin() {
         dispatch(setProducts(productsResponse.data));
         dispatch(setStyles(stylesResponse.data));
         dispatch(setUsers(usersResponse.data));
+        dispatch(setAdmins(adminsResponse.data))
         setContainers(usersResponse.data.containers);
       } catch (error) {
         console.log("Error fetching data:", error);
@@ -56,6 +59,8 @@ function Admin() {
         return <Orders />;
       case "customers":
         return <Customers />;
+      case "administrators":
+        return<Admins />;
       default:
         return null;
     }
