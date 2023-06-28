@@ -15,7 +15,7 @@ import verifyReducer from "../Common/Navbar/Verify/verifyAgeSlice";
 import adminReducer from "../Features/Dashboard/adminSlice";
 import shopReducer from "../Features/Shop/shopSlice";
 import productReducer from "./productSlice";
-// import orderReducer from "./orderSlice";
+import orderReducer from "./orderSlice";
 import cartSlice from "../Common/Navbar/Cart/cartSlice";
 
 const rootReducer = combineReducers({
@@ -24,7 +24,7 @@ const rootReducer = combineReducers({
   admin: adminReducer,
   shop: shopReducer,
   product: productReducer,
-  // order: orderReducer,
+  order: orderReducer,
   cart: cartSlice,
 });
 

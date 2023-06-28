@@ -7,10 +7,11 @@ import UserOrder from "./components/UserOrder";
 import OutOfScopeModal from "../../Common/components/OutOfScopeModal";
 import { updateUserData } from "./userSlice";
 import "./styles.css";
+import { setOrder } from "../../redux/orderSlice";
 
 function UserAccount() {
   const user = useSelector((state) => state.user);
-
+  const orders = useSelector((state) => state.order);
   const dispatch = useDispatch();
 
   const [shippingAddress, setShippingAddress] = useState(user.shippingAddress);
@@ -44,6 +45,25 @@ function UserAccount() {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    const getOrders = async () => {
+      try {
+        const response = await axios({
+          method: "GET",
+          url: `${import.meta.env.VITE_BACK_URL}/users/orders/${user.id}`,
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        });
+
+        dispatch(setOrder(response.data));
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getOrders();
+  }, []);
 
   return (
     <div className="graphite-background-account d-flex justify-content-center align-items-center">
@@ -180,8 +200,8 @@ function UserAccount() {
         </div>
         <div className="main-account">
           <h3 className="mb-3 heading-orange">Order history</h3>
-          {user && user.orders && user.orders.length > 0 ? (
-            user.orders.map((order) => <UserOrder key={order.id} order={order} />)
+          {orders && orders.length > 0 ? (
+            orders.map((order) => <UserOrder key={order.id} order={order} />)
           ) : (
             <span className="fs-5">
               There are no orders yet. <Link to={"/shop"}>Lets shop!</Link>
