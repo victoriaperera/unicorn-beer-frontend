@@ -176,6 +176,7 @@ function SignUp() {
                     Log in
                   </Button>
                 </div>
+                <div>{alertToggle && <Alert variant="danger">{alertText}</Alert>}</div>
                 <div>
                   <small className="d-block">
                     Back to{" "}
@@ -183,7 +184,6 @@ function SignUp() {
                       LOGIN
                     </Link>
                   </small>
-                  {alertToggle && <Alert variant="danger">{alertText}</Alert>}
                 </div>
               </form>
             </div>

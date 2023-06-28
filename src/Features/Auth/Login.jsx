@@ -40,7 +40,6 @@ function Login() {
     }
   };
 
-
   useEffect(() => {
     setColor(useRandomColor());
     if (user) {
@@ -96,6 +95,7 @@ function Login() {
                     Log in
                   </Button>
                 </div>
+                <div>{alertToggle && <Alert variant="danger">{alertText}</Alert>}</div>
                 <div>
                   <small className="d-block">
                     Don't you have an account?{" "}
@@ -109,7 +109,6 @@ function Login() {
                       Reset password
                     </Link>
                   </small>
-                  {alertToggle && <Alert variant="danger">{alertText}</Alert>}
                 </div>
               </form>
             </div>

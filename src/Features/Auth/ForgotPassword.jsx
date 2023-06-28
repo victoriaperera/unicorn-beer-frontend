@@ -91,7 +91,9 @@ function ForgotPassword() {
                     Change Password
                   </Button>
                 </div>
-                <div>{alertToggle && <Alert variant="danger">{alertText}</Alert>}</div>
+                <div>
+                  <div>{alertToggle && <Alert variant="danger">{alertText}</Alert>}</div>
+                </div>
               </form>
             </div>
           </div>
