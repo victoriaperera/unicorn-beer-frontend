@@ -152,7 +152,7 @@
   height: 100vh;
   margin-left: 200px;
   padding: 20px;
-  background-color: var(--yellow);
+  background-color: var(--lightYellow);
   overflow: scroll;
 }
 

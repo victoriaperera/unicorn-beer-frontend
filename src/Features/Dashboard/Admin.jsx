@@ -59,7 +59,7 @@ function Admin() {
         return <Orders />;
       case "customers":
         return <Customers />;
-      case "admins":
+      case "administrators":
         return<Admins />;
       default:
         return null;
