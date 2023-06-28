@@ -91,3 +91,7 @@
 .heading-orange {
   color: var(--orange);
 }
+
+.account-order-img {
+  height: 4rem;
+}

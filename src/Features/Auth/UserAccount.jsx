@@ -19,8 +19,6 @@ function UserAccount() {
     e.preventDefault();
   };
 
-  console.log(orders);
-
   return (
     <div className="graphite-background-account d-flex justify-content-center align-items-center">
       <div className="container account-container">
