@@ -16,7 +16,7 @@ function Customers() {
   return (
     <>
       <CustomerDelete show={showDelete} close={handleCloseDelete} user={user} />
-      <table className="table table-hover text-center align-middle">
+      <table className="table table-hover text-center align-middle rounded rounded-3 overflow-hidden dashboard-table">
         <thead className="align-middle">
           <tr>
             <th scope="col" className="customers-table-heading">

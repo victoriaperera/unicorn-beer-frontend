@@ -242,9 +242,16 @@ function About() {
             <Col xs={12} md={8} lg={6} className="align-self-center mb-4">
               <h3 className="mb-3">PROJECT ORGANIZATION - MER</h3>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti iure perspiciatis
-                ducimus porro cupiditate. Nobis, nulla repudiandae dolores ex ducimus recusandae
-                quos mollitia sit soluta similique quod magnam. Dolor, voluptates!
+                Our first step was to define the backend requirements before moving forward. We
+                created a list of the top five tasks and then carefully crafted an entity
+                relationship diagram. Here, we defined the main relationships between the following
+                entities: User, Products, Orders, Styles, and Admins.
+              </p>
+              <p>
+                To ensure efficient task allocation within our team, we utilized Trello as our
+                project management tool. The project was divided into three sprints, with Github
+                serving as our primary collaboration platform. Discord played a crucial role in
+                facilitating seamless communication throughout the development process.
               </p>
             </Col>
             <Col className="d-flex image-container align-self-center justify-content-center p-0 mb-5 mx-4 col-12">
@@ -276,11 +283,15 @@ function About() {
           <div className="animation-container" ref={animationRef3}>
             <Col xs={12} md={8} lg={6} className="align-self-center mb-4">
               <h3 className="mb-3">PRODUCT DESIGN</h3>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti iure perspiciatis
-                ducimus porro cupiditate. Nobis, nulla repudiandae dolores ex ducimus recusandae
-                quos mollitia sit soluta similique quod magnam. Dolor, voluptates!
-              </p>
+              
+                <p>
+                  Drawing inspiration from websites like Mastra and Heineken, we not only defined
+                  our product's name, explored various beer styles, and curated a captivating color
+                  palette, but also took the initiative to design and create our own brand. This
+                  involved crafting a unique logo and designing eye-catching packaging to showcase
+                  our commitment to excellence.
+                </p>
+              
             </Col>
             <Col className="d-flex image-container align-self-center justify-content-center p-0 col-12">
               <img
@@ -300,6 +311,13 @@ function About() {
                 alt="Product design"
                 className="product-design large"
                 fluid
+              />
+            </Col>
+            <Col className="d-flex image-container align-self-center justify-content-center p-0 col-12">
+              <img
+                src="src/assets/img/Bottle-about-us.png"
+                alt="Ipa Bottle"
+                className="design-img p-4"
               />
             </Col>
           </div>

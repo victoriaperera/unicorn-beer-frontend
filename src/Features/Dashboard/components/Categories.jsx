@@ -25,7 +25,7 @@ function Categories() {
           }}
         ></i>
       </div>
-      <table className="table table-hover text-center align-middle">
+      <table className="table table-hover text-center align-middle dashboard-table rounded rounded-3 overflow-hidden">
         <thead className="align-middle">
           <tr>
             <th scope="col" className="categories-table-heading">

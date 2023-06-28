@@ -4,6 +4,37 @@
   z-index: 999;
 }
 
+.custom-navbar .active {
+  border-radius: 0px !important;
+  color: var(--orange) !important;
+}
+
+.custom-navbar .nav-hover {
+  position: relative;
+  display: inline-block;
+  color: var(--orange);
+}
+
+.custom-navbar .nav-hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--orange);
+  transition: width 0.3s ease-in-out;
+}
+
+.custom-navbar .nav-hover:hover::after {
+  width: 100%;
+}
+
+.custom-dropdown .active {
+  background: white !important;
+}
+
 .navbar-blur {
   backdrop-filter: blur(5px);
   background-color: rgba(0, 0, 0, 0.37) !important;
@@ -12,7 +43,7 @@
   cursor: pointer;
 }
 .icon-beer {
-  width: 150px;
+  height: 50px;
 }
 .text-graphite {
   font-weight: 700;

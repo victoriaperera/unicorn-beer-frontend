@@ -124,17 +124,26 @@
   flex-direction: column;
   margin: 150px;
 }
+.about-logo {
+  height: 600px;
+}
 
 @media (max-width: 503px) {
   .small {
     display: block;
     width: 365px;
   }
+  .design-img {
+    width: 350px;
+  }
 }
 
 @media (max-width: 739px) {
   .small {
     display: block;
+  }
+  .design-img {
+    width: 500px;
   }
 }
 
@@ -145,6 +154,9 @@
   }
   .dashboard-img {
     width: 700px;
+  }
+  .design-img {
+    width: 550px;
   }
 }
 
@@ -158,6 +170,9 @@
   }
   .dashboard-img {
     width: 900px;
+  }
+  .design-img {
+    width: 550px;
   }
 }
 
