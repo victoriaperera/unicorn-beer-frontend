@@ -84,9 +84,9 @@ function AdminsUpdate({show, close, admin}){
                    </Form.Group>
                     <Form.Group as={Col} sm="6">
                         <InputGroup className="mb-3">
-                            <InputGroup.Text>Repeat password</InputGroup.Text>
+                            <InputGroup.Text>Confirm Password</InputGroup.Text>
                             <Form.Control
-                            placeholder="Password"
+                            placeholder="Confirm Password"
                             name="passwordRepeat"
                             type="password"
                             onChange={(e)=> setPasswordRepeat(e.target.value)}
