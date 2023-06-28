@@ -1,6 +1,7 @@
 import "./styles.css";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
+import { deleteAdmin } from "../adminSlice";
 
 function AdminsTableContent({admin, key}){
     const token = useSelector((state) => state.admin.token.token)
@@ -11,12 +12,14 @@ function AdminsTableContent({admin, key}){
                 method: "DELETE",
                 url: `${import.meta.env.VITE_BACK_URL}/admin`,
                 headers: {
-                    Authorization: `Bearear ${token}`
+                    Authorization: `Bearer ${token}`
                 },
                 data:{
                     adminId
                 }
             })
+            dispatch(deleteAdmin(adminId))
+
 
         }catch(err){
             console.log(err)
