@@ -16,10 +16,10 @@ function Product() {
     <>
       <div style={{ backgroundColor: bgColor }}>
         <div
-          className="container d-flex justify-content-center align-items-center product-view-bg"
+          className="container-fluid d-flex justify-content-center align-items-center text-white m-0 p-0"
           style={{ backgroundColor: bgColor }}
         >
-          <div className="row">
+          <div className="row d-flex justify-content-center gap-3 product-row">
             <ProductCarousel product={product} />
             <ProductCard product={product} />
           </div>

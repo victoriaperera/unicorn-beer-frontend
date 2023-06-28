@@ -193,7 +193,7 @@ function TeamMemberCard({ admin }) {
       </Col>
       <Col className="mb-4 " ref={circleFive}>
         <img
-          src="/src/assets/icons/user-5.png"
+          src="/src/assets/img/members/Victoria-card.png"
           alt="User Avatar"
           className="img-team-member"
           onMouseEnter={handleExpand}

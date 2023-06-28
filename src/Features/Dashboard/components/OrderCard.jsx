@@ -13,8 +13,12 @@ function OrderCard() {
   const dispatch = useDispatch();
 
   const [show, setShow] = useState(false);
-  const handleShow = () => { setShow(true)}
-  const handleClose = () => { setShow(false)}
+  const handleShow = () => {
+    setShow(true);
+  };
+  const handleClose = () => {
+    setShow(false);
+  };
 
   const [order, setOrder] = useState("");
 
@@ -56,12 +60,12 @@ function OrderCard() {
 
   return (
     <>
-    <OrderModal order={order} show={show} close={handleClose}/>
-      <table className="table table-hover text-center align-middle">
+      <OrderModal order={order} show={show} close={handleClose} />
+      <table className="table table-hover text-center align-middle rounded rounded-3 overflow-hidden dashboard-table">
         <thead className="align-middle">
           <tr>
             <th scope="col" className="orders-table-heading">
-              Order Nº
+              Order Id
             </th>
             <th scope="col" className="orders-table-heading">
               Date
@@ -122,19 +126,19 @@ function OrderCard() {
                   </select>
                 </td>
                 <td>
-                  <i className="bi bi-bullseye show-icon"
-                  onClick={()=>{
-                    setOrder(order);
-                    handleShow();
-                  }}
-                  >
-                  </i>
+                  <i
+                    className="bi bi-bullseye show-icon"
+                    onClick={() => {
+                      setOrder(order);
+                      handleShow();
+                    }}
+                  ></i>
                 </td>
               </tr>
             ))
           ) : (
             <tr>
-              <td colSpan="6">There are no orders to display.</td>
+              <td colSpan="10">There are no orders to display.</td>
             </tr>
           )}
         </tbody>

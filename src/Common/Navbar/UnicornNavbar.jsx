@@ -56,13 +56,14 @@ function UnicornNavbar() {
       <Navbar
         collapseOnSelect
         bg="dark"
+        data-bs-theme="dark"
         expand="lg"
         fixed="top"
         className={`custom-navbar ${navbarBlur}`}
       >
-        <Container fluid className="collapsed-nav">
+        <Container fluid className="collapsed-nav p-0 ps-3 pe-1">
           <Navbar.Toggle aria-controls="responsive-navbar-nav" className="nav-toggler-btn" />
-          <Navbar.Brand>
+          <Navbar.Brand className="p-0">
             <Nav.Link as={Link} to={"/"} onClick={handleLinkClick}>
               <img
                 src="/src/assets/icons/Unicorn-beer-white-logo-iso.svg"
@@ -74,12 +75,12 @@ function UnicornNavbar() {
           <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
             <Nav className="ms-auto">
               <div className="mx-2 mt-1">
-                <Nav.Link as={Link} to={"/about"} eventKey={"1"}>
+                <Nav.Link as={Link} to={"/about"} eventKey={"1"} className="nav-hover new-hover">
                   ABOUT THIS PROJECT
                 </Nav.Link>
               </div>
               <div className="mx-2 mt-1">
-                <Nav.Link as={Link} to={"/#our-beer-section"} eventKey={"2"}>
+                <Nav.Link as={Link} to={"/#our-beer-section"} eventKey={"2"} className="nav-hover">
                   OUR BEER
                 </Nav.Link>
               </div>
@@ -87,7 +88,7 @@ function UnicornNavbar() {
                 <Nav.Link
                   as={Link}
                   to={"/shop"}
-                  className="nav-link"
+                  className="nav-hover"
                   onClick={() => dispatch(clearFilter())}
                   eventKey={"3"}
                 >
@@ -96,7 +97,7 @@ function UnicornNavbar() {
               </div>
               <NavDropdown
                 title={<i className="bi bi-person-fill fs-5 text-white"></i>}
-                className="mx-2"
+                className="mx-2 custom-dropdown"
                 eventKey={"4"}
                 menuVariant="secondary"
               >
@@ -139,7 +140,7 @@ function UnicornNavbar() {
                 </Offcanvas>
               </div>
               <div className="mx-2 mt-1">
-                <Nav.Link as={Link} to={"/contact"} className="nav-link" eventKey={"5"}>
+                <Nav.Link as={Link} to={"/contact"} className="nav-hover" eventKey={"5"}>
                   CONTACT
                 </Nav.Link>
               </div>

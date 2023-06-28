@@ -18,11 +18,11 @@ function ProductCarousel({ product }) {
   const photos = useCheckImg(imgs);
 
   return (
-    <div className="col-12 col-md-5 product-view-img">
+    <div className="col-10 col-sm-8 col-lg-5 col-xl-4 p-0 ">
       <Carousel variant="dark" activeIndex={activeIndex} onSelect={handleSelect} interval={null}>
         {photos.map((photo, index) => (
           <Carousel.Item key={index}>
-            <img className="d-block w-100" src={photo} alt="First slide" />
+            <img className="d-block w-100 align-self-center" src={photo} alt="First slide" />
           </Carousel.Item>
         ))}
       </Carousel>

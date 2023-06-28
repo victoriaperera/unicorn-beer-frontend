@@ -63,7 +63,7 @@ function OrderModal({order, show, close}) {
             Close
           </Button>
         </Modal.Footer>
-      </Modal>
+        </Modal>
         </>
 
     )

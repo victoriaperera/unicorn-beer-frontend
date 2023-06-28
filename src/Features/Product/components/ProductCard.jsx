@@ -3,6 +3,7 @@ import AddToCartBtn from "../../../Common/components/AddToCartBtn";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 function ProductCard({ product }) {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ function ProductCard({ product }) {
   };
 
   return (
-    <div className="col-12 col-md-7 col-lg-6 align-self-center px-5 product-view-text">
+    <div className="col-10 col-sm-8 col-lg-5 col-xl-3 align-self-start product-view-text">
       <div className="pb-2">
         <h2>{product.style.name}</h2>
         <p className="mb-0">{product.style.description}</p>
@@ -71,9 +72,17 @@ function ProductCard({ product }) {
           </a>
         </div>
       )}
-      <div className="d-flex align-items-center pt-2">
-        <i className="bi bi-truck fs-6 text-white me-2"></i>
-        <span className="m-0">Delivery available.</span>
+      <div className=" d-flex justify-content-between">
+        <div className="d-flex align-items-center pt-2">
+          <i className="bi bi-truck fs-6 text-white me-2"></i>
+          <span className="m-0">Delivery available.</span>
+        </div>
+        <div className="d-flex align-items-center pt-2">
+          <Link to="/shop" className="text-decoration-none text-white fw-bolder">
+            <i className="bi bi-arrow-left-short fs-6 text-white me-2"></i>
+            <span className="m-0">Back to Shop</span>
+          </Link>
+        </div>
       </div>
     </div>
   );

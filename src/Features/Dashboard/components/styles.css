@@ -23,6 +23,11 @@
   color: var(--green) !important;
 }
 
+.dashboard-table {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  font-size: 0.9rem;
+}
+
 /**** DASHBOARD ****/
 
 .dashboard-bg {
@@ -145,6 +150,20 @@
 
 .orderDetail {
   font-weight: bold;
+}
+/**** ADMINISTRATORS ****/
+
+.administrators-bg {
+  height: 100vh;
+  margin-left: 200px;
+  padding: 20px;
+  background-color: var(--lightYellow);
+  overflow: scroll;
+}
+
+.administrators-table-heading {
+  background-color: var(--yellow) !important;
+  color: var(--white) !important;
 }
 /**** CUSTOMERS ****/
 

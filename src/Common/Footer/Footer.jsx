@@ -11,7 +11,7 @@ function Footer() {
   const location = useLocation();
 
   return (
-    <footer className="footer d-flex justify-content-between align-items-center product-divider fixed-bottom ">
+    <footer className="footer d-flex justify-content-between align-items-center product-divider fixed-bottom">
       <div className="divider-top p-0">
         <svg
           data-name="Layer 1"
@@ -52,19 +52,19 @@ function Footer() {
           ADMIN
         </Nav.Link>
       </Nav>
-      <div className="d-flex align-items-center justify-content-around">
-        <h6 className="text-white m-0">Social:</h6>
-        <div className="d-flex justify-content-between">
-          <Nav.Link href="#" className="mx-2 footerLink text-white">
+      <div className="d-flex align-items-center justify-content-between">
+        <div className="d-flex justify-content-between gap-2">
+          <h6 className="text-white m-0 align-self-center">Social:</h6>
+          <Nav.Link href="#" className=" footerLink text-white">
             <i className="bi bi-facebook fs-6 text-white"></i>
           </Nav.Link>
           <Nav.Link
             href="https://www.instagram.com/unicorn_craftedbeer/"
-            className="mx-2 footerLink text-white"
+            className=" footerLink text-white"
           >
             <i className="bi bi-instagram fs-6 text-white"></i>
           </Nav.Link>
-          <Nav.Link href="https://twitter.com/Unicorn_beer" className="mx-2 footerLink text-white">
+          <Nav.Link href="https://twitter.com/Unicorn_beer" className=" footerLink text-white">
             <i className="bi bi-twitter fs-6 text-white"></i>
           </Nav.Link>
         </div>

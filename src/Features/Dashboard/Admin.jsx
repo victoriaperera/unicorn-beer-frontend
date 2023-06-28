@@ -8,10 +8,13 @@ import Customers from "./components/Customers";
 import Admins from "./components/Admins";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import Header from "../../Common/components/Header";
 import axios from "axios";
+
 import { setOrders, setProducts, setStyles, setUsers, setAdmins } from "./adminSlice";
 
 function Admin() {
+  const pageTitle = "Admin Dashboard";
   const [selectedComponent, setSelectedComponent] = useState("dashboard");
   const [containers, setContainers] = useState([]);
   const dispatch = useDispatch();
@@ -23,21 +26,20 @@ function Admin() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [ordersResponse, productsResponse, stylesResponse, usersResponse, adminsResponse] = await Promise.all(
-          [
+        const [ordersResponse, productsResponse, stylesResponse, usersResponse, adminsResponse] =
+          await Promise.all([
             axios.get(`${import.meta.env.VITE_BACK_URL}/orders`),
             axios.get(`${import.meta.env.VITE_BACK_URL}/products`),
             axios.get(`${import.meta.env.VITE_BACK_URL}/styles`),
             axios.get(`${import.meta.env.VITE_BACK_URL}/users`),
-            axios.get(`${import.meta.env.VITE_BACK_URL}/admin`)
-          ],
-        );
+            axios.get(`${import.meta.env.VITE_BACK_URL}/admin`),
+          ]);
 
         dispatch(setOrders(ordersResponse.data));
         dispatch(setProducts(productsResponse.data));
         dispatch(setStyles(stylesResponse.data));
         dispatch(setUsers(usersResponse.data));
-        dispatch(setAdmins(adminsResponse.data))
+        dispatch(setAdmins(adminsResponse.data));
         setContainers(usersResponse.data.containers);
       } catch (error) {
         console.log("Error fetching data:", error);
@@ -59,8 +61,8 @@ function Admin() {
         return <Orders />;
       case "customers":
         return <Customers />;
-      case "admins":
-        return<Admins />;
+      case "administrators":
+        return <Admins />;
       default:
         return null;
     }
@@ -68,6 +70,7 @@ function Admin() {
 
   return (
     <>
+      <Header title={pageTitle} />
       <AdminSidebar onSidebarClick={handleSidebarClick} />
       {renderComponent()}
     </>
