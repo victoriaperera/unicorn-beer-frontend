@@ -9,6 +9,10 @@
   padding: 20px;
   border-radius: 5px;
 }
+.modalBtn-Success:hover {
+  background-color: #dddddd;
+  color: var(--green);
+}
 .modal-pdf {
   z-index: 9999;
 }

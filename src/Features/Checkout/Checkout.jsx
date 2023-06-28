@@ -4,15 +4,17 @@ import CardForm from "./components/CardForm";
 import { Badge, Button, Container, Col, ListGroup, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
+import React, { useState, useRef } from "react";
 import Select from "react-select";
 import axios from "axios";
-import { clearCart } from "../../Common/Navbar/Cart/cartSlice";
 import { Alert } from "react-bootstrap";
+import { setOrder } from "../../redux/orderSlice";
 
 function Checkout() {
   const user = useSelector((state) => state.user);
   const cart = useSelector((state) => state.cart);
+  const order = useSelector((state) => state.order);
+
   const dispatch = useDispatch();
   const [paymentMethod, setPaymentMet] = useState();
   const [deliveryDate, setDeliveryDate] = useState();
@@ -24,20 +26,24 @@ function Checkout() {
 
   const paymentOptions = [
     { value: "Visa", label: "Visa", image: "src/assets/icons/icons8-tarjeta-visa-48.png" },
-    { value: "Mastercard", label: "Master Card", image: "src/assets/icons/icons8-mastercard-48.png"},
+    {
+      value: "Mastercard",
+      label: "Master Card",
+      image: "src/assets/icons/icons8-mastercard-48.png",
+    },
     { value: "Paypal", label: "PayPal", image: "src/assets/icons/icons8-paypal-48.png" },
   ];
   const handlePaymentMethodChange = (selectedOption) => {
     setPaymentMet(selectedOption);
     setShowCardForm(true);
   };
-  const formatOptionLabel = ( option ) => {
-    return(
+  const formatOptionLabel = (option) => {
+    return (
       <div>
-      <img src={option.image} alt={option.label} style={{ width: '33px', marginRight: '10px' }} />
-      {option.label}
-    </div>
-    )
+        <img src={option.image} alt={option.label} style={{ width: "33px", marginRight: "10px" }} />
+        {option.label}
+      </div>
+    );
   };
 
   const deliveryOptions = [];
@@ -93,7 +99,8 @@ function Checkout() {
             },
           });
           setAlertToggle(false);
-          dispatch(clearCart());
+          console.log(response.data);
+          dispatch(setOrder(response.data));
           setShow(true);
         }
       } catch (err) {

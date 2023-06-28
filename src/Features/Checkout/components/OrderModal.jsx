@@ -1,7 +1,19 @@
 import "./styles.css";
 import { Modal } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import DetailPdf from "./DetailPdf";
+import { useDispatch, useSelector } from "react-redux";
+import { clearCart } from "../../../Common/Navbar/Cart/cartSlice";
+
 function OrderModal({ show }) {
+  const cart = useSelector((state) => state.cart);
+  const user = useSelector((state) => state.user);
+  const order = useSelector((state) => state.order);
+
+  const dispatch = useDispatch();
+
   return (
     <Modal show={show} size="md" backdrop="static" className="unicornModal">
       <Modal.Header className="border-0 d-flex flex-column justify-content-center">
@@ -16,9 +28,17 @@ function OrderModal({ show }) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className="mt-5 d-flex justify-content-center">
-        <Link to="/" className="modalBtn modalBtn-Success">
+        <Link to="/" onClick={() => dispatch(clearCart())} className="modalBtn modalBtn-Success">
           Go to Home
         </Link>
+        <PDFDownloadLink
+          document={<DetailPdf user={user} order={order} cart={cart} />}
+          fileName="PDF-Detail"
+        >
+          <Button className="modalBtn modalBtn-Success border-0 ms-2 button-modal">
+            Download Detail
+          </Button>
+        </PDFDownloadLink>
       </Modal.Body>
     </Modal>
   );

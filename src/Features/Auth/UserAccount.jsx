@@ -1,13 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import axios from "axios";
+
 import UserOrder from "./components/UserOrder";
 import OutOfScopeModal from "../../Common/components/OutOfScopeModal";
+import { updateUserData } from "./userSlice";
 import "./styles.css";
+import { setOrder } from "../../redux/orderSlice";
 
 function UserAccount() {
   const user = useSelector((state) => state.user);
-  const orders = user.orders;
+  const orders = useSelector((state) => state.order);
+  const dispatch = useDispatch();
+
+  const [shippingAddress, setShippingAddress] = useState(user.shippingAddress);
+  const [billingAddress, setBillingAddress] = useState(user.address);
+  const [phoneNumber, setPhoneNumber] = useState(user.phone);
 
   const [showModal, setShowModal] = useState(false);
 
@@ -15,9 +24,46 @@ function UserAccount() {
     setShowModal(true);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    try {
+      const response = await axios({
+        method: "PATCH",
+        url: `${import.meta.env.VITE_BACK_URL}/users/${user.id}`,
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+        data: {
+          shippingAddress: shippingAddress,
+          address: billingAddress,
+          phone: phoneNumber,
+        },
+      });
+
+      dispatch(updateUserData({ user: response.data }));
+    } catch (error) {
+      console.log(error);
+    }
   };
+
+  useEffect(() => {
+    const getOrders = async () => {
+      try {
+        const response = await axios({
+          method: "GET",
+          url: `${import.meta.env.VITE_BACK_URL}/users/orders/${user.id}`,
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        });
+
+        dispatch(setOrder(response.data));
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getOrders();
+  }, []);
 
   return (
     <div className="graphite-background-account d-flex justify-content-center align-items-center">
@@ -45,7 +91,8 @@ function UserAccount() {
                   <input
                     type="text"
                     className="form-control form-control-sm"
-                    defaultValue={user.shippingAddress}
+                    value={shippingAddress}
+                    onChange={(e) => setShippingAddress(e.target.value)}
                   />
                 </div>
                 <div className="mb-2">
@@ -55,7 +102,8 @@ function UserAccount() {
                   <input
                     type="text"
                     className="form-control form-control-sm"
-                    defaultValue={user.address}
+                    value={billingAddress}
+                    onChange={(e) => setBillingAddress(e.target.value)}
                   />
                 </div>
                 <div className="mb-2">
@@ -65,7 +113,8 @@ function UserAccount() {
                   <input
                     type="text"
                     className="form-control form-control-sm"
-                    defaultValue={user.phone}
+                    value={phoneNumber}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
                   />
                 </div>
                 <button type="submit" className="btn btn-sm rounded-pill btn-outline-success mt-3">

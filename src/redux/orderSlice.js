@@ -11,5 +11,5 @@ const orderSlice = createSlice({
 });
 
 const { actions, reducer } = orderSlice;
-export const {} = actions;
+export const { setOrder } = actions;
 export default reducer;

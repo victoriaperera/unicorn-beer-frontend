@@ -10,9 +10,15 @@ const userSlice = createSlice({
     clearToken: (state) => {
       return null;
     },
+    updateUserData(state, action) {
+      const user = action.payload.user;
+      state.shippingAddress = user.shippingAddress;
+      state.address = user.address;
+      state.phone = user.phone;
+    },
   },
 });
 
 const { actions, reducer } = userSlice;
-export const { setToken, clearToken,} = actions;
+export const { setToken, clearToken, updateUserData } = actions;
 export default reducer;

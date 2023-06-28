@@ -242,9 +242,16 @@ function About() {
             <Col xs={12} md={8} lg={6} className="align-self-center mb-4">
               <h3 className="mb-3">PROJECT ORGANIZATION - MER</h3>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti iure perspiciatis
-                ducimus porro cupiditate. Nobis, nulla repudiandae dolores ex ducimus recusandae
-                quos mollitia sit soluta similique quod magnam. Dolor, voluptates!
+                Our primary objective was to outline the backend prerequisites prior to progressing.
+                We created a list of the primary tasks and then meticulously constructed an entity
+                relationship diagram. Within this diagram, we defined the fundamental associations
+                among the following entities: User, Products, Orders, Styles, and Admins.
+              </p>
+              <p>
+                To ensure efficient task allocation within our team, we utilized Trello as our
+                project management tool. The project was divided into three sprints, with Github
+                serving as our primary collaboration platform. Discord played a crucial role in
+                facilitating seamless communication throughout the development process.
               </p>
             </Col>
             <Col className="d-flex image-container align-self-center justify-content-center p-0 mb-5 mx-4 col-12">
@@ -276,10 +283,13 @@ function About() {
           <div className="animation-container" ref={animationRef3}>
             <Col xs={12} md={8} lg={6} className="align-self-center mb-4">
               <h3 className="mb-3">PRODUCT DESIGN</h3>
+
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti iure perspiciatis
-                ducimus porro cupiditate. Nobis, nulla repudiandae dolores ex ducimus recusandae
-                quos mollitia sit soluta similique quod magnam. Dolor, voluptates!
+                Drawing inspiration from websites like Mastra and Heineken, we not only defined our
+                product's name, explored various beer styles, and curated a captivating color
+                palette, but also took the initiative to design and create our own brand. This
+                involved crafting a unique logo and designing eye-catching packaging to showcase our
+                commitment to excellence.
               </p>
             </Col>
             <Col className="d-flex image-container align-self-center justify-content-center p-0 col-12">
@@ -302,6 +312,13 @@ function About() {
                 fluid
               />
             </Col>
+            <Col className="d-flex image-container align-self-center justify-content-center p-0 col-12">
+              <img
+                src="src/assets/img/Bottle-about-us.png"
+                alt="Ipa Bottle"
+                className="design-img p-4"
+              />
+            </Col>
           </div>
         </Row>
         <Row
@@ -312,9 +329,10 @@ function About() {
             <Col xs={12} md={8} lg={6} className="align-self-center mb-4">
               <h3 className="mb-3">ADMIN DASHBOARD</h3>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti iure perspiciatis
-                ducimus porro cupiditate. Nobis, nulla repudiandae dolores ex ducimus recusandae
-                quos mollitia sit soluta similique quod magnam. Dolor, voluptates!
+                In this e-commerce platform, we provide an admin panel dashboard where the
+                administrator has the ability to delete, update, or create products, categories and
+                users. Additionally, they can monitor the status of orders and make modifications as
+                necessary.
               </p>
             </Col>
             <Col className="d-flex image-container align-self-center justify-content-center p-0 col-12">
