@@ -3,9 +3,10 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteAdmin } from "../adminSlice";
 
-function AdminsTableContent({admin, key}){
+function AdminsTableContent({admin}){
     const token = useSelector((state) => state.admin.token.token)
     const dispatch = useDispatch();
+
     const handleDelete = async (adminId) => {
         try{
             await axios({
@@ -19,15 +20,13 @@ function AdminsTableContent({admin, key}){
                 }
             })
             dispatch(deleteAdmin(adminId))
-
-
         }catch(err){
             console.log(err)
         }
 
     }
     return(
-        <tr key={key}>
+        <tr>
             <td>
                 {admin.id}
             </td>
