@@ -33,7 +33,7 @@ function Products() {
           <thead className="table-header">
             <tr>
               <th className="products-table-heading" scope="col">
-                Id
+                Product Id
               </th>
               <th className="products-table-heading" scope="col">
                 Name

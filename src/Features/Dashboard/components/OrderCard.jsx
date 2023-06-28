@@ -65,7 +65,7 @@ function OrderCard() {
         <thead className="align-middle">
           <tr>
             <th scope="col" className="orders-table-heading">
-              Order Nº
+              Order Id
             </th>
             <th scope="col" className="orders-table-heading">
               Date
