@@ -20,7 +20,7 @@ function ProductCard({ product }) {
   };
 
   return (
-    <div className="col-12 col-md-7 col-lg-6 align-self-center px-5 product-view-text">
+    <div className="col-10 col-sm-8 col-lg-5 col-xl-4 align-self-start product-view-text">
       <div className="pb-2">
         <h2>{product.style.name}</h2>
         <p className="mb-0">{product.style.description}</p>
