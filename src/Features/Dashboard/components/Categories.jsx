@@ -3,7 +3,8 @@ import CategoryDelete from "./CategoryDelete";
 import CategoryCreate from "./CategoryCreate";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import { setToggleDeleteStyle, setToggleStyle } from "../adminSlice";
+import { setToggleStyle } from "../adminSlice";
+import CategoriesTableContent from "./CategoriesTableContent";
 
 function Categories() {
   const styles = useSelector((state) => state.admin.styles);
@@ -40,6 +41,12 @@ function Categories() {
               ABV
             </th>
             <th scope="col" className="categories-table-heading">
+              Price
+            </th>
+            <th scope="col" className="categories-table-heading">
+              Photos
+            </th>
+            <th scope="col" className="categories-table-heading">
               Actions
             </th>
           </tr>
@@ -47,22 +54,7 @@ function Categories() {
         <tbody>
           {styles && styles.length > 0 ? (
             styles.map((style) => (
-              <tr key={style.id}>
-                <th scope="row">{style.id}</th>
-                <td>{style.name}</td>
-                <td className="category-description-overflow">{style.description}</td>
-                <td>{style.abv}</td>
-                <td className="d-flex justify-content-around">
-                  <i className="bi bi-pencil-square fs-5 edit-icon"></i>
-                  <i
-                    className="bi bi-trash3-fill fs-5 delete-icon"
-                    onClick={() => {
-                      dispatch(setToggleDeleteStyle(true));
-                      setStyle(style);
-                    }}
-                  ></i>
-                </td>
-              </tr>
+              <CategoriesTableContent style={style} key={style.id}></CategoriesTableContent>
             ))
           ) : (
             <tr>

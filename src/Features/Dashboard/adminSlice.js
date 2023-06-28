@@ -52,20 +52,16 @@ const adminSlice = createSlice({
     },
     createProduct: (state, action) => {
       const newProduct = action.payload;
-      console.log(action.payload);
+
       state.products.push(newProduct);
     },
     deleteProduct: (state, action) => {
       state.products = state.products.filter((product) => product.id !== action.payload);
     },
     updateProduct: (state, action) => {
-      const updatedProduct = action.payload;
-      const product = state.products.find((product) => product.id === updatedProduct.id);
-      if (product) {
-        product.status = updatedProduct.status;
-        const productIndex = state.products.indexOf(product);
-        state.products[productIndex] = product;
-      }
+      const product = state.products.find((product) => product.id === action.payload.id);
+      const productIndex = state.products.indexOf(product);
+      state.products[productIndex].stock = action.payload.stock;
     },
     setStyles: (state, action) => {
       state.styles = action.payload;
@@ -74,13 +70,10 @@ const adminSlice = createSlice({
       state.styles.push(action.payload);
     },
     updateStyle: (state, action) => {
-      const updatedStyle = action.payload;
-      const style = state.styles.find((style) => style.id === updatedStyle.id);
-      if (style) {
-        style.status = updatedStyle.status;
-        const styleIndex = state.styles.indexOf(style);
-        state.styles[styleIndex] = style;
-      }
+      const style = state.styles.find((style) => style.id === action.payload.id);
+
+      const styleIndex = state.styles.indexOf(style);
+      state.styles[styleIndex] = action.payload;
     },
     deleteStyle: (state, action) => {
       state.styles = state.styles.filter((style) => style.id !== action.payload);
