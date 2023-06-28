@@ -4,8 +4,9 @@ import { useSelector } from "react-redux";
 import AdminsTableContent from "./AdminsTableContent";
 
 function Admins(){
-    const admins = useSelector((state)=> state.admins )
+    const admins = useSelector((state)=> state.admin.admins )
     const [admin, setAdmin] = useState("");
+    console.log(admins)
     return(
         <div className="administrators-bg scrollable">
        
@@ -13,9 +14,6 @@ function Admins(){
           <h2 className="text-white mb-3">Adminisrators</h2>
           <i
             className="bi bi-plus-circle fs-2 create-icon"
-            onClick={() => {
-              setAdmin(admin);
-            }}
           ></i>
         </div>
         <table className="table table-hover text-center align-middle">
@@ -36,10 +34,8 @@ function Admins(){
             </tr>
           </thead>
           <tbody>
-            {admins && (
-              admins.map( admin =>
+            {admins.map( admin =>
                <AdminsTableContent admin={admin} key={admin.id}/>
-              )
             )}
           </tbody>
         </table>

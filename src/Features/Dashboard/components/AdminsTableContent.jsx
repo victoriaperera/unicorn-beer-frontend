@@ -14,7 +14,10 @@ function AdminsTableContent({admin, key}){
                 {admin.email}
             </td>
             <td>
-                Actions
+                <div className="d-flex justify-content-around">
+                    <i class="bi bi-pencil-square fs-5 edit-icon"></i>
+                    <i class="bi bi-trash3-fill fs-5 delete-icon"></i>
+                </div>
             </td>
         </tr>
     )
