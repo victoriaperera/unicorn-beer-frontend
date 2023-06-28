@@ -1,12 +1,14 @@
 import "./styles.css";
 import { Button, Col, Form, InputGroup, Modal, Row } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { createAdmin } from "../adminSlice";
 import { useState } from "react";
 import axios from "axios";
 
 function AdminCreate({show, close}){
     const dispatch = useDispatch();
+
+    const token = useSelector((state) => state.admin.token.token);
 
     const [name, setName] = useState(null);
     const [email, setEmail] = useState(null);
@@ -29,8 +31,8 @@ function AdminCreate({show, close}){
                         password: password
                     }
                 })
-                console.log(response)
-                //dispatch(createAdmin(response.data))
+                dispatch(createAdmin(response.data))
+                close();
             }
         }catch(err) {
 
