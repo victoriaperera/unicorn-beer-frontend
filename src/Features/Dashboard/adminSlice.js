@@ -22,6 +22,9 @@ const adminSlice = createSlice({
     setAdmins(state, action) {
       state.admins = action.payload
     },
+    deleteAdmin(state, action) {
+     state.admins = state.admins.filter((admin) => admin.id !== action.payload)
+    },
     clearAdminToken: (state) => {
       state.token = null;
       state.orders = [];
@@ -97,6 +100,7 @@ const adminSlice = createSlice({
 export const {
   setAdminToken,
   setAdmins,
+  deleteAdmin,
   clearAdminToken,
   setOrders,
   setUsers,
