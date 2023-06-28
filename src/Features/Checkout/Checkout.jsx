@@ -24,20 +24,24 @@ function Checkout() {
 
   const paymentOptions = [
     { value: "Visa", label: "Visa", image: "src/assets/icons/icons8-tarjeta-visa-48.png" },
-    { value: "Mastercard", label: "Master Card", image: "src/assets/icons/icons8-mastercard-48.png"},
+    {
+      value: "Mastercard",
+      label: "Master Card",
+      image: "src/assets/icons/icons8-mastercard-48.png",
+    },
     { value: "Paypal", label: "PayPal", image: "src/assets/icons/icons8-paypal-48.png" },
   ];
   const handlePaymentMethodChange = (selectedOption) => {
     setPaymentMet(selectedOption);
     setShowCardForm(true);
   };
-  const formatOptionLabel = ( option ) => {
-    return(
+  const formatOptionLabel = (option) => {
+    return (
       <div>
-      <img src={option.image} alt={option.label} style={{ width: '33px', marginRight: '10px' }} />
-      {option.label}
-    </div>
-    )
+        <img src={option.image} alt={option.label} style={{ width: "33px", marginRight: "10px" }} />
+        {option.label}
+      </div>
+    );
   };
 
   const deliveryOptions = [];

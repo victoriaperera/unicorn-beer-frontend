@@ -60,7 +60,7 @@ function UserOrder({ order }) {
                         if (photo.includes("Main") && photo.includes(product.container.name)) {
                           const mainPhoto = useCheckImg([photo])[0];
                           return (
-                            <div key={photo.id} className="text-center">
+                            <div key={photo} className="text-center">
                               <img
                                 src={mainPhoto}
                                 alt="product photo"

@@ -10,7 +10,7 @@ import "./styles.css";
 
 function UserAccount() {
   const user = useSelector((state) => state.user);
-  const orders = user.orders;
+
   const dispatch = useDispatch();
 
   const [shippingAddress, setShippingAddress] = useState(user.shippingAddress);
@@ -38,7 +38,8 @@ function UserAccount() {
           phone: phoneNumber,
         },
       });
-      dispatch(updateUserData(response.data));
+
+      dispatch(updateUserData({ user: response.data }));
     } catch (error) {
       console.log(error);
     }
@@ -179,8 +180,8 @@ function UserAccount() {
         </div>
         <div className="main-account">
           <h3 className="mb-3 heading-orange">Order history</h3>
-          {orders && orders.length > 0 ? (
-            orders.map((order) => <UserOrder key={order.id} order={order} />)
+          {user && user.orders && user.orders.length > 0 ? (
+            user.orders.map((order) => <UserOrder key={order.id} order={order} />)
           ) : (
             <span className="fs-5">
               There are no orders yet. <Link to={"/shop"}>Lets shop!</Link>
