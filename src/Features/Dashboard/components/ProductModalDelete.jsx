@@ -30,11 +30,11 @@ function ProductModalDelete({ product }) {
       show={toggleDelete}
       onHide={() => dispatch(setToggleDelete(false))}
       size="md"
-      aria-labelledby="contained-modal-title-vcenter"
+      aria-labelledby="contained-modal-delete"
     >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          <p className="text-center">Do you want to DELETE this product?</p>
+      <Modal.Header className="d-flex m-0" closeButton>
+        <Modal.Title id="contained-modal-delete">
+          <p className="m-0 fw-semibold fs-5">Do you want to DELETE this product?</p>
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>

@@ -23,6 +23,11 @@
   color: var(--green) !important;
 }
 
+.dashboard-table {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  font-size: 0.9rem;
+}
+
 /**** DASHBOARD ****/
 
 .dashboard-bg {

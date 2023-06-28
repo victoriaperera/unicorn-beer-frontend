@@ -29,7 +29,7 @@ function Products() {
         ></i>
       </div>
       <div>
-        <Table className="table table-hover align-middle text-center">
+        <Table className="table table-hover align-middle text-center dashboard-table rounded rounded-3 overflow-hidden">
           <thead className="table-header">
             <tr>
               <th className="products-table-heading" scope="col">

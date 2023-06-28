@@ -6,7 +6,7 @@ import { createProduct, setToggleProduct, setToggleStyle, updateProduct } from "
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-function ProductModalCU({ product}) {
+function ProductModalCU({ product }) {
   const token = useSelector((state) => state.admin.token.token);
   const styles = useSelector((state) => state.admin.styles);
   const toggleProduct = useSelector((state) => state.admin.toggleCreateProduct);
@@ -28,25 +28,25 @@ function ProductModalCU({ product}) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-      try {
-        const response = await axios({
-          method: "POST",
-          url: `${import.meta.env.VITE_BACK_URL}/products`,
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-          data: {
-            style: style,
-            featured: false,
-            container: container,
-            stock: stock,
-          },
-        });
-        dispatch(createProduct(response.data));
-        dispatch(setToggleProduct(false));
-      } catch (err) {
-        console.log(err);
-      }
+    try {
+      const response = await axios({
+        method: "POST",
+        url: `${import.meta.env.VITE_BACK_URL}/products`,
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        data: {
+          style: style,
+          featured: false,
+          container: container,
+          stock: stock,
+        },
+      });
+      dispatch(createProduct(response.data));
+      dispatch(setToggleProduct(false));
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -56,13 +56,13 @@ function ProductModalCU({ product}) {
         dispatch(setToggleProduct(false));
         resetStates();
       }}
-      size="xl"
+      size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <Modal.Header closeButton className="mb-4" style={{ borderBottom: "none" }}>
+      <Modal.Header closeButton className="" style={{ borderBottom: "none" }}>
         <Modal.Title className="position-relative" id="contained-modal-title-vcenter">
-          <h3 className="mb-4">Create Product </h3>
+          <h3 className="m-0">Create Product </h3>
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
@@ -76,10 +76,10 @@ function ProductModalCU({ product}) {
                 onChange={(e) => handleSelectStyle(e.target.value)}
               >
                 {styles.map((style) => (
-                    <option key={style.id} value={style.id}>
-                      {style.name}
-                    </option>
-                  ))}
+                  <option key={style.id} value={style.id}>
+                    {style.name}
+                  </option>
+                ))}
               </Form.Select>
             </Form.Group>
             <Form.Group as={Col}>
@@ -91,23 +91,23 @@ function ProductModalCU({ product}) {
               >
                 <option>Select a container</option>
                 {containers.map((container) => (
-                    <option key={container._id} value={container._id}>
-                      {container.name}
-                    </option>
-                    ))}
+                  <option key={container._id} value={container._id}>
+                    {container.name}
+                  </option>
+                ))}
               </Form.Select>
             </Form.Group>
-              <p className="my-2">
-                Would you like to create a brand new
-                <Link
-                  onClick={() => {
-                    dispatch(setToggleStyle(true));
-                    dispatch(setToggleProduct(false));
-                  }}
-                >
-                  Style?
-                </Link>
-              </p>
+            <p className="my-2">
+              Would you like to create a brand new{" "}
+              <Link
+                onClick={() => {
+                  dispatch(setToggleStyle(true));
+                  dispatch(setToggleProduct(false));
+                }}
+              >
+                Style?
+              </Link>
+            </p>
             <Form.Group>
               <Form.Label>Stock</Form.Label>
               <Form.Control type="number" name="stock" onChange={(e) => setStock(e.target.value)} />
