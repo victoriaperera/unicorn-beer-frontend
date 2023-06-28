@@ -1,37 +1,38 @@
 import "./styles.css";
 import { Button, Col, Form, InputGroup, Modal, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { createAdmin } from "../adminSlice";
+import { updateAdmin } from "../adminSlice";
 import { useState } from "react";
 import axios from "axios";
 
-function AdminCreate({show, close}){
+function AdminsUpdate({show, close, admin}){
     const dispatch = useDispatch();
 
     const token = useSelector((state) => state.admin.token.token);
 
-    const [name, setName] = useState(null);
-    const [email, setEmail] = useState(null);
-    const [password, setPassword] = useState(null);
-    const [passwordRepeat, setPasswordRepeat] = useState(null);
+    const [name, setName] = useState(admin.name);
+    const [email, setEmail] = useState(admin.email);
+    const [password, setPassword] = useState(admin.password);
+    const [passwordRepeat, setPasswordRepeat] = useState(admin.password);
 
     const handleSubmit = async (e)=> {
         e.preventDefault();
         try{
             if(password === passwordRepeat && name && email){
                 const response = await axios({
-                    method: "POST",
+                    method: "PATCH",
                     url: `${import.meta.env.VITE_BACK_URL}/admin`,
                     headers:{
                         Authorization: `Bearer ${token}`
                     },
                     data:{
+                        id: admin.id,
                         name: name,
                         email: email,
                         password: password
                     }
                 })
-                dispatch(createAdmin(response.data))
+                dispatch(updateAdmin(response.data))
                 close();
             }
         }catch(err) {
@@ -41,7 +42,7 @@ function AdminCreate({show, close}){
     return (
         <Modal show={show} onHide={close} size="lg">
             <Modal.Header closeButton>
-            <h2>Create Administrator</h2>
+            <h2>Update Administrator</h2>
             </Modal.Header>
             <Modal.Body>
             <Form onSubmit={handleSubmit}>
@@ -53,6 +54,7 @@ function AdminCreate({show, close}){
                             placeholder="Admin Name"
                             name="name"
                             type="text"
+                            value={name}
                             onChange={(e)=> setName(e.target.value)}
                             />
                         </InputGroup>
@@ -64,6 +66,7 @@ function AdminCreate({show, close}){
                             placeholder="Email"
                             name="email"
                             type="email"
+                            value={email}
                             onChange={(e)=> setEmail(e.target.value)}
                             />
                         </InputGroup>
@@ -92,7 +95,7 @@ function AdminCreate({show, close}){
                     </Form.Group>
                     <div className="d-flex justify-content-around align-items-end">
                         <Button variant="success" type="submit">
-                            Create Admin
+                            Update Admin
                         </Button>
                         <Button variant="secondary" onClick={close}>
                             Close
@@ -105,4 +108,4 @@ function AdminCreate({show, close}){
     )
 }
 
-export default AdminCreate;
+export default AdminsUpdate;

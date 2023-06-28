@@ -5,7 +5,7 @@ import AdminsTableContent from "./AdminsTableContent";
 import AdminsCreate from "./AdminsCreate"
 function Admins(){
     const admins = useSelector((state)=> state.admin.admins )
-    const [admin, setAdmin] = useState("");
+    
 
     const [show, setShow] = useState(false);
     const handleShowCreate = ()=> {setShow(true)}

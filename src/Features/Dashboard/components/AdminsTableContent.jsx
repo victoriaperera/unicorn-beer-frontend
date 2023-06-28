@@ -1,11 +1,18 @@
 import "./styles.css";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 import { deleteAdmin } from "../adminSlice";
+import AdminsUpdate from "./AdminsUpdate";
 
 function AdminsTableContent({admin}){
-    const token = useSelector((state) => state.admin.token.token)
+    const token = useSelector((state) => state.admin.token.token);
+
     const dispatch = useDispatch();
+
+    const [show, setShow]= useState(false);
+    const handleShowUpdate = () => setShow(true);
+    const handleCloseUpdate = () => setShow(false);
 
     const handleDelete = async (adminId) => {
         try{
@@ -27,6 +34,7 @@ function AdminsTableContent({admin}){
     }
     return(
         <tr>
+            <AdminsUpdate show={show} close={handleCloseUpdate} admin={admin}/>
             <td>
                 {admin.id}
             </td>
@@ -38,7 +46,10 @@ function AdminsTableContent({admin}){
             </td>
             <td>
                 <div className="d-flex justify-content-around">
-                    <i className="bi bi-pencil-square fs-5 edit-icon"></i>
+                    <i className="bi bi-pencil-square fs-5 edit-icon"
+                    onClick={handleShowUpdate}
+                    >
+                    </i>
                     <i 
                     className="bi bi-trash3-fill fs-5 delete-icon"
                     onClick={()=> handleDelete(admin.id)}
