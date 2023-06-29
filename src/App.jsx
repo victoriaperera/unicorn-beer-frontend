@@ -13,7 +13,7 @@ import UserAccount from "./Features/Auth/UserAccount";
 import Product from "./Features/Product/Product";
 import Checkout from "./Features/Checkout/Checkout";
 import Contact from "./Features/Contact/Contact";
-import AdminLogin from "./Features/Auth/adminLogin";
+import AdminLogin from "./Features/Auth/AdminLogin";
 import Admin from "./Features/Dashboard/Admin";
 import Err404 from "./Features/err404/err404";
 import ForgotPassword from "./Features/Auth/ForgotPassword";
