@@ -1,6 +1,7 @@
 import { Col, Row } from "react-bootstrap";
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
+import figmaLogo from "../../../assets/icons/figma_logo"
 
 const TechSection = React.forwardRef((props, ref) => {
   const animationRef1 = useRef(null);
@@ -77,7 +78,7 @@ const TechSection = React.forwardRef((props, ref) => {
             <div className="iconTech">
               <i>
                 <img
-                  src="src/assets/icons/figma_logo.png"
+                  src={figmaLogo}
                   alt="figma icon"
                   typeof="png/image"
                   className="tech-icon"
