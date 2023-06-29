@@ -1,9 +1,18 @@
-import { Document, Page, Text, View, Image, StyleSheet } from "@react-pdf/renderer";
+import { Document, Page, Text, View, Image, StyleSheet, Font } from "@react-pdf/renderer";
 import { format } from "date-fns";
+import bebasNeue from "../../../assets/BebasNeue-Regular.ttf";
+import logoUnicorn from "../../../assets/icons/Unicorn-black-logo.png";
+
+Font.register({
+  family: "Bebas Neue",
+  fontStyle: "normal",
+  fontWeight: "normal",
+  fonts: [{ src: bebasNeue }],
+});
 
 const styles = StyleSheet.create({
   page: {
-    fontFamily: "Helvetica",
+    fontFamily: "Bebas Neue",
     fontSize: 12,
     paddingTop: 30,
     paddingLeft: 60,
@@ -92,7 +101,7 @@ const DetailPdf = ({ cart, user, order }) => {
     <Document>
       <Page size="A4" style={styles.page}>
         <View style={[styles.logoContainer, styles.centered]}>
-          <Image src="src/assets/icons/Unicorn-black-logo.png" alt="Logo" style={styles.logo} />
+          <Image src={logoUnicorn} alt="Logo" style={styles.logo} />
         </View>
         <View style={styles.titleContainer}>
           <Text style={styles.title}>Order Details</Text>

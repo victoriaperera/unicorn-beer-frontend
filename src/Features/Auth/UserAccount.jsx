@@ -9,6 +9,7 @@ import { updateUserData } from "./userSlice";
 import { setOrder } from "../../redux/orderSlice";
 import UserOrder from "./components/UserOrder";
 import OutOfScopeModal from "../../Common/components/OutOfScopeModal";
+import unicornLogo from "../../assets/icons/Unicorn-beer-icon-3.svg";
 
 function UserAccount() {
   const user = useSelector((state) => state.user);
@@ -71,11 +72,7 @@ function UserAccount() {
     <div className="graphite-background-account d-flex justify-content-center align-items-center">
       <div className="container account-container">
         <div className="d-flex justify-content-center align-items-center mb-5">
-          <img
-            src="../src/assets/icons/Unicorn-beer-icon-3.svg"
-            alt="unicorn icon"
-            className="checkout-logo-icon me-3"
-          />
+          <img src={unicornLogo} alt="Unicorn logo" className="checkout-logo-icon me-3" />
           <h2 className="m-0">
             Welcome, {user.firstname} {user.lastname}
           </h2>

@@ -4,6 +4,7 @@ import { NavLink, Nav } from "react-bootstrap";
 import { useSetColor } from "../../hook/useSetColor";
 import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
+import unicornLogo from "../../assets/icons/Unicorn-beer-white-logo-iso.svg";
 
 function Footer() {
   const lastProduct = useSelector((state) => state.product);
@@ -27,11 +28,7 @@ function Footer() {
       </div>
       <div className="d-flex flex-column gap-3 mt-5">
         <NavLink href="/">
-          <img
-            src="/src/assets/icons/Unicorn-beer-white-logo-iso.svg"
-            alt="Unicorn Logo"
-            className="icon-beer d-inline"
-          />
+          <img src={unicornLogo} alt="Unicorn Logo" className="icon-beer d-inline" />
         </NavLink>
         <small className="text-white fw-lighter">{`© ${new Date().getFullYear()} Unicorn Craft Beer & Co.`}</small>
       </div>
