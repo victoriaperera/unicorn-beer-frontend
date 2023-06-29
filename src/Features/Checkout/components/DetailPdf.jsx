@@ -4,10 +4,9 @@ import bebasNeue from "../../../assets/BebasNeue-Regular.ttf";
 
 Font.register({
   family: "Bebas Neue",
-  src: bebasNeue,
   fontStyle: "normal",
   fontWeight: "normal",
-  fonts: [],
+  fonts: [{ src: bebasNeue }],
 });
 
 const styles = StyleSheet.create({
