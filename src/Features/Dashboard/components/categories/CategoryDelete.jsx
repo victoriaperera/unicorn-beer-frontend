@@ -5,7 +5,7 @@ import { Button, Modal } from "react-bootstrap";
 import { deleteStyle, setToggleDeleteStyle } from "../../adminSlice";
 
 function CategoryDelete({ style }) {
-  const token = useSelector((state) => state.admin.token);
+  const admin = useSelector((state) => state.admin.token);
   const toggleDelete = useSelector((state) => state.admin.toggleDeleteStyle);
   const dispatch = useDispatch();
 
@@ -15,7 +15,7 @@ function CategoryDelete({ style }) {
         method: "DELETE",
         url: `${import.meta.env.VITE_BACK_URL}/styles`,
         headers: {
-          Authorization: `Bearer ${token.token}`,
+          Authorization: `Bearer ${admin.token}`,
         },
         data: { styleId },
       });
