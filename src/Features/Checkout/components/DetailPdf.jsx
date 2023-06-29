@@ -1,21 +1,20 @@
 import React from "react";
 import { Document, Page, Text, View, Image, StyleSheet } from "@react-pdf/renderer";
-import { useSelector } from "react-redux";
 import { format } from "date-fns";
 
 const styles = StyleSheet.create({
   page: {
     fontFamily: "Helvetica",
     fontSize: 12,
-    paddingTop: 100,
+    paddingTop: 30,
     paddingLeft: 60,
     paddingRight: 60,
     paddingBottom: 30,
   },
   titleContainer: {
     flexDirection: "row",
-    justifyContent: "center",
-    marginBottom: 20,
+    marginLeft: 70,
+    marginBottom: 30,
   },
   title: {
     fontSize: 24,
@@ -26,7 +25,8 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 18,
-    marginBottom: 5,
+    marginBottom: 10,
+    borderBottom: "1px solid #525252",
     padding: 5,
   },
   subtitle2: {
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   tableRow: {
     margin: "auto",
     flexDirection: "row",
-    marginTop: 20,
+    marginTop: 15,
     borderBottom: "1px solid #525252",
   },
   tableColHeader: {
@@ -119,13 +119,13 @@ const DetailPdf = ({ cart, user, order }) => {
         <View style={[styles.table, styles.centered]}>
           <View style={styles.tableRow}>
             <View style={styles.tableColHeader}>
-              <Text style={styles.text}>Imagen</Text>
+              <Text style={styles.text}>Image</Text>
             </View>
             <View style={styles.tableColHeader}>
-              <Text style={styles.text}>Producto</Text>
+              <Text style={styles.text}>Product</Text>
             </View>
             <View style={styles.tableColHeader}>
-              <Text style={styles.text}>Precio</Text>
+              <Text style={styles.text}>Price</Text>
             </View>
           </View>
           {cart.products.map((product, index) => {

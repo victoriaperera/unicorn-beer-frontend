@@ -1,3 +1,15 @@
 .err404Container {
     background-color: var(--lightGraphite);
 }
+
+.errorImg {
+    width: 100%;
+    padding: 0;
+}
+
+@media (min-width: 768px) {
+    .errorImg{
+        width: 80%;
+        padding: 100px;
+    }
+  }
