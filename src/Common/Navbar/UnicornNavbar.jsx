@@ -140,6 +140,16 @@ function UnicornNavbar() {
                 </Offcanvas>
               </div>
               <div className="mx-2 mt-1">
+                <Nav.Link
+                  as={Link}
+                  to={"/admin/login"}
+                  eventKey={"6"}
+                  className="nav-hover new-hover"
+                >
+                  Admin
+                </Nav.Link>
+              </div>
+              <div className="mx-2 mt-1">
                 <Nav.Link as={Link} to={"/contact"} className="nav-hover" eventKey={"5"}>
                   CONTACT
                 </Nav.Link>

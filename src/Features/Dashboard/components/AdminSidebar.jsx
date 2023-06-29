@@ -1,9 +1,11 @@
 import "../styles.css";
 import Logout from "../../Auth/components/Logout";
 import { useState } from "react";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 function AdminSidebar({ onSidebarClick }) {
   const [activeButton, setActiveButton] = useState("dashboard");
+  const navigate = useNavigate();
 
   const handleNavigation = (component) => {
     onSidebarClick(component);
@@ -17,6 +19,7 @@ function AdminSidebar({ onSidebarClick }) {
           src="/src/assets/icons/Unicorn-beer-white-logo-iso.svg"
           alt="Logo"
           className="sidebar-logo"
+          onClick={() => navigate("/")}
         />
       </div>
       <ul className="nav flex-column">
@@ -62,11 +65,13 @@ function AdminSidebar({ onSidebarClick }) {
           </button>
         </li>
         <li className="nav-item">
-          <button 
-            className={`nav-link active ${activeButton === "administrators" ? "active-administrators" : ""}`}
+          <button
+            className={`nav-link active ${
+              activeButton === "administrators" ? "active-administrators" : ""
+            }`}
             onClick={() => handleNavigation("administrators")}
           >
-          <i className="bi bi-award me-3"></i>Admins
+            <i className="bi bi-award me-3"></i>Admins
           </button>
         </li>
         <li className="nav-item">
