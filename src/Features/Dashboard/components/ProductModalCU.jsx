@@ -6,7 +6,8 @@ import { createProduct, setToggleProduct, setToggleStyle, updateProduct } from "
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-function ProductModalCU({ product }) {
+function ProductModalCU() {
+  const product = useSelector((state) => state.admin.product);
   const token = useSelector((state) => state.admin.token.token);
   const styles = useSelector((state) => state.admin.styles);
   const toggleProduct = useSelector((state) => state.admin.toggleCreateProduct);

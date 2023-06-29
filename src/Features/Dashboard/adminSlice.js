@@ -7,6 +7,7 @@ const adminSlice = createSlice({
     token: null,
     orders: [],
     products: [],
+    product: null,
     users: [],
     styles: [],
     admins: [],
@@ -20,16 +21,18 @@ const adminSlice = createSlice({
       state.token = action.payload;
     },
     setAdmins(state, action) {
-      state.admins = action.payload
+      state.admins = action.payload;
     },
     createAdmin(state, action) {
-      state.admins.push(action.payload)
+      state.admins.push(action.payload);
     },
     deleteAdmin(state, action) {
-     state.admins = state.admins.filter((admin) => admin.id !== action.payload)
+      state.admins = state.admins.filter((admin) => admin.id !== action.payload);
     },
     updateAdmin(state, action) {
-      state.admins = state.admins.map((admin)=> admin.id === action.payload.id ? {...action.payload} : admin )
+      state.admins = state.admins.map((admin) =>
+        admin.id === action.payload.id ? { ...action.payload } : admin,
+      );
     },
     clearAdminToken: (state) => {
       state.token = null;
@@ -63,6 +66,10 @@ const adminSlice = createSlice({
     setProducts: (state, action) => {
       state.products = action.payload;
     },
+    setProduct: (state, action) => {
+      state.product = action.payload;
+    },
+
     createProduct: (state, action) => {
       const newProduct = action.payload;
 
@@ -114,6 +121,7 @@ export const {
   setUsers,
   deleteUser,
   setProducts,
+  setProduct,
   createProduct,
   updateProduct,
   deleteProduct,
