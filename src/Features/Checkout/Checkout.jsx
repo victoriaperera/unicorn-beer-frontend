@@ -10,6 +10,11 @@ import Select from "react-select";
 import CardForm from "./components/CardForm";
 import OrderModal from "./components/OrderModal";
 import OutOfScopeModal from "../../Common/components/OutOfScopeModal";
+import amex from "../../assets/icons/icons8-amex-48.png";
+import mastercard from "../../assets/icons/icons8-mastercard-48.png";
+import visa from "../../assets/icons/icons8-tarjeta-visa-48.png";
+import paypal from "../../assets/icons/icons8-paypal-48.png";
+import unicorn from "../../assets/icons/Unicorn-beer-icon-3.svg";
 
 function Checkout() {
   const user = useSelector((state) => state.user);
@@ -31,15 +36,15 @@ function Checkout() {
     {
       value: "Amex",
       label: "Amex",
-      image: "src/assets/icons/icons8-amex-48.png",
+      image: { amex },
     },
     {
       value: "Mastercard",
       label: "Mastercard",
-      image: "src/assets/icons/icons8-mastercard-48.png",
+      image: { mastercard },
     },
-    { value: "Visa", label: "Visa", image: "src/assets/icons/icons8-tarjeta-visa-48.png" },
-    { value: "Paypal", label: "PayPal", image: "src/assets/icons/icons8-paypal-48.png" },
+    { value: "Visa", label: "Visa", image: { visa } },
+    { value: "Paypal", label: "PayPal", image: { paypal } },
   ];
 
   const handlePaypalAccount = () => {
@@ -133,11 +138,7 @@ function Checkout() {
       <OrderModal show={show} />
       <div className="container checkout-container">
         <div className="d-flex justify-content-center align-items-center my-5">
-          <img
-            src="src/assets/icons/Unicorn-beer-icon-3.svg"
-            alt="unicorn icon"
-            className="checkout-logo-icon me-3"
-          />
+          <img src="unicorn" alt="unicorn icon" className="checkout-logo-icon me-3" />
           <h2 className="m-0">Check Out</h2>
         </div>
         <div className="main-checkout">
