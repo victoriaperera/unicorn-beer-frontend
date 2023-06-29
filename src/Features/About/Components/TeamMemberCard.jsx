@@ -69,7 +69,7 @@ function TeamMemberCard({ admin }) {
         <h4 className="mt-4">Esteban Castañeira</h4>
         <p>Full Stack Developer </p>
         <div>
-          <a href="https://www.linkedin.com/in/estebancastaneira/">
+          <a href="https://www.linkedin.com/in/estebancastaneira/" target="_blank">
             <img
               src="src/assets/icons/linkedin_logo.png"
               alt="linkedin icon"
@@ -79,7 +79,7 @@ function TeamMemberCard({ admin }) {
               onMouseLeave={handleShrink}
             />
           </a>
-          <a href="https://github.com/estebanCastaneira">
+          <a href="https://github.com/estebanCastaneira" target="_blank">
             <img
               src="src/assets/icons/github_logo.png"
               alt="github icon"
@@ -102,7 +102,7 @@ function TeamMemberCard({ admin }) {
         <h4 className="mt-4">Noah Sugliano</h4>
         <p>Full Stack Developer </p>
         <div>
-          <a href="https://www.linkedin.com/in/noah-sugliano" target="blank">
+          <a href="https://www.linkedin.com/in/noah-sugliano" target="_blank">
             <img
               src="src/assets/icons/linkedin_logo.png"
               alt="linkedin icon"
@@ -168,7 +168,7 @@ function TeamMemberCard({ admin }) {
         <h4 className="mt-4">Nicolás Martínez</h4>
         <p>Full Stack Developer </p>
         <div>
-          <a href="https://www.linkedin.com/in/nicolás-martínez-latorraca" target="blank">
+          <a href="https://www.linkedin.com/in/nicolás-martínez-latorraca" target="_blank">
             <img
               src="src/assets/icons/linkedin_logo.png"
               alt="linkedin icon"
