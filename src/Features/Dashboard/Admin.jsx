@@ -1,15 +1,16 @@
+import "./styles.css";
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import { setOrders, setProducts, setStyles, setUsers, setAdmins } from "./adminSlice";
 import Header from "../../Common/components/Header";
-import axios from "axios";
-
-import "./styles.css";
 import AdminSidebar from "./components/AdminSidebar";
 import Dashboard from "./components/dashboard/Dashboard";
 import Categories from "./components/categories/Categories";
 import Customers from "./components/customers/Customers";
 import Admins from "./components/admin/Admins";
-import { setOrders, setProducts, setStyles, setUsers, setAdmins } from "./adminSlice";
+import Products from "./components/products/Products";
+import Orders from "./components/orders/Orders";
 
 function Admin() {
   const pageTitle = "Admin Dashboard";

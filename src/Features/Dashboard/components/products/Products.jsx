@@ -1,11 +1,10 @@
 import "../styles.css";
-import ProductModalCU from "./ProductModalCU";
-import ProductModalDelete from "./ProductModalDelete";
 import { useDispatch, useSelector } from "react-redux";
 import { Table } from "react-bootstrap";
-import { useState } from "react";
 import { setToggleProduct } from "../../adminSlice";
-import CategoryCreate from "./CategoryCreate";
+import ProductModalCU from "./ProductModalCU";
+import ProductModalDelete from "./ProductModalDelete";
+import CategoryCreate from "../categories/CategoryCreate";
 import ProductsTableContent from "./ProductsTableContent";
 
 function Products() {

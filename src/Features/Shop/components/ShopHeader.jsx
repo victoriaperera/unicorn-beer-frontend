@@ -1,9 +1,9 @@
 import "./styles.css";
 import { Container, Row, Col } from "react-bootstrap";
-import ProductFilter from "./ProductFilter";
-import SearchInput from "./SearchInput";
 import { gsap } from "gsap";
 import { useRef, useEffect } from "react";
+import ProductFilter from "./ProductFilter";
+import SearchInput from "./SearchInput";
 
 function ShopHeader() {
   const titleRef = useRef(null);

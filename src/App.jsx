@@ -1,15 +1,14 @@
 import "./App.css";
 import { Routes, Route, useLocation, Navigate } from "react-router-dom";
-
+import { useSelector } from "react-redux";
 import Verify from "./Common/Navbar/Verify/Verify";
 import UnicornNavbar from "./Common/Navbar/UnicornNavbar";
 import Footer from "./Common/Footer/Footer";
 import Home from "./Features/Home/Home";
 import About from "./Features/About/About";
-
 import Shop from "./Features/Shop/Shop";
 import Login from "./Features/Auth/Login";
-import SignUp from "./Features/Auth/Singup";
+import SignUp from "./Features/Auth/SingUp";
 import UserAccount from "./Features/Auth/UserAccount";
 import Product from "./Features/Product/Product";
 import Checkout from "./Features/Checkout/Checkout";
@@ -19,7 +18,6 @@ import Admin from "./Features/Dashboard/Admin";
 import Err404 from "./Features/err404/err404";
 import ForgotPassword from "./Features/Auth/ForgotPassword";
 import RequestPassChange from "./Features/Auth/RequestPassChange";
-import { useSelector } from "react-redux";
 
 function App() {
   const { pathname: currentPage } = useLocation();

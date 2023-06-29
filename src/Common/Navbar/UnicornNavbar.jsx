@@ -1,11 +1,11 @@
 import "./styles.css";
+import "react-toastify/dist/ReactToastify.css";
 import Cart from "./Cart/Cart";
 import Logout from "../../Features/Auth/components/Logout";
 import { setTotalQuantity } from "./Cart/cartSlice";
 import { clearFilter, fromCheckOut } from "../../Features/Shop/shopSlice";
 import { Container, Nav, Navbar, NavDropdown, Offcanvas } from "react-bootstrap";
 import { ToastContainer, Bounce } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";

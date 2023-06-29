@@ -2,9 +2,9 @@ import "./styles.css";
 import { Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { PDFDownloadLink } from "@react-pdf/renderer";
-import DetailPdf from "./DetailPdf";
 import { useDispatch, useSelector } from "react-redux";
 import { clearCart } from "../../../Common/Navbar/Cart/cartSlice";
+import DetailPdf from "./DetailPdf";
 
 function OrderModal({ show }) {
   const cart = useSelector((state) => state.cart);

@@ -1,7 +1,7 @@
+import "./styles.css";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Collapse, Form, InputGroup, Modal } from "react-bootstrap";
-import "./styles.css";
+import {  Form, InputGroup, Modal } from "react-bootstrap";
 import { useVerifyAge } from "../../../hook/useVerifyAge";
 import { toggleModal } from "./verifyAgeSlice";
 

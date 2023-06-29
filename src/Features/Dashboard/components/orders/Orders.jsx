@@ -1,6 +1,5 @@
 import "../styles.css";
 import OrderCard from "./OrderCard";
-import React from "react";
 
 function Orders() {
   return (

@@ -2,12 +2,10 @@ import "./styles.css";
 import CartProduct from "./components/CartProduct";
 import CartFooter from "./components/CartFooter";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import { useDispatch, useSelector } from "react-redux";
-import React from "react";
+import { useSelector } from "react-redux";
 
 function Cart({ handleClose }) {
   const cart = useSelector((state) => state.cart.products);
-  const user = useSelector((state) => state.user);
 
   return (
     <>

@@ -202,7 +202,7 @@ function TeamMemberCard({ admin }) {
         <h4 className="mt-4">Victoria Perera</h4>
         <p>Full Stack Developer </p>
         <div>
-          <a href="#">
+          <a href="https://www.linkedin.com/in/victoria-perera" target="blank">
             <img
               src="src/assets/icons/linkedin_logo.png"
               alt="linkedin icon"
@@ -212,7 +212,7 @@ function TeamMemberCard({ admin }) {
               onMouseLeave={handleShrink}
             />
           </a>
-          <a href="#">
+          <a href="https://github.com/victoriaperera" target="blank">
             <img
               src="src/assets/icons/github_logo.png"
               alt="github icon"

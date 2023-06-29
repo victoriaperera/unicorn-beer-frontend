@@ -1,4 +1,3 @@
-import React from "react";
 import { Document, Page, Text, View, Image, StyleSheet } from "@react-pdf/renderer";
 import { format } from "date-fns";
 

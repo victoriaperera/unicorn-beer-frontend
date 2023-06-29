@@ -1,4 +1,3 @@
-import React from "react";
 import format from "date-fns/format";
 import Accordion from "react-bootstrap/Accordion";
 import { useCheckImg } from "../../../hook/useCheckImg";
@@ -7,8 +6,6 @@ function UserOrder({ order }) {
   const formatDate = (date) => {
     return format(new Date(date), "dd-MMMM-yyyy");
   };
-
-
 
   return (
     <Accordion>

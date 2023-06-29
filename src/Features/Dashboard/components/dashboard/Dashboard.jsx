@@ -2,19 +2,15 @@ import "../styles.css";
 import format from "date-fns/format";
 import LineChart from "./LineChart";
 import { useSelector } from "react-redux";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
-function Dashboard({ containers, handleSidebarClick }) {
-  const products = useSelector((state) => state.admin.products);
+function Dashboard({ handleSidebarClick }) {
   const categories = useSelector((state) => state.admin.styles);
-  const [dashboardContainers, setDashboardContainers] = useState(containers);
 
   const orders = useSelector((state) => state.admin.orders);
-  const customers = useSelector((state) => state.admin.users);
 
   const totalSales = orders.reduce((total, order) => total + order.totalAmount, 0);
   const totalOrders = orders.length;
-  const totalCustomers = customers.length;
 
   const [averagePurchaseValue, setAveragePurchaseValue] = useState(0);
 
@@ -32,10 +28,6 @@ function Dashboard({ containers, handleSidebarClick }) {
 
     calculateAveragePurchaseValue();
   }, [orders]);
-
-  useEffect(() => {
-    setDashboardContainers(containers);
-  }, [containers]);
 
   return (
     <div className="dashboard-bg scrollable">

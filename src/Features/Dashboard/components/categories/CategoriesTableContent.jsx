@@ -1,7 +1,7 @@
-import React, { useRef, useState } from "react";
+import axios from "axios";
+import { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setToggleDeleteStyle, updateStyle } from "../../adminSlice";
-import axios from "axios";
 
 function CategoriesTableContent({ style }) {
   const admin = useSelector((state) => state.admin.token);
@@ -21,8 +21,6 @@ function CategoriesTableContent({ style }) {
     photos ? formData.append("photos", photos) : null;
     price ? formData.append("price", price) : null;
     description ? formData.append("description", description) : null;
-
-  
 
     try {
       const response = await axios({

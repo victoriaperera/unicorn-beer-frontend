@@ -1,5 +1,3 @@
-import React from "react";
-
 function Loader() {
   return (
     <div className="container-fluid d-flex justify-content-center align-items-center graphite-background loading-screen">

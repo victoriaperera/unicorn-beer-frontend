@@ -1,12 +1,11 @@
 import "../styles.css";
-import AddToCartBtn from "../../../Common/components/AddToCartBtn";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
+import AddToCartBtn from "../../../Common/components/AddToCartBtn";
 
 function ProductCard({ product }) {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const [counter, setCounter] = useState(1);

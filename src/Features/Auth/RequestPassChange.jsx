@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import Header from "../../Common/components/Header";
-import { useRandomColor } from "../../hook/useRandomColor";
 import axios from "axios";
+import { useEffect, useState } from "react";
+import { useRandomColor } from "../../hook/useRandomColor";
 import { Alert, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Header from "../../Common/components/Header";
 
 function RequestPassChange() {
   const pageTitle = "Reset password";

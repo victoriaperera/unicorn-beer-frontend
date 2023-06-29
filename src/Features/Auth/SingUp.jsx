@@ -5,8 +5,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { Alert } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { setToken } from "./userSlice";
-import Header from "../../Common/components/Header";
 import { useRandomColor } from "../../hook/useRandomColor";
+import Header from "../../Common/components/Header";
 
 function SignUp() {
   const pageTitle = "Sign Up";

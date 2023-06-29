@@ -1,5 +1,5 @@
 import "../styles.css";
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import ApexCharts from "apexcharts";
 
 function LineChart() {
