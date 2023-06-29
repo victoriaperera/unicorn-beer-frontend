@@ -1,18 +1,18 @@
 import { Col, Row } from "react-bootstrap";
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
-import figmaLogo from "../../../assets/icons/figma_logo";
-import cssLogo from "../../../assets/icons/css_logo";
-import bootstrapLogo from "../../../assets/icons/bootstrap_logo";
-import githubLogo from "../../../assets/icons/github_logo"
-import javascriptLogo from "../../../assets/icons/javascript_logo"
-import mongodbLogo from "../../../assets/icons/mongodb_logo";
-import nodejsLogo from "../../../assets/icons/nodejs_logo";
-import reactLogo from "../../../assets/icons/react_logo";
-import reduxLogo from "../../../assets/icons/redux_logo";
-import greenSockLogo from "../../../assets/icons/greensock_logo";
-import trelloLogo from "../../../assets/icons/trello_logo";
-import discrodLogo from "../../../assets/icons/discord_logo";
+import figmaLogo from "../../../assets/icons/figma_logo.png";
+import cssLogo from "../../../assets/icons/css_logo.png";
+import bootstrapLogo from "../../../assets/icons/bootstrap_logo.png";
+import githubLogo from "../../../assets/icons/github_logo.png"
+import javascriptLogo from "../../../assets/icons/javascript_logo.png"
+import mongodbLogo from "../../../assets/icons/mongodb_logo.png";
+import nodejsLogo from "../../../assets/icons/nodejs_logo.png";
+import reactLogo from "../../../assets/icons/react_logo.png";
+import reduxLogo from "../../../assets/icons/redux_logo.png";
+import greenSockLogo from "../../../assets/icons/greensock_logo.png";
+import trelloLogo from "../../../assets/icons/trello_logo.png";
+import discrodLogo from "../../../assets/icons/discord_logo.png";
 
 const TechSection = React.forwardRef((props, ref) => {
   const animationRef1 = useRef(null);
