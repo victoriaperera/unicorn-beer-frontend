@@ -38,7 +38,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route
           path="/account"
-          element={user ? <UserAccount /> : <Navigate to="/login" replace={true} />}
+          element={user && user.token ? <UserAccount /> : <Navigate to="/login" replace={true} />}
         />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/shop" element={<Shop />} />
@@ -48,7 +48,7 @@ function App() {
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route
           path="/admin"
-          element={admin.token ? <Admin /> : <Navigate to="/admin/login" replace={true} />}
+          element={admin && admin.token ? <Admin /> : <Navigate to="/admin/login" replace={true} />}
         />
         <Route path="*" element={<Err404 />} />
         <Route path="/reset-password" element={<RequestPassChange />} />
