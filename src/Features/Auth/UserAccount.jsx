@@ -124,18 +124,6 @@ function UserAccount() {
                   Save changes
                 </button>
               </form>
-              <ToastContainer
-                position="top-right"
-                autoClose={3000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable={false}
-                pauseOnHover
-                theme="colored"
-              />
             </div>
             <div className="col-12 col-md-6 pe-3">
               <h4>My payment methods</h4>
@@ -225,6 +213,18 @@ function UserAccount() {
         </div>
         {showModal && <OutOfScopeModal onClose={() => setShowModal(false)} />}
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable={false}
+        pauseOnHover
+        theme="colored"
+      />
     </div>
   );
 }
