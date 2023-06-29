@@ -280,7 +280,7 @@ function Checkout() {
                     >
                       <div className="ms-2 me-auto">
                         <p className="m-0 text-body-secondary">
-                          <span className="fs-5">
+                          <span className="fs-5 text-orange">
                             Your cart is empty,{" "}
                             <Link to={"/shop"} className="fs-4">
                               Go to our shop!
@@ -288,9 +288,6 @@ function Checkout() {
                           </span>
                         </p>
                       </div>
-                      <Badge bg="danger" pill>
-                        0
-                      </Badge>
                     </ListGroup.Item>
                   )}
                 </ListGroup>
