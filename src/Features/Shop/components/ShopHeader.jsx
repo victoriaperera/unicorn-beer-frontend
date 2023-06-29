@@ -49,7 +49,7 @@ function ShopHeader() {
             <div className="content ps-5">
               <h2 ref={titleRef}>Welcome to our shop.</h2>
               <p className="fs-5" ref={textRef}>
-                Explore the Magic of Unicorn Beer; where Craftsmanship Awaits
+                Explore the Magic of Unicorn Beer, where craftsmanship awaits.
               </p>
             </div>
             <div className="mt-auto">
