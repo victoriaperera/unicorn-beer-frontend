@@ -28,8 +28,12 @@ function OrderModal({ show }) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className="mt-5 d-flex justify-content-center">
-        <Link to="/" onClick={() => dispatch(clearCart())} className="modalBtn modalBtn-Success">
-          Go to Home
+        <Link
+          to="/shop"
+          onClick={() => dispatch(clearCart())}
+          className="modalBtn modalBtn-Success"
+        >
+          Go to Shop
         </Link>
         <PDFDownloadLink
           document={<DetailPdf user={user} order={order} cart={cart} />}

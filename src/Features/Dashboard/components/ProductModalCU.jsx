@@ -23,7 +23,7 @@ function ProductModalCU() {
   const handleSelectStyle = (e) => {
     setStyle(e);
     for (const style of styles) {
-      style._id === e ? setContainers(style.containers) : "";
+      style.id === e ? setContainers(style.containers) : "";
     }
   };
 
@@ -92,7 +92,7 @@ function ProductModalCU() {
               >
                 <option>Select a container</option>
                 {containers.map((container) => (
-                  <option key={container._id} value={container._id}>
+                  <option key={container.id} value={container.id}>
                     {container.name}
                   </option>
                 ))}
