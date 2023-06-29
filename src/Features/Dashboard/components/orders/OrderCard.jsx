@@ -51,7 +51,7 @@ function OrderCard() {
           status: e,
         },
       });
-      dispatch(updateOrderStatus(response.data)); // TODO hacerlo con la misma info que se envía a la DB
+      dispatch(updateOrderStatus(response.data));
     } catch (err) {
       console.log(err);
     }
