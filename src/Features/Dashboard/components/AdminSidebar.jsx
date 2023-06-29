@@ -2,6 +2,8 @@ import "../styles.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Logout from "../../Auth/components/Logout";
+import unicornLogo from "../../../assets/icons/Unicorn-beer-white-logo-iso.svg";
+import userPic from "../../../assets/img/mock-user-pic.png";
 
 function AdminSidebar({ onSidebarClick }) {
   const [activeButton, setActiveButton] = useState("dashboard");
@@ -15,20 +17,11 @@ function AdminSidebar({ onSidebarClick }) {
   return (
     <div className="sidebar scrollable">
       <div className="sidebar-header">
-        <img
-          src="/src/assets/icons/Unicorn-beer-white-logo-iso.svg"
-          alt="Logo"
-          className="sidebar-logo"
-          onClick={() => navigate("/")}
-        />
+        <img src={unicornLogo} alt="Logo" className="sidebar-logo" onClick={() => navigate("/")} />
       </div>
       <ul className="nav flex-column">
         <li className="text-center mb-4">
-          <img
-            src="./src/assets/img/mock-user-pic.png"
-            alt="Admin photo"
-            className="img-fluid rounded-circle p-0 w-50"
-          />
+          <img src={userPic} alt="Admin photo" className="img-fluid rounded-circle p-0 w-50" />
         </li>
         <li className="nav-item">
           <button
