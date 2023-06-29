@@ -15,7 +15,7 @@ import Checkout from "./Features/Checkout/Checkout";
 import Contact from "./Features/Contact/Contact";
 import AdminLogin from "./Features/Auth/AdminLogin";
 import Admin from "./Features/Dashboard/Admin";
-import Err404 from "./Features/err404/err404";
+import Err404 from "./Features/Err404/Err404";
 import ForgotPassword from "./Features/Auth/ForgotPassword";
 import RequestPassChange from "./Features/Auth/RequestPassChange";
 
