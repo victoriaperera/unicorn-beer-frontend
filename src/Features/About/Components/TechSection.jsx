@@ -1,7 +1,7 @@
 import { Col, Row } from "react-bootstrap";
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
-import figmaLogo from "../../../assets/icons/figma_logo.png"
+import figmaLogo from "../../../assets/icons/figma_logo"
 
 const TechSection = React.forwardRef((props, ref) => {
   const animationRef1 = useRef(null);
