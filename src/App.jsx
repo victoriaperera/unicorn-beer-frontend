@@ -1,12 +1,12 @@
 import "./App.css";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 
 import Verify from "./Common/Navbar/Verify/Verify";
 import UnicornNavbar from "./Common/Navbar/UnicornNavbar";
 import Footer from "./Common/Footer/Footer";
 import Home from "./Features/Home/Home";
 import About from "./Features/About/About";
-import Cart from "./Common/Navbar/Cart/Cart";
+
 import Shop from "./Features/Shop/Shop";
 import Login from "./Features/Auth/Login";
 import SignUp from "./Features/Auth/Singup";
@@ -19,11 +19,14 @@ import Admin from "./Features/Dashboard/Admin";
 import Err404 from "./Features/err404/err404";
 import ForgotPassword from "./Features/Auth/ForgotPassword";
 import RequestPassChange from "./Features/Auth/RequestPassChange";
+import { useSelector } from "react-redux";
 
 function App() {
   const { pathname: currentPage } = useLocation();
   const pagesWONavbars = ["/admin"];
   const RenderVerify = !currentPage.includes("/admin");
+  const admin = useSelector((state) => state.admin.token);
+  const user = useSelector((state) => state.user);
 
   return (
     <>
@@ -32,16 +35,21 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/account" element={<UserAccount />} />
+        <Route
+          path="/account"
+          element={user ? <UserAccount /> : <Navigate to="/login" replace={true} />}
+        />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/products/:id" element={<Product />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/admin" element={<Admin />} />
+        <Route
+          path="/admin"
+          element={admin.token ? <Admin /> : <Navigate to="/admin/login" replace={true} />}
+        />
         <Route path="*" element={<Err404 />} />
         <Route path="/reset-password" element={<RequestPassChange />} />
         <Route path="/forgotpassword/:id" element={<ForgotPassword></ForgotPassword>}></Route>
