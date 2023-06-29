@@ -5,6 +5,7 @@ import { useRef, useEffect } from "react";
 import { gsap, Expo } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import BuyNowBtn from "../../../Common/components/BuyNowBtn";
+import containers from "../../../assets/icons/containers-06.svg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -92,11 +93,7 @@ function FeaturedProducts({ product, afterColor }) {
           <Col xs={12} sm={8} md={4} lg={3} xxl={3} className="p-0 px-4 pt-5" ref={leftRef}>
             <img src={logo} alt={`${product.style.name} logo`} className="beer-logo mb-3" />
             <p className="product-text">{product.style.description}</p>
-            <img
-              src="/src/assets/icons/containers-06.svg"
-              alt="beer containers"
-              className="beer-containers pb-3 pb-md-0"
-            />
+            <img src={containers} alt="beer containers" className="beer-containers pb-3 pb-md-0" />
           </Col>
           <Col xs={12} sm={8} md={4} lg={4} xxl={3} className="p-0 py-5">
             <img
