@@ -1,6 +1,10 @@
 import React, { useRef, useEffect } from "react";
 import { Col, Row, Image } from "react-bootstrap";
 import { gsap } from "gsap";
+import productDesignSm from "../../../assets/img/product-design-sm.png";
+import productDesignMd from "../../../assets/img/product-design-md.png";
+import productDesignLg from "../../../assets/img/product-design-lg.png";
+import bottleLogo from "../../../assets/img/Bottle-about-us.png";
 
 const DesignSection = React.forwardRef((props, ref) => {
   const animationRef3 = useRef(null);
@@ -41,31 +45,26 @@ const DesignSection = React.forwardRef((props, ref) => {
           </Col>
           <Col className="d-flex image-container align-self-center justify-content-center p-0 col-12">
             <Image
-              src="src/assets/img/product-design-sm.png"
+              src={productDesignSm}
               alt="Product design"
               className="product-design small"
               fluid
             />
             <Image
-              src="src/assets/img/product-design-md.png"
+              src={productDesignMd}
               alt="Product design"
               className="product-design medium"
               fluid
             />
             <Image
-              src="src/assets/img/product-design-lg.png"
+              src={productDesignLg}
               alt="Product design"
               className="product-design large"
               fluid
             />
           </Col>
           <Col className="d-flex image-container align-self-center justify-content-center p-0 col-12">
-            <Image
-              src="src/assets/img/Bottle-about-us.png"
-              alt="Ipa Bottle"
-              className="design-img p-4"
-              fluid
-            />
+            <Image src={bottleLogo} alt="Ipa Bottle" className="design-img p-4" fluid />
           </Col>
         </div>
       </Row>
