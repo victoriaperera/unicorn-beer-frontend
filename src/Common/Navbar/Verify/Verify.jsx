@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {  Form, InputGroup, Modal } from "react-bootstrap";
 import { useVerifyAge } from "../../../hook/useVerifyAge";
 import { toggleModal } from "./verifyAgeSlice";
-
+import unicornLogo from "../../assets/icons/Unicorn-beer-white-logo.svg";
 function Verify() {
   const show = useSelector((state) => state.verify);
   const dispatch = useDispatch();
@@ -29,7 +29,7 @@ function Verify() {
     <Modal show={show} size="md" centered backdrop="static" className="unicornModal">
       <Modal.Header className="border-0 d-flex flex-column justify-content-center">
         <img
-          src="src/assets/icons/Unicorn-beer-icon-black.svg"
+          src={unicornLogo}
           alt="Unicorn Logo"
           className="w-50 pt-3"
         />
