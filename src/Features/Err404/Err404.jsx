@@ -1,6 +1,6 @@
 import "./styles.css";
 import Header from "../../Common/components/Header";
-import unicornAtBeach from "../../assets/img/unicornAtBeach.jpg";
+import unicornAtBeach from "../../assets/img/unicronAtBeach.jpg";
 
 function Err404() {
   const pageTitle = "Oops! Page not found";
