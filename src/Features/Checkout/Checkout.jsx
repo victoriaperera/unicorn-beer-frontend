@@ -279,7 +279,14 @@ function Checkout() {
                       className="d-flex justify-content-between align-items-start"
                     >
                       <div className="ms-2 me-auto">
-                        <p className="m-0 text-body-secondary">Your cart it's emtpy :(</p>
+                        <p className="m-0 text-body-secondary">
+                          <span className="fs-5">
+                            Your cart is empty,{" "}
+                            <Link to={"/shop"} className="fs-4">
+                              Lets shop!
+                            </Link>
+                          </span>
+                        </p>
                       </div>
                       <Badge bg="danger" pill>
                         0
