@@ -315,7 +315,11 @@ function Checkout() {
                     <span>US$ {cart.totalAmount}</span>
                   </div>
                 </div>
-                <button type="submit" className="btn btn-cofirm-order rounded-pill w-75 my-3">
+                <button
+                  type="submit"
+                  className="btn btn-cofirm-order rounded-pill w-75 my-3"
+                  disabled={cart.products.length === 0}
+                >
                   <i className="bi bi-lock-fill me-2"></i>
                   Confirm Order
                 </button>
