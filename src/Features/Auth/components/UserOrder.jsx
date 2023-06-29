@@ -8,8 +8,6 @@ function UserOrder({ order }) {
     return format(new Date(date), "dd-MMMM-yyyy");
   };
 
-  console.log(order);
-
   return (
     <Accordion>
       <Accordion.Item eventKey={order.id.toString()} className="mb-3">
