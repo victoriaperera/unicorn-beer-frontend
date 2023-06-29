@@ -1,13 +1,15 @@
-import "./styles.css";
-import OrderModal from "./components/OrderModal";
-import CardForm from "./components/CardForm";
-import { Badge, Button, Container, Col, ListGroup, Form, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 import React, { useState, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import Select from "react-select";
 import axios from "axios";
+import { Badge, Button, Container, Col, ListGroup, Form, Row } from "react-bootstrap";
 import { Alert } from "react-bootstrap";
+
+import CardForm from "./components/CardForm";
+import OrderModal from "./components/OrderModal";
+import OutOfScopeModal from "../../Common/components/OutOfScopeModal";
+import "./styles.css";
 import { setOrder } from "../../redux/orderSlice";
 
 function Checkout() {
@@ -19,24 +21,41 @@ function Checkout() {
   const [paymentMethod, setPaymentMet] = useState();
   const [deliveryDate, setDeliveryDate] = useState();
   const [showCardForm, setShowCardForm] = useState(false);
+  const [show, setShow] = useState(false);
+  const [showPaypalLink, setShowPaypalLink] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const [alertText, setAlertText] = useState("");
   const [alertToggle, setAlertToggle] = useState(null);
-  const [show, setShow] = useState(false);
 
   const paymentOptions = [
-    { value: "Visa", label: "Visa", image: "src/assets/icons/icons8-tarjeta-visa-48.png" },
+    {
+      value: "Amex",
+      label: "Amex",
+      image: "src/assets/icons/icons8-amex-48.png",
+    },
     {
       value: "Mastercard",
-      label: "Master Card",
+      label: "Mastercard",
       image: "src/assets/icons/icons8-mastercard-48.png",
     },
+    { value: "Visa", label: "Visa", image: "src/assets/icons/icons8-tarjeta-visa-48.png" },
     { value: "Paypal", label: "PayPal", image: "src/assets/icons/icons8-paypal-48.png" },
   ];
+
+  const handlePaypalAccount = () => {
+    setShowModal(true);
+  };
+
   const handlePaymentMethodChange = (selectedOption) => {
     setPaymentMet(selectedOption);
-    setShowCardForm(true);
+    if (selectedOption.value === "Paypal") {
+      setShowPaypalLink(true);
+    } else {
+      setShowCardForm(true);
+    }
   };
+
   const formatOptionLabel = (option) => {
     return (
       <div>
@@ -59,7 +78,6 @@ function Checkout() {
         { month: "long" },
       )} ${date.getDate()}, ${date.getFullYear()}`,
     });
-
     today = date;
   }
 
@@ -136,7 +154,6 @@ function Checkout() {
                   <i className="bi bi-pencil-square edit-info-icon"></i>
                 </Link>
               </div>
-
               <div className="d-flex flex-column mb-3 read-only">
                 <span>
                   <small>Shipping address:</small>
@@ -190,7 +207,10 @@ function Checkout() {
                     required
                   />
                 </Form.Group>
-                {showCardForm && <CardForm user={user} />}
+                {!showPaypalLink && <CardForm user={user} />}
+                {showPaypalLink && (
+                  <Link onClick={handlePaypalAccount}>Go to my Paypal account</Link>
+                )}
               </div>
               <div className="col-12 col-md-6">
                 <Form.Group className="my-2">
@@ -206,6 +226,7 @@ function Checkout() {
                 </Form.Group>
               </div>
             </div>
+            {showModal && <OutOfScopeModal onClose={() => setShowModal(false)} />}
           </div>
           <div className="main-checkout aside-checkout">
             <div className="row">
