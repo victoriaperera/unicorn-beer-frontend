@@ -26,9 +26,13 @@ function OrderModal({ show }) {
           <p className="mt-5 text-center">Your order is being processed.</p>
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body className="mt-5 d-flex justify-content-center gap-3">
-        <Link to="/" onClick={() => dispatch(clearCart())} className="modalBtn modalBtn-Success">
-          Go to Home
+      <Modal.Body className="mt-5 d-flex justify-content-center">
+        <Link
+          to="/shop"
+          onClick={() => dispatch(clearCart())}
+          className="modalBtn modalBtn-Success"
+        >
+          Go to Shop
         </Link>
         <PDFDownloadLink
           document={<DetailPdf user={user} order={order} cart={cart} />}

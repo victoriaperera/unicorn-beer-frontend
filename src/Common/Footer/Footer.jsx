@@ -33,7 +33,7 @@ function Footer() {
             className="icon-beer d-inline"
           />
         </NavLink>
-        <small className="text-white fw-lighter">{`© ${new Date().getFullYear()} Unicorn Beer Craft Beer & Co.`}</small>
+        <small className="text-white fw-lighter">{`© ${new Date().getFullYear()} Unicorn Craft Beer & Co.`}</small>
       </div>
       <Nav className="footerLinkContainer">
         <Nav.Link as={Link} to="/about" className="footerLink">

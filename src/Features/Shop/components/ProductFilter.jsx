@@ -20,7 +20,7 @@ const ProductFilter = forwardRef(function ProductFilter(props, ref) {
   return (
     <div className="d-flex flex-wrap mt-3 search-filter" ref={filterRef}>
       {styles.map((style) => (
-        <FilterBtn style={style} key={style._id} filterRef={filterRef}></FilterBtn>
+        <FilterBtn style={style} key={style.id} filterRef={filterRef}></FilterBtn>
       ))}
       <FilterAllBtn filterRef={filterRef} />
     </div>

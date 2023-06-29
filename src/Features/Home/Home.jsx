@@ -8,7 +8,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { setProductList } from "../../redux/productSlice";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import SplitType from "split-type";
 import BackToTopBtn from "../../Common/components/BackToTopBtn";
 import Header from "../../Common/components/Header";
 import Loader from "../../Common/components/Loader";
