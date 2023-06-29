@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   },
   titleContainer: {
     flexDirection: "row",
-    marginLeft: 70,
+    marginLeft: 40,
     marginBottom: 30,
   },
   title: {
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
   logoContainer: {
     position: "absolute",
     top: 0,
-    left: 0,
+    right: 0,
     margin: 20,
   },
   logo: {
