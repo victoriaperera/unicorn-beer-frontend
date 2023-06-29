@@ -1,6 +1,7 @@
 import { Container } from "react-bootstrap";
 import { gsap } from "gsap";
 import { useRef, useEffect } from "react";
+import videoHome from "../../assets/videos/home_header_video.mp4";
 
 function HomeHeader() {
   const logoRef = useRef(null);
@@ -16,7 +17,7 @@ function HomeHeader() {
     <header>
       <div className="overlay"></div>
       <video playsInline autoPlay muted loop>
-        <source src="/src/assets/videos/home_header_video.mp4" />
+        <source src={videoHome} />
       </video>
       <Container className="h-100">
         <div className="d-flex h-100 text-center align-items-center">
@@ -27,7 +28,6 @@ function HomeHeader() {
               className="header-logo w-sm-50 w-100"
               ref={logoRef}
             />
-            {/*<p className="lead mb-0">Unlock the magic in every sip</p>*/}
           </div>
         </div>
       </Container>
@@ -46,44 +46,3 @@ function HomeHeader() {
 }
 
 export default HomeHeader;
-
-{
-  /*
-      <Carousel>
-        <Carousel.Item interval={2000}>
-          <img
-            className="d-block w-100"
-            src="/src/assets/img/main_header_bg.jpeg"
-            alt="First slide"
-          />
-          <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item interval={2000}>
-          <img
-            className="d-block w-100"
-            src="/src/assets/img/main_header_bg.jpeg"
-            alt="Second slide"
-          />
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="/src/assets/img/main_header_bg.jpeg"
-            alt="Third slide"
-          />
-          <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>*/
-}
