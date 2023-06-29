@@ -1,12 +1,11 @@
 import "./styles.css";
 import { Col } from "react-bootstrap";
 import { gsap } from "gsap";
-import { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 
 function TeamMemberCard({ admin }) {
-  const circle = useRef(null);
   const circleOne = useRef(null);
   const circleTwo = useRef(null);
   const circleThree = useRef(null);
