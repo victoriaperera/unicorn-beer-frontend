@@ -7,7 +7,13 @@ function OutOfScopeModal() {
 
   return (
     <>
-      <Modal size="sm" show={smShow} onHide={() => setSmShow(false)} aria-labelledby="modal-title">
+      <Modal
+        size="sm"
+        show={smShow}
+        onHide={() => setSmShow(false)}
+        centered
+        aria-labelledby="modal-title"
+      >
         <Modal.Header closeButton>
           <Modal.Title id="modal-title">
             <span className="h3">Information</span>

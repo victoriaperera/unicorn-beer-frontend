@@ -70,7 +70,7 @@ function TeamMemberCard({ admin }) {
         <h4 className="mt-4">Esteban Castañeira</h4>
         <p>Full Stack Developer Jr.</p>
         <div>
-          <a href="#">
+          <a href="https://www.linkedin.com/in/estebancastaneira/">
             <img
               src="src/assets/icons/linkedin_logo.png"
               alt="linkedin icon"
@@ -80,7 +80,7 @@ function TeamMemberCard({ admin }) {
               onMouseLeave={handleShrink}
             />
           </a>
-          <a href="#">
+          <a href="https://github.com/estebanCastaneira">
             <img
               src="src/assets/icons/github_logo.png"
               alt="github icon"
