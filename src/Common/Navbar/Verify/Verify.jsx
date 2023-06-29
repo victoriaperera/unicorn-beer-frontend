@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {  Form, InputGroup, Modal } from "react-bootstrap";
 import { useVerifyAge } from "../../../hook/useVerifyAge";
 import { toggleModal } from "./verifyAgeSlice";
-import unicornLogo from "../../../assets/icons/Unicron-black-logo.png";
+import unicornLogo from "../../../assets/icons/Unicorn-black-logo.png";
 
 function Verify() {
   const show = useSelector((state) => state.verify);
