@@ -29,7 +29,7 @@ function ForgotPassword() {
           url: `${import.meta.env.VITE_BACK_URL}/users/resetPassword/${params.id}`,
           data: { password: password },
         });
-        console.log(response.data);
+      
         dispatch(setToken(response.data));
         navigate("/shop");
       } catch (err) {

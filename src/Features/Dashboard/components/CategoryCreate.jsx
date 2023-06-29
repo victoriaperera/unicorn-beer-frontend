@@ -39,7 +39,7 @@ function CategoryCreate() {
           Authorization: `Bearer ${admin.token}`,
         },
       });
-      console.log(response.data);
+  
       dispatch(setToggleStyle(false));
       dispatch(setToggleProduct(true));
       dispatch(createStyle(response.data));
