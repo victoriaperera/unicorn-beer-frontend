@@ -8,6 +8,8 @@ import noahPic from "../../../assets/img/members/Noah-card.png";
 import lorenaPic from "../../../assets/img/members/Lore-card.png";
 import nicolasPic from "../../../assets/img/members/Nico-card.png";
 import victoriaPic from "../../../assets/img/members/Victoria-card.png";
+import linkedinIcon from "../../../assets/icons/linkedin_logo.png";
+import githubIcon from "../../../assets/icons/github_logo.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -77,7 +79,7 @@ function TeamMemberCard({ admin }) {
         <div>
           <a href="https://www.linkedin.com/in/estebancastaneira/" target="_blank">
             <img
-              src="src/assets/icons/linkedin_logo.png"
+              src={linkedinIcon}
               alt="linkedin icon"
               typeof="png/image"
               className="team-member-icon me-2"
@@ -87,7 +89,7 @@ function TeamMemberCard({ admin }) {
           </a>
           <a href="https://github.com/estebanCastaneira" target="_blank">
             <img
-              src="src/assets/icons/github_logo.png"
+              src={githubIcon}
               alt="github icon"
               typeof="png/image"
               className="team-member-icon"
@@ -110,7 +112,7 @@ function TeamMemberCard({ admin }) {
         <div>
           <a href="https://www.linkedin.com/in/noah-sugliano" target="_blank">
             <img
-              src="src/assets/icons/linkedin_logo.png"
+              src={linkedinIcon}
               alt="linkedin icon"
               typeof="png/image"
               className="team-member-icon me-2"
@@ -120,7 +122,7 @@ function TeamMemberCard({ admin }) {
           </a>
           <a href="https://github.com/Noah1711" target="blank">
             <img
-              src="src/assets/icons/github_logo.png"
+              src={githubIcon}
               alt="github icon"
               typeof="png/image"
               className="team-member-icon"
@@ -143,7 +145,7 @@ function TeamMemberCard({ admin }) {
         <div>
           <a href="https://www.linkedin.com/in/lore-rincon/" target="_blank">
             <img
-              src="src/assets/icons/linkedin_logo.png"
+              src={linkedinIcon}
               alt="linkedin icon"
               typeof="png/image"
               className="team-member-icon me-2"
@@ -153,7 +155,7 @@ function TeamMemberCard({ admin }) {
           </a>
           <a href="https://github.com/lorenacrincon" target="_blank">
             <img
-              src="src/assets/icons/github_logo.png"
+              src={githubIcon}
               alt="github icon"
               typeof="png/image"
               className="team-member-icon"
@@ -176,7 +178,7 @@ function TeamMemberCard({ admin }) {
         <div>
           <a href="https://www.linkedin.com/in/nicolás-martínez-latorraca" target="_blank">
             <img
-              src="src/assets/icons/linkedin_logo.png"
+              src={linkedinIcon}
               alt="linkedin icon"
               typeof="png/image"
               className="team-member-icon me-2"
@@ -186,7 +188,7 @@ function TeamMemberCard({ admin }) {
           </a>
           <a href="https://github.com/Martinez-Latorraca" target="blank">
             <img
-              src="src/assets/icons/github_logo.png"
+              src={githubIcon}
               alt="github icon"
               typeof="png/image"
               className="team-member-icon"
@@ -207,9 +209,9 @@ function TeamMemberCard({ admin }) {
         <h4 className="mt-4">Victoria Perera</h4>
         <p>Full Stack Developer </p>
         <div>
-          <a href="https://www.linkedin.com/in/victoria-perera" target="blank">
+          <a href="https://www.linkedin.com/in/victoria-perera" target="_blank">
             <img
-              src="src/assets/icons/linkedin_logo.png"
+              src={linkedinIcon}
               alt="linkedin icon"
               typeof="png/image"
               className="team-member-icon me-2"
@@ -219,7 +221,7 @@ function TeamMemberCard({ admin }) {
           </a>
           <a href="https://github.com/victoriaperera" target="blank">
             <img
-              src="src/assets/icons/github_logo.png"
+              src={githubIcon}
               alt="github icon"
               typeof="png/image"
               className="team-member-icon"
