@@ -18,7 +18,7 @@ const shopSlice = createSlice({
       state.filter = action.payload.filter;
     },
     fromCheckOut(state, action) {
-      state.fromCheckOut = true;
+      state.fromCheckOut = action.payload;
     },
     clearFilter(state, action) {
       state.filter = "all";

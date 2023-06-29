@@ -8,6 +8,7 @@ import { Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { useRandomColor } from "../../hook/useRandomColor";
 import Header from "../../Common/components/Header";
+import { fromCheckOut } from "../Shop/shopSlice";
 
 function Login() {
   const pageTitle = "Login";
@@ -44,6 +45,7 @@ function Login() {
     setColor(useRandomColor());
     if (user) {
       checkOut ? navigate("/checkout") : navigate("/shop");
+      dispatch(fromCheckOut(false));
     }
   }, [user]);
 

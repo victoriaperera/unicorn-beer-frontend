@@ -4,6 +4,7 @@ import { clearToken } from "../userSlice";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clearAdminToken } from "../../Dashboard/adminSlice";
+import { fromCheckOut } from "../../Shop/shopSlice";
 
 function Logout() {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ function Logout() {
       const res = await axios.get(`${import.meta.env.VITE_BACK_URL}/auth/logout`);
       setResponse(res);
       dispatch(clearToken());
-
+      dispatch(fromCheckOut(false));
       navigate("/");
     }
     if (admin != null) {

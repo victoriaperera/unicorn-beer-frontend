@@ -20,7 +20,7 @@ function UnicornNavbar() {
 
   const handleClose = () => {
     setShow(!show);
-    dispatch(fromCheckOut());
+    dispatch(fromCheckOut(true));
   };
 
   useEffect(() => {
@@ -77,7 +77,11 @@ function UnicornNavbar() {
         className={`custom-navbar ${navbarBlur}`}
       >
         <Container fluid className="collapsed-nav p-0 ps-3 pe-1">
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" className="nav-toggler-btn" onClick={()=>setNavbarBlur("navbar-blur")} />
+          <Navbar.Toggle
+            aria-controls="responsive-navbar-nav"
+            className="nav-toggler-btn"
+            onClick={() => setNavbarBlur("navbar-blur")}
+          />
           <Navbar.Brand className="p-0">
             <Nav.Link as={Link} to={"/"} onClick={handleLinkClick}>
               <img
@@ -135,7 +139,7 @@ function UnicornNavbar() {
                 )}*/}
 
                 {user && (
-                  <NavDropdown.Item eventKey={"4.3"} as={Link} to={`/account/${user.id}`}>
+                  <NavDropdown.Item eventKey={"4.3"} as={Link} to={`/account/${user._id}`}>
                     My account
                   </NavDropdown.Item>
                 )}
