@@ -9,17 +9,17 @@ import OrderModal from "./OrderModal";
 function OrderCard() {
   const orders = useSelector((state) => state.admin.orders);
   const token = useSelector((state) => state.admin.token);
+  const [show, setShow] = useState(false);
+  const [orderToModal, setOrderToModal] = useState("");
   const dispatch = useDispatch();
 
-  const [show, setShow] = useState(false);
   const handleShow = () => {
     setShow(true);
   };
+
   const handleClose = () => {
     setShow(false);
   };
-
-  const [order, setOrder] = useState("");
 
   const statusColor = (status) => {
     switch (status) {
@@ -59,7 +59,7 @@ function OrderCard() {
 
   return (
     <>
-      <OrderModal order={order} show={show} close={handleClose} />
+      <OrderModal order={orderToModal} show={show} close={handleClose} />
       <table className="table table-hover text-center align-middle rounded rounded-3 overflow-hidden dashboard-table">
         <thead className="align-middle">
           <tr>
@@ -128,7 +128,7 @@ function OrderCard() {
                   <i
                     className="bi bi-bullseye show-icon"
                     onClick={() => {
-                      setOrder(order);
+                      setOrderToModal(order);
                       handleShow();
                     }}
                   ></i>
