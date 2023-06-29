@@ -120,7 +120,7 @@ function UnicornNavbar() {
                 )}*/}
 
                 {user && (
-                  <NavDropdown.Item eventKey={"4.3"} as={Link} to="/account">
+                  <NavDropdown.Item eventKey={"4.3"} as={Link} to="/account/:slug">
                     My account
                   </NavDropdown.Item>
                 )}

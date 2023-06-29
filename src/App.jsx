@@ -37,7 +37,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route
-          path="/account"
+          path="/account/:slug"
           element={user && user.token ? <UserAccount /> : <Navigate to="/login" replace={true} />}
         />
         <Route path="/signup" element={<SignUp />} />
