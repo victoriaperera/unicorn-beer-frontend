@@ -283,7 +283,7 @@ function Checkout() {
                           <span className="fs-5">
                             Your cart is empty,{" "}
                             <Link to={"/shop"} className="fs-4">
-                              Lets shop!
+                              Go to our shop!
                             </Link>
                           </span>
                         </p>
