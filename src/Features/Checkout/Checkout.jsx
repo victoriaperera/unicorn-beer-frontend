@@ -132,7 +132,7 @@ function Checkout() {
             <div className="col-12 col-md-6">
               <div className="d-flex">
                 <h4>Shipping information </h4>
-                <Link to="/account/:slug">
+                <Link to={`/account/${user.id}`}>
                   <i className="bi bi-pencil-square edit-info-icon"></i>
                 </Link>
               </div>
@@ -153,7 +153,7 @@ function Checkout() {
             <div className="col-12 col-md-6">
               <div className="d-flex">
                 <h4>Billing Information </h4>
-                <Link to="/account/:slug">
+                <Link to={`/account/${user.id}`}>
                   <i className="bi bi-pencil-square edit-info-icon"></i>
                 </Link>
               </div>
