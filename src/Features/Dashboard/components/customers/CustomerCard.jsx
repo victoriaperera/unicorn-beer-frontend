@@ -39,7 +39,7 @@ function Customers() {
         <tbody>
           {users && users.length > 0 ? (
             users.map((user) => (
-              <tr key={user.id}>
+              <tr key={user._id}>
                 <td>
                   {user.firstname} {user.lastname}
                 </td>

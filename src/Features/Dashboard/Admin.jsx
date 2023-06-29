@@ -9,6 +9,8 @@ import Dashboard from "./components/dashboard/Dashboard";
 import Categories from "./components/categories/Categories";
 import Customers from "./components/customers/Customers";
 import Admins from "./components/admin/Admins";
+import Products from "./components/products/Products";
+import Orders from "./components/orders/orders";
 import { setOrders, setProducts, setStyles, setUsers, setAdmins } from "./adminSlice";
 
 function Admin() {

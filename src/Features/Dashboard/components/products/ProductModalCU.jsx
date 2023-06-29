@@ -1,4 +1,4 @@
-import "./styles.css";
+import "../styles.css";
 import { Button, Col, Form, InputGroup, Modal, Row } from "react-bootstrap";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
