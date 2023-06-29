@@ -103,7 +103,7 @@ function TeamMemberCard({ admin }) {
         <h4 className="mt-4">Noah Sugliano</h4>
         <p>Full Stack Developer Jr.</p>
         <div>
-          <a href="#">
+          <a href="https://www.linkedin.com/in/noah-sugliano" target="blank">
             <img
               src="src/assets/icons/linkedin_logo.png"
               alt="linkedin icon"
@@ -113,7 +113,7 @@ function TeamMemberCard({ admin }) {
               onMouseLeave={handleShrink}
             />
           </a>
-          <a href="#">
+          <a href="https://github.com/Noah1711" target="blank">
             <img
               src="src/assets/icons/github_logo.png"
               alt="github icon"
