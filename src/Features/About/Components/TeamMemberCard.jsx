@@ -68,7 +68,7 @@ function TeamMemberCard({ admin }) {
           onMouseLeave={handleShrink}
         />
         <h4 className="mt-4">Esteban Castañeira</h4>
-        <p>Full Stack Developer Jr.</p>
+        <p>Full Stack Developer </p>
         <div>
           <a href="https://www.linkedin.com/in/estebancastaneira/">
             <img
@@ -101,7 +101,7 @@ function TeamMemberCard({ admin }) {
           onMouseLeave={handleShrink}
         />
         <h4 className="mt-4">Noah Sugliano</h4>
-        <p>Full Stack Developer Jr.</p>
+        <p>Full Stack Developer </p>
         <div>
           <a href="https://www.linkedin.com/in/noah-sugliano" target="blank">
             <img
@@ -134,7 +134,7 @@ function TeamMemberCard({ admin }) {
           onMouseLeave={handleShrink}
         />
         <h4 className="mt-4">Lorena Rincón</h4>
-        <p>Full Stack Developer Jr.</p>
+        <p>Full Stack Developer </p>
         <div>
           <a href="#">
             <img
@@ -167,9 +167,9 @@ function TeamMemberCard({ admin }) {
           onMouseLeave={handleShrink}
         />
         <h4 className="mt-4">Nicolás Martínez</h4>
-        <p>Full Stack Developer Jr.</p>
+        <p>Full Stack Developer </p>
         <div>
-          <a href="#">
+          <a href="https://www.linkedin.com/in/nicolás-martínez-latorraca" target="blank">
             <img
               src="src/assets/icons/linkedin_logo.png"
               alt="linkedin icon"
@@ -179,7 +179,7 @@ function TeamMemberCard({ admin }) {
               onMouseLeave={handleShrink}
             />
           </a>
-          <a href="#">
+          <a href="https://github.com/Martinez-Latorraca" target="blank">
             <img
               src="src/assets/icons/github_logo.png"
               alt="github icon"
@@ -200,7 +200,7 @@ function TeamMemberCard({ admin }) {
           onMouseLeave={handleShrink}
         />
         <h4 className="mt-4">Victoria Perera</h4>
-        <p>Full Stack Developer Jr.</p>
+        <p>Full Stack Developer </p>
         <div>
           <a href="#">
             <img
