@@ -36,15 +36,15 @@ function Checkout() {
     {
       value: "Amex",
       label: "Amex",
-      image: { amex },
+      image: amex,
     },
     {
       value: "Mastercard",
       label: "Mastercard",
-      image: { mastercard },
+      image: mastercard,
     },
-    { value: "Visa", label: "Visa", image: { visa } },
-    { value: "Paypal", label: "PayPal", image: { paypal } },
+    { value: "Visa", label: "Visa", image: visa },
+    { value: "Paypal", label: "PayPal", image: paypal },
   ];
 
   const handlePaypalAccount = () => {
@@ -138,7 +138,7 @@ function Checkout() {
       <OrderModal show={show} />
       <div className="container checkout-container">
         <div className="d-flex justify-content-center align-items-center my-5">
-          <img src="unicorn" alt="unicorn icon" className="checkout-logo-icon me-3" />
+          <img src={unicorn} alt="unicorn icon" className="checkout-logo-icon me-3" />
           <h2 className="m-0">Check Out</h2>
         </div>
         <div className="main-checkout">
