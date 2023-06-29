@@ -1,9 +1,18 @@
-import { Document, Page, Text, View, Image, StyleSheet } from "@react-pdf/renderer";
+import { Document, Page, Text, View, Image, StyleSheet, Font } from "@react-pdf/renderer";
 import { format } from "date-fns";
+import bebasNeue from "../../../assets/BebasNeue-Regular.ttf";
+
+Font.register({
+  family: "Bebas Neue",
+  src: bebasNeue,
+  fontStyle: "normal",
+  fontWeight: "normal",
+  fonts: [],
+});
 
 const styles = StyleSheet.create({
   page: {
-    fontFamily: "Helvetica",
+    fontFamily: "Bebas Neue",
     fontSize: 12,
     paddingTop: 30,
     paddingLeft: 60,
