@@ -25,7 +25,7 @@ function About() {
   const sectionAbout = useRef(null);
 
   const scrollToSection = (ref) => {
-    ref.current.scrollIntoView({ behavior: "smooth", block: "center" });
+    ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
