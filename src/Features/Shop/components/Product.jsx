@@ -1,5 +1,5 @@
 import "./styles.css";
-import { Col } from "react-bootstrap";
+import { Badge, Col } from "react-bootstrap";
 import { useCheckImg } from "../../../hook/useCheckImg";
 import { useSetGradientColor } from "../../../hook/useSetGradientColor";
 import AddToCartBtn from "../../../Common/components/AddToCartBtn";
@@ -44,6 +44,11 @@ function Product({ product }) {
         className="d-flex flex-column justify-content-evenly text-center text-white product-card p-0"
         style={{ background: bgColor, filter: product.stock ? "sepia(0)" : "sepia(1)" }}
       >
+        {product.featured && (
+          <Badge className="feature-badge" bg="warning">
+            New
+          </Badge>
+        )}
         <div ref={imgRef}>
           <Link to={`/products/${product.slug}`}>
             <img src={main} alt={`${product.name} image`} className="product-img" />
