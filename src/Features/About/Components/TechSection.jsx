@@ -1,6 +1,18 @@
 import { Col, Row } from "react-bootstrap";
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
+import figmaLogo from "../../../assets/icons/figma_logo.png";
+import cssLogo from "../../../assets/icons/css_logo.png";
+import bootstrapLogo from "../../../assets/icons/bootstrap_logo.png";
+import githubLogo from "../../../assets/icons/github_logo.png"
+import javascriptLogo from "../../../assets/icons/javascript_logo.png"
+import mongodbLogo from "../../../assets/icons/mongodb_logo.png";
+import nodejsLogo from "../../../assets/icons/nodejs_logo.png";
+import reactLogo from "../../../assets/icons/react_logo.png";
+import reduxLogo from "../../../assets/icons/redux_logo.png";
+import greenSockLogo from "../../../assets/icons/greensock_logo.png";
+import trelloLogo from "../../../assets/icons/trello_logo.png";
+import  discordLogo from "../../../assets/icons/discord_logo.png";
 
 const TechSection = React.forwardRef((props, ref) => {
   const animationRef1 = useRef(null);
@@ -55,8 +67,8 @@ const TechSection = React.forwardRef((props, ref) => {
             <div className="iconTech d-flex">
               <i>
                 <img
-                  src="src/assets/icons/bootstrap_logo.png"
-                  alt="bootrapp icon"
+                  src={bootstrapLogo}
+                  alt="bootsrap icon"
                   typeof="png/image"
                   className="tech-icon"
                 />
@@ -66,8 +78,8 @@ const TechSection = React.forwardRef((props, ref) => {
             <div className="iconTech">
               <i>
                 <img
-                  src="src/assets/icons/css_logo.png"
-                  alt="css4 icon"
+                  src={cssLogo}
+                  alt="css3 icon"
                   typeof="png/image"
                   className="tech-icon"
                 />
@@ -77,7 +89,7 @@ const TechSection = React.forwardRef((props, ref) => {
             <div className="iconTech">
               <i>
                 <img
-                  src="src/assets/icons/figma_logo.png"
+                  src={figmaLogo}
                   alt="figma icon"
                   typeof="png/image"
                   className="tech-icon"
@@ -88,7 +100,7 @@ const TechSection = React.forwardRef((props, ref) => {
             <div className="iconTech">
               <i>
                 <img
-                  src="src/assets/icons/github_logo.png"
+                  src={githubLogo}
                   alt="github icon"
                   typeof="png/image"
                   className="tech-icon"
@@ -99,7 +111,7 @@ const TechSection = React.forwardRef((props, ref) => {
             <div className="iconTech">
               <i>
                 <img
-                  src="src/assets/icons/javascript_logo.png"
+                  src={javascriptLogo}
                   alt="javascript icon"
                   typeof="png/image"
                   className="tech-icon"
@@ -110,7 +122,7 @@ const TechSection = React.forwardRef((props, ref) => {
             <div className="iconTech">
               <i>
                 <img
-                  src="src/assets/icons/mongodb_logo.png"
+                  src={mongodbLogo}
                   alt="mongodb icon"
                   typeof="png/image"
                   className="tech-icon"
@@ -121,7 +133,7 @@ const TechSection = React.forwardRef((props, ref) => {
             <div className="iconTech">
               <i>
                 <img
-                  src="src/assets/icons/nodejs_logo.png"
+                  src={nodejsLogo}
                   alt="node icon"
                   typeof="png/image"
                   className="tech-icon"
@@ -132,7 +144,7 @@ const TechSection = React.forwardRef((props, ref) => {
             <div className="iconTech">
               <i>
                 <img
-                  src="src/assets/icons/react_logo.png"
+                  src={reactLogo}
                   alt="react icon"
                   typeof="png/image"
                   className="tech-icon"
@@ -143,7 +155,7 @@ const TechSection = React.forwardRef((props, ref) => {
             <div className="iconTech">
               <i>
                 <img
-                  src="src/assets/icons/redux_logo.png"
+                  src={reduxLogo}
                   alt="redux icon"
                   typeof="png/image"
                   className="tech-icon"
@@ -154,7 +166,7 @@ const TechSection = React.forwardRef((props, ref) => {
             <div className="iconTech">
               <i>
                 <img
-                  src="src/assets/icons/greensock_logo.png"
+                  src={greenSockLogo}
                   alt="greensock icon"
                   typeof="png/image"
                   className="tech-icon"
@@ -165,7 +177,7 @@ const TechSection = React.forwardRef((props, ref) => {
             <div className="iconTech">
               <i>
                 <img
-                  src="src/assets/icons/Trello.png"
+                  src={trelloLogo}
                   alt="Trello icon"
                   typeof="png/image"
                   className="tech-icon"
@@ -176,7 +188,7 @@ const TechSection = React.forwardRef((props, ref) => {
             <div className="iconTech">
               <i>
                 <img
-                  src="src/assets/icons/Discord.png"
+                  src={discordLogo}
                   alt="Discord icon"
                   typeof="png/image"
                   className="tech-icon"
