@@ -2,7 +2,7 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { Button, Modal } from "react-bootstrap";
-import { deleteProduct, setToggleDelete } from "../adminSlice";
+import { deleteProduct, setToggleDelete } from "../../adminSlice";
 
 function ProductModalDelete() {
   const product = useSelector((state) => state.admin.product);

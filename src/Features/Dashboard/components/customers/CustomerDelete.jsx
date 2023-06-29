@@ -2,58 +2,54 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { Button, Modal } from "react-bootstrap";
-import { deleteStyle, setToggleDeleteStyle } from "../adminSlice";
+import { deleteUser } from "../../adminSlice";
 
-function CategoryDelete({ style }) {
+function CustomerDelete({ show, close, user }) {
   const token = useSelector((state) => state.admin.token);
-  const toggleDelete = useSelector((state) => state.admin.toggleDeleteStyle);
   const dispatch = useDispatch();
 
-  const handleDelete = async (styleId) => {
+  const handleDelete = async (userId) => {
     try {
       const response = await axios({
         method: "DELETE",
-        url: `${import.meta.env.VITE_BACK_URL}/styles`,
+        url: `${import.meta.env.VITE_BACK_URL}/users`,
         headers: {
           Authorization: `Bearer ${token.token}`,
         },
-        data: { styleId },
+        data: { userId },
       });
-      dispatch(deleteStyle(styleId));
-      dispatch(setToggleDeleteStyle(false));
+      dispatch(deleteUser(userId));
     } catch (err) {
       console.log(err);
     }
   };
 
   return (
-    <Modal
-      show={toggleDelete}
-      onHide={() => dispatch(setToggleDeleteStyle(false))}
-      size="md"
-      aria-labelledby="contained-modal-title-vcenter"
-    >
+    <Modal show={show} onHide={close} size="md" aria-labelledby="delete-customer-modal">
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          <p className="text-center">Do you want to DELETE this category?</p>
+          <p className="text-center">Do you want to delete this CUSTOMER?</p>
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h3 className="text-center">{style.name}</h3>
+        <h3 className="text-center">
+          {user.firstname} {user.lastname}
+        </h3>
       </Modal.Body>
       <Modal.Footer className="justify-content-center">
         <Button
           onClick={() => {
-            handleDelete(style.id);
+            handleDelete(user.id);
+            close();
           }}
           variant="danger"
         >
           Delete
         </Button>
-        <Button>Close</Button>
+        <Button onClick={close}>Close</Button>
       </Modal.Footer>
     </Modal>
   );
 }
 
-export default CategoryDelete;
+export default CustomerDelete;

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./styles.css";
+import "../styles.css";
 import { useSelector } from "react-redux";
 import AdminsTableContent from "./AdminsTableContent";
 import AdminsCreate from "./AdminsCreate";

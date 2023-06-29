@@ -60,7 +60,7 @@
 }
 
 .dashboard-totals {
-  height: 150px;
+  height: 200px;
   background-color: var(--white);
   color: var(--graphite);
   text-align: center;

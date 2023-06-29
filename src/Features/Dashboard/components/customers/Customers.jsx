@@ -1,4 +1,4 @@
-import "./styles.css";
+import "../styles.css";
 import CustomerCard from "./CustomerCard";
 import React, { useEffect } from "react";
 

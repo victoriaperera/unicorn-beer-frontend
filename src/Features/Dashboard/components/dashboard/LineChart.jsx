@@ -1,4 +1,4 @@
-import "./styles.css";
+import "../styles.css";
 import React, { useEffect, useRef } from "react";
 import ApexCharts from "apexcharts";
 

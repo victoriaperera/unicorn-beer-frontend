@@ -1,4 +1,4 @@
-import "./styles.css";
+import "../styles.css";
 import OrderCard from "./OrderCard";
 import React from "react";
 

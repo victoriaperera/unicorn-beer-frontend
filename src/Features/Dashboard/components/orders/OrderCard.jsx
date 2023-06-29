@@ -4,8 +4,8 @@ import axios from "axios";
 import format from "date-fns/format";
 import OrderModal from "./OrderModal";
 
-import { updateOrderStatus } from "../adminSlice";
-import "./styles.css";
+import { updateOrderStatus } from "../../adminSlice";
+import "../styles.css";
 
 function OrderCard() {
   const orders = useSelector((state) => state.admin.orders);

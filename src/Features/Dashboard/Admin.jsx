@@ -1,16 +1,14 @@
-import "./styles.css";
-import AdminSidebar from "./components/AdminSidebar";
-import Dashboard from "./components/Dashboard";
-import Products from "./components/Products";
-import Categories from "./components/Categories";
-import Orders from "./components/Orders";
-import Customers from "./components/Customers";
-import Admins from "./components/Admins";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import Header from "../../Common/components/Header";
 import axios from "axios";
 
+import "./styles.css";
+import AdminSidebar from "./components/AdminSidebar";
+import Dashboard from "./components/dashboard/Dashboard";
+import Categories from "./components/categories/Categories";
+import Customers from "./components/customers/Customers";
+import Admins from "./components/admin/Admins";
 import { setOrders, setProducts, setStyles, setUsers, setAdmins } from "./adminSlice";
 
 function Admin() {

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setToggleDeleteStyle, updateStyle } from "../adminSlice";
+import { setToggleDeleteStyle, updateStyle } from "../../adminSlice";
 import axios from "axios";
 
 function CategoriesTableContent({ style }) {

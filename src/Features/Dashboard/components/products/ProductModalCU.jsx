@@ -2,7 +2,7 @@ import "./styles.css";
 import { Button, Col, Form, InputGroup, Modal, Row } from "react-bootstrap";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { createProduct, setToggleProduct, setToggleStyle, updateProduct } from "../adminSlice";
+import { createProduct, setToggleProduct, setToggleStyle, updateProduct } from "../../adminSlice";
 import axios from "axios";
 import { Link } from "react-router-dom";
 

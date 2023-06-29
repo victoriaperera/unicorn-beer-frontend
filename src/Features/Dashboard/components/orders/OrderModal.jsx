@@ -1,6 +1,6 @@
 import { Badge, Button, Modal, ListGroup } from "react-bootstrap";
-import { capitalizeFirstLetter } from "../../../hook/capitalizeFirstLetter";
-import "./styles.css";
+import { capitalizeFirstLetter } from "../../../../hook/capitalizeFirstLetter";
+import "../styles.css";
 
 function OrderModal({ order, show, close }) {
   const shippingDate = new Date(Date.parse(order.shippingDate));

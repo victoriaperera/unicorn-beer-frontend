@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { Col, Button, Form, Modal, Row } from "react-bootstrap";
-import { createStyle, setToggleProduct, setToggleStyle } from "../adminSlice";
+import { createStyle, setToggleProduct, setToggleStyle } from "../../adminSlice";
 
 function CategoryCreate() {
   const admin = useSelector((state) => state.admin.token);

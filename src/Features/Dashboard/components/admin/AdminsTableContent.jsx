@@ -1,8 +1,8 @@
-import "./styles.css";
+import "../styles.css";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import { deleteAdmin } from "../adminSlice";
+import { deleteAdmin } from "../../adminSlice";
 import AdminsUpdate from "./AdminsUpdate";
 
 function AdminsTableContent({ admin }) {

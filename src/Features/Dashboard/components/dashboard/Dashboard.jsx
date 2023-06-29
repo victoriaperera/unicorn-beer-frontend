@@ -1,4 +1,4 @@
-import "./styles.css";
+import "../styles.css";
 import format from "date-fns/format";
 import LineChart from "./LineChart";
 import { useSelector } from "react-redux";
@@ -58,9 +58,9 @@ function Dashboard({ containers, handleSidebarClick }) {
         </div>
         <div className="col-6 col-md-3">
           <div className="card mb-4 dashboard-totals">
-            <div className="card-header">Bestselling Products</div>
+            <div className="card-header">Bestselling</div>
             <div className="card-body fs-3">
-              <span>IPA Can / Pilsener Bottle</span>
+              <img src="./src/assets/img/BLONDE_Bottle.png" className="w-25" alt="" />
             </div>
           </div>
         </div>
