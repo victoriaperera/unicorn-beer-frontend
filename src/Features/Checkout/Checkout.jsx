@@ -208,7 +208,9 @@ function Checkout() {
                     required
                   />
                 </Form.Group>
-                {!showPaypalLink && <CardForm user={user} />}
+                {paymentMethod && paymentMethod.value !== "Paypal" && showCardForm && (
+                  <CardForm user={user} />
+                )}
                 {showPaypalLink && (
                   <button
                     type="button"
@@ -277,11 +279,15 @@ function Checkout() {
                       className="d-flex justify-content-between align-items-start"
                     >
                       <div className="ms-2 me-auto">
-                        <p className="m-0 text-body-secondary">Your cart it's emtpy :(</p>
+                        <p className="m-0 text-body-secondary">
+                          <span className="fs-5 text-orange">
+                            Your cart is empty,{" "}
+                            <Link to={"/shop"} className="fs-4">
+                              Go to our shop!
+                            </Link>
+                          </span>
+                        </p>
                       </div>
-                      <Badge bg="danger" pill>
-                        0
-                      </Badge>
                     </ListGroup.Item>
                   )}
                 </ListGroup>
@@ -306,7 +312,11 @@ function Checkout() {
                     <span>US$ {cart.totalAmount}</span>
                   </div>
                 </div>
-                <button type="submit" className="btn btn-cofirm-order rounded-pill w-75 my-3">
+                <button
+                  type="submit"
+                  className="btn btn-cofirm-order rounded-pill w-75 my-3"
+                  disabled={cart.products.length === 0}
+                >
                   <i className="bi bi-lock-fill me-2"></i>
                   Confirm Order
                 </button>
