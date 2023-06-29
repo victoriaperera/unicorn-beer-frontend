@@ -8,7 +8,7 @@ import OrderModal from "./OrderModal";
 
 function OrderCard() {
   const orders = useSelector((state) => state.admin.orders);
-  const token = useSelector((state) => state.admin.token);
+  const admin = useSelector((state) => state.admin.token);
   const [show, setShow] = useState(false);
   const [orderToModal, setOrderToModal] = useState("");
   const dispatch = useDispatch();
@@ -44,7 +44,7 @@ function OrderCard() {
         method: "PATCH",
         url: `${import.meta.env.VITE_BACK_URL}/orders/${orderId}`,
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${admin.token}`,
         },
         data: {
           orderId: orderId,
