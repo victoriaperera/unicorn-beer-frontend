@@ -72,7 +72,7 @@ function UserAccount() {
       <div className="container account-container">
         <div className="d-flex justify-content-center align-items-center mb-5">
           <img
-            src="src/assets/icons/Unicorn-beer-icon-3.svg"
+            src="../src/assets/icons/Unicorn-beer-icon-3.svg"
             alt="unicorn icon"
             className="checkout-logo-icon me-3"
           />
@@ -80,7 +80,7 @@ function UserAccount() {
             Welcome, {user.firstname} {user.lastname}
           </h2>
         </div>
-        <div className="main-account">
+        <div className="main-account rounded">
           <h3 className="mb-3 heading-orange">Account details</h3>
           <div className="row">
             <div className="col-12 col-md-6 pe-5">
@@ -119,7 +119,7 @@ function UserAccount() {
                     onChange={(e) => setPhoneNumber(e.target.value)}
                   />
                 </div>
-                <button type="submit" className="btn btn-sm rounded-pill btn-outline-success mt-3">
+                <button type="submit" className="btn btn-sm rounded-pill btn-outline-success my-3">
                   Save changes
                 </button>
               </form>
@@ -200,13 +200,13 @@ function UserAccount() {
             </div>
           </div>
         </div>
-        <div className="main-account">
+        <div className="main-account rounded">
           <h3 className="mb-3 heading-orange">Order history</h3>
           {orders && orders.length > 0 ? (
             orders.map((order) => <UserOrder key={order.id} order={order} />)
           ) : (
             <span className="fs-5">
-              There are no orders yet. <Link to={"/shop"}>Lets shop!</Link>
+              There are no orders yet. <Link to={"/shop"}>Let's shop!</Link>
             </span>
           )}
         </div>
