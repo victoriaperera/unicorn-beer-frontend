@@ -1,6 +1,9 @@
 import { Col, Row, Image } from "react-bootstrap";
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
+import merSmall from "../../../assets/img/MER-small.png";
+import merMedium from "../../../assets/img/MER-medium.png";
+import merLarge from "../../..//assets/img/MER-large.png";
 
 const MerSection = React.forwardRef((props, ref) => {
   const animationRef2 = useRef(null);
@@ -39,19 +42,19 @@ const MerSection = React.forwardRef((props, ref) => {
           </Col>
           <Col className="d-flex image-container align-self-center justify-content-center p-0 mb-5 mx-4 col-12">
             <Image
-              src="src/assets/img/MER-small.png"
+              src={merSmall}
               alt="MER"
               className="product-design small"
               fluid
             />
             <Image
-              src="src/assets/img/MER-medium.png"
+              src={merMedium}
               alt="MER"
               className="product-design medium"
               fluid
             />
             <Image
-              src="src/assets/img/MER-large.png"
+              src={merLarge}
               alt="MER"
               className="product-design large"
               fluid
