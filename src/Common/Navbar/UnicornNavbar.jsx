@@ -85,7 +85,7 @@ function UnicornNavbar() {
           <Navbar.Brand className="p-0">
             <Nav.Link as={Link} to={"/"} onClick={handleLinkClick}>
               <img
-                src="/src/assets/icons/Unicorn-beer-white-logo-iso.svg"
+                src="./src/assets/icons/Unicorn-beer-white-logo-iso.svg"
                 alt="Unicorn Logo"
                 className="icon-beer"
               />
