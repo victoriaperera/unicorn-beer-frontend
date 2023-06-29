@@ -23,7 +23,7 @@ function ProductsTableContent({ product }) {
             stock: stock,
           },
         });
-        console.log(response.data);
+     
         dispatch(updateProduct(response.data));
       } catch (err) {
         console.log(err);

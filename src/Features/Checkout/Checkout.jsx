@@ -119,7 +119,7 @@ function Checkout() {
             },
           });
           setAlertToggle(false);
-          console.log(response.data);
+        
           dispatch(setOrder(response.data));
           setShow(true);
         }

@@ -22,7 +22,7 @@ function CategoriesTableContent({ style }) {
     price ? formData.append("price", price) : null;
     description ? formData.append("description", description) : null;
 
-    console.log(Object.fromEntries(formData));
+  
 
     try {
       const response = await axios({

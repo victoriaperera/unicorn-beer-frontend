@@ -15,14 +15,14 @@ function RequestPassChange() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(email);
+
     try {
       const response = await axios({
         method: "POST",
         url: `${import.meta.env.VITE_BACK_URL}/users/resetPassword`,
         data: { email: email },
       });
-      console.log(response.data);
+
       setResponseToggle(true);
       alertText(response.data);
     } catch (err) {
