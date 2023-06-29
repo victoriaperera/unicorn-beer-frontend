@@ -70,7 +70,7 @@ function TeamMemberCard({ admin }) {
         <h4 className="mt-4">Esteban Castañeira</h4>
         <p>Full Stack Developer Jr.</p>
         <div>
-          <a href="#">
+          <a href="https://www.linkedin.com/in/estebancastaneira/">
             <img
               src="src/assets/icons/linkedin_logo.png"
               alt="linkedin icon"
@@ -80,7 +80,7 @@ function TeamMemberCard({ admin }) {
               onMouseLeave={handleShrink}
             />
           </a>
-          <a href="#">
+          <a href="https://github.com/estebanCastaneira">
             <img
               src="src/assets/icons/github_logo.png"
               alt="github icon"
@@ -160,8 +160,8 @@ function TeamMemberCard({ admin }) {
       </Col>
       <Col className="mb-4 " ref={circleFour}>
         <img
-          src="/src/assets/icons/user-4.png"
-          alt="User Avatar"
+          src="/src/assets/img/members/Nico-card.png"
+          alt="Nicolas Martinez"
           className="img-team-member"
           onMouseEnter={handleExpand}
           onMouseLeave={handleShrink}
