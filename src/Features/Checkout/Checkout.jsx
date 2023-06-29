@@ -51,7 +51,9 @@ function Checkout() {
     setPaymentMet(selectedOption);
     if (selectedOption.value === "Paypal") {
       setShowPaypalLink(true);
+      setShowCardForm(false);
     } else {
+      setShowPaypalLink(false);
       setShowCardForm(true);
     }
   };
@@ -209,7 +211,13 @@ function Checkout() {
                 </Form.Group>
                 {!showPaypalLink && <CardForm user={user} />}
                 {showPaypalLink && (
-                  <Link onClick={handlePaypalAccount}>Go to my Paypal account</Link>
+                  <button
+                    type="button"
+                    className="btn btn-sm rounded-pill btn-outline-primary mt-3"
+                    onClick={handlePaypalAccount}
+                  >
+                    Go to my PAYPAL account
+                  </button>
                 )}
               </div>
               <div className="col-12 col-md-6">
