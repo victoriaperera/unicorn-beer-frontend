@@ -4,12 +4,13 @@ import { useSelector } from "react-redux";
 import { Button, Modal } from "react-bootstrap";
 import { deleteStyle, setToggleDeleteStyle } from "../../adminSlice";
 
-function CategoryDelete({ style }) {
+function CategoryDelete() {
   const admin = useSelector((state) => state.admin.token);
+  const style = useSelector((state) => state.admin.style);
   const toggleDelete = useSelector((state) => state.admin.toggleDeleteStyle);
   const dispatch = useDispatch();
 
-  const handleDelete = async (styleId) => {
+  const handleDelete = async () => {
     try {
       const response = await axios({
         method: "DELETE",
@@ -17,9 +18,9 @@ function CategoryDelete({ style }) {
         headers: {
           Authorization: `Bearer ${admin.token}`,
         },
-        data: { styleId },
+        data: { style: style.id },
       });
-      dispatch(deleteStyle(styleId));
+      dispatch(deleteStyle(style.id));
       dispatch(setToggleDeleteStyle(false));
     } catch (err) {
       console.log(err);

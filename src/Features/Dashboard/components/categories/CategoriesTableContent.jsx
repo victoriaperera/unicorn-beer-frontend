@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setToggleDeleteStyle, updateStyle } from "../../adminSlice";
+import { setStyle, setToggleDeleteStyle, updateStyle } from "../../adminSlice";
 
 function CategoriesTableContent({ style }) {
   const admin = useSelector((state) => state.admin.token);
@@ -128,6 +128,7 @@ function CategoriesTableContent({ style }) {
             className="bi bi-trash3-fill fs-5 delete-icon"
             onClick={() => {
               dispatch(setToggleDeleteStyle(true));
+              dispatch(setStyle(style));
             }}
           ></i>
         </div>
