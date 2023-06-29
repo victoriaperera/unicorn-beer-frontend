@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import arrow from "../../assets/icons/arrow-up-circle.svg";
 
 function BackToTopBtn() {
   const [backToTop, setBackToTop] = useState(false);
@@ -24,12 +25,7 @@ function BackToTopBtn() {
     <>
       {backToTop && (
         <a>
-          <img
-            className="go-top"
-            src="src/assets/icons/arrow-up-circle.svg"
-            alt="Back to top"
-            onClick={scrollUp}
-          />
+          <img className="go-top" src={arrow} alt="Back to top" onClick={scrollUp} />
         </a>
       )}
     </>

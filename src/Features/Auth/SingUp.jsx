@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { setToken } from "./userSlice";
 import { useRandomColor } from "../../hook/useRandomColor";
 import Header from "../../Common/components/Header";
+import unicornLogo from "../../assets/icons/Unicorn-beer-white-logo.svg";
 
 function SignUp() {
   const pageTitle = "Sign Up";
@@ -71,11 +72,7 @@ function SignUp() {
               className="col-md-7 d-none d-md-flex align-items-center justify-content-center p-4 rounded-start"
               style={{ backgroundColor: color }}
             >
-              <img
-                src="../src/assets/icons/Unicorn-beer-white-logo.svg"
-                alt="Unicorn Logo"
-                className="header-logo w-sm-75 w-75 h-75"
-              />
+              <img src={unicornLogo} alt="Unicorn Logo" className="header-logo w-sm-75 w-75 h-75" />
             </div>
             <div className="col-12 col-md-5 d-flex align-items-center justify-content-center text-black py-4 px-4 bg-white rounded-end form-border">
               <form onSubmit={handleSubmit} method="post">

@@ -6,6 +6,7 @@ import { setToken } from "./userSlice";
 import { useRandomColor } from "../../hook/useRandomColor";
 import Header from "../../Common/components/Header";
 import { Alert, Button } from "react-bootstrap";
+import unicornLogo from "../../assets/icons/Unicorn-beer-white-logo.svg";
 
 function ForgotPassword() {
   const pageTitle = "Reset password";
@@ -29,7 +30,7 @@ function ForgotPassword() {
           url: `${import.meta.env.VITE_BACK_URL}/users/resetPassword/${params.id}`,
           data: { password: password },
         });
-      
+
         dispatch(setToken(response.data));
         navigate("/shop");
       } catch (err) {
@@ -54,11 +55,7 @@ function ForgotPassword() {
               className="col-md-7 d-none d-md-flex flex-wrap align-items-center justify-content-center p-4 rounded-start "
               style={{ backgroundColor: color }}
             >
-              <img
-                src="../src/assets/icons/Unicorn-beer-white-logo.svg"
-                alt="Unicorn Logo"
-                className="header-logo w-sm-50 w-75 h-75"
-              />
+              <img src={unicornLogo} alt="Unicorn Logo" className="header-logo w-sm-50 w-75 h-75" />
             </div>
             <div className="d-flex col-12 col-md-5 text-black py-5 px-5 bg-white align-items-center justify-content-center rounded-end form-border">
               <form onSubmit={handleSubmit} method="post">
