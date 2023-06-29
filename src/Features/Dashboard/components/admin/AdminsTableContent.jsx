@@ -17,7 +17,9 @@ function AdminsTableContent({ admin }) {
   const handleCloseDelete = () => setShowD(false)
  
   return (
+    
     <tr>
+      
       <AdminsUpdate show={showU} close={handleCloseUpdate} admin={admin} />
       <AdminsDelete show={showD} close={handleCloseDelete} admin={admin} />
       <td>{admin.id}</td>
@@ -26,7 +28,7 @@ function AdminsTableContent({ admin }) {
       <td>
         <div className="d-flex justify-content-around">
           <i className="bi bi-pencil-square fs-5 edit-icon" onClick={handleShowUpdate}></i>
-          {currentAdmin.id !== admin.id ? (
+          {(currentAdmin.id !== admin.id && admin.name !== "Admin Test") ? (
             <i
               className="bi bi-trash3-fill fs-5 delete-icon"
               onClick={() => handleShowDelete()}
