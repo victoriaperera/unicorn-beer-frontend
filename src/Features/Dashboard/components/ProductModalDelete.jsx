@@ -4,7 +4,8 @@ import { useSelector } from "react-redux";
 import { Button, Modal } from "react-bootstrap";
 import { deleteProduct, setToggleDelete } from "../adminSlice";
 
-function ProductModalDelete({ product }) {
+function ProductModalDelete() {
+  const product = useSelector((state) => state.admin.product);
   const token = useSelector((state) => state.token);
   const toggleDelete = useSelector((state) => state.admin.toggleDeleteProduct);
   const dispatch = useDispatch();
