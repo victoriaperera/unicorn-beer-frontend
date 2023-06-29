@@ -12,7 +12,7 @@ import reactLogo from "../../../assets/icons/react_logo.png";
 import reduxLogo from "../../../assets/icons/redux_logo.png";
 import greenSockLogo from "../../../assets/icons/greensock_logo.png";
 import trelloLogo from "../../../assets/icons/trello_logo.png";
-import discrodLogo from "../../../assets/icons/discord_logo.png";
+import  discordLogo from "../../../assets/icons/discord_logo.png";
 
 const TechSection = React.forwardRef((props, ref) => {
   const animationRef1 = useRef(null);
@@ -188,7 +188,7 @@ const TechSection = React.forwardRef((props, ref) => {
             <div className="iconTech">
               <i>
                 <img
-                  src={discrodLogo}
+                  src={discordLogo}
                   alt="Discord icon"
                   typeof="png/image"
                   className="tech-icon"
