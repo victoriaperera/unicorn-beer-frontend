@@ -1,10 +1,10 @@
 import "./styles.css";
-import Product from "./Product";
 import axios from "axios";
 import { Row } from "react-bootstrap";
-import { useEffect, forwardRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setProductList } from "../shopSlice";
+import Product from "./Product";
 import Loader from "../../../Common/components/Loader";
 
 function ProductList() {

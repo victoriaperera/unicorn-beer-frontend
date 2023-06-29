@@ -1,5 +1,5 @@
-import { useSelector } from "react-redux";
 import "./styles.css";
+import { useSelector } from "react-redux";
 import { NavLink, Nav } from "react-bootstrap";
 import { useSetColor } from "../../hook/useSetColor";
 import { useLocation } from "react-router";

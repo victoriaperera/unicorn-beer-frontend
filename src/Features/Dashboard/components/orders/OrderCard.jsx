@@ -1,11 +1,10 @@
-import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import "../styles.css";
 import axios from "axios";
+import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { updateOrderStatus } from "../../adminSlice";
 import format from "date-fns/format";
 import OrderModal from "./OrderModal";
-
-import { updateOrderStatus } from "../../adminSlice";
-import "../styles.css";
 
 function OrderCard() {
   const orders = useSelector((state) => state.admin.orders);

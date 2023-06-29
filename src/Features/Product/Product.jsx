@@ -1,9 +1,9 @@
 import "./styles.css";
-import ProductCarousel from "./components/ProductCarousel";
-import ProductCard from "./components/ProductCard";
 import { useParams } from "react-router";
 import { useSelector } from "react-redux";
 import { useSetColor } from "../../hook/useSetColor";
+import ProductCarousel from "./components/ProductCarousel";
+import ProductCard from "./components/ProductCard";
 
 function Product() {
   const params = useParams();

@@ -1,16 +1,15 @@
-import React, { useState, useRef } from "react";
+import "./styles.css";
+import axios from "axios";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import Select from "react-select";
-import axios from "axios";
-import { Badge, Button, Container, Col, ListGroup, Form, Row } from "react-bootstrap";
+import { Badge, ListGroup, Form } from "react-bootstrap";
 import { Alert } from "react-bootstrap";
-
+import { setOrder } from "../../redux/orderSlice";
+import Select from "react-select";
 import CardForm from "./components/CardForm";
 import OrderModal from "./components/OrderModal";
 import OutOfScopeModal from "../../Common/components/OutOfScopeModal";
-import "./styles.css";
-import { setOrder } from "../../redux/orderSlice";
 
 function Checkout() {
   const user = useSelector((state) => state.user);
@@ -119,7 +118,7 @@ function Checkout() {
             },
           });
           setAlertToggle(false);
-        
+
           dispatch(setOrder(response.data));
           setShow(true);
         }

@@ -2,11 +2,12 @@ import "./styles.css";
 import { Badge, Col } from "react-bootstrap";
 import { useCheckImg } from "../../../hook/useCheckImg";
 import { useSetGradientColor } from "../../../hook/useSetGradientColor";
-import AddToCartBtn from "../../../Common/components/AddToCartBtn";
 import { Link } from "react-router-dom";
 import { gsap, Expo } from "gsap";
 import { useRef, useEffect } from "react";
 import { ScrollTrigger } from "gsap/all";
+import AddToCartBtn from "../../../Common/components/AddToCartBtn";
+
 gsap.registerPlugin(ScrollTrigger);
 
 function Product({ product }) {

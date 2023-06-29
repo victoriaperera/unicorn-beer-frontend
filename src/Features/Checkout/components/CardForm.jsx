@@ -1,6 +1,5 @@
 import "./styles.css";
 import { Form } from "react-bootstrap";
-import React from "react";
 
 function CardForm({ user }) {
   return (

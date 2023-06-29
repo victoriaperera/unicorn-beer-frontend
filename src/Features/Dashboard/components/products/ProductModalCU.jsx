@@ -1,9 +1,9 @@
 import "../styles.css";
-import { Button, Col, Form, InputGroup, Modal, Row } from "react-bootstrap";
+import axios from "axios";
+import { Button, Col, Form, Modal, Row } from "react-bootstrap";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { createProduct, setToggleProduct, setToggleStyle, updateProduct } from "../../adminSlice";
-import axios from "axios";
+import { createProduct, setToggleProduct, setToggleStyle } from "../../adminSlice";
 import { Link } from "react-router-dom";
 
 function ProductModalCU() {
@@ -11,7 +11,6 @@ function ProductModalCU() {
   const token = useSelector((state) => state.admin.token.token);
   const styles = useSelector((state) => state.admin.styles);
   const toggleProduct = useSelector((state) => state.admin.toggleCreateProduct);
-  const toggleStyle = useSelector((state) => state.admin.toggleCreateStyle);
 
   const dispatch = useDispatch();
 
@@ -55,7 +54,6 @@ function ProductModalCU() {
       show={toggleProduct}
       onHide={() => {
         dispatch(setToggleProduct(false));
-        resetStates();
       }}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"

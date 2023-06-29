@@ -1,8 +1,9 @@
-import { useState } from "react";
 import "../styles.css";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import AdminsTableContent from "./AdminsTableContent";
 import AdminsCreate from "./AdminsCreate";
+
 function Admins() {
   const admins = useSelector((state) => state.admin.admins);
 

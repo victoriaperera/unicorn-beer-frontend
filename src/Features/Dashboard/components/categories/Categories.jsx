@@ -1,9 +1,9 @@
 import "../styles.css";
-import CategoryDelete from "./CategoryDelete";
-import CategoryCreate from "./CategoryCreate";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { setToggleStyle } from "../../adminSlice";
+import CategoryDelete from "./CategoryDelete";
+import CategoryCreate from "./CategoryCreate";
 import CategoriesTableContent from "./CategoriesTableContent";
 
 function Categories() {

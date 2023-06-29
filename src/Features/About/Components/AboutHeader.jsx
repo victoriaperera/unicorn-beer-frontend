@@ -3,8 +3,6 @@ import { Col, Row, Container } from "react-bootstrap";
 import { gsap } from "gsap";
 import { useRef, useEffect } from "react";
 
-import React from "react";
-
 function AboutHeader() {
   const titleRef = useRef(null);
   const textRef = useRef(null);

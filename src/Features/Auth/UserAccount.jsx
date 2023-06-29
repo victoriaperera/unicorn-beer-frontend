@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from "react";
+import "./styles.css";
+import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
+import { updateUserData } from "./userSlice";
+import { setOrder } from "../../redux/orderSlice";
 import UserOrder from "./components/UserOrder";
 import OutOfScopeModal from "../../Common/components/OutOfScopeModal";
-import { updateUserData } from "./userSlice";
-import "./styles.css";
-import { setOrder } from "../../redux/orderSlice";
 
 function UserAccount() {
   const user = useSelector((state) => state.user);

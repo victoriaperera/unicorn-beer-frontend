@@ -1,8 +1,7 @@
 import "../styles.css";
-import CustomerDelete from "./CustomerDelete";
+import { useState } from "react";
 import { useSelector } from "react-redux";
-import { setUsers } from "../../adminSlice";
-import React, { useState } from "react";
+import CustomerDelete from "./CustomerDelete";
 
 function Customers() {
   const users = useSelector((state) => state.admin.users);

@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 import { setProduct, setToggleDelete, updateProduct } from "../../adminSlice";
 
 function ProductsTableContent({ product }) {

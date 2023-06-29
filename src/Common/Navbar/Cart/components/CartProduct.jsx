@@ -1,5 +1,4 @@
 import "./styles.css";
-import React from "react";
 import { useCheckImg } from "../../../../hook/useCheckImg";
 import { useDispatch } from "react-redux";
 import { incrementQuantity, decrementQuantity, removeItem } from "../cartSlice";

@@ -1,6 +1,5 @@
 import "../styles.css";
 import CustomerCard from "./CustomerCard";
-import React, { useEffect } from "react";
 
 function Customers() {
   return (

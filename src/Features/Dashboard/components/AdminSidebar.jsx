@@ -1,7 +1,7 @@
 import "../styles.css";
-import Logout from "../../Auth/components/Logout";
 import { useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Logout from "../../Auth/components/Logout";
 
 function AdminSidebar({ onSidebarClick }) {
   const [activeButton, setActiveButton] = useState("dashboard");

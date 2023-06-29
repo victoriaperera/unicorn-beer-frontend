@@ -1,7 +1,7 @@
 import "../styles.css";
 import Carousel from "react-bootstrap/Carousel";
 import { useCheckImg } from "../../../hook/useCheckImg";
-import React, { useState } from "react";
+import { useState } from "react";
 
 function ProductCarousel({ product }) {
   const [activeIndex, setActiveIndex] = useState(0);

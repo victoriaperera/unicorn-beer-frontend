@@ -1,13 +1,13 @@
 import "./styles.css";
-import HomeHeader from "./HomeHeader";
 import axios from "axios";
-import FeaturedProducts from "./Components/FeaturedProducts";
 import { Container, Row, Col } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setProductList } from "../../redux/productSlice";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import HomeHeader from "./HomeHeader";
+import FeaturedProducts from "./Components/FeaturedProducts";
 import BackToTopBtn from "../../Common/components/BackToTopBtn";
 import Header from "../../Common/components/Header";
 import Loader from "../../Common/components/Loader";

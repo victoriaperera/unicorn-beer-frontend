@@ -2,7 +2,7 @@ import "./styles.css";
 import { useSetColor } from "../../hook/useSetColor";
 import { setFilter } from "../../Features/Shop/shopSlice";
 import { useDispatch } from "react-redux";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function BuyNowBtn({ product }) {

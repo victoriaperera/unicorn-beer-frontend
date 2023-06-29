@@ -1,9 +1,9 @@
 import "../styles.css";
+import axios from "axios";
 import { Button, Col, Form, InputGroup, Modal, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { updateAdmin } from "../../adminSlice";
 import { useState } from "react";
-import axios from "axios";
 
 function AdminsUpdate({ show, close, admin }) {
   const dispatch = useDispatch();

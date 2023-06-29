@@ -1,12 +1,12 @@
 import "./styles.css";
-import OutOfScopeModal from "../../Common/components/OutOfScopeModal";
+import axios from "axios";
 import { Button, Form, InputGroup, Alert } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import Header from "../../Common/components/Header";
 import { useRandomColor } from "../../hook/useRandomColor";
-import axios from "axios";
+import Header from "../../Common/components/Header";
+import OutOfScopeModal from "../../Common/components/OutOfScopeModal";
 
 function Contact() {
   const pageTitle = "Contact Us";
