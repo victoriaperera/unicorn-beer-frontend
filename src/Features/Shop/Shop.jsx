@@ -11,9 +11,6 @@ import Header from "../../Common/components/Header";
 
 function Shop() {
   const pageTitle = "Our Shop";
-  const cart = useSelector((state) => state.cart);
-  const toggleToastAdd = useSelector((state) => state.shop.toggleToastAdd);
-  const toggleToastRemove = useSelector((state) => state.shop.toggleToastRemove);
 
   return (
     <>

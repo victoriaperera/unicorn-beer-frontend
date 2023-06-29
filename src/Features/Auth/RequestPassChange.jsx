@@ -9,7 +9,6 @@ function RequestPassChange() {
   const pageTitle = "Reset password";
   const [email, setEmail] = useState();
   const [color, setColor] = useState("");
-  const [user, setUser] = useState();
   const [alertText, setAlertText] = useState("");
   const [alertToggle, setAlertToggle] = useState(false);
   const [responseToggle, setResponseToggle] = useState(false);
@@ -28,7 +27,7 @@ function RequestPassChange() {
       alertText(response.data);
     } catch (err) {
       setAlertToggle(true);
-      setAlertText(err.response.data);
+      setAlertText(err.response.data.message);
     }
   };
 
@@ -71,14 +70,16 @@ function RequestPassChange() {
                     Reset your password
                   </Button>
                 </div>
+                <div>
+                  <div>{alertToggle && <Alert variant="danger">{alertText}</Alert>}</div>
+                  <div>{responseToggle && <Alert variant="info">{alertText}</Alert>}</div>
+                </div>
                 <small className="d-block">
                   Back to{" "}
                   <Link className="auth-link" to="/login" style={{ color: color }}>
                     LOGIN
                   </Link>
                 </small>
-                <div>{alertToggle && <Alert variant="danger">{alertText}</Alert>}</div>
-                <div>{responseToggle && <Alert variant="info">{alertText}</Alert>}</div>
               </form>
             </div>
           </div>
