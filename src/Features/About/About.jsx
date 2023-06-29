@@ -4,7 +4,7 @@ import TeamMemberCard from "./Components/TeamMemberCard";
 import { gsap } from "gsap";
 import { useRef, useEffect } from "react";
 import { ScrollTrigger } from "gsap/all";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row, Image } from "react-bootstrap";
 import BackToTopBtn from "../../Common/components/BackToTopBtn";
 import Header from "../../Common/components/Header";
 
@@ -100,6 +100,12 @@ function About() {
                 experience with databases and leveraged practical tools to optimize our workflow.
               </p>
               <p>
+                To ensure efficient task allocation within our team, we utilized Trello as our
+                project management tool. The project was divided into three sprints, with Github
+                serving as our primary collaboration platform. Discord played a crucial role in
+                facilitating seamless communication throughout the development process.
+              </p>
+              <p>
                 For this project, we handpicked the following set of tools to boost our
                 productivity.
               </p>
@@ -108,7 +114,8 @@ function About() {
               xs={12}
               sm={10}
               md={8}
-              className="d-flex justify-content-center align-self-center flex-wrap gap-2 w-100 m-0"
+              xl={6}
+              className="d-flex justify-content-center align-self-center flex-wrap gap-2 m-0"
             >
               <div className="iconTech d-flex">
                 <i>
@@ -231,6 +238,17 @@ function About() {
                 </i>
                 <small>Trello</small>
               </div>
+              <div className="iconTech">
+                <i>
+                  <img
+                    src="src/assets/icons/Discord.png"
+                    alt="Discord icon"
+                    typeof="png/image"
+                    className="tech-icon"
+                  />
+                </i>
+                <small>Discord</small>
+              </div>
             </Col>
           </div>
         </Row>
@@ -247,27 +265,21 @@ function About() {
                 relationship diagram. Within this diagram, we defined the fundamental associations
                 among the following entities: User, Products, Orders, Styles, and Admins.
               </p>
-              <p>
-                To ensure efficient task allocation within our team, we utilized Trello as our
-                project management tool. The project was divided into three sprints, with Github
-                serving as our primary collaboration platform. Discord played a crucial role in
-                facilitating seamless communication throughout the development process.
-              </p>
             </Col>
             <Col className="d-flex image-container align-self-center justify-content-center p-0 mb-5 mx-4 col-12">
-              <img
+              <Image
                 src="src/assets/img/MER-small.png"
                 alt="MER"
                 className="product-design small"
                 fluid
               />
-              <img
+              <Image
                 src="src/assets/img/MER-medium.png"
                 alt="MER"
                 className="product-design medium"
                 fluid
               />
-              <img
+              <Image
                 src="src/assets/img/MER-large.png"
                 alt="MER"
                 className="product-design large"
@@ -293,19 +305,19 @@ function About() {
               </p>
             </Col>
             <Col className="d-flex image-container align-self-center justify-content-center p-0 col-12">
-              <img
+              <Image
                 src="src/assets/img/product-design-sm.png"
                 alt="Product design"
                 className="product-design small"
                 fluid
               />
-              <img
+              <Image
                 src="src/assets/img/product-design-md.png"
                 alt="Product design"
                 className="product-design medium"
                 fluid
               />
-              <img
+              <Image
                 src="src/assets/img/product-design-lg.png"
                 alt="Product design"
                 className="product-design large"
@@ -313,10 +325,11 @@ function About() {
               />
             </Col>
             <Col className="d-flex image-container align-self-center justify-content-center p-0 col-12">
-              <img
+              <Image
                 src="src/assets/img/Bottle-about-us.png"
                 alt="Ipa Bottle"
                 className="design-img p-4"
+                fluid
               />
             </Col>
           </div>
@@ -336,12 +349,28 @@ function About() {
               </p>
             </Col>
             <Col className="d-flex image-container align-self-center justify-content-center p-0 col-12">
-              <img
+              <Image
                 src="src/assets/img/Admin_dashboard.png"
                 alt="Admin dashboard"
                 className="dashboard-img"
                 fluid
               />
+            </Col>
+            <Col xs={12} md={8} lg={6} className="align-self-center mt-5">
+              <h4>To access our admin dashboard, please follow these steps:</h4>
+            </Col>
+            <Col xs={12} sm={7} md={8} lg={4} className="align-self-center mt-3">
+              <ol className="text-start">
+                <li>
+                  Visit our{" "}
+                  <a href="/admin/login" className="admin-link">
+                    admin login page.
+                  </a>
+                </li>
+                <li>Enter the email address "test@test.com" as your username.</li>
+                <li>Input "123" as the password.</li>
+                <li>Click on the login button or submit the form.</li>
+              </ol>
             </Col>
           </div>
         </Row>

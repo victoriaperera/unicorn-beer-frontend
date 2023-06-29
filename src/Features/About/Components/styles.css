@@ -53,3 +53,9 @@
   font-size: 1rem;
   margin-bottom: 20px;
 }
+
+.admin-link {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-weight: bolder;
+}
