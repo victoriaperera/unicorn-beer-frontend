@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import UserOrder from "./components/UserOrder";
 import OutOfScopeModal from "../../Common/components/OutOfScopeModal";
@@ -41,6 +43,7 @@ function UserAccount() {
       });
 
       dispatch(updateUserData({ user: response.data }));
+      toast.success("Changes saved successfully!");
     } catch (error) {
       console.log(error);
     }
@@ -121,6 +124,18 @@ function UserAccount() {
                   Save changes
                 </button>
               </form>
+              <ToastContainer
+                position="top-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable={false}
+                pauseOnHover
+                theme="colored"
+              />
             </div>
             <div className="col-12 col-md-6 pe-3">
               <h4>My payment methods</h4>
