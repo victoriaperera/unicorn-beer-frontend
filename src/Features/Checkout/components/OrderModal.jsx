@@ -1,6 +1,5 @@
 import "./styles.css";
 import { Modal } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import DetailPdf from "./DetailPdf";
@@ -27,17 +26,16 @@ function OrderModal({ show }) {
           <p className="mt-5 text-center">Your order is being processed.</p>
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body className="mt-5 d-flex justify-content-center">
+      <Modal.Body className="mt-5 d-flex justify-content-center gap-3">
         <Link to="/" onClick={() => dispatch(clearCart())} className="modalBtn modalBtn-Success">
           Go to Home
         </Link>
         <PDFDownloadLink
           document={<DetailPdf user={user} order={order} cart={cart} />}
           fileName="PDF-Detail"
+          className="modalBtn modalBtn-Success "
         >
-          <Button className="modalBtn modalBtn-Success border-0 ms-2 button-modal">
-            Download Detail
-          </Button>
+          Download Detail
         </PDFDownloadLink>
       </Modal.Body>
     </Modal>

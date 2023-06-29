@@ -4,6 +4,8 @@ import Logout from "../../Features/Auth/components/Logout";
 import { setTotalQuantity } from "./Cart/cartSlice";
 import { clearFilter, fromCheckOut } from "../../Features/Shop/shopSlice";
 import { Container, Nav, Navbar, NavDropdown, Offcanvas } from "react-bootstrap";
+import { ToastContainer, Bounce } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -53,6 +55,19 @@ function UnicornNavbar() {
 
   return (
     <>
+      <ToastContainer
+        position="bottom-left"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        transition={Bounce}
+      />
       <Navbar
         collapseOnSelect
         bg="dark"
