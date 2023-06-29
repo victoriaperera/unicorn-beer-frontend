@@ -2,6 +2,7 @@ import { Container } from "react-bootstrap";
 import { gsap } from "gsap";
 import { useRef, useEffect } from "react";
 import videoHome from "../../assets/videos/home_header_video.mp4";
+import unicornLogo from "../../assets/icons/Unicorn-beer-white-logo.svg";
 
 function HomeHeader() {
   const logoRef = useRef(null);
@@ -23,7 +24,7 @@ function HomeHeader() {
         <div className="d-flex h-100 text-center align-items-center">
           <div className="w-100 text-white">
             <img
-              src="/src/assets/icons/Unicorn-beer-white-logo.svg"
+              src={unicornLogo}
               alt="Unicorn Logo"
               className="header-logo w-sm-50 w-100"
               ref={logoRef}
