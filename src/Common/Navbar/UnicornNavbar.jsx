@@ -9,6 +9,7 @@ import { ToastContainer, Bounce } from "react-toastify";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import logo from "../../assets/icons/Unicorn-beer-white-logo-iso.svg";
 
 function UnicornNavbar() {
   const [show, setShow] = useState(false);
@@ -84,11 +85,7 @@ function UnicornNavbar() {
           />
           <Navbar.Brand className="p-0">
             <Nav.Link as={Link} to={"/"} onClick={handleLinkClick}>
-              <img
-                src="./src/assets/icons/Unicorn-beer-white-logo-iso.svg"
-                alt="Unicorn Logo"
-                className="icon-beer"
-              />
+              <img src={logo} alt="Unicorn Logo" className="icon-beer" />
             </Nav.Link>
           </Navbar.Brand>
           <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
