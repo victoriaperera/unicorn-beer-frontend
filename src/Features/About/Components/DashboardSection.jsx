@@ -1,6 +1,7 @@
 import { Col, Row, Image } from "react-bootstrap";
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
+import adminDashboard from "../../../assets/img/Admin_dashboard.png";
 
 const DashboardSection = React.forwardRef((props, ref) => {
   const animationRef4 = useRef(null);
@@ -38,12 +39,7 @@ const DashboardSection = React.forwardRef((props, ref) => {
             </p>
           </Col>
           <Col className="d-flex image-container align-self-center justify-content-center p-0 col-12">
-            <Image
-              src="src/assets/img/Admin_dashboard.png"
-              alt="Admin dashboard"
-              className="dashboard-img"
-              fluid
-            />
+            <Image src={adminDashboard} alt="Admin dashboard" className="dashboard-img" fluid />
           </Col>
           <Col xs={12} md={8} lg={6} className="align-self-center mt-5">
             <h4>To access our admin dashboard, please follow these steps:</h4>

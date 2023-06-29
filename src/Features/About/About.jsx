@@ -4,7 +4,7 @@ import TeamMemberCard from "./Components/TeamMemberCard";
 import { gsap } from "gsap";
 import { useRef, useEffect } from "react";
 import { ScrollTrigger } from "gsap/all";
-import { Col, Container, Row, Image } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import BackToTopBtn from "../../Common/components/BackToTopBtn";
 import Header from "../../Common/components/Header";
 import TechSection from "./Components/TechSection";
@@ -25,7 +25,7 @@ function About() {
   const sectionAbout = useRef(null);
 
   const scrollToSection = (ref) => {
-    ref.current.scrollIntoView({ behavior: "smooth", block: "center" });
+    ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
@@ -60,15 +60,25 @@ function About() {
         </nav>
       </div>
       <BackToTopBtn />
-      <div innerref={sectionAbout}>
+      <div ref={sectionAbout}>
         <AboutHeader />
       </div>
       <Container fluid className="text-center">
-        <TechSection ref={sectionTech} />
-        <MerSection ref={sectionMer} />
-        <DesignSection ref={sectionDesign} />
-        <DashboardSection ref={sectionAdmin} />
-        <TeamSection ref={sectionTeam} />
+        <div ref={sectionTech}>
+          <TechSection />
+        </div>
+        <div ref={sectionMer}>
+          <MerSection />
+        </div>
+        <div ref={sectionDesign}>
+          <DesignSection />
+        </div>
+        <div ref={sectionAdmin}>
+          <DashboardSection />
+        </div>
+        <div ref={sectionTeam}>
+          <TeamSection />
+        </div>
       </Container>
     </>
   );
