@@ -208,7 +208,9 @@ function Checkout() {
                     required
                   />
                 </Form.Group>
-                {!showPaypalLink && <CardForm user={user} />}
+                {paymentMethod && paymentMethod.value !== "Paypal" && showCardForm && (
+                  <CardForm user={user} />
+                )}
                 {showPaypalLink && (
                   <button
                     type="button"
