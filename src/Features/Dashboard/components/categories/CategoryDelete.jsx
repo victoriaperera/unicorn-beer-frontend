@@ -44,7 +44,7 @@ function CategoryDelete({ style }) {
       <Modal.Footer className="justify-content-center">
         <Button
           onClick={() => {
-            handleDelete(style.id);
+            handleDelete(style._id);
           }}
           variant="danger"
         >
