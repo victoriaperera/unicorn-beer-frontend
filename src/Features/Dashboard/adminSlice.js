@@ -94,13 +94,13 @@ const adminSlice = createSlice({
       state.styles.push(action.payload);
     },
     updateStyle: (state, action) => {
-      const style = state.styles.find((style) => style.id === action.payload.id);
+      const style = state.styles.find((style) => style._id === action.payload.id);
 
       const styleIndex = state.styles.indexOf(style);
       state.styles[styleIndex] = action.payload;
     },
     deleteStyle: (state, action) => {
-      state.styles = state.styles.filter((style) => style.id !== action.payload);
+      state.styles = state.styles.filter((style) => style._id !== action.payload);
     },
     updateOrderStatus: (state, action) => {
       const newOrder = action.payload;

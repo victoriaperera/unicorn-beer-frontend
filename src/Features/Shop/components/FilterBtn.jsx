@@ -27,7 +27,7 @@ function FilterBtn({ style, filterRef }) {
     <div>
       <a
         className="filter-btn h2 me-3"
-        key={style.id}
+        key={style._id}
         onMouseEnter={handleMouseEnter}
         style={{
           color: isHovering ? color : "var(--white)",
