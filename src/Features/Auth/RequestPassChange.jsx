@@ -24,10 +24,10 @@ function RequestPassChange() {
         data: { email: email },
       });
 
-      setResponseToggle(true);
+      // setResponseToggle(true);
       alertText(response.data);
     } catch (err) {
-      setAlertToggle(true);
+      // setAlertToggle(true);
       setAlertText(err.response.data.message);
     }
   };
