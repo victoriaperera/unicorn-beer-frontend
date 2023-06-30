@@ -5,7 +5,7 @@ import CustomerDelete from "./CustomerDelete";
 
 function Customers() {
   const users = useSelector((state) => state.admin.users);
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState();
   const userCount = users ? users.length : 0;
 
   const [showDelete, setShowDelete] = useState(false);
@@ -14,7 +14,7 @@ function Customers() {
 
   return (
     <>
-      <CustomerDelete show={showDelete} close={handleCloseDelete} user={user} />
+      {user && <CustomerDelete show={showDelete} close={handleCloseDelete} user={user} />}
       <table className="table table-hover text-center align-middle rounded rounded-3 overflow-hidden dashboard-table">
         <thead className="align-middle">
           <tr>
