@@ -27,7 +27,7 @@ function AdminsTableContent({ admin }) {
       <td>{admin.email}</td>
       <td>
         <div className="d-flex justify-content-around">
-          <i className="bi bi-pencil-square fs-5 edit-icon" onClick={handleShowUpdate}></i>
+          {admin.name !== "Admin Test" && <i className="bi bi-pencil-square fs-5 edit-icon" onClick={handleShowUpdate}></i>}
           {(currentAdmin.id !== admin.id && admin.name !== "Admin Test") ? (
             <i
               className="bi bi-trash3-fill fs-5 delete-icon"
