@@ -8,9 +8,10 @@ import OrderModal from "./OrderModal";
 
 function OrderCard() {
   const orders = useSelector((state) => state.admin.orders);
+  const filteredOrders = orders.filter((order) => order.user !== null);
   const admin = useSelector((state) => state.admin.token);
   const [show, setShow] = useState(false);
-  const [orderToModal, setOrderToModal] = useState("");
+  const [orderToModal, setOrderToModal] = useState();
   const dispatch = useDispatch();
 
   const handleShow = () => {
@@ -59,7 +60,7 @@ function OrderCard() {
 
   return (
     <>
-      <OrderModal order={orderToModal} show={show} close={handleClose} />
+      {orderToModal && <OrderModal order={orderToModal} show={show} close={handleClose} />}
       <table className="table table-hover text-center align-middle rounded rounded-3 overflow-hidden dashboard-table">
         <thead className="align-middle">
           <tr>
@@ -90,8 +91,8 @@ function OrderCard() {
           </tr>
         </thead>
         <tbody>
-          {orders && orders.length > 0 ? (
-            orders.map((order) => (
+          {filteredOrders && filteredOrders.length > 0 ? (
+            filteredOrders.map((order) => (
               <tr key={order.id}>
                 <th scope="row">{order.id}</th>
                 <th scope="row">{format(new Date(order.createdAt), "dd-MMMM-yyyy")}</th>
