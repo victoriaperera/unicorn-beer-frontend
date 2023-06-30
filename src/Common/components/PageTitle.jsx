@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const Header = ({ title }) => {
+const PageTitle = ({ title }) => {
   useEffect(() => {
     document.title = title;
   }, [title]);
@@ -8,4 +8,4 @@ const Header = ({ title }) => {
   return null;
 };
 
-export default Header;
+export default PageTitle;

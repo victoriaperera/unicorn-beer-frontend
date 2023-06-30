@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setAdminToken } from "../Dashboard/adminSlice";
 import { useRandomColor } from "../../hook/useRandomColor";
-import Header from "../../Common/components/Header";
+import PageTitle from "../../Common/components/PageTitle";
 import unicornLogo from "../../assets/icons/Unicorn-beer-white-logo.svg";
 
 function AdminLogin() {
@@ -49,7 +49,7 @@ function AdminLogin() {
 
   return (
     <>
-      <Header title={pageTitle} />
+      <PageTitle title={pageTitle} />
       <div className="parent_container" style={{ height: "90vh" }}>
         <div className="d-flex justify-content-center align-items-center">
           <div id="admin-row" className="row mx-4">

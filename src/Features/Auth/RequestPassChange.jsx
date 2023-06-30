@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useRandomColor } from "../../hook/useRandomColor";
 import { Alert, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Header from "../../Common/components/Header";
+import PageTitle from "../../Common/components/PageTitle";
 import unicornLogo from "../../assets/icons/Unicorn-beer-white-logo.svg";
 
 function RequestPassChange() {
@@ -38,7 +38,7 @@ function RequestPassChange() {
 
   return (
     <>
-      <Header title={pageTitle} />
+      <PageTitle title={pageTitle} />
       <div className="parent_container" style={{ height: "90vh" }}>
         <div className="d-flex justify-content-center align-items-center">
           <div id="login-row" className="row mx-0">
