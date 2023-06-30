@@ -1,12 +1,12 @@
 import "./styles.css";
 import axios from "axios";
-import { Row } from "react-bootstrap";
+import { Row, Image } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setProductList } from "../shopSlice";
 import Product from "./Product";
 import Loader from "../../../Common/components/Loader";
-import unicornAtBeach from "../../../assets/img/unicronAtBeach.jpg";
+import unicornIcon from "../../../assets/icons/Unicorn-beer-icon-3.svg";
 
 function ProductList() {
   const filter = useSelector((state) => state.shop.filter);
@@ -45,8 +45,12 @@ function ProductList() {
         {products.length > 0 ? (
           products.map((product) => <Product product={product} key={product.id}></Product>)
         ) : (
-          <div className="container  justify-content-center align-items-center">
-            <h2 className="text-white">Ooops! There is no product for that search, try again. </h2>
+          <div
+            className="col-10 col-md-6 container d-flex justify-content-center align-items-center gap-3"
+            style={{ opacity: "80%" }}
+          >
+            <Image src={unicornIcon} alt="Unicorn Icon" style={{ height: "100px" }} />
+            <h2 className="text-white">Ooops! There is no product for that search, try again.</h2>
           </div>
         )}
       </Row>

@@ -18,10 +18,11 @@ header video {
   width: auto;
   height: auto;
   z-index: 0;
-  -ms-transform: translate(-50%, -50%) scale(0.6); /* Ajusta el valor de scale para alejar o acercar el video */
-  -moz-transform: translate(-50%, -50%) scale(0.6);
-  -webkit-transform: translate(-50%, -50%) scale(0.6);
-  transform: translate(-50%, -50%) scale(0.6);
+  -ms-transform: translate(-50%, -50%) scale(0.5); /* Ajusta el valor de scale para alejar o acercar el video */
+  -moz-transform: translate(-50%, -50%) scale(0.5);
+  -webkit-transform: translate(-50%, -50%) scale(0.5);
+  transform: translate(-50%, -50%) scale(0.5);
+  object-fit: cover;
 }
 
 header .container {
