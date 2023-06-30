@@ -9,12 +9,12 @@ import CategoriesTableContent from "./CategoriesTableContent";
 function Categories() {
   const styles = useSelector((state) => state.admin.styles);
   const dispatch = useDispatch();
-  const [style, setStyle] = useState("");
+  const [styleToDelete, setStyleToDelete] = useState("");
 
   return (
     <div className="categories-bg scrollable">
-      <CategoryDelete style={style} />
-      <CategoryCreate style={style} />
+      <CategoryDelete style={styleToDelete} />
+      <CategoryCreate />
       <div className="d-flex justify-content-between align-content-center pb-3 me-3">
         <h2 className="text-white mb-3">Categories</h2>
         <i
@@ -54,7 +54,11 @@ function Categories() {
         <tbody>
           {styles && styles.length > 0 ? (
             styles.map((style) => (
-              <CategoriesTableContent style={style} key={style.id}></CategoriesTableContent>
+              <CategoriesTableContent
+                style={style}
+                key={style.id}
+                setStyleToDelete={setStyleToDelete}
+              ></CategoriesTableContent>
             ))
           ) : (
             <tr>

@@ -3,10 +3,11 @@ import { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setToggleDeleteStyle, updateStyle } from "../../adminSlice";
 
-function CategoriesTableContent({ style }) {
+function CategoriesTableContent({ style, setStyleToDelete }) {
   const admin = useSelector((state) => state.admin.token);
   const dispatch = useDispatch();
   const [update, setUpdate] = useState(false);
+
   const [name, setName] = useState();
   const [description, setDescription] = useState();
   const [abv, setAbv] = useState();
@@ -128,6 +129,7 @@ function CategoriesTableContent({ style }) {
             className="bi bi-trash3-fill fs-5 delete-icon"
             onClick={() => {
               dispatch(setToggleDeleteStyle(true));
+              setStyleToDelete(style);
             }}
           ></i>
         </div>
