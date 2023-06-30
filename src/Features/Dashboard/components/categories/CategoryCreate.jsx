@@ -119,7 +119,7 @@ function CategoryCreate() {
             </Form.Group>
             <Form.Group className="mb-2" as={Col} sm="2">
               <Form.Label>Price per litre</Form.Label>
-              <Form.Control type="number" name="price" onChange={(e) => setPrice(e.target.value)} />
+              <Form.Control type="text" name="price" onChange={(e) => setPrice(e.target.value)} />
             </Form.Group>
           </Row>
           <Button type="submit" variant="success">

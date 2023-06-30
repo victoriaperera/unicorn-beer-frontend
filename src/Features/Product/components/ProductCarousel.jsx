@@ -22,7 +22,7 @@ function ProductCarousel({ product }) {
       <Carousel variant="dark" activeIndex={activeIndex} onSelect={handleSelect} interval={null}>
         {photos.map((photo, index) => (
           <Carousel.Item key={index}>
-            <img className="d-block w-100 align-self-center" src={photo} alt="First slide" />
+            <img className="d-block w-100 align-self-center mb-3" src={photo} alt="First slide" />
           </Carousel.Item>
         ))}
       </Carousel>

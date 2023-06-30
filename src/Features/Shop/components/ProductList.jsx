@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setProductList } from "../shopSlice";
 import Product from "./Product";
 import Loader from "../../../Common/components/Loader";
+import unicornAtBeach from "../../../assets/img/unicronAtBeach.jpg";
 
 function ProductList() {
   const filter = useSelector((state) => state.shop.filter);
@@ -41,8 +42,13 @@ function ProductList() {
   return (
     <>
       <Row style={{ backgroundColor: "var(--graphite)" }}>
-        {products.length > 0 &&
-          products.map((product) => <Product product={product} key={product.id}></Product>)}
+        {products.length > 0 ? (
+          products.map((product) => <Product product={product} key={product.id}></Product>)
+        ) : (
+          <div className="container  justify-content-center align-items-center">
+            <h2 className="text-white">Ooops! There is no product for that search, try again. </h2>
+          </div>
+        )}
       </Row>
     </>
   );

@@ -28,7 +28,7 @@ function ProductModalCU() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-   
+    console.log(container);
     try {
       const response = await axios({
         method: "POST",
@@ -39,7 +39,7 @@ function ProductModalCU() {
         data: {
           style: style,
           featured: featured === "on" ? true : false,
-          container: containers.filter((cont) => cont.name === container),
+          container: container,
           stock: stock,
         },
       });
@@ -88,12 +88,12 @@ function ProductModalCU() {
               <Form.Select
                 name="container"
                 id="container"
-                onChange={(e) => setContainer(e.target)}
+                onChange={(e) => setContainer(e.target.value)}
                 required
               >
                 <option>Select a container</option>
                 {containers.map((container) => (
-                  <option key={container.id} value={container.id}>
+                  <option key={container.id} value={container._id}>
                     {container.name}
                   </option>
                 ))}
