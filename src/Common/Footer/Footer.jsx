@@ -34,7 +34,7 @@ function Footer() {
       </div>
       <Nav className="footerLinkContainer">
         <Nav.Link as={Link} to="/about" className="footerLink">
-          ABOUT OUR PROJECT
+          ABOUT THIS PROJECT
         </Nav.Link>
         <Nav.Link as={Link} to="/#our-beer" className="footerLink">
           OUR BEER
