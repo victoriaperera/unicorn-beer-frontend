@@ -57,11 +57,16 @@ function Footer() {
           </Nav.Link>
           <Nav.Link
             href="https://www.instagram.com/unicorn_craftedbeer/"
+            target="blank"
             className=" footerLink text-white"
           >
             <i className="bi bi-instagram fs-6 text-white"></i>
           </Nav.Link>
-          <Nav.Link href="https://twitter.com/Unicorn_beer" className=" footerLink text-white">
+          <Nav.Link
+            href="https://twitter.com/Unicorn_beer"
+            target="blank"
+            className=" footerLink text-white"
+          >
             <i className="bi bi-twitter fs-6 text-white"></i>
           </Nav.Link>
         </div>
