@@ -54,7 +54,7 @@ function Categories() {
         <tbody>
           {styles && styles.length > 0 ? (
             styles.map((style) => (
-              <CategoriesTableContent style={style} key={style._id}></CategoriesTableContent>
+              <CategoriesTableContent style={style} key={style.id}></CategoriesTableContent>
             ))
           ) : (
             <tr>

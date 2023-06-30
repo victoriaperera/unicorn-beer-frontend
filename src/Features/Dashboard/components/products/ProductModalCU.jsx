@@ -22,7 +22,7 @@ function ProductModalCU() {
   const handleSelectStyle = (e) => {
     setStyle(e);
     for (const style of styles) {
-      style._id === e ? setContainers(style.containers) : "";
+      style.id === e ? setContainers(style.containers) : "";
     }
   };
 
@@ -75,7 +75,7 @@ function ProductModalCU() {
                 onChange={(e) => handleSelectStyle(e.target.value)}
               >
                 {styles.map((style) => (
-                  <option key={style._id} value={style._id}>
+                  <option key={style.id} value={style.id}>
                     {style.name}
                   </option>
                 ))}

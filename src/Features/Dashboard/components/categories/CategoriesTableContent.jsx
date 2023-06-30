@@ -25,7 +25,7 @@ function CategoriesTableContent({ style }) {
     try {
       const response = await axios({
         method: "PATCH",
-        url: `${import.meta.env.VITE_BACK_URL}/styles/${style._id}`,
+        url: `${import.meta.env.VITE_BACK_URL}/styles/${style.id}`,
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${admin.token}`,
@@ -40,8 +40,8 @@ function CategoriesTableContent({ style }) {
   };
 
   return (
-    <tr key={style._id}>
-      <td>{style._id}</td>
+    <tr key={style.id}>
+      <td>{style.id}</td>
       {update ? (
         <td>
           <input
