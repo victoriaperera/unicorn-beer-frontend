@@ -4,7 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { updateUserData } from "./userSlice";
 import { setOrder } from "../../redux/orderSlice";
 import PageTitle from "../../Common/components/PageTitle";
@@ -216,18 +216,6 @@ function UserAccount() {
           </div>
           {showModal && <OutOfScopeModal onClose={() => setShowModal(false)} />}
         </div>
-        <ToastContainer
-          position="top-right"
-          autoClose={3000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable={false}
-          pauseOnHover
-          theme="colored"
-        />
       </div>
     </>
   );
