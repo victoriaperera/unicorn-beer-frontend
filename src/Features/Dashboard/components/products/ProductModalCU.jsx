@@ -38,7 +38,7 @@ function ProductModalCU() {
         data: {
           style: style,
           featured: false,
-          container: container,
+          container: containers.filter((c) => c === containers.name),
           stock: stock,
         },
       });
