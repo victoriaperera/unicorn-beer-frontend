@@ -21,7 +21,6 @@ function Categories() {
           className="bi bi-plus-circle fs-2 create-icon"
           onClick={() => {
             dispatch(setToggleStyle(true));
-            setStyle(style);
           }}
         ></i>
       </div>

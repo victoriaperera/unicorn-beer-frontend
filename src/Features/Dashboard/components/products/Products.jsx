@@ -9,14 +9,13 @@ import ProductsTableContent from "./ProductsTableContent";
 
 function Products() {
   const products = useSelector((state) => state.admin.products);
-  const product = useSelector((state) => state.admin.product);
 
   const dispatch = useDispatch();
 
   return (
     <div className="products-bg scrollable">
-      {product && <ProductModalCU />}
-      {product && <ProductModalDelete />}
+      <ProductModalCU />
+      <ProductModalDelete />
       <CategoryCreate />
       <div className="d-flex justify-content-between align-content-center mb-3">
         <h2 className="text-white mb-3">Products</h2>
