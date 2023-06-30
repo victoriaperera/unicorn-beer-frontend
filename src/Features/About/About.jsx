@@ -1,12 +1,11 @@
 import "./styles.css";
 import AboutHeader from "./Components/AboutHeader";
-import TeamMemberCard from "./Components/TeamMemberCard";
 import { gsap } from "gsap";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { ScrollTrigger } from "gsap/all";
 import { Container } from "react-bootstrap";
 import BackToTopBtn from "../../Common/components/BackToTopBtn";
-import Header from "../../Common/components/Header";
+import PageTitle from "../../Common/components/PageTitle";
 import TechSection from "./Components/TechSection";
 import MerSection from "./Components/MerSection";
 import DesignSection from "./Components/DesignSection";
@@ -30,7 +29,7 @@ function About() {
 
   return (
     <>
-      <Header title={pageTitle} />
+      <PageTitle title={pageTitle} />
       <div className="about-nav-container me-3">
         <nav className="about-nav">
           <button

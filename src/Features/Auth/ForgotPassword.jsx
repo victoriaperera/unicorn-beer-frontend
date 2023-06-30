@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router";
 import { setToken } from "./userSlice";
 import { useRandomColor } from "../../hook/useRandomColor";
-import Header from "../../Common/components/Header";
+import PageTitle from "../../Common/components/PageTitle";
 import { Alert, Button } from "react-bootstrap";
 import unicornLogo from "../../assets/icons/Unicorn-beer-white-logo.svg";
 
@@ -47,7 +47,7 @@ function ForgotPassword() {
 
   return (
     <>
-      <Header title={pageTitle} />
+      <PageTitle title={pageTitle} />
       <div className="parent_container" style={{ height: "90vh" }}>
         <div className="d-flex justify-content-center align-items-center">
           <div id="login-row" className="row mx-0">

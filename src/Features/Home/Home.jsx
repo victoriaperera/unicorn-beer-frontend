@@ -9,7 +9,7 @@ import { ScrollTrigger } from "gsap/all";
 import HomeHeader from "./HomeHeader";
 import FeaturedProducts from "./Components/FeaturedProducts";
 import BackToTopBtn from "../../Common/components/BackToTopBtn";
-import Header from "../../Common/components/Header";
+import PageTitle from "../../Common/components/PageTitle";
 import Loader from "../../Common/components/Loader";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -40,7 +40,7 @@ function Home() {
   return (
     <>
       <div>
-        <Header title={pageTitle} />
+        <PageTitle title={pageTitle} />
         <HomeHeader />
         <Container fluid className="text-center">
           <section id="our-beer">

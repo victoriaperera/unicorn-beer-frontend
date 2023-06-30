@@ -6,7 +6,7 @@ import { Alert } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { setToken } from "./userSlice";
 import { useRandomColor } from "../../hook/useRandomColor";
-import Header from "../../Common/components/Header";
+import PageTitle from "../../Common/components/PageTitle";
 import unicornLogo from "../../assets/icons/Unicorn-beer-white-logo.svg";
 
 function SignUp() {
@@ -64,7 +64,7 @@ function SignUp() {
   };
   return (
     <>
-      <Header title={pageTitle} />
+      <PageTitle title={pageTitle} />
       <div className="parent_container" style={{ height: "100vh" }}>
         <div className="d-flex justify-content-center align-items-center">
           <div id="signup-row" className="row mx-0">

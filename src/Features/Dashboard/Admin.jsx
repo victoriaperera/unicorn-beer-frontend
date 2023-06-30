@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { setOrders, setProducts, setStyles, setUsers, setAdmins } from "./adminSlice";
-import Header from "../../Common/components/Header";
+import PageTitle from "../../Common/components/PageTitle";
 import AdminSidebar from "./components/AdminSidebar";
 import Dashboard from "./components/dashboard/Dashboard";
 import Categories from "./components/categories/Categories";
@@ -69,7 +69,7 @@ function Admin() {
 
   return (
     <>
-      <Header title={pageTitle} />
+      <PageTitle title={pageTitle} />
       <AdminSidebar onSidebarClick={handleSidebarClick} />
       {renderComponent()}
     </>
