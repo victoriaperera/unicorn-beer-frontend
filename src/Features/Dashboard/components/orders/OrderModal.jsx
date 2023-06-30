@@ -6,7 +6,6 @@ function OrderModal({ order, show, close }) {
   const shippingDate = new Date(Date.parse(order.shippingDate));
   const deliveryDate = new Date(Date.parse(order.deliveryDate));
 
-  console.log(order);
   return (
     order && (
       <>

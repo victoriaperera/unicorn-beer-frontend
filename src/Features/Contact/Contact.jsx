@@ -35,7 +35,7 @@ function Contact() {
       try {
         const response = await axios({
           method: "POST",
-          url: `${import.meta.env.VITE_BACK_URL}/auth/contact `, // TODO: probablemente como una opción de mejora
+          url: `${import.meta.env.VITE_BACK_URL}/auth/contact `, 
           data: {
             firstname,
             lastname,

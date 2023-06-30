@@ -11,12 +11,12 @@ function ProductModalCU() {
   const token = useSelector((state) => state.admin.token.token);
   const styles = useSelector((state) => state.admin.styles);
   const toggleProduct = useSelector((state) => state.admin.toggleCreateProduct);
-
+  const [featured, setFeatured] = useState(false);
   const dispatch = useDispatch();
 
   const [style, setStyle] = product ? useState(product.style.name) : useState("");
   const [containers, setContainers] = useState([]);
-  const [container, setContainer] = product ? useState(product.container) : useState(null);
+  const [container, setContainer] = product ? useState(product.style.container) : useState(null);
   const [stock, setStock] = product ? useState(product.stock) : useState("");
 
   const handleSelectStyle = (e) => {
@@ -28,7 +28,7 @@ function ProductModalCU() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(containers.filter((c) => c.name === container));
+   
     try {
       const response = await axios({
         method: "POST",
@@ -38,8 +38,8 @@ function ProductModalCU() {
         },
         data: {
           style: style,
-          featured: false,
-          container: containers.filter((c) => c.name === container),
+          featured: featured === "on" ? true : false,
+          container: containers.filter((cont) => cont.name === container),
           stock: stock,
         },
       });
@@ -74,6 +74,7 @@ function ProductModalCU() {
                 name="style"
                 id="style"
                 onChange={(e) => handleSelectStyle(e.target.value)}
+                required
               >
                 {styles.map((style) => (
                   <option key={style.id} value={style.id}>
@@ -87,7 +88,8 @@ function ProductModalCU() {
               <Form.Select
                 name="container"
                 id="container"
-                onChange={(e) => setContainer(e.target.value)}
+                onChange={(e) => setContainer(e.target)}
+                required
               >
                 <option>Select a container</option>
                 {containers.map((container) => (
@@ -97,26 +99,40 @@ function ProductModalCU() {
                 ))}
               </Form.Select>
             </Form.Group>
-            <p className="my-2">
-              Would you like to create a brand new{" "}
-              <Link
-                onClick={() => {
-                  dispatch(setToggleStyle(true));
-                  dispatch(setToggleProduct(false));
-                }}
-              >
-                Style?
-              </Link>
-            </p>
-            <Form.Group>
-              <Form.Label>Stock</Form.Label>
-              <Form.Control type="number" name="stock" onChange={(e) => setStock(e.target.value)} />
-            </Form.Group>
+            <div className="d-flex justify-content-between align-items-center mt-3">
+              <p className="my-2">
+                Would you like to create a brand new{" "}
+                <Link
+                  onClick={() => {
+                    dispatch(setToggleStyle(true));
+                    dispatch(setToggleProduct(false));
+                  }}
+                >
+                  Style?
+                </Link>
+              </p>
+              <Form.Check
+                label="Featured"
+                name="Featured"
+                type="checkbox"
+                className="me-2"
+                onChange={(e) => setFeatured(e.target.value)}
+              />
+              <Form.Group className="d-flex gap-3 justify-content-center align-items-center">
+                <Form.Label className="mb-0">Stock</Form.Label>
+                <Form.Control
+                  type="number"
+                  name="stock"
+                  onChange={(e) => setStock(e.target.value)}
+                  required
+                />
+              </Form.Group>
+            </div>
           </Row>
           <Row className="mb-3">
             <Col className="d-flex justify-content-end">
-              <Button className="w-25" type="submit">
-                Make it happen
+              <Button className="w-25" type="submit" variant="success">
+                Create Product
               </Button>
             </Col>
           </Row>

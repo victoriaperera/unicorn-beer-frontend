@@ -9,7 +9,7 @@ function CustomerDelete({ show, close, user }) {
   const dispatch = useDispatch();
 
   const handleDelete = async () => {
-    console.log(user);
+
     try {
       const response = await axios({
         method: "DELETE",
