@@ -1,5 +1,5 @@
 .product-view-text {
-  padding: 0 !important;
+  padding: 0, 0, 0, 5 !important;
   font-size: smaller;
 }
 
