@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { useSetColor } from "../../hook/useSetColor";
 import ProductCarousel from "./components/ProductCarousel";
 import ProductCard from "./components/ProductCard";
+import RelatedProducts from "./components/RelatedProducts";
 
 function Product() {
   const params = useParams();
@@ -22,6 +23,7 @@ function Product() {
           <div className="row d-flex justify-content-center gap-3 product-row">
             <ProductCarousel product={product} />
             <ProductCard product={product} />
+            <RelatedProducts />
           </div>
         </div>
       </div>
