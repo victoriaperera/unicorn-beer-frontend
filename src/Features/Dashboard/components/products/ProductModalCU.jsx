@@ -28,6 +28,7 @@ function ProductModalCU() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(containers.filter((c) => c.name === container));
     try {
       const response = await axios({
         method: "POST",
@@ -38,7 +39,7 @@ function ProductModalCU() {
         data: {
           style: style,
           featured: false,
-          container: containers.filter((c) => c === containers.name),
+          container: containers.filter((c) => c.name === container),
           stock: stock,
         },
       });
