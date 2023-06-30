@@ -10,7 +10,6 @@ const adminSlice = createSlice({
     product: null,
     users: [],
     styles: [],
-    style: null,
     admins: [],
     toggleCreateStyle: false,
     toggleDeleteStyle: false,
@@ -84,9 +83,6 @@ const adminSlice = createSlice({
       const productIndex = state.products.indexOf(product);
       state.products[productIndex].stock = action.payload.stock;
     },
-    setStyle: (state, action) => {
-      state.style = action.payload;
-    },
     setStyles: (state, action) => {
       state.styles = action.payload;
     },
@@ -130,7 +126,6 @@ export const {
   updateProduct,
   deleteProduct,
   setStyles,
-  setStyle,
   createStyle,
   updateStyle,
   deleteStyle,

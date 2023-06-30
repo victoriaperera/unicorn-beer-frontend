@@ -9,7 +9,7 @@ import CategoriesTableContent from "./CategoriesTableContent";
 function Categories() {
   const styles = useSelector((state) => state.admin.styles);
   const dispatch = useDispatch();
-  const [style, setStyle] = useState();
+  const [style, setStyle] = useState("");
 
   return (
     <div className="categories-bg scrollable">
