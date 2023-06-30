@@ -20,7 +20,6 @@ import PageTitle from "../../Common/components/PageTitle";
 function Checkout() {
   const user = useSelector((state) => state.user);
   const cart = useSelector((state) => state.cart);
-  const order = useSelector((state) => state.order);
   const pageTitle = "Checkout";
 
   const dispatch = useDispatch();
@@ -111,6 +110,7 @@ function Checkout() {
               Authorization: `Bearer ${user.token}`,
             },
             data: {
+              user: user,
               products: cart.products,
               paymentMethod: paymentMethod.label,
               totalAmount: cart.totalAmount,
