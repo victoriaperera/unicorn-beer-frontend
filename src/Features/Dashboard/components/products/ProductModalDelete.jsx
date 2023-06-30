@@ -10,7 +10,7 @@ function ProductModalDelete() {
   const toggleDelete = useSelector((state) => state.admin.toggleDeleteProduct);
   const dispatch = useDispatch();
 
-  const handleDelete = async (productId) => {
+  const handleDelete = async () => {
     try {
       const response = await axios({
         method: "DELETE",
@@ -18,9 +18,9 @@ function ProductModalDelete() {
         headers: {
           Authorization: `Bearer ${admin.token}`,
         },
-        data: { productId },
+        data: { product: product.id },
       });
-      dispatch(deleteProduct(productId));
+      dispatch(deleteProduct(product.id));
       dispatch(setToggleDelete(false));
     } catch (err) {
       console.log(err);
@@ -44,7 +44,7 @@ function ProductModalDelete() {
       <Modal.Footer className="justify-content-center">
         <Button
           onClick={() => {
-            handleDelete(product.id);
+            handleDelete();
           }}
           variant="danger"
         >
