@@ -36,7 +36,7 @@ function Footer() {
         <Nav.Link as={Link} to="/about" className="footerLink">
           ABOUT OUR PROJECT
         </Nav.Link>
-        <Nav.Link as={Link} to="/#our-beer-section" className="footerLink">
+        <Nav.Link as={Link} to="/#our-beer" className="footerLink">
           OUR BEER
         </Nav.Link>
         <Nav.Link as={Link} to="/shop" className="footerLink">

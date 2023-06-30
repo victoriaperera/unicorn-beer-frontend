@@ -43,7 +43,7 @@ function Home() {
         <Header title={pageTitle} />
         <HomeHeader />
         <Container fluid className="text-center">
-          <section id="our-beer-section">
+          <section id="our-beer">
             <Row className="white-row align-items-center justify-content-center">
               <Col>
                 <h2 className="m-0 beers-heading">Unlock the magic in every sip</h2>

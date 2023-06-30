@@ -8,16 +8,17 @@ import { Container, Nav, Navbar, NavDropdown, Offcanvas } from "react-bootstrap"
 import { ToastContainer, Bounce } from "react-toastify";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import logo from "../../assets/icons/Unicorn-beer-white-logo-iso.svg";
+import { NavLink, Link } from "react-router-dom";
 
 function UnicornNavbar() {
-  const [show, setShow] = useState(false);
-  const [navbarBlur, setNavbarBlur] = useState("");
   const user = useSelector((state) => state.user);
   const cart = useSelector((state) => state.cart.products);
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const dispatch = useDispatch();
+  const [show, setShow] = useState(false);
+  const [navbarBlur, setNavbarBlur] = useState("");
 
   const handleClose = () => {
     setShow(!show);
@@ -52,6 +53,13 @@ function UnicornNavbar() {
 
   const handleLinkClick = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const scrollToSection = (ref) => {
+    const section = document.querySelector(ref);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   return (
@@ -96,7 +104,13 @@ function UnicornNavbar() {
                 </Nav.Link>
               </div>
               <div className="mx-2 mt-1">
-                <Nav.Link as={Link} to={"/#our-beer-section"} eventKey={"2"} className="nav-hover">
+                <Nav.Link
+                  as={Link}
+                  to={"/#our-beer"}
+                  onClick={() => scrollToSection("#our-beer")}
+                  eventKey={"2"}
+                  className="nav-hover"
+                >
                   OUR BEER
                 </Nav.Link>
               </div>

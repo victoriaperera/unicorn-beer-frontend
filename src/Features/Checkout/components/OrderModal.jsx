@@ -29,14 +29,14 @@ function OrderModal({ show }) {
           onClick={() => dispatch(clearCart())}
           className="modalBtn modalBtn-Success"
         >
-          Go to Shop
+          Back to Shop
         </Link>
         <PDFDownloadLink
           document={<DetailPdf user={user} order={order} cart={cart} />}
           fileName="PDF-Detail"
           className="modalBtn modalBtn-Success "
         >
-          Download Detail
+          Download order
         </PDFDownloadLink>
       </Modal.Body>
     </Modal>
