@@ -57,6 +57,7 @@
   list-style-type: none;
   column-count: 2;
   column-gap: 20px;
+  padding: 0 !important;
 }
 
 .dashboard-totals {
