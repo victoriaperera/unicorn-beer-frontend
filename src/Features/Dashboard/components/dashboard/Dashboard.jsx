@@ -34,7 +34,9 @@ function Dashboard({ handleSidebarClick }) {
       <div className="row">
         <div className="col-6 col-md-3">
           <div className="card mb-4 dashboard-totals">
-            <div className="card-header py-3">Sales</div>
+            <div className="card-header py-3">
+              <h5 className="m-0">Sales</h5>
+            </div>
             <div className="card-body fs-3 pt-5">
               <span>US$ {totalSales.toFixed(2)}</span>
             </div>
@@ -42,7 +44,9 @@ function Dashboard({ handleSidebarClick }) {
         </div>
         <div className="col-6 col-md-3">
           <div className="card mb-4 dashboard-totals">
-            <div className="card-header py-3">Average Purchase Value</div>
+            <div className="card-header py-3">
+              <h5 className="m-0">Average Purchase Value</h5>
+            </div>
             <div className="card-body fs-3 pt-5">
               <span>US$ {averagePurchaseValue.toFixed(2)}</span>
             </div>
@@ -50,7 +54,9 @@ function Dashboard({ handleSidebarClick }) {
         </div>
         <div className="col-6 col-md-3">
           <div className="card mb-4 dashboard-totals">
-            <div className="card-header py-3">Bestselling</div>
+            <div className="card-header py-3">
+              <h5 className="m-0">Bestselling</h5>
+            </div>
             <div className="card-body fs-3">
               <img src="./src/assets/img/BLONDE_Bottle.png" className="w-25" alt="" />
             </div>
@@ -58,7 +64,9 @@ function Dashboard({ handleSidebarClick }) {
         </div>
         <div className="col-6 col-md-3">
           <div className="card mb-4 dashboard-totals">
-            <div className="card-header py-3">Categories</div>
+            <div className="card-header py-3">
+              <h5 className="m-0">Categories</h5>
+            </div>
             <div className="card-body">
               {categories && categories.length > 0 ? (
                 <ul className="categories-list">
