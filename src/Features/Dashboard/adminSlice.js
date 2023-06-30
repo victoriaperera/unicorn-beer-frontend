@@ -60,8 +60,7 @@ const adminSlice = createSlice({
       state.users = action.payload;
     },
     deleteUser: (state, action) => {
-      const deletedUser = action.payload;
-      state.users = state.users.filter((user) => user.id !== deletedUser);
+      state.users = state.users.filter((user) => user._id !== action.payload);
     },
     setProducts: (state, action) => {
       state.products = action.payload;

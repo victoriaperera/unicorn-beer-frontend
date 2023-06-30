@@ -7,7 +7,7 @@ import { setToken } from "./userSlice";
 import { Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { useRandomColor } from "../../hook/useRandomColor";
-import Header from "../../Common/components/Header";
+import PageTitle from "../../Common/components/PageTitle";
 import { fromCheckOut } from "../Shop/shopSlice";
 import unicornLogo from "../../assets/icons/Unicorn-beer-white-logo.svg";
 
@@ -52,7 +52,7 @@ function Login() {
 
   return (
     <>
-      <Header title={pageTitle} />
+      <PageTitle title={pageTitle} />
       <div className="parent_container" style={{ height: "90vh" }}>
         <div className="d-flex justify-content-center align-items-center">
           <div id="login-row" className="row mx-0">

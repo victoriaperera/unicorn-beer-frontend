@@ -5,20 +5,21 @@ import { Button, Modal } from "react-bootstrap";
 import { deleteUser } from "../../adminSlice";
 
 function CustomerDelete({ show, close, user }) {
-  const token = useSelector((state) => state.admin.token);
+  const admin = useSelector((state) => state.admin.token);
   const dispatch = useDispatch();
 
-  const handleDelete = async (userId) => {
+  const handleDelete = async () => {
+    console.log(user);
     try {
       const response = await axios({
         method: "DELETE",
         url: `${import.meta.env.VITE_BACK_URL}/users`,
         headers: {
-          Authorization: `Bearer ${token.token}`,
+          Authorization: `Bearer ${admin.token}`,
         },
-        data: { userId },
+        data: { userId: user._id },
       });
-      dispatch(deleteUser(userId));
+      dispatch(deleteUser(user._id));
     } catch (err) {
       console.log(err);
     }
@@ -39,7 +40,7 @@ function CustomerDelete({ show, close, user }) {
       <Modal.Footer className="justify-content-center">
         <Button
           onClick={() => {
-            handleDelete(user.id);
+            handleDelete();
             close();
           }}
           variant="danger"

@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useRandomColor } from "../../hook/useRandomColor";
-import Header from "../../Common/components/Header";
+import PageTitle from "../../Common/components/PageTitle";
 import OutOfScopeModal from "../../Common/components/OutOfScopeModal";
 import unicornLogo from "../../assets/icons/Unicorn-beer-white-logo.svg";
 
@@ -50,7 +50,7 @@ function Contact() {
   };
   return (
     <>
-      <Header title={pageTitle} />
+      <PageTitle title={pageTitle} />
       <OutOfScopeModal />
       <div className="parent_container">
         <div className="d-flex justify-content-center align-items-center container-contact">
