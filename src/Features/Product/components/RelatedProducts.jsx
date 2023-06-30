@@ -24,7 +24,6 @@ function RelatedProducts() {
               (photo) => photo.includes("Main") && photo.includes(product.container.name),
             );
             {
-              console.log(photo);
             }
             return (
               <div key={index} className="col-10 col-sm-7 col-md-5 col-lg-2 text-center p-0">
