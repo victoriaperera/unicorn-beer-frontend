@@ -50,7 +50,9 @@ function ProductList() {
             style={{ opacity: "80%" }}
           >
             <Image src={unicornIcon} alt="Unicorn Icon" style={{ height: "100px" }} />
-            <h2 className="text-white">Ooops! There is no product for that search, try again.</h2>
+            <h2 className="text-white">
+              Oops! We couldn't find any products matching your search. Please try again.
+            </h2>
           </div>
         )}
       </Row>
