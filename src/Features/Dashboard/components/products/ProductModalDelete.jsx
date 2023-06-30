@@ -6,7 +6,7 @@ import { deleteProduct, setToggleDelete } from "../../adminSlice";
 
 function ProductModalDelete() {
   const product = useSelector((state) => state.admin.product);
-  const token = useSelector((state) => state.token);
+  const admin = useSelector((state) => state.admin.token);
   const toggleDelete = useSelector((state) => state.admin.toggleDeleteProduct);
   const dispatch = useDispatch();
 
@@ -16,7 +16,7 @@ function ProductModalDelete() {
         method: "DELETE",
         url: `${import.meta.env.VITE_BACK_URL}/products`,
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${admin.token}`,
         },
         data: { productId },
       });
