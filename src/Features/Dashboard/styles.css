@@ -51,7 +51,7 @@
 .active-dashboard::after {
   content: "";
   position: absolute;
-  top: 45px;
+  top: 38px;
   right: 16px;
   height: 40px;
   width: 40px;
