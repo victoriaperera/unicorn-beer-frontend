@@ -8,10 +8,10 @@ function CategoriesTableContent({ style, setStyleToDelete }) {
   const dispatch = useDispatch();
   const [update, setUpdate] = useState(false);
 
-  const [name, setName] = useState();
-  const [description, setDescription] = useState();
-  const [abv, setAbv] = useState();
-  const [price, setPrice] = useState();
+  const [name, setName] = useState(style.name);
+  const [description, setDescription] = useState(style.description);
+  const [abv, setAbv] = useState(style.abv);
+  const [price, setPrice] = useState(style.price);
   const [photos, setPhotos] = useState();
   const inputRef = useRef(null);
 
