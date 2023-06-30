@@ -81,7 +81,7 @@
 .active-products::after {
   content: "";
   position: absolute;
-  top: 45px;
+  top: 38px;
   right: 16px;
   height: 40px;
   width: 40px;
@@ -111,7 +111,7 @@
 .active-categories::after {
   content: "";
   position: absolute;
-  top: 45px;
+  top: 38px;
   right: 16px;
   height: 40px;
   width: 40px;
@@ -141,7 +141,7 @@
 .active-orders::after {
   content: "";
   position: absolute;
-  top: 45px;
+  top: 38px;
   right: 16px;
   height: 40px;
   width: 40px;
@@ -171,7 +171,7 @@
 .active-customers::after {
   content: "";
   position: absolute;
-  top: 45px;
+  top: 38px;
   right: 16px;
   height: 40px;
   width: 40px;
@@ -200,7 +200,7 @@
 .active-administrators::after {
   content: "";
   position: absolute;
-  top: 45px;
+  top: 38px;
   right: 16px;
   height: 40px;
   width: 40px;
