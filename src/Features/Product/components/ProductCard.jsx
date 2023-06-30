@@ -1,5 +1,4 @@
 import "../styles.css";
-import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
@@ -20,7 +19,7 @@ function ProductCard({ product }) {
   };
 
   return (
-    <div className="col-10 col-sm-8 col-lg-5 col-xl-3 align-self-start product-view-text">
+    <div className="col-10 col-sm-8 col-lg-5 col-xl-4 align-self-start product-view-text">
       <div className="pb-2">
         <h2>{product.style.name}</h2>
         <p className="mb-0">{product.style.description}</p>
